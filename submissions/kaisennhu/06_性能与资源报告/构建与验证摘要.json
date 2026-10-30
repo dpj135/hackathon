@@ -1,0 +1,135 @@
+{
+  "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+  "binary_sha256": "5bd2c3efb4cd0cda63b57a8979acd4c2a3379716631bc4403e3c93ab0fc14a24",
+  "engine_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+  "repeat": 3,
+  "groups": {
+    "official": 39,
+    "resources": 72,
+    "coverage": 54,
+    "distribution": 96,
+    "regression": 96,
+    "robustness": 33,
+    "cache_mix": 24,
+    "blind": 24,
+    "admission": 19,
+    "holdout": 24,
+    "engine_holdout": 24,
+    "planning_holdout": 24,
+    "transfer_holdout": 24,
+    "pr17_added": 78,
+    "independent_combinations": 24
+  },
+  "inputs": 655,
+  "player_runs": 1965,
+  "all_replay_valid": true,
+  "all_repeated_outputs_identical": true,
+  "policy_peak_mb_max": 13.0615234375,
+  "automated": 88.4555,
+  "automated_max": 90,
+  "official_greedy_score": 67.1981,
+  "public_vs_greedy": {
+    "wins": 35,
+    "ties": 4,
+    "losses": 0
+  },
+  "extended_vs_greedy": {
+    "cases": 292,
+    "wins": 195,
+    "ties": 1,
+    "losses": 96
+  },
+  "functional_boundary_gate_checks": 173,
+  "engine_files_sha256": {
+    "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+    "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
+    "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
+  },
+  "strategy_boundary": {
+    "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+    "passed": 1,
+    "sdk_dependencies": [
+      "nds::align_down(long, long)",
+      "nds::physical_span(long, long)",
+      "nds::Json::at(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)",
+      "nds::Json::array()",
+      "nds::Json::as_array()",
+      "nds::Json::push_back(nds::Json)",
+      "nds::Json::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)",
+      "nds::align_up(long, long)",
+      "nds::Json::at(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const",
+      "nds::Json::size() const",
+      "nds::Json::as_int() const",
+      "nds::Json::as_array() const",
+      "nds::Json::as_string[abi:cxx11]() const",
+      "nds::Json::operator[](unsigned long) const"
+    ]
+  },
+  "provenance": {
+    "PR17_commit": "f26313bd67e7640da27635cb3588062a6884911b",
+    "additional_cases": 78,
+    "all_generated_inputs_are_visible_regression": true,
+    "independent_combination_seeds": [
+      451009,
+      451019,
+      451027,
+      451039,
+      451049,
+      451057
+    ]
+  },
+  "runtime": {
+    "repeat": 3,
+    "warmup_per_input": 1,
+    "cpu": 8,
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "cpu_model": "AMD EPYC 9575F 64-Core Processor",
+    "flags": [
+      "-O2",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic"
+    ],
+    "source_sha256": {
+      "strategy": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+      "greedy": "82f29df92e749349904bbe0398d673f7f8defacc04c1eb82a55fb00b3832b6d8"
+    },
+    "engine_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+    "entry_sha256": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
+    "timing_wrapper_sha256": "133f82158efbc34c8f9a3f89645b0b77847ebab63c9f6f555a3dd13dcf9db734",
+    "binary_sha256": {
+      "strategy": "a29f866d2a6f489ff5ec17f59c27b880e474bc60d812188b56fdacd5948d2006",
+      "greedy": "f3407535454cea154e2583d538ba29420751f2265fb03e17419d45d5dec4c3fb"
+    },
+    "build_seconds": 13.793446683790535,
+    "totals": {
+      "strategy": {
+        "wall_seconds": 9.392674229573458,
+        "policy_total_ms": 1153.4711970000158
+      },
+      "greedy": {
+        "wall_seconds": 10.96877548797056,
+        "policy_total_ms": 831.1762179999861
+      }
+    },
+    "all_valid": true,
+    "all_repeated_outputs_identical": true
+  },
+  "source_commit": "519ef500ad5f685a7e7e010c076960610018c20b",
+  "verification_date_utc": "2026-10-30",
+  "scale": {
+    "cases": 5,
+    "runs": 11,
+    "all_valid": true,
+    "policy_peak_kib_max": 1658996,
+    "process_peak_kib_max": 3510992,
+    "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+    "cpu": 184,
+    "seed": 26102929,
+    "generated_submits": 100,
+    "generated_iocbs_per_submit": 1000
+  },
+  "fresh_replay_matches_published_655_outputs": true
+}
