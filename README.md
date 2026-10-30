@@ -21,6 +21,6 @@ python3 run.py score
 python3 run.py demo
 ```
 
-需要C++17编译器、make和Python 3.10+。入口从本仓库`public/`校验并复制固定SDK，按需重建扩展输入；不修改官方源码与参考成本。详情见[复现手册](submissions/kaisennhu/04_测试复现/测试操作手册.md)。
+需要C++17编译器、make、nm（binutils）和Python 3.10+。入口从本仓库`public/`校验并复制固定SDK，按需重建扩展输入；不修改官方源码与参考成本。详情见[复现手册](submissions/kaisennhu/04_测试复现/测试操作手册.md)。
 
 Git仅保留源码、必要的解释和复现依据。二进制、Word/HTML报告、PPTX/PDF、逐页图片与完整原始记录由本地离线交付提供，不在仓库中重复存储。

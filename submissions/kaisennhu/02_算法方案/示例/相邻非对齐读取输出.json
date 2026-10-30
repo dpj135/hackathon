@@ -60,7 +60,7 @@
       "operations": [
         {
           "buffer_bytes": 4096,
-          "operation_id": 2,
+          "operation_id": 1,
           "path": "AGGREGATE",
           "ranges": [
             {
@@ -73,10 +73,55 @@
             {
               "depends_on": [],
               "device_id": 0,
-              "group_id": 2,
+              "group_id": 1,
               "not_before_us": 0,
               "physical_length": 4096,
               "physical_ssd_offset": 0,
+              "priority": 100,
+              "transfer_id": 1,
+              "type": "SSD_TO_HBM_BUFFER"
+            },
+            {
+              "bytes": 4096,
+              "depends_on": [
+                1
+              ],
+              "device_id": 0,
+              "group_id": 1,
+              "not_before_us": 0,
+              "priority": 100,
+              "transfer_id": 2,
+              "type": "D2D",
+              "vectors": [
+                {
+                  "iocb_id": 1,
+                  "iov_id": 0,
+                  "iov_offset": 0,
+                  "length": 4096
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "buffer_bytes": 4096,
+          "operation_id": 2,
+          "path": "AGGREGATE",
+          "ranges": [
+            {
+              "iocb_id": 2,
+              "iocb_offset": 0,
+              "length": 4096
+            }
+          ],
+          "transfers": [
+            {
+              "depends_on": [],
+              "device_id": 0,
+              "group_id": 2,
+              "not_before_us": 0,
+              "physical_length": 4096,
+              "physical_ssd_offset": 4096,
               "priority": 100,
               "transfer_id": 3,
               "type": "SSD_TO_HBM_BUFFER"
@@ -94,7 +139,7 @@
               "type": "D2D",
               "vectors": [
                 {
-                  "iocb_id": 1,
+                  "iocb_id": 2,
                   "iov_id": 0,
                   "iov_offset": 0,
                   "length": 4096
@@ -109,7 +154,7 @@
           "path": "AGGREGATE",
           "ranges": [
             {
-              "iocb_id": 2,
+              "iocb_id": 3,
               "iocb_offset": 0,
               "length": 4096
             }
@@ -121,7 +166,7 @@
               "group_id": 3,
               "not_before_us": 0,
               "physical_length": 4096,
-              "physical_ssd_offset": 4096,
+              "physical_ssd_offset": 8192,
               "priority": 100,
               "transfer_id": 5,
               "type": "SSD_TO_HBM_BUFFER"
@@ -136,51 +181,6 @@
               "not_before_us": 0,
               "priority": 100,
               "transfer_id": 6,
-              "type": "D2D",
-              "vectors": [
-                {
-                  "iocb_id": 2,
-                  "iov_id": 0,
-                  "iov_offset": 0,
-                  "length": 4096
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "buffer_bytes": 4096,
-          "operation_id": 4,
-          "path": "AGGREGATE",
-          "ranges": [
-            {
-              "iocb_id": 3,
-              "iocb_offset": 0,
-              "length": 4096
-            }
-          ],
-          "transfers": [
-            {
-              "depends_on": [],
-              "device_id": 0,
-              "group_id": 4,
-              "not_before_us": 0,
-              "physical_length": 4096,
-              "physical_ssd_offset": 8192,
-              "priority": 100,
-              "transfer_id": 7,
-              "type": "SSD_TO_HBM_BUFFER"
-            },
-            {
-              "bytes": 4096,
-              "depends_on": [
-                7
-              ],
-              "device_id": 0,
-              "group_id": 4,
-              "not_before_us": 0,
-              "priority": 100,
-              "transfer_id": 8,
               "type": "D2D",
               "vectors": [
                 {
