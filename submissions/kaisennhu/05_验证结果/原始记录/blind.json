@@ -1,0 +1,3935 @@
+{
+  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
+  "repeat": 3,
+  "cases": [
+    {
+      "file": "renewal_hotspot_9491.json",
+      "family": "renewal_hotspot",
+      "input_sha256": "4bc42c6330c9b15b35aaeeabec0bee5945cc814e225c5630ef30d4ab9fb24983",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.1779172599781305,
+              "valid": true,
+              "output_sha256": "d25d067d853fcd84f8cbadbd2e030fed60f10d8275bea997c0656acaa79d950e",
+              "metrics": {
+                "cache_hits": 674,
+                "cpu_cost": 12694,
+                "effective_bandwidth_mb_s": 26261.763197,
+                "evictions": 32,
+                "latency_p50_us": 6479,
+                "latency_p95_us": 137352,
+                "latency_p99_us": 148578,
+                "npu_cost": 2242,
+                "physical_ssd_bytes": 4633345024,
+                "promote_count": 42,
+                "promote_hit_rate": 1.0,
+                "promote_success": 42,
+                "read_amplification": 0.776479,
+                "total_cost": 231627,
+                "trace_time_us": 216691,
+                "valid_bytes": 5967118576
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.1758788470178843,
+              "valid": true,
+              "output_sha256": "d25d067d853fcd84f8cbadbd2e030fed60f10d8275bea997c0656acaa79d950e",
+              "metrics": {
+                "cache_hits": 674,
+                "cpu_cost": 12694,
+                "effective_bandwidth_mb_s": 26261.763197,
+                "evictions": 32,
+                "latency_p50_us": 6479,
+                "latency_p95_us": 137352,
+                "latency_p99_us": 148578,
+                "npu_cost": 2242,
+                "physical_ssd_bytes": 4633345024,
+                "promote_count": 42,
+                "promote_hit_rate": 1.0,
+                "promote_success": 42,
+                "read_amplification": 0.776479,
+                "total_cost": 231627,
+                "trace_time_us": 216691,
+                "valid_bytes": 5967118576
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.1658065218944103,
+              "valid": true,
+              "output_sha256": "d25d067d853fcd84f8cbadbd2e030fed60f10d8275bea997c0656acaa79d950e",
+              "metrics": {
+                "cache_hits": 674,
+                "cpu_cost": 12694,
+                "effective_bandwidth_mb_s": 26261.763197,
+                "evictions": 32,
+                "latency_p50_us": 6479,
+                "latency_p95_us": 137352,
+                "latency_p99_us": 148578,
+                "npu_cost": 2242,
+                "physical_ssd_bytes": 4633345024,
+                "promote_count": 42,
+                "promote_hit_rate": 1.0,
+                "promote_success": 42,
+                "read_amplification": 0.776479,
+                "total_cost": 231627,
+                "trace_time_us": 216691,
+                "valid_bytes": 5967118576
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.25183912203647196,
+              "valid": true,
+              "output_sha256": "d29a326673cbcc45b0613ce23a436bf52a9a267a1bad714713f545dda7068d95",
+              "metrics": {
+                "cache_hits": 361,
+                "cpu_cost": 57167,
+                "effective_bandwidth_mb_s": 22524.353162,
+                "evictions": 355,
+                "latency_p50_us": 24397,
+                "latency_p95_us": 153779,
+                "latency_p99_us": 174787,
+                "npu_cost": 4129,
+                "physical_ssd_bytes": 5432246272,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.910363,
+                "total_cost": 313942,
+                "trace_time_us": 252646,
+                "valid_bytes": 5967118576
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.2563009699806571,
+              "valid": true,
+              "output_sha256": "d29a326673cbcc45b0613ce23a436bf52a9a267a1bad714713f545dda7068d95",
+              "metrics": {
+                "cache_hits": 361,
+                "cpu_cost": 57167,
+                "effective_bandwidth_mb_s": 22524.353162,
+                "evictions": 355,
+                "latency_p50_us": 24397,
+                "latency_p95_us": 153779,
+                "latency_p99_us": 174787,
+                "npu_cost": 4129,
+                "physical_ssd_bytes": 5432246272,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.910363,
+                "total_cost": 313942,
+                "trace_time_us": 252646,
+                "valid_bytes": 5967118576
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.2534860821906477,
+              "valid": true,
+              "output_sha256": "d29a326673cbcc45b0613ce23a436bf52a9a267a1bad714713f545dda7068d95",
+              "metrics": {
+                "cache_hits": 361,
+                "cpu_cost": 57167,
+                "effective_bandwidth_mb_s": 22524.353162,
+                "evictions": 355,
+                "latency_p50_us": 24397,
+                "latency_p95_us": 153779,
+                "latency_p99_us": 174787,
+                "npu_cost": 4129,
+                "physical_ssd_bytes": 5432246272,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.910363,
+                "total_cost": 313942,
+                "trace_time_us": 252646,
+                "valid_bytes": 5967118576
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "walking_hotspot_9491.json",
+      "family": "walking_hotspot",
+      "input_sha256": "f8f0d79c1d9f8867d45479e30dc1c5510d4eaf0101d42ddf792f3a05f16a01ea",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.9598755820188671,
+              "valid": true,
+              "output_sha256": "50eec29dea95209f27e6feeaf800c5666927666a2bde9b1b9658fee67bce775f",
+              "metrics": {
+                "cache_hits": 127,
+                "cpu_cost": 17179,
+                "effective_bandwidth_mb_s": 26542.245852,
+                "evictions": 45,
+                "latency_p50_us": 30699,
+                "latency_p95_us": 177712,
+                "latency_p99_us": 201892,
+                "npu_cost": 1640,
+                "physical_ssd_bytes": 5265330688,
+                "promote_count": 50,
+                "promote_hit_rate": 1.0,
+                "promote_success": 50,
+                "read_amplification": 0.74242,
+                "total_cost": 273642,
+                "trace_time_us": 254823,
+                "valid_bytes": 7092122120
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.9630967639386654,
+              "valid": true,
+              "output_sha256": "50eec29dea95209f27e6feeaf800c5666927666a2bde9b1b9658fee67bce775f",
+              "metrics": {
+                "cache_hits": 127,
+                "cpu_cost": 17179,
+                "effective_bandwidth_mb_s": 26542.245852,
+                "evictions": 45,
+                "latency_p50_us": 30699,
+                "latency_p95_us": 177712,
+                "latency_p99_us": 201892,
+                "npu_cost": 1640,
+                "physical_ssd_bytes": 5265330688,
+                "promote_count": 50,
+                "promote_hit_rate": 1.0,
+                "promote_success": 50,
+                "read_amplification": 0.74242,
+                "total_cost": 273642,
+                "trace_time_us": 254823,
+                "valid_bytes": 7092122120
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.9609545138664544,
+              "valid": true,
+              "output_sha256": "50eec29dea95209f27e6feeaf800c5666927666a2bde9b1b9658fee67bce775f",
+              "metrics": {
+                "cache_hits": 127,
+                "cpu_cost": 17179,
+                "effective_bandwidth_mb_s": 26542.245852,
+                "evictions": 45,
+                "latency_p50_us": 30699,
+                "latency_p95_us": 177712,
+                "latency_p99_us": 201892,
+                "npu_cost": 1640,
+                "physical_ssd_bytes": 5265330688,
+                "promote_count": 50,
+                "promote_hit_rate": 1.0,
+                "promote_success": 50,
+                "read_amplification": 0.74242,
+                "total_cost": 273642,
+                "trace_time_us": 254823,
+                "valid_bytes": 7092122120
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.24722618609666824,
+              "valid": true,
+              "output_sha256": "b8e325db9fa5b2efe911d4e05ab31dba36cb01c34ca6046ec078cfd122d8422b",
+              "metrics": {
+                "cache_hits": 409,
+                "cpu_cost": 42792,
+                "effective_bandwidth_mb_s": 22996.517375,
+                "evictions": 204,
+                "latency_p50_us": 10231,
+                "latency_p95_us": 168828,
+                "latency_p99_us": 203713,
+                "npu_cost": 3643,
+                "physical_ssd_bytes": 6302994432,
+                "promote_count": 208,
+                "promote_hit_rate": 1.0,
+                "promote_success": 208,
+                "read_amplification": 0.888732,
+                "total_cost": 340548,
+                "trace_time_us": 294113,
+                "valid_bytes": 7092122120
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.2483100958634168,
+              "valid": true,
+              "output_sha256": "b8e325db9fa5b2efe911d4e05ab31dba36cb01c34ca6046ec078cfd122d8422b",
+              "metrics": {
+                "cache_hits": 409,
+                "cpu_cost": 42792,
+                "effective_bandwidth_mb_s": 22996.517375,
+                "evictions": 204,
+                "latency_p50_us": 10231,
+                "latency_p95_us": 168828,
+                "latency_p99_us": 203713,
+                "npu_cost": 3643,
+                "physical_ssd_bytes": 6302994432,
+                "promote_count": 208,
+                "promote_hit_rate": 1.0,
+                "promote_success": 208,
+                "read_amplification": 0.888732,
+                "total_cost": 340548,
+                "trace_time_us": 294113,
+                "valid_bytes": 7092122120
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.24738698289729655,
+              "valid": true,
+              "output_sha256": "b8e325db9fa5b2efe911d4e05ab31dba36cb01c34ca6046ec078cfd122d8422b",
+              "metrics": {
+                "cache_hits": 409,
+                "cpu_cost": 42792,
+                "effective_bandwidth_mb_s": 22996.517375,
+                "evictions": 204,
+                "latency_p50_us": 10231,
+                "latency_p95_us": 168828,
+                "latency_p99_us": 203713,
+                "npu_cost": 3643,
+                "physical_ssd_bytes": 6302994432,
+                "promote_count": 208,
+                "promote_hit_rate": 1.0,
+                "promote_success": 208,
+                "read_amplification": 0.888732,
+                "total_cost": 340548,
+                "trace_time_us": 294113,
+                "valid_bytes": 7092122120
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "random_epochs_9491.json",
+      "family": "random_epochs",
+      "input_sha256": "35ce802fbbfbfb089f0acaa33f7dfad70d4be413fc0c13ad13550b47e556516e",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.1198225319385529,
+              "valid": true,
+              "output_sha256": "5e058d8079bf6d7d37c463f0043f1d37e012f41a52cc993b0660d6e5c2c274e1",
+              "metrics": {
+                "cache_hits": 68,
+                "cpu_cost": 13334,
+                "effective_bandwidth_mb_s": 28537.197565,
+                "evictions": 27,
+                "latency_p50_us": 29767,
+                "latency_p95_us": 148912,
+                "latency_p99_us": 169969,
+                "npu_cost": 1387,
+                "physical_ssd_bytes": 4930662400,
+                "promote_count": 33,
+                "promote_hit_rate": 1.0,
+                "promote_success": 33,
+                "read_amplification": 0.71184,
+                "total_cost": 246200,
+                "trace_time_us": 231479,
+                "valid_bytes": 6926643448
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.1261828769929707,
+              "valid": true,
+              "output_sha256": "5e058d8079bf6d7d37c463f0043f1d37e012f41a52cc993b0660d6e5c2c274e1",
+              "metrics": {
+                "cache_hits": 68,
+                "cpu_cost": 13334,
+                "effective_bandwidth_mb_s": 28537.197565,
+                "evictions": 27,
+                "latency_p50_us": 29767,
+                "latency_p95_us": 148912,
+                "latency_p99_us": 169969,
+                "npu_cost": 1387,
+                "physical_ssd_bytes": 4930662400,
+                "promote_count": 33,
+                "promote_hit_rate": 1.0,
+                "promote_success": 33,
+                "read_amplification": 0.71184,
+                "total_cost": 246200,
+                "trace_time_us": 231479,
+                "valid_bytes": 6926643448
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.128807958913967,
+              "valid": true,
+              "output_sha256": "5e058d8079bf6d7d37c463f0043f1d37e012f41a52cc993b0660d6e5c2c274e1",
+              "metrics": {
+                "cache_hits": 68,
+                "cpu_cost": 13334,
+                "effective_bandwidth_mb_s": 28537.197565,
+                "evictions": 27,
+                "latency_p50_us": 29767,
+                "latency_p95_us": 148912,
+                "latency_p99_us": 169969,
+                "npu_cost": 1387,
+                "physical_ssd_bytes": 4930662400,
+                "promote_count": 33,
+                "promote_hit_rate": 1.0,
+                "promote_success": 33,
+                "read_amplification": 0.71184,
+                "total_cost": 246200,
+                "trace_time_us": 231479,
+                "valid_bytes": 6926643448
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.30918349395506084,
+              "valid": true,
+              "output_sha256": "245384c2b1030653ce6610f5352128db62a1496f19f74fe9992994493cfa1af2",
+              "metrics": {
+                "cache_hits": 397,
+                "cpu_cost": 51716,
+                "effective_bandwidth_mb_s": 21562.794044,
+                "evictions": 308,
+                "latency_p50_us": 46025,
+                "latency_p95_us": 170658,
+                "latency_p99_us": 210544,
+                "npu_cost": 3935,
+                "physical_ssd_bytes": 6748113408,
+                "promote_count": 312,
+                "promote_hit_rate": 1.0,
+                "promote_success": 312,
+                "read_amplification": 0.974226,
+                "total_cost": 362001,
+                "trace_time_us": 306350,
+                "valid_bytes": 6926643448
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.328389324946329,
+              "valid": true,
+              "output_sha256": "245384c2b1030653ce6610f5352128db62a1496f19f74fe9992994493cfa1af2",
+              "metrics": {
+                "cache_hits": 397,
+                "cpu_cost": 51716,
+                "effective_bandwidth_mb_s": 21562.794044,
+                "evictions": 308,
+                "latency_p50_us": 46025,
+                "latency_p95_us": 170658,
+                "latency_p99_us": 210544,
+                "npu_cost": 3935,
+                "physical_ssd_bytes": 6748113408,
+                "promote_count": 312,
+                "promote_hit_rate": 1.0,
+                "promote_success": 312,
+                "read_amplification": 0.974226,
+                "total_cost": 362001,
+                "trace_time_us": 306350,
+                "valid_bytes": 6926643448
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.3132226010784507,
+              "valid": true,
+              "output_sha256": "245384c2b1030653ce6610f5352128db62a1496f19f74fe9992994493cfa1af2",
+              "metrics": {
+                "cache_hits": 397,
+                "cpu_cost": 51716,
+                "effective_bandwidth_mb_s": 21562.794044,
+                "evictions": 308,
+                "latency_p50_us": 46025,
+                "latency_p95_us": 170658,
+                "latency_p99_us": 210544,
+                "npu_cost": 3935,
+                "physical_ssd_bytes": 6748113408,
+                "promote_count": 312,
+                "promote_hit_rate": 1.0,
+                "promote_success": 312,
+                "read_amplification": 0.974226,
+                "total_cost": 362001,
+                "trace_time_us": 306350,
+                "valid_bytes": 6926643448
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "size_heat_9491.json",
+      "family": "size_heat",
+      "input_sha256": "d136a3dd055aa756d364cc24f1ec3c03b2dd2e1e518858fa702ebcd641db95ae",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.3418325879611075,
+              "valid": true,
+              "output_sha256": "1b76e71977770c9ff3dd2d0f18cd911bf2e1c0b715c574a21ba57ae0911c7bf1",
+              "metrics": {
+                "cache_hits": 325,
+                "cpu_cost": 15423,
+                "effective_bandwidth_mb_s": 6826.980277,
+                "evictions": 0,
+                "latency_p50_us": 240,
+                "latency_p95_us": 2019,
+                "latency_p99_us": 4871,
+                "npu_cost": 2036,
+                "physical_ssd_bytes": 686214144,
+                "promote_count": 86,
+                "promote_hit_rate": 1.0,
+                "promote_success": 86,
+                "read_amplification": 0.980219,
+                "total_cost": 115252,
+                "trace_time_us": 97793,
+                "valid_bytes": 700061720
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.34040805511176586,
+              "valid": true,
+              "output_sha256": "1b76e71977770c9ff3dd2d0f18cd911bf2e1c0b715c574a21ba57ae0911c7bf1",
+              "metrics": {
+                "cache_hits": 325,
+                "cpu_cost": 15423,
+                "effective_bandwidth_mb_s": 6826.980277,
+                "evictions": 0,
+                "latency_p50_us": 240,
+                "latency_p95_us": 2019,
+                "latency_p99_us": 4871,
+                "npu_cost": 2036,
+                "physical_ssd_bytes": 686214144,
+                "promote_count": 86,
+                "promote_hit_rate": 1.0,
+                "promote_success": 86,
+                "read_amplification": 0.980219,
+                "total_cost": 115252,
+                "trace_time_us": 97793,
+                "valid_bytes": 700061720
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.3346155299805105,
+              "valid": true,
+              "output_sha256": "1b76e71977770c9ff3dd2d0f18cd911bf2e1c0b715c574a21ba57ae0911c7bf1",
+              "metrics": {
+                "cache_hits": 325,
+                "cpu_cost": 15423,
+                "effective_bandwidth_mb_s": 6826.980277,
+                "evictions": 0,
+                "latency_p50_us": 240,
+                "latency_p95_us": 2019,
+                "latency_p99_us": 4871,
+                "npu_cost": 2036,
+                "physical_ssd_bytes": 686214144,
+                "promote_count": 86,
+                "promote_hit_rate": 1.0,
+                "promote_success": 86,
+                "read_amplification": 0.980219,
+                "total_cost": 115252,
+                "trace_time_us": 97793,
+                "valid_bytes": 700061720
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.0828985869884491,
+              "valid": true,
+              "output_sha256": "d9106e28bb18835b50537af2f43a69e0123899bd8df30b7d92ab15d43d6a099f",
+              "metrics": {
+                "cache_hits": 1720,
+                "cpu_cost": 36976,
+                "effective_bandwidth_mb_s": 6748.654398,
+                "evictions": 228,
+                "latency_p50_us": 80,
+                "latency_p95_us": 1897,
+                "latency_p99_us": 5228,
+                "npu_cost": 3680,
+                "physical_ssd_bytes": 694755328,
+                "promote_count": 232,
+                "promote_hit_rate": 1.0,
+                "promote_success": 232,
+                "read_amplification": 0.99242,
+                "total_cost": 139584,
+                "trace_time_us": 98928,
+                "valid_bytes": 700061720
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.08109199907630682,
+              "valid": true,
+              "output_sha256": "d9106e28bb18835b50537af2f43a69e0123899bd8df30b7d92ab15d43d6a099f",
+              "metrics": {
+                "cache_hits": 1720,
+                "cpu_cost": 36976,
+                "effective_bandwidth_mb_s": 6748.654398,
+                "evictions": 228,
+                "latency_p50_us": 80,
+                "latency_p95_us": 1897,
+                "latency_p99_us": 5228,
+                "npu_cost": 3680,
+                "physical_ssd_bytes": 694755328,
+                "promote_count": 232,
+                "promote_hit_rate": 1.0,
+                "promote_success": 232,
+                "read_amplification": 0.99242,
+                "total_cost": 139584,
+                "trace_time_us": 98928,
+                "valid_bytes": 700061720
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.08246960397809744,
+              "valid": true,
+              "output_sha256": "d9106e28bb18835b50537af2f43a69e0123899bd8df30b7d92ab15d43d6a099f",
+              "metrics": {
+                "cache_hits": 1720,
+                "cpu_cost": 36976,
+                "effective_bandwidth_mb_s": 6748.654398,
+                "evictions": 228,
+                "latency_p50_us": 80,
+                "latency_p95_us": 1897,
+                "latency_p99_us": 5228,
+                "npu_cost": 3680,
+                "physical_ssd_bytes": 694755328,
+                "promote_count": 232,
+                "promote_hit_rate": 1.0,
+                "promote_success": 232,
+                "read_amplification": 0.99242,
+                "total_cost": 139584,
+                "trace_time_us": 98928,
+                "valid_bytes": 700061720
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "barrier_bursts_9491.json",
+      "family": "barrier_bursts",
+      "input_sha256": "87b30c09954819772a5baea2888131071b55498c43ce64389160168759561cb3",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.9905548340175301,
+              "valid": true,
+              "output_sha256": "8953b7d6f23962d5a9697f21e5f57a0d8f95d887dad91d5a09c1447d82643ef5",
+              "metrics": {
+                "cache_hits": 2,
+                "cpu_cost": 19646,
+                "effective_bandwidth_mb_s": 15332.292143,
+                "evictions": 116,
+                "latency_p50_us": 26546,
+                "latency_p95_us": 52248,
+                "latency_p99_us": 55049,
+                "npu_cost": 1843,
+                "physical_ssd_bytes": 4537061376,
+                "promote_count": 120,
+                "promote_hit_rate": 1.0,
+                "promote_success": 120,
+                "read_amplification": 0.771468,
+                "total_cost": 387294,
+                "trace_time_us": 365805,
+                "valid_bytes": 5881073896
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.9775845720432699,
+              "valid": true,
+              "output_sha256": "8953b7d6f23962d5a9697f21e5f57a0d8f95d887dad91d5a09c1447d82643ef5",
+              "metrics": {
+                "cache_hits": 2,
+                "cpu_cost": 19646,
+                "effective_bandwidth_mb_s": 15332.292143,
+                "evictions": 116,
+                "latency_p50_us": 26546,
+                "latency_p95_us": 52248,
+                "latency_p99_us": 55049,
+                "npu_cost": 1843,
+                "physical_ssd_bytes": 4537061376,
+                "promote_count": 120,
+                "promote_hit_rate": 1.0,
+                "promote_success": 120,
+                "read_amplification": 0.771468,
+                "total_cost": 387294,
+                "trace_time_us": 365805,
+                "valid_bytes": 5881073896
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.9835808519273996,
+              "valid": true,
+              "output_sha256": "8953b7d6f23962d5a9697f21e5f57a0d8f95d887dad91d5a09c1447d82643ef5",
+              "metrics": {
+                "cache_hits": 2,
+                "cpu_cost": 19646,
+                "effective_bandwidth_mb_s": 15332.292143,
+                "evictions": 116,
+                "latency_p50_us": 26546,
+                "latency_p95_us": 52248,
+                "latency_p99_us": 55049,
+                "npu_cost": 1843,
+                "physical_ssd_bytes": 4537061376,
+                "promote_count": 120,
+                "promote_hit_rate": 1.0,
+                "promote_success": 120,
+                "read_amplification": 0.771468,
+                "total_cost": 387294,
+                "trace_time_us": 365805,
+                "valid_bytes": 5881073896
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.19874865096062422,
+              "valid": true,
+              "output_sha256": "48ca4e51f8d5a52ad4cae5cda278b9c044c03a39be453d7d1ae81dd1be05ef99",
+              "metrics": {
+                "cache_hits": 42,
+                "cpu_cost": 59658,
+                "effective_bandwidth_mb_s": 14598.505767,
+                "evictions": 348,
+                "latency_p50_us": 21870,
+                "latency_p95_us": 63620,
+                "latency_p99_us": 69478,
+                "npu_cost": 4230,
+                "physical_ssd_bytes": 5754630144,
+                "promote_count": 352,
+                "promote_hit_rate": 1.0,
+                "promote_success": 352,
+                "read_amplification": 0.9785,
+                "total_cost": 448080,
+                "trace_time_us": 384192,
+                "valid_bytes": 5881073896
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.19555659010075033,
+              "valid": true,
+              "output_sha256": "48ca4e51f8d5a52ad4cae5cda278b9c044c03a39be453d7d1ae81dd1be05ef99",
+              "metrics": {
+                "cache_hits": 42,
+                "cpu_cost": 59658,
+                "effective_bandwidth_mb_s": 14598.505767,
+                "evictions": 348,
+                "latency_p50_us": 21870,
+                "latency_p95_us": 63620,
+                "latency_p99_us": 69478,
+                "npu_cost": 4230,
+                "physical_ssd_bytes": 5754630144,
+                "promote_count": 352,
+                "promote_hit_rate": 1.0,
+                "promote_success": 352,
+                "read_amplification": 0.9785,
+                "total_cost": 448080,
+                "trace_time_us": 384192,
+                "valid_bytes": 5881073896
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.19789033709093928,
+              "valid": true,
+              "output_sha256": "48ca4e51f8d5a52ad4cae5cda278b9c044c03a39be453d7d1ae81dd1be05ef99",
+              "metrics": {
+                "cache_hits": 42,
+                "cpu_cost": 59658,
+                "effective_bandwidth_mb_s": 14598.505767,
+                "evictions": 348,
+                "latency_p50_us": 21870,
+                "latency_p95_us": 63620,
+                "latency_p99_us": 69478,
+                "npu_cost": 4230,
+                "physical_ssd_bytes": 5754630144,
+                "promote_count": 352,
+                "promote_hit_rate": 1.0,
+                "promote_success": 352,
+                "read_amplification": 0.9785,
+                "total_cost": 448080,
+                "trace_time_us": 384192,
+                "valid_bytes": 5881073896
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "sparse_revisits_9491.json",
+      "family": "sparse_revisits",
+      "input_sha256": "e3fc029362cfbdbc38ee5baeda7b454b305ef17a7f6b06014bd168765bd29125",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.2485621238593012,
+              "valid": true,
+              "output_sha256": "cc9ae9bb1f06a66fddc780ee3d572a252e070e018bcbcacec8d642c531ca8a6a",
+              "metrics": {
+                "cache_hits": 216,
+                "cpu_cost": 13552,
+                "effective_bandwidth_mb_s": 20775.548947,
+                "evictions": 0,
+                "latency_p50_us": 22572,
+                "latency_p95_us": 169288,
+                "latency_p99_us": 183807,
+                "npu_cost": 2232,
+                "physical_ssd_bytes": 5763678208,
+                "promote_count": 24,
+                "promote_hit_rate": 1.0,
+                "promote_success": 24,
+                "read_amplification": 0.941732,
+                "total_cost": 296728,
+                "trace_time_us": 280944,
+                "valid_bytes": 6120292560
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.241368685150519,
+              "valid": true,
+              "output_sha256": "cc9ae9bb1f06a66fddc780ee3d572a252e070e018bcbcacec8d642c531ca8a6a",
+              "metrics": {
+                "cache_hits": 216,
+                "cpu_cost": 13552,
+                "effective_bandwidth_mb_s": 20775.548947,
+                "evictions": 0,
+                "latency_p50_us": 22572,
+                "latency_p95_us": 169288,
+                "latency_p99_us": 183807,
+                "npu_cost": 2232,
+                "physical_ssd_bytes": 5763678208,
+                "promote_count": 24,
+                "promote_hit_rate": 1.0,
+                "promote_success": 24,
+                "read_amplification": 0.941732,
+                "total_cost": 296728,
+                "trace_time_us": 280944,
+                "valid_bytes": 6120292560
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.25394834484905,
+              "valid": true,
+              "output_sha256": "cc9ae9bb1f06a66fddc780ee3d572a252e070e018bcbcacec8d642c531ca8a6a",
+              "metrics": {
+                "cache_hits": 216,
+                "cpu_cost": 13552,
+                "effective_bandwidth_mb_s": 20775.548947,
+                "evictions": 0,
+                "latency_p50_us": 22572,
+                "latency_p95_us": 169288,
+                "latency_p99_us": 183807,
+                "npu_cost": 2232,
+                "physical_ssd_bytes": 5763678208,
+                "promote_count": 24,
+                "promote_hit_rate": 1.0,
+                "promote_success": 24,
+                "read_amplification": 0.941732,
+                "total_cost": 296728,
+                "trace_time_us": 280944,
+                "valid_bytes": 6120292560
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.22667684103362262,
+              "valid": true,
+              "output_sha256": "541ec3991f95f05edc899cb1207fa65fa02aba12a58c0601437498e857aa3d86",
+              "metrics": {
+                "cache_hits": 280,
+                "cpu_cost": 39064,
+                "effective_bandwidth_mb_s": 20569.447395,
+                "evictions": 138,
+                "latency_p50_us": 25223,
+                "latency_p95_us": 163572,
+                "latency_p99_us": 181376,
+                "npu_cost": 3760,
+                "physical_ssd_bytes": 5843099648,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.954709,
+                "total_cost": 326583,
+                "trace_time_us": 283759,
+                "valid_bytes": 6120292560
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.22412320808507502,
+              "valid": true,
+              "output_sha256": "541ec3991f95f05edc899cb1207fa65fa02aba12a58c0601437498e857aa3d86",
+              "metrics": {
+                "cache_hits": 280,
+                "cpu_cost": 39064,
+                "effective_bandwidth_mb_s": 20569.447395,
+                "evictions": 138,
+                "latency_p50_us": 25223,
+                "latency_p95_us": 163572,
+                "latency_p99_us": 181376,
+                "npu_cost": 3760,
+                "physical_ssd_bytes": 5843099648,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.954709,
+                "total_cost": 326583,
+                "trace_time_us": 283759,
+                "valid_bytes": 6120292560
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.22355875791981816,
+              "valid": true,
+              "output_sha256": "541ec3991f95f05edc899cb1207fa65fa02aba12a58c0601437498e857aa3d86",
+              "metrics": {
+                "cache_hits": 280,
+                "cpu_cost": 39064,
+                "effective_bandwidth_mb_s": 20569.447395,
+                "evictions": 138,
+                "latency_p50_us": 25223,
+                "latency_p95_us": 163572,
+                "latency_p99_us": 181376,
+                "npu_cost": 3760,
+                "physical_ssd_bytes": 5843099648,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.954709,
+                "total_cost": 326583,
+                "trace_time_us": 283759,
+                "valid_bytes": 6120292560
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "renewal_hotspot_9497.json",
+      "family": "renewal_hotspot",
+      "input_sha256": "88bf537364df0544bf330484965300a0f0384c5a0b090493594f600123032385",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.863171610981226,
+              "valid": true,
+              "output_sha256": "4ecd8428d3ecf8cde442ad2bc14987584d6598af1fd03e7ae7ffa75713ff3be6",
+              "metrics": {
+                "cache_hits": 460,
+                "cpu_cost": 25156,
+                "effective_bandwidth_mb_s": 30705.783914,
+                "evictions": 137,
+                "latency_p50_us": 690,
+                "latency_p95_us": 23785,
+                "latency_p99_us": 43056,
+                "npu_cost": 2111,
+                "physical_ssd_bytes": 3315526144,
+                "promote_count": 182,
+                "promote_hit_rate": 1.0,
+                "promote_success": 182,
+                "read_amplification": 0.622056,
+                "total_cost": 192807,
+                "trace_time_us": 165540,
+                "valid_bytes": 5329949000
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.8706547950860113,
+              "valid": true,
+              "output_sha256": "4ecd8428d3ecf8cde442ad2bc14987584d6598af1fd03e7ae7ffa75713ff3be6",
+              "metrics": {
+                "cache_hits": 460,
+                "cpu_cost": 25156,
+                "effective_bandwidth_mb_s": 30705.783914,
+                "evictions": 137,
+                "latency_p50_us": 690,
+                "latency_p95_us": 23785,
+                "latency_p99_us": 43056,
+                "npu_cost": 2111,
+                "physical_ssd_bytes": 3315526144,
+                "promote_count": 182,
+                "promote_hit_rate": 1.0,
+                "promote_success": 182,
+                "read_amplification": 0.622056,
+                "total_cost": 192807,
+                "trace_time_us": 165540,
+                "valid_bytes": 5329949000
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.8613585350103676,
+              "valid": true,
+              "output_sha256": "4ecd8428d3ecf8cde442ad2bc14987584d6598af1fd03e7ae7ffa75713ff3be6",
+              "metrics": {
+                "cache_hits": 460,
+                "cpu_cost": 25156,
+                "effective_bandwidth_mb_s": 30705.783914,
+                "evictions": 137,
+                "latency_p50_us": 690,
+                "latency_p95_us": 23785,
+                "latency_p99_us": 43056,
+                "npu_cost": 2111,
+                "physical_ssd_bytes": 3315526144,
+                "promote_count": 182,
+                "promote_hit_rate": 1.0,
+                "promote_success": 182,
+                "read_amplification": 0.622056,
+                "total_cost": 192807,
+                "trace_time_us": 165540,
+                "valid_bytes": 5329949000
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.11046286299824715,
+              "valid": true,
+              "output_sha256": "23452b234bdde40474ff59557680e47dea3b2cac66b8efe229de3374fe40bcf6",
+              "metrics": {
+                "cache_hits": 1217,
+                "cpu_cost": 47688,
+                "effective_bandwidth_mb_s": 28231.243927,
+                "evictions": 328,
+                "latency_p50_us": 371,
+                "latency_p95_us": 28466,
+                "latency_p99_us": 44136,
+                "npu_cost": 3515,
+                "physical_ssd_bytes": 3615782400,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.67839,
+                "total_cost": 231253,
+                "trace_time_us": 180050,
+                "valid_bytes": 5329949000
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.10987360402941704,
+              "valid": true,
+              "output_sha256": "23452b234bdde40474ff59557680e47dea3b2cac66b8efe229de3374fe40bcf6",
+              "metrics": {
+                "cache_hits": 1217,
+                "cpu_cost": 47688,
+                "effective_bandwidth_mb_s": 28231.243927,
+                "evictions": 328,
+                "latency_p50_us": 371,
+                "latency_p95_us": 28466,
+                "latency_p99_us": 44136,
+                "npu_cost": 3515,
+                "physical_ssd_bytes": 3615782400,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.67839,
+                "total_cost": 231253,
+                "trace_time_us": 180050,
+                "valid_bytes": 5329949000
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.11030076607130468,
+              "valid": true,
+              "output_sha256": "23452b234bdde40474ff59557680e47dea3b2cac66b8efe229de3374fe40bcf6",
+              "metrics": {
+                "cache_hits": 1217,
+                "cpu_cost": 47688,
+                "effective_bandwidth_mb_s": 28231.243927,
+                "evictions": 328,
+                "latency_p50_us": 371,
+                "latency_p95_us": 28466,
+                "latency_p99_us": 44136,
+                "npu_cost": 3515,
+                "physical_ssd_bytes": 3615782400,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.67839,
+                "total_cost": 231253,
+                "trace_time_us": 180050,
+                "valid_bytes": 5329949000
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "walking_hotspot_9497.json",
+      "family": "walking_hotspot",
+      "input_sha256": "9613c08c81a0eda12bccb05cc43de77d5e0ff6c21fe82dd39bf25c03fe436327",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.43061865819618106,
+              "valid": true,
+              "output_sha256": "50f8d1a34928fe4a7482bcf0b9d1a3a40c403e063e0467e61156841af58a7416",
+              "metrics": {
+                "cache_hits": 1015,
+                "cpu_cost": 17705,
+                "effective_bandwidth_mb_s": 29124.187113,
+                "evictions": 28,
+                "latency_p50_us": 489,
+                "latency_p95_us": 6685,
+                "latency_p99_us": 13707,
+                "npu_cost": 2276,
+                "physical_ssd_bytes": 1104279040,
+                "promote_count": 124,
+                "promote_hit_rate": 1.0,
+                "promote_success": 124,
+                "read_amplification": 0.292704,
+                "total_cost": 143518,
+                "trace_time_us": 123537,
+                "valid_bytes": 3772687008
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.4307059859856963,
+              "valid": true,
+              "output_sha256": "50f8d1a34928fe4a7482bcf0b9d1a3a40c403e063e0467e61156841af58a7416",
+              "metrics": {
+                "cache_hits": 1015,
+                "cpu_cost": 17705,
+                "effective_bandwidth_mb_s": 29124.187113,
+                "evictions": 28,
+                "latency_p50_us": 489,
+                "latency_p95_us": 6685,
+                "latency_p99_us": 13707,
+                "npu_cost": 2276,
+                "physical_ssd_bytes": 1104279040,
+                "promote_count": 124,
+                "promote_hit_rate": 1.0,
+                "promote_success": 124,
+                "read_amplification": 0.292704,
+                "total_cost": 143518,
+                "trace_time_us": 123537,
+                "valid_bytes": 3772687008
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.42636331589892507,
+              "valid": true,
+              "output_sha256": "50f8d1a34928fe4a7482bcf0b9d1a3a40c403e063e0467e61156841af58a7416",
+              "metrics": {
+                "cache_hits": 1015,
+                "cpu_cost": 17705,
+                "effective_bandwidth_mb_s": 29124.187113,
+                "evictions": 28,
+                "latency_p50_us": 489,
+                "latency_p95_us": 6685,
+                "latency_p99_us": 13707,
+                "npu_cost": 2276,
+                "physical_ssd_bytes": 1104279040,
+                "promote_count": 124,
+                "promote_hit_rate": 1.0,
+                "promote_success": 124,
+                "read_amplification": 0.292704,
+                "total_cost": 143518,
+                "trace_time_us": 123537,
+                "valid_bytes": 3772687008
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.07759203412570059,
+              "valid": true,
+              "output_sha256": "d821e92fdfe6de88e120d9c131025e8dbbe878d71e7a74db61594884aa84b40a",
+              "metrics": {
+                "cache_hits": 2061,
+                "cpu_cost": 35508,
+                "effective_bandwidth_mb_s": 29119.944182,
+                "evictions": 89,
+                "latency_p50_us": 541,
+                "latency_p95_us": 13433,
+                "latency_p99_us": 31393,
+                "npu_cost": 3667,
+                "physical_ssd_bytes": 1777594880,
+                "promote_count": 272,
+                "promote_hit_rate": 1.0,
+                "promote_success": 272,
+                "read_amplification": 0.471175,
+                "total_cost": 162730,
+                "trace_time_us": 123555,
+                "valid_bytes": 3772687008
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.08373624202795327,
+              "valid": true,
+              "output_sha256": "d821e92fdfe6de88e120d9c131025e8dbbe878d71e7a74db61594884aa84b40a",
+              "metrics": {
+                "cache_hits": 2061,
+                "cpu_cost": 35508,
+                "effective_bandwidth_mb_s": 29119.944182,
+                "evictions": 89,
+                "latency_p50_us": 541,
+                "latency_p95_us": 13433,
+                "latency_p99_us": 31393,
+                "npu_cost": 3667,
+                "physical_ssd_bytes": 1777594880,
+                "promote_count": 272,
+                "promote_hit_rate": 1.0,
+                "promote_success": 272,
+                "read_amplification": 0.471175,
+                "total_cost": 162730,
+                "trace_time_us": 123555,
+                "valid_bytes": 3772687008
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.0786304350476712,
+              "valid": true,
+              "output_sha256": "d821e92fdfe6de88e120d9c131025e8dbbe878d71e7a74db61594884aa84b40a",
+              "metrics": {
+                "cache_hits": 2061,
+                "cpu_cost": 35508,
+                "effective_bandwidth_mb_s": 29119.944182,
+                "evictions": 89,
+                "latency_p50_us": 541,
+                "latency_p95_us": 13433,
+                "latency_p99_us": 31393,
+                "npu_cost": 3667,
+                "physical_ssd_bytes": 1777594880,
+                "promote_count": 272,
+                "promote_hit_rate": 1.0,
+                "promote_success": 272,
+                "read_amplification": 0.471175,
+                "total_cost": 162730,
+                "trace_time_us": 123555,
+                "valid_bytes": 3772687008
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "random_epochs_9497.json",
+      "family": "random_epochs",
+      "input_sha256": "ac8931fd9fa3ea6dc2104e810584dc76ccab75766c9e664850b7d212b5d0a5cf",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.099675505189225,
+              "valid": true,
+              "output_sha256": "559cd10a4c12764c4b130fb792607fd73ea8352711df211c69f22b49a8bc4541",
+              "metrics": {
+                "cache_hits": 93,
+                "cpu_cost": 19790,
+                "effective_bandwidth_mb_s": 27154.889484,
+                "evictions": 30,
+                "latency_p50_us": 7967,
+                "latency_p95_us": 100018,
+                "latency_p99_us": 119412,
+                "npu_cost": 1756,
+                "physical_ssd_bytes": 3988263936,
+                "promote_count": 86,
+                "promote_hit_rate": 1.0,
+                "promote_success": 86,
+                "read_amplification": 0.724287,
+                "total_cost": 214932,
+                "trace_time_us": 193386,
+                "valid_bytes": 5506466272
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.0924129360355437,
+              "valid": true,
+              "output_sha256": "559cd10a4c12764c4b130fb792607fd73ea8352711df211c69f22b49a8bc4541",
+              "metrics": {
+                "cache_hits": 93,
+                "cpu_cost": 19790,
+                "effective_bandwidth_mb_s": 27154.889484,
+                "evictions": 30,
+                "latency_p50_us": 7967,
+                "latency_p95_us": 100018,
+                "latency_p99_us": 119412,
+                "npu_cost": 1756,
+                "physical_ssd_bytes": 3988263936,
+                "promote_count": 86,
+                "promote_hit_rate": 1.0,
+                "promote_success": 86,
+                "read_amplification": 0.724287,
+                "total_cost": 214932,
+                "trace_time_us": 193386,
+                "valid_bytes": 5506466272
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.094713615020737,
+              "valid": true,
+              "output_sha256": "559cd10a4c12764c4b130fb792607fd73ea8352711df211c69f22b49a8bc4541",
+              "metrics": {
+                "cache_hits": 93,
+                "cpu_cost": 19790,
+                "effective_bandwidth_mb_s": 27154.889484,
+                "evictions": 30,
+                "latency_p50_us": 7967,
+                "latency_p95_us": 100018,
+                "latency_p99_us": 119412,
+                "npu_cost": 1756,
+                "physical_ssd_bytes": 3988263936,
+                "promote_count": 86,
+                "promote_hit_rate": 1.0,
+                "promote_success": 86,
+                "read_amplification": 0.724287,
+                "total_cost": 214932,
+                "trace_time_us": 193386,
+                "valid_bytes": 5506466272
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.15832413011230528,
+              "valid": true,
+              "output_sha256": "016e8633002b7294590ea6e099efbc75e76c1b06fed659ca106dddc6e3573997",
+              "metrics": {
+                "cache_hits": 1037,
+                "cpu_cost": 53738,
+                "effective_bandwidth_mb_s": 23458.930632,
+                "evictions": 277,
+                "latency_p50_us": 1168,
+                "latency_p95_us": 109773,
+                "latency_p99_us": 123298,
+                "npu_cost": 3843,
+                "physical_ssd_bytes": 4856650752,
+                "promote_count": 408,
+                "promote_hit_rate": 1.0,
+                "promote_success": 408,
+                "read_amplification": 0.88199,
+                "total_cost": 281435,
+                "trace_time_us": 223854,
+                "valid_bytes": 5506466272
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.1519413460046053,
+              "valid": true,
+              "output_sha256": "016e8633002b7294590ea6e099efbc75e76c1b06fed659ca106dddc6e3573997",
+              "metrics": {
+                "cache_hits": 1037,
+                "cpu_cost": 53738,
+                "effective_bandwidth_mb_s": 23458.930632,
+                "evictions": 277,
+                "latency_p50_us": 1168,
+                "latency_p95_us": 109773,
+                "latency_p99_us": 123298,
+                "npu_cost": 3843,
+                "physical_ssd_bytes": 4856650752,
+                "promote_count": 408,
+                "promote_hit_rate": 1.0,
+                "promote_success": 408,
+                "read_amplification": 0.88199,
+                "total_cost": 281435,
+                "trace_time_us": 223854,
+                "valid_bytes": 5506466272
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.15208829403854907,
+              "valid": true,
+              "output_sha256": "016e8633002b7294590ea6e099efbc75e76c1b06fed659ca106dddc6e3573997",
+              "metrics": {
+                "cache_hits": 1037,
+                "cpu_cost": 53738,
+                "effective_bandwidth_mb_s": 23458.930632,
+                "evictions": 277,
+                "latency_p50_us": 1168,
+                "latency_p95_us": 109773,
+                "latency_p99_us": 123298,
+                "npu_cost": 3843,
+                "physical_ssd_bytes": 4856650752,
+                "promote_count": 408,
+                "promote_hit_rate": 1.0,
+                "promote_success": 408,
+                "read_amplification": 0.88199,
+                "total_cost": 281435,
+                "trace_time_us": 223854,
+                "valid_bytes": 5506466272
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "size_heat_9497.json",
+      "family": "size_heat",
+      "input_sha256": "b429742b8968de92bf5db2468a3c1aa77f127b22f8c2a43ab286d5914b7fa635",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.24493694910779595,
+              "valid": true,
+              "output_sha256": "7d1f5a45bf39ffa13af65d78874e15cbc9b799d292bc0f062ff309327c55fda1",
+              "metrics": {
+                "cache_hits": 608,
+                "cpu_cost": 15679,
+                "effective_bandwidth_mb_s": 3836.081041,
+                "evictions": 0,
+                "latency_p50_us": 206,
+                "latency_p95_us": 771,
+                "latency_p99_us": 3473,
+                "npu_cost": 2007,
+                "physical_ssd_bytes": 475553792,
+                "promote_count": 87,
+                "promote_hit_rate": 1.0,
+                "promote_success": 87,
+                "read_amplification": 0.889142,
+                "total_cost": 150652,
+                "trace_time_us": 132966,
+                "valid_bytes": 534845432
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.247302555013448,
+              "valid": true,
+              "output_sha256": "7d1f5a45bf39ffa13af65d78874e15cbc9b799d292bc0f062ff309327c55fda1",
+              "metrics": {
+                "cache_hits": 608,
+                "cpu_cost": 15679,
+                "effective_bandwidth_mb_s": 3836.081041,
+                "evictions": 0,
+                "latency_p50_us": 206,
+                "latency_p95_us": 771,
+                "latency_p99_us": 3473,
+                "npu_cost": 2007,
+                "physical_ssd_bytes": 475553792,
+                "promote_count": 87,
+                "promote_hit_rate": 1.0,
+                "promote_success": 87,
+                "read_amplification": 0.889142,
+                "total_cost": 150652,
+                "trace_time_us": 132966,
+                "valid_bytes": 534845432
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.24443483795039356,
+              "valid": true,
+              "output_sha256": "7d1f5a45bf39ffa13af65d78874e15cbc9b799d292bc0f062ff309327c55fda1",
+              "metrics": {
+                "cache_hits": 608,
+                "cpu_cost": 15679,
+                "effective_bandwidth_mb_s": 3836.081041,
+                "evictions": 0,
+                "latency_p50_us": 206,
+                "latency_p95_us": 771,
+                "latency_p99_us": 3473,
+                "npu_cost": 2007,
+                "physical_ssd_bytes": 475553792,
+                "promote_count": 87,
+                "promote_hit_rate": 1.0,
+                "promote_success": 87,
+                "read_amplification": 0.889142,
+                "total_cost": 150652,
+                "trace_time_us": 132966,
+                "valid_bytes": 534845432
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.05124460579827428,
+              "valid": true,
+              "output_sha256": "db556bc215e1df419b7d6e8ba317b12c801beb9961c82e5c44a92a3db8b9319f",
+              "metrics": {
+                "cache_hits": 2432,
+                "cpu_cost": 30040,
+                "effective_bandwidth_mb_s": 3838.101611,
+                "evictions": 0,
+                "latency_p50_us": 18,
+                "latency_p95_us": 621,
+                "latency_p99_us": 4364,
+                "npu_cost": 3384,
+                "physical_ssd_bytes": 468811776,
+                "promote_count": 264,
+                "promote_hit_rate": 1.0,
+                "promote_success": 264,
+                "read_amplification": 0.876537,
+                "total_cost": 166320,
+                "trace_time_us": 132896,
+                "valid_bytes": 534845432
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.0500235368963331,
+              "valid": true,
+              "output_sha256": "db556bc215e1df419b7d6e8ba317b12c801beb9961c82e5c44a92a3db8b9319f",
+              "metrics": {
+                "cache_hits": 2432,
+                "cpu_cost": 30040,
+                "effective_bandwidth_mb_s": 3838.101611,
+                "evictions": 0,
+                "latency_p50_us": 18,
+                "latency_p95_us": 621,
+                "latency_p99_us": 4364,
+                "npu_cost": 3384,
+                "physical_ssd_bytes": 468811776,
+                "promote_count": 264,
+                "promote_hit_rate": 1.0,
+                "promote_success": 264,
+                "read_amplification": 0.876537,
+                "total_cost": 166320,
+                "trace_time_us": 132896,
+                "valid_bytes": 534845432
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.05040722992271185,
+              "valid": true,
+              "output_sha256": "db556bc215e1df419b7d6e8ba317b12c801beb9961c82e5c44a92a3db8b9319f",
+              "metrics": {
+                "cache_hits": 2432,
+                "cpu_cost": 30040,
+                "effective_bandwidth_mb_s": 3838.101611,
+                "evictions": 0,
+                "latency_p50_us": 18,
+                "latency_p95_us": 621,
+                "latency_p99_us": 4364,
+                "npu_cost": 3384,
+                "physical_ssd_bytes": 468811776,
+                "promote_count": 264,
+                "promote_hit_rate": 1.0,
+                "promote_success": 264,
+                "read_amplification": 0.876537,
+                "total_cost": 166320,
+                "trace_time_us": 132896,
+                "valid_bytes": 534845432
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "barrier_bursts_9497.json",
+      "family": "barrier_bursts",
+      "input_sha256": "649451ed6df7d3fd8e5628274169fcec69de7aaa73871d4740907a8ea7891563",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.1082591770682484,
+              "valid": true,
+              "output_sha256": "b5a4ceb664a4bdb140a22aa8f8e1ad408a4cd74ff6bd7d80a0d993ef047b1455",
+              "metrics": {
+                "cache_hits": 98,
+                "cpu_cost": 26129,
+                "effective_bandwidth_mb_s": 16868.346994,
+                "evictions": 149,
+                "latency_p50_us": 2092,
+                "latency_p95_us": 46891,
+                "latency_p99_us": 56712,
+                "npu_cost": 2299,
+                "physical_ssd_bytes": 4086456320,
+                "promote_count": 178,
+                "promote_hit_rate": 1.0,
+                "promote_success": 178,
+                "read_amplification": 0.769377,
+                "total_cost": 328714,
+                "trace_time_us": 300286,
+                "valid_bytes": 5311381840
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.0918726481031626,
+              "valid": true,
+              "output_sha256": "b5a4ceb664a4bdb140a22aa8f8e1ad408a4cd74ff6bd7d80a0d993ef047b1455",
+              "metrics": {
+                "cache_hits": 98,
+                "cpu_cost": 26129,
+                "effective_bandwidth_mb_s": 16868.346994,
+                "evictions": 149,
+                "latency_p50_us": 2092,
+                "latency_p95_us": 46891,
+                "latency_p99_us": 56712,
+                "npu_cost": 2299,
+                "physical_ssd_bytes": 4086456320,
+                "promote_count": 178,
+                "promote_hit_rate": 1.0,
+                "promote_success": 178,
+                "read_amplification": 0.769377,
+                "total_cost": 328714,
+                "trace_time_us": 300286,
+                "valid_bytes": 5311381840
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.1000530188903213,
+              "valid": true,
+              "output_sha256": "b5a4ceb664a4bdb140a22aa8f8e1ad408a4cd74ff6bd7d80a0d993ef047b1455",
+              "metrics": {
+                "cache_hits": 98,
+                "cpu_cost": 26129,
+                "effective_bandwidth_mb_s": 16868.346994,
+                "evictions": 149,
+                "latency_p50_us": 2092,
+                "latency_p95_us": 46891,
+                "latency_p99_us": 56712,
+                "npu_cost": 2299,
+                "physical_ssd_bytes": 4086456320,
+                "promote_count": 178,
+                "promote_hit_rate": 1.0,
+                "promote_success": 178,
+                "read_amplification": 0.769377,
+                "total_cost": 328714,
+                "trace_time_us": 300286,
+                "valid_bytes": 5311381840
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.16723308619111776,
+              "valid": true,
+              "output_sha256": "5e9bd98b6b000c82b010e820437d957cc3d9f6e89456537dd9188561bf16b3c6",
+              "metrics": {
+                "cache_hits": 305,
+                "cpu_cost": 58478,
+                "effective_bandwidth_mb_s": 16585.339201,
+                "evictions": 232,
+                "latency_p50_us": 2345,
+                "latency_p95_us": 40417,
+                "latency_p99_us": 53979,
+                "npu_cost": 4111,
+                "physical_ssd_bytes": 4121783808,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.776029,
+                "total_cost": 367999,
+                "trace_time_us": 305410,
+                "valid_bytes": 5311381840
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.1652118251658976,
+              "valid": true,
+              "output_sha256": "5e9bd98b6b000c82b010e820437d957cc3d9f6e89456537dd9188561bf16b3c6",
+              "metrics": {
+                "cache_hits": 305,
+                "cpu_cost": 58478,
+                "effective_bandwidth_mb_s": 16585.339201,
+                "evictions": 232,
+                "latency_p50_us": 2345,
+                "latency_p95_us": 40417,
+                "latency_p99_us": 53979,
+                "npu_cost": 4111,
+                "physical_ssd_bytes": 4121783808,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.776029,
+                "total_cost": 367999,
+                "trace_time_us": 305410,
+                "valid_bytes": 5311381840
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.16662396886385977,
+              "valid": true,
+              "output_sha256": "5e9bd98b6b000c82b010e820437d957cc3d9f6e89456537dd9188561bf16b3c6",
+              "metrics": {
+                "cache_hits": 305,
+                "cpu_cost": 58478,
+                "effective_bandwidth_mb_s": 16585.339201,
+                "evictions": 232,
+                "latency_p50_us": 2345,
+                "latency_p95_us": 40417,
+                "latency_p99_us": 53979,
+                "npu_cost": 4111,
+                "physical_ssd_bytes": 4121783808,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.776029,
+                "total_cost": 367999,
+                "trace_time_us": 305410,
+                "valid_bytes": 5311381840
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "sparse_revisits_9497.json",
+      "family": "sparse_revisits",
+      "input_sha256": "011c244441252f0d76c69c8cb46aadaf0105ede424006650c7222ae95a1ad096",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.5791808729991317,
+              "valid": true,
+              "output_sha256": "c49c27862393f1a862c7c828325be0bd771182df517086e68b4eee2b3edc10f2",
+              "metrics": {
+                "cache_hits": 104,
+                "cpu_cost": 18061,
+                "effective_bandwidth_mb_s": 21972.325143,
+                "evictions": 0,
+                "latency_p50_us": 2471,
+                "latency_p95_us": 102104,
+                "latency_p99_us": 122093,
+                "npu_cost": 3127,
+                "physical_ssd_bytes": 4793067520,
+                "promote_count": 35,
+                "promote_hit_rate": 1.0,
+                "promote_success": 35,
+                "read_amplification": 0.957119,
+                "total_cost": 238544,
+                "trace_time_us": 217356,
+                "valid_bytes": 5007806776
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.5774309951812029,
+              "valid": true,
+              "output_sha256": "c49c27862393f1a862c7c828325be0bd771182df517086e68b4eee2b3edc10f2",
+              "metrics": {
+                "cache_hits": 104,
+                "cpu_cost": 18061,
+                "effective_bandwidth_mb_s": 21972.325143,
+                "evictions": 0,
+                "latency_p50_us": 2471,
+                "latency_p95_us": 102104,
+                "latency_p99_us": 122093,
+                "npu_cost": 3127,
+                "physical_ssd_bytes": 4793067520,
+                "promote_count": 35,
+                "promote_hit_rate": 1.0,
+                "promote_success": 35,
+                "read_amplification": 0.957119,
+                "total_cost": 238544,
+                "trace_time_us": 217356,
+                "valid_bytes": 5007806776
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.5897334711626172,
+              "valid": true,
+              "output_sha256": "c49c27862393f1a862c7c828325be0bd771182df517086e68b4eee2b3edc10f2",
+              "metrics": {
+                "cache_hits": 104,
+                "cpu_cost": 18061,
+                "effective_bandwidth_mb_s": 21972.325143,
+                "evictions": 0,
+                "latency_p50_us": 2471,
+                "latency_p95_us": 102104,
+                "latency_p99_us": 122093,
+                "npu_cost": 3127,
+                "physical_ssd_bytes": 4793067520,
+                "promote_count": 35,
+                "promote_hit_rate": 1.0,
+                "promote_success": 35,
+                "read_amplification": 0.957119,
+                "total_cost": 238544,
+                "trace_time_us": 217356,
+                "valid_bytes": 5007806776
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.16902281483635306,
+              "valid": true,
+              "output_sha256": "c72a6ade06bdc41ed0d9adfcf9b8c933704dec92afc42f5e7843184f4f3786a5",
+              "metrics": {
+                "cache_hits": 384,
+                "cpu_cost": 38592,
+                "effective_bandwidth_mb_s": 22153.235692,
+                "evictions": 58,
+                "latency_p50_us": 614,
+                "latency_p95_us": 96142,
+                "latency_p99_us": 111658,
+                "npu_cost": 3704,
+                "physical_ssd_bytes": 4683771904,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.935294,
+                "total_cost": 257877,
+                "trace_time_us": 215581,
+                "valid_bytes": 5007806776
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.17165142693556845,
+              "valid": true,
+              "output_sha256": "c72a6ade06bdc41ed0d9adfcf9b8c933704dec92afc42f5e7843184f4f3786a5",
+              "metrics": {
+                "cache_hits": 384,
+                "cpu_cost": 38592,
+                "effective_bandwidth_mb_s": 22153.235692,
+                "evictions": 58,
+                "latency_p50_us": 614,
+                "latency_p95_us": 96142,
+                "latency_p99_us": 111658,
+                "npu_cost": 3704,
+                "physical_ssd_bytes": 4683771904,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.935294,
+                "total_cost": 257877,
+                "trace_time_us": 215581,
+                "valid_bytes": 5007806776
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.1679221058730036,
+              "valid": true,
+              "output_sha256": "c72a6ade06bdc41ed0d9adfcf9b8c933704dec92afc42f5e7843184f4f3786a5",
+              "metrics": {
+                "cache_hits": 384,
+                "cpu_cost": 38592,
+                "effective_bandwidth_mb_s": 22153.235692,
+                "evictions": 58,
+                "latency_p50_us": 614,
+                "latency_p95_us": 96142,
+                "latency_p99_us": 111658,
+                "npu_cost": 3704,
+                "physical_ssd_bytes": 4683771904,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.935294,
+                "total_cost": 257877,
+                "trace_time_us": 215581,
+                "valid_bytes": 5007806776
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "renewal_hotspot_9503.json",
+      "family": "renewal_hotspot",
+      "input_sha256": "ce93749903f4dacd894dd1014d277b45c1a083c73ac1f78ca01d957eac955c67",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.5780198080465198,
+              "valid": true,
+              "output_sha256": "9cfa5a1975590cbdadd9a7e28ed2a4f01f02b50242333ab94aa7bbc90d60a3a0",
+              "metrics": {
+                "cache_hits": 465,
+                "cpu_cost": 18313,
+                "effective_bandwidth_mb_s": 15789.218501,
+                "evictions": 80,
+                "latency_p50_us": 652,
+                "latency_p95_us": 10457,
+                "latency_p99_us": 15921,
+                "npu_cost": 2135,
+                "physical_ssd_bytes": 2117999616,
+                "promote_count": 95,
+                "promote_hit_rate": 1.0,
+                "promote_success": 95,
+                "read_amplification": 0.675121,
+                "total_cost": 209937,
+                "trace_time_us": 189489,
+                "valid_bytes": 3137216944
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.5784463500604033,
+              "valid": true,
+              "output_sha256": "9cfa5a1975590cbdadd9a7e28ed2a4f01f02b50242333ab94aa7bbc90d60a3a0",
+              "metrics": {
+                "cache_hits": 465,
+                "cpu_cost": 18313,
+                "effective_bandwidth_mb_s": 15789.218501,
+                "evictions": 80,
+                "latency_p50_us": 652,
+                "latency_p95_us": 10457,
+                "latency_p99_us": 15921,
+                "npu_cost": 2135,
+                "physical_ssd_bytes": 2117999616,
+                "promote_count": 95,
+                "promote_hit_rate": 1.0,
+                "promote_success": 95,
+                "read_amplification": 0.675121,
+                "total_cost": 209937,
+                "trace_time_us": 189489,
+                "valid_bytes": 3137216944
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.5715665069874376,
+              "valid": true,
+              "output_sha256": "9cfa5a1975590cbdadd9a7e28ed2a4f01f02b50242333ab94aa7bbc90d60a3a0",
+              "metrics": {
+                "cache_hits": 465,
+                "cpu_cost": 18313,
+                "effective_bandwidth_mb_s": 15789.218501,
+                "evictions": 80,
+                "latency_p50_us": 652,
+                "latency_p95_us": 10457,
+                "latency_p99_us": 15921,
+                "npu_cost": 2135,
+                "physical_ssd_bytes": 2117999616,
+                "promote_count": 95,
+                "promote_hit_rate": 1.0,
+                "promote_success": 95,
+                "read_amplification": 0.675121,
+                "total_cost": 209937,
+                "trace_time_us": 189489,
+                "valid_bytes": 3137216944
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.1720219198614359,
+              "valid": true,
+              "output_sha256": "f3ea88859bb5b65ae74bd0cd4a9428066de10fd54cd154c5e2da71ec0c0169ad",
+              "metrics": {
+                "cache_hits": 354,
+                "cpu_cost": 59578,
+                "effective_bandwidth_mb_s": 15690.844855,
+                "evictions": 354,
+                "latency_p50_us": 2723,
+                "latency_p95_us": 19705,
+                "latency_p99_us": 35643,
+                "npu_cost": 4336,
+                "physical_ssd_bytes": 2983357440,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.950957,
+                "total_cost": 254591,
+                "trace_time_us": 190677,
+                "valid_bytes": 3137216944
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.16826652898453176,
+              "valid": true,
+              "output_sha256": "f3ea88859bb5b65ae74bd0cd4a9428066de10fd54cd154c5e2da71ec0c0169ad",
+              "metrics": {
+                "cache_hits": 354,
+                "cpu_cost": 59578,
+                "effective_bandwidth_mb_s": 15690.844855,
+                "evictions": 354,
+                "latency_p50_us": 2723,
+                "latency_p95_us": 19705,
+                "latency_p99_us": 35643,
+                "npu_cost": 4336,
+                "physical_ssd_bytes": 2983357440,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.950957,
+                "total_cost": 254591,
+                "trace_time_us": 190677,
+                "valid_bytes": 3137216944
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.17089367005974054,
+              "valid": true,
+              "output_sha256": "f3ea88859bb5b65ae74bd0cd4a9428066de10fd54cd154c5e2da71ec0c0169ad",
+              "metrics": {
+                "cache_hits": 354,
+                "cpu_cost": 59578,
+                "effective_bandwidth_mb_s": 15690.844855,
+                "evictions": 354,
+                "latency_p50_us": 2723,
+                "latency_p95_us": 19705,
+                "latency_p99_us": 35643,
+                "npu_cost": 4336,
+                "physical_ssd_bytes": 2983357440,
+                "promote_count": 360,
+                "promote_hit_rate": 1.0,
+                "promote_success": 360,
+                "read_amplification": 0.950957,
+                "total_cost": 254591,
+                "trace_time_us": 190677,
+                "valid_bytes": 3137216944
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "walking_hotspot_9503.json",
+      "family": "walking_hotspot",
+      "input_sha256": "5a89989c65ba53ec927c9e8ce493dfc5277781d07b1439e4d1c9daf3b3f72574",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.7877142019569874,
+              "valid": true,
+              "output_sha256": "1f7ba5c32230263730b2d1ef192a0e03dc4e59363572b4ad092cee98476fd6c0",
+              "metrics": {
+                "cache_hits": 251,
+                "cpu_cost": 22543,
+                "effective_bandwidth_mb_s": 27188.515911,
+                "evictions": 134,
+                "latency_p50_us": 627,
+                "latency_p95_us": 25617,
+                "latency_p99_us": 33402,
+                "npu_cost": 1733,
+                "physical_ssd_bytes": 2351239680,
+                "promote_count": 148,
+                "promote_hit_rate": 1.0,
+                "promote_success": 148,
+                "read_amplification": 0.600721,
+                "total_cost": 161566,
+                "trace_time_us": 137290,
+                "valid_bytes": 3914031536
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.7784752619918436,
+              "valid": true,
+              "output_sha256": "1f7ba5c32230263730b2d1ef192a0e03dc4e59363572b4ad092cee98476fd6c0",
+              "metrics": {
+                "cache_hits": 251,
+                "cpu_cost": 22543,
+                "effective_bandwidth_mb_s": 27188.515911,
+                "evictions": 134,
+                "latency_p50_us": 627,
+                "latency_p95_us": 25617,
+                "latency_p99_us": 33402,
+                "npu_cost": 1733,
+                "physical_ssd_bytes": 2351239680,
+                "promote_count": 148,
+                "promote_hit_rate": 1.0,
+                "promote_success": 148,
+                "read_amplification": 0.600721,
+                "total_cost": 161566,
+                "trace_time_us": 137290,
+                "valid_bytes": 3914031536
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.7832559139933437,
+              "valid": true,
+              "output_sha256": "1f7ba5c32230263730b2d1ef192a0e03dc4e59363572b4ad092cee98476fd6c0",
+              "metrics": {
+                "cache_hits": 251,
+                "cpu_cost": 22543,
+                "effective_bandwidth_mb_s": 27188.515911,
+                "evictions": 134,
+                "latency_p50_us": 627,
+                "latency_p95_us": 25617,
+                "latency_p99_us": 33402,
+                "npu_cost": 1733,
+                "physical_ssd_bytes": 2351239680,
+                "promote_count": 148,
+                "promote_hit_rate": 1.0,
+                "promote_success": 148,
+                "read_amplification": 0.600721,
+                "total_cost": 161566,
+                "trace_time_us": 137290,
+                "valid_bytes": 3914031536
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.1687411111779511,
+              "valid": true,
+              "output_sha256": "fe4367641ad7a508da497a1d32b2f5373f57daafae2183f9aebfd457ed5ef22d",
+              "metrics": {
+                "cache_hits": 331,
+                "cpu_cost": 41798,
+                "effective_bandwidth_mb_s": 23525.887092,
+                "evictions": 156,
+                "latency_p50_us": 1135,
+                "latency_p95_us": 42811,
+                "latency_p99_us": 63177,
+                "npu_cost": 3857,
+                "physical_ssd_bytes": 3341881856,
+                "promote_count": 168,
+                "promote_hit_rate": 1.0,
+                "promote_success": 168,
+                "read_amplification": 0.853821,
+                "total_cost": 204319,
+                "trace_time_us": 158664,
+                "valid_bytes": 3914031536
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.16920547210611403,
+              "valid": true,
+              "output_sha256": "fe4367641ad7a508da497a1d32b2f5373f57daafae2183f9aebfd457ed5ef22d",
+              "metrics": {
+                "cache_hits": 331,
+                "cpu_cost": 41798,
+                "effective_bandwidth_mb_s": 23525.887092,
+                "evictions": 156,
+                "latency_p50_us": 1135,
+                "latency_p95_us": 42811,
+                "latency_p99_us": 63177,
+                "npu_cost": 3857,
+                "physical_ssd_bytes": 3341881856,
+                "promote_count": 168,
+                "promote_hit_rate": 1.0,
+                "promote_success": 168,
+                "read_amplification": 0.853821,
+                "total_cost": 204319,
+                "trace_time_us": 158664,
+                "valid_bytes": 3914031536
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.16989887901581824,
+              "valid": true,
+              "output_sha256": "fe4367641ad7a508da497a1d32b2f5373f57daafae2183f9aebfd457ed5ef22d",
+              "metrics": {
+                "cache_hits": 331,
+                "cpu_cost": 41798,
+                "effective_bandwidth_mb_s": 23525.887092,
+                "evictions": 156,
+                "latency_p50_us": 1135,
+                "latency_p95_us": 42811,
+                "latency_p99_us": 63177,
+                "npu_cost": 3857,
+                "physical_ssd_bytes": 3341881856,
+                "promote_count": 168,
+                "promote_hit_rate": 1.0,
+                "promote_success": 168,
+                "read_amplification": 0.853821,
+                "total_cost": 204319,
+                "trace_time_us": 158664,
+                "valid_bytes": 3914031536
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "random_epochs_9503.json",
+      "family": "random_epochs",
+      "input_sha256": "fbcb240b7e6024993016443aa7fbde2e2ddae10f67a931dc92476c551c913315",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.6660980309825391,
+              "valid": true,
+              "output_sha256": "b3f7c9d9a85bdbf8c8500a7a045435f7e8d46cef7cb2e24d049a7e2350d66db0",
+              "metrics": {
+                "cache_hits": 83,
+                "cpu_cost": 22434,
+                "effective_bandwidth_mb_s": 23014.322817,
+                "evictions": 103,
+                "latency_p50_us": 354,
+                "latency_p95_us": 21464,
+                "latency_p99_us": 22695,
+                "npu_cost": 1746,
+                "physical_ssd_bytes": 2387621376,
+                "promote_count": 107,
+                "promote_hit_rate": 1.0,
+                "promote_success": 107,
+                "read_amplification": 0.627877,
+                "total_cost": 181757,
+                "trace_time_us": 157577,
+                "valid_bytes": 3802690168
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.6668021380901337,
+              "valid": true,
+              "output_sha256": "b3f7c9d9a85bdbf8c8500a7a045435f7e8d46cef7cb2e24d049a7e2350d66db0",
+              "metrics": {
+                "cache_hits": 83,
+                "cpu_cost": 22434,
+                "effective_bandwidth_mb_s": 23014.322817,
+                "evictions": 103,
+                "latency_p50_us": 354,
+                "latency_p95_us": 21464,
+                "latency_p99_us": 22695,
+                "npu_cost": 1746,
+                "physical_ssd_bytes": 2387621376,
+                "promote_count": 107,
+                "promote_hit_rate": 1.0,
+                "promote_success": 107,
+                "read_amplification": 0.627877,
+                "total_cost": 181757,
+                "trace_time_us": 157577,
+                "valid_bytes": 3802690168
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.6641692169941962,
+              "valid": true,
+              "output_sha256": "b3f7c9d9a85bdbf8c8500a7a045435f7e8d46cef7cb2e24d049a7e2350d66db0",
+              "metrics": {
+                "cache_hits": 83,
+                "cpu_cost": 22434,
+                "effective_bandwidth_mb_s": 23014.322817,
+                "evictions": 103,
+                "latency_p50_us": 354,
+                "latency_p95_us": 21464,
+                "latency_p99_us": 22695,
+                "npu_cost": 1746,
+                "physical_ssd_bytes": 2387621376,
+                "promote_count": 107,
+                "promote_hit_rate": 1.0,
+                "promote_success": 107,
+                "read_amplification": 0.627877,
+                "total_cost": 181757,
+                "trace_time_us": 157577,
+                "valid_bytes": 3802690168
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.14691835804842412,
+              "valid": true,
+              "output_sha256": "13290e3adb4eccddae978ceeff2a06c9122ec6d6618f1f59d03421507c7239c0",
+              "metrics": {
+                "cache_hits": 527,
+                "cpu_cost": 49061,
+                "effective_bandwidth_mb_s": 21090.963765,
+                "evictions": 242,
+                "latency_p50_us": 391,
+                "latency_p95_us": 23898,
+                "latency_p99_us": 34345,
+                "npu_cost": 3949,
+                "physical_ssd_bytes": 3281910784,
+                "promote_count": 272,
+                "promote_hit_rate": 1.0,
+                "promote_success": 272,
+                "read_amplification": 0.86305,
+                "total_cost": 224957,
+                "trace_time_us": 171947,
+                "valid_bytes": 3802690168
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.14200864918529987,
+              "valid": true,
+              "output_sha256": "13290e3adb4eccddae978ceeff2a06c9122ec6d6618f1f59d03421507c7239c0",
+              "metrics": {
+                "cache_hits": 527,
+                "cpu_cost": 49061,
+                "effective_bandwidth_mb_s": 21090.963765,
+                "evictions": 242,
+                "latency_p50_us": 391,
+                "latency_p95_us": 23898,
+                "latency_p99_us": 34345,
+                "npu_cost": 3949,
+                "physical_ssd_bytes": 3281910784,
+                "promote_count": 272,
+                "promote_hit_rate": 1.0,
+                "promote_success": 272,
+                "read_amplification": 0.86305,
+                "total_cost": 224957,
+                "trace_time_us": 171947,
+                "valid_bytes": 3802690168
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.14130757213570178,
+              "valid": true,
+              "output_sha256": "13290e3adb4eccddae978ceeff2a06c9122ec6d6618f1f59d03421507c7239c0",
+              "metrics": {
+                "cache_hits": 527,
+                "cpu_cost": 49061,
+                "effective_bandwidth_mb_s": 21090.963765,
+                "evictions": 242,
+                "latency_p50_us": 391,
+                "latency_p95_us": 23898,
+                "latency_p99_us": 34345,
+                "npu_cost": 3949,
+                "physical_ssd_bytes": 3281910784,
+                "promote_count": 272,
+                "promote_hit_rate": 1.0,
+                "promote_success": 272,
+                "read_amplification": 0.86305,
+                "total_cost": 224957,
+                "trace_time_us": 171947,
+                "valid_bytes": 3802690168
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "size_heat_9503.json",
+      "family": "size_heat",
+      "input_sha256": "ce7a8dd0df60364acf5ff4cf81cce50d843df464ebf11875724c4b5410e8ef00",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.22522579901851714,
+              "valid": true,
+              "output_sha256": "4c335a867305c09d4499ca3e25b4b602a7c280c613ddc0b58b9a74443b557ea1",
+              "metrics": {
+                "cache_hits": 160,
+                "cpu_cost": 13528,
+                "effective_bandwidth_mb_s": 2051.315906,
+                "evictions": 0,
+                "latency_p50_us": 232,
+                "latency_p95_us": 378,
+                "latency_p99_us": 2900,
+                "npu_cost": 2008,
+                "physical_ssd_bytes": 400076800,
+                "promote_count": 64,
+                "promote_hit_rate": 1.0,
+                "promote_success": 64,
+                "read_amplification": 1.000302,
+                "total_cost": 201479,
+                "trace_time_us": 185943,
+                "valid_bytes": 399956072
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.22908330895006657,
+              "valid": true,
+              "output_sha256": "4c335a867305c09d4499ca3e25b4b602a7c280c613ddc0b58b9a74443b557ea1",
+              "metrics": {
+                "cache_hits": 160,
+                "cpu_cost": 13528,
+                "effective_bandwidth_mb_s": 2051.315906,
+                "evictions": 0,
+                "latency_p50_us": 232,
+                "latency_p95_us": 378,
+                "latency_p99_us": 2900,
+                "npu_cost": 2008,
+                "physical_ssd_bytes": 400076800,
+                "promote_count": 64,
+                "promote_hit_rate": 1.0,
+                "promote_success": 64,
+                "read_amplification": 1.000302,
+                "total_cost": 201479,
+                "trace_time_us": 185943,
+                "valid_bytes": 399956072
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.22480125585570931,
+              "valid": true,
+              "output_sha256": "4c335a867305c09d4499ca3e25b4b602a7c280c613ddc0b58b9a74443b557ea1",
+              "metrics": {
+                "cache_hits": 160,
+                "cpu_cost": 13528,
+                "effective_bandwidth_mb_s": 2051.315906,
+                "evictions": 0,
+                "latency_p50_us": 232,
+                "latency_p95_us": 378,
+                "latency_p99_us": 2900,
+                "npu_cost": 2008,
+                "physical_ssd_bytes": 400076800,
+                "promote_count": 64,
+                "promote_hit_rate": 1.0,
+                "promote_success": 64,
+                "read_amplification": 1.000302,
+                "total_cost": 201479,
+                "trace_time_us": 185943,
+                "valid_bytes": 399956072
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.053212998900562525,
+              "valid": true,
+              "output_sha256": "21035785bb0178c05f232a07386a9c3f394ac5cc65697ffe792011f5fcb71aad",
+              "metrics": {
+                "cache_hits": 2416,
+                "cpu_cost": 28784,
+                "effective_bandwidth_mb_s": 2050.874723,
+                "evictions": 0,
+                "latency_p50_us": 17,
+                "latency_p95_us": 372,
+                "latency_p99_us": 3120,
+                "npu_cost": 3456,
+                "physical_ssd_bytes": 393015296,
+                "promote_count": 232,
+                "promote_hit_rate": 1.0,
+                "promote_success": 232,
+                "read_amplification": 0.982646,
+                "total_cost": 218223,
+                "trace_time_us": 185983,
+                "valid_bytes": 399956072
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.053239647997543216,
+              "valid": true,
+              "output_sha256": "21035785bb0178c05f232a07386a9c3f394ac5cc65697ffe792011f5fcb71aad",
+              "metrics": {
+                "cache_hits": 2416,
+                "cpu_cost": 28784,
+                "effective_bandwidth_mb_s": 2050.874723,
+                "evictions": 0,
+                "latency_p50_us": 17,
+                "latency_p95_us": 372,
+                "latency_p99_us": 3120,
+                "npu_cost": 3456,
+                "physical_ssd_bytes": 393015296,
+                "promote_count": 232,
+                "promote_hit_rate": 1.0,
+                "promote_success": 232,
+                "read_amplification": 0.982646,
+                "total_cost": 218223,
+                "trace_time_us": 185983,
+                "valid_bytes": 399956072
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.05247544287703931,
+              "valid": true,
+              "output_sha256": "21035785bb0178c05f232a07386a9c3f394ac5cc65697ffe792011f5fcb71aad",
+              "metrics": {
+                "cache_hits": 2416,
+                "cpu_cost": 28784,
+                "effective_bandwidth_mb_s": 2050.874723,
+                "evictions": 0,
+                "latency_p50_us": 17,
+                "latency_p95_us": 372,
+                "latency_p99_us": 3120,
+                "npu_cost": 3456,
+                "physical_ssd_bytes": 393015296,
+                "promote_count": 232,
+                "promote_hit_rate": 1.0,
+                "promote_success": 232,
+                "read_amplification": 0.982646,
+                "total_cost": 218223,
+                "trace_time_us": 185983,
+                "valid_bytes": 399956072
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "barrier_bursts_9503.json",
+      "family": "barrier_bursts",
+      "input_sha256": "3c59a1cd43bb21b95ed603134f803f1d1e45da52d0d6ff99dd1d10d8a65eaa21",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.9519947851076722,
+              "valid": true,
+              "output_sha256": "a425b4681081264ad792f0e73dc880c7ea61fc100ca2198e43aad9bea4a5af8e",
+              "metrics": {
+                "cache_hits": 0,
+                "cpu_cost": 17864,
+                "effective_bandwidth_mb_s": 8898.148749,
+                "evictions": 92,
+                "latency_p50_us": 12092,
+                "latency_p95_us": 26349,
+                "latency_p99_us": 29315,
+                "npu_cost": 1832,
+                "physical_ssd_bytes": 2291871744,
+                "promote_count": 96,
+                "promote_hit_rate": 1.0,
+                "promote_success": 96,
+                "read_amplification": 0.749617,
+                "total_cost": 347377,
+                "trace_time_us": 327681,
+                "valid_bytes": 3057389960
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.9393278548959643,
+              "valid": true,
+              "output_sha256": "a425b4681081264ad792f0e73dc880c7ea61fc100ca2198e43aad9bea4a5af8e",
+              "metrics": {
+                "cache_hits": 0,
+                "cpu_cost": 17864,
+                "effective_bandwidth_mb_s": 8898.148749,
+                "evictions": 92,
+                "latency_p50_us": 12092,
+                "latency_p95_us": 26349,
+                "latency_p99_us": 29315,
+                "npu_cost": 1832,
+                "physical_ssd_bytes": 2291871744,
+                "promote_count": 96,
+                "promote_hit_rate": 1.0,
+                "promote_success": 96,
+                "read_amplification": 0.749617,
+                "total_cost": 347377,
+                "trace_time_us": 327681,
+                "valid_bytes": 3057389960
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.9532219120301306,
+              "valid": true,
+              "output_sha256": "a425b4681081264ad792f0e73dc880c7ea61fc100ca2198e43aad9bea4a5af8e",
+              "metrics": {
+                "cache_hits": 0,
+                "cpu_cost": 17864,
+                "effective_bandwidth_mb_s": 8898.148749,
+                "evictions": 92,
+                "latency_p50_us": 12092,
+                "latency_p95_us": 26349,
+                "latency_p99_us": 29315,
+                "npu_cost": 1832,
+                "physical_ssd_bytes": 2291871744,
+                "promote_count": 96,
+                "promote_hit_rate": 1.0,
+                "promote_success": 96,
+                "read_amplification": 0.749617,
+                "total_cost": 347377,
+                "trace_time_us": 327681,
+                "valid_bytes": 3057389960
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.1843667950015515,
+              "valid": true,
+              "output_sha256": "4f98e15060d5adea2606fa245c7e4c4115a64bc7f71195ae71bc472b43a7759a",
+              "metrics": {
+                "cache_hits": 42,
+                "cpu_cost": 59236,
+                "effective_bandwidth_mb_s": 8697.902245,
+                "evictions": 324,
+                "latency_p50_us": 11207,
+                "latency_p95_us": 30360,
+                "latency_p99_us": 36106,
+                "npu_cost": 4334,
+                "physical_ssd_bytes": 2838780928,
+                "promote_count": 328,
+                "promote_hit_rate": 1.0,
+                "promote_success": 328,
+                "read_amplification": 0.928498,
+                "total_cost": 398795,
+                "trace_time_us": 335225,
+                "valid_bytes": 3057389960
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.1812678910791874,
+              "valid": true,
+              "output_sha256": "4f98e15060d5adea2606fa245c7e4c4115a64bc7f71195ae71bc472b43a7759a",
+              "metrics": {
+                "cache_hits": 42,
+                "cpu_cost": 59236,
+                "effective_bandwidth_mb_s": 8697.902245,
+                "evictions": 324,
+                "latency_p50_us": 11207,
+                "latency_p95_us": 30360,
+                "latency_p99_us": 36106,
+                "npu_cost": 4334,
+                "physical_ssd_bytes": 2838780928,
+                "promote_count": 328,
+                "promote_hit_rate": 1.0,
+                "promote_success": 328,
+                "read_amplification": 0.928498,
+                "total_cost": 398795,
+                "trace_time_us": 335225,
+                "valid_bytes": 3057389960
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.18155015702359378,
+              "valid": true,
+              "output_sha256": "4f98e15060d5adea2606fa245c7e4c4115a64bc7f71195ae71bc472b43a7759a",
+              "metrics": {
+                "cache_hits": 42,
+                "cpu_cost": 59236,
+                "effective_bandwidth_mb_s": 8697.902245,
+                "evictions": 324,
+                "latency_p50_us": 11207,
+                "latency_p95_us": 30360,
+                "latency_p99_us": 36106,
+                "npu_cost": 4334,
+                "physical_ssd_bytes": 2838780928,
+                "promote_count": 328,
+                "promote_hit_rate": 1.0,
+                "promote_success": 328,
+                "read_amplification": 0.928498,
+                "total_cost": 398795,
+                "trace_time_us": 335225,
+                "valid_bytes": 3057389960
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "sparse_revisits_9503.json",
+      "family": "sparse_revisits",
+      "input_sha256": "d0ba58fade963c994238249dddc946480f4b26743fee4339ba9c02eca0806b80",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.5931283228565007,
+              "valid": true,
+              "output_sha256": "7d3a8e876da775de6358f19ba5d64dc2c972f1e2f5da4f5092f1caac79169c72",
+              "metrics": {
+                "cache_hits": 223,
+                "cpu_cost": 14048,
+                "effective_bandwidth_mb_s": 14808.382252,
+                "evictions": 11,
+                "latency_p50_us": 2659,
+                "latency_p95_us": 13178,
+                "latency_p99_us": 15543,
+                "npu_cost": 2428,
+                "physical_ssd_bytes": 2657320960,
+                "promote_count": 23,
+                "promote_hit_rate": 1.0,
+                "promote_success": 23,
+                "read_amplification": 0.889318,
+                "total_cost": 208909,
+                "trace_time_us": 192433,
+                "valid_bytes": 2988044632
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.5972728990018368,
+              "valid": true,
+              "output_sha256": "7d3a8e876da775de6358f19ba5d64dc2c972f1e2f5da4f5092f1caac79169c72",
+              "metrics": {
+                "cache_hits": 223,
+                "cpu_cost": 14048,
+                "effective_bandwidth_mb_s": 14808.382252,
+                "evictions": 11,
+                "latency_p50_us": 2659,
+                "latency_p95_us": 13178,
+                "latency_p99_us": 15543,
+                "npu_cost": 2428,
+                "physical_ssd_bytes": 2657320960,
+                "promote_count": 23,
+                "promote_hit_rate": 1.0,
+                "promote_success": 23,
+                "read_amplification": 0.889318,
+                "total_cost": 208909,
+                "trace_time_us": 192433,
+                "valid_bytes": 2988044632
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.5974880349822342,
+              "valid": true,
+              "output_sha256": "7d3a8e876da775de6358f19ba5d64dc2c972f1e2f5da4f5092f1caac79169c72",
+              "metrics": {
+                "cache_hits": 223,
+                "cpu_cost": 14048,
+                "effective_bandwidth_mb_s": 14808.382252,
+                "evictions": 11,
+                "latency_p50_us": 2659,
+                "latency_p95_us": 13178,
+                "latency_p99_us": 15543,
+                "npu_cost": 2428,
+                "physical_ssd_bytes": 2657320960,
+                "promote_count": 23,
+                "promote_hit_rate": 1.0,
+                "promote_success": 23,
+                "read_amplification": 0.889318,
+                "total_cost": 208909,
+                "trace_time_us": 192433,
+                "valid_bytes": 2988044632
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.15547480201348662,
+              "valid": true,
+              "output_sha256": "e259b6625a0f13809823af21dab77348cf641da3910fca82bba69cf1f3613998",
+              "metrics": {
+                "cache_hits": 352,
+                "cpu_cost": 40336,
+                "effective_bandwidth_mb_s": 14747.53229,
+                "evictions": 110,
+                "latency_p50_us": 733,
+                "latency_p95_us": 11699,
+                "latency_p99_us": 18701,
+                "npu_cost": 3984,
+                "physical_ssd_bytes": 2678501376,
+                "promote_count": 136,
+                "promote_hit_rate": 1.0,
+                "promote_success": 136,
+                "read_amplification": 0.896406,
+                "total_cost": 237547,
+                "trace_time_us": 193227,
+                "valid_bytes": 2988044632
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.15580967697314918,
+              "valid": true,
+              "output_sha256": "e259b6625a0f13809823af21dab77348cf641da3910fca82bba69cf1f3613998",
+              "metrics": {
+                "cache_hits": 352,
+                "cpu_cost": 40336,
+                "effective_bandwidth_mb_s": 14747.53229,
+                "evictions": 110,
+                "latency_p50_us": 733,
+                "latency_p95_us": 11699,
+                "latency_p99_us": 18701,
+                "npu_cost": 3984,
+                "physical_ssd_bytes": 2678501376,
+                "promote_count": 136,
+                "promote_hit_rate": 1.0,
+                "promote_success": 136,
+                "read_amplification": 0.896406,
+                "total_cost": 237547,
+                "trace_time_us": 193227,
+                "valid_bytes": 2988044632
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.1632441901601851,
+              "valid": true,
+              "output_sha256": "e259b6625a0f13809823af21dab77348cf641da3910fca82bba69cf1f3613998",
+              "metrics": {
+                "cache_hits": 352,
+                "cpu_cost": 40336,
+                "effective_bandwidth_mb_s": 14747.53229,
+                "evictions": 110,
+                "latency_p50_us": 733,
+                "latency_p95_us": 11699,
+                "latency_p99_us": 18701,
+                "npu_cost": 3984,
+                "physical_ssd_bytes": 2678501376,
+                "promote_count": 136,
+                "promote_hit_rate": 1.0,
+                "promote_success": 136,
+                "read_amplification": 0.896406,
+                "total_cost": 237547,
+                "trace_time_us": 193227,
+                "valid_bytes": 2988044632
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "renewal_hotspot_9511.json",
+      "family": "renewal_hotspot",
+      "input_sha256": "5ebbc2a1fd1e63613d50df0c9418fc405cd40b1305905086e338f8ee6523263b",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.37354446295648813,
+              "valid": true,
+              "output_sha256": "46a34bcf5d63ef543558b67fba2ce7f4d2d20bb948d8192c85c26491ed0e52c7",
+              "metrics": {
+                "cache_hits": 654,
+                "cpu_cost": 17808,
+                "effective_bandwidth_mb_s": 21031.945966,
+                "evictions": 30,
+                "latency_p50_us": 346,
+                "latency_p95_us": 8966,
+                "latency_p99_us": 21849,
+                "npu_cost": 2101,
+                "physical_ssd_bytes": 1745866240,
+                "promote_count": 126,
+                "promote_hit_rate": 1.0,
+                "promote_success": 126,
+                "read_amplification": 0.429724,
+                "total_cost": 204131,
+                "trace_time_us": 184222,
+                "valid_bytes": 4062757152
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.37145501002669334,
+              "valid": true,
+              "output_sha256": "46a34bcf5d63ef543558b67fba2ce7f4d2d20bb948d8192c85c26491ed0e52c7",
+              "metrics": {
+                "cache_hits": 654,
+                "cpu_cost": 17808,
+                "effective_bandwidth_mb_s": 21031.945966,
+                "evictions": 30,
+                "latency_p50_us": 346,
+                "latency_p95_us": 8966,
+                "latency_p99_us": 21849,
+                "npu_cost": 2101,
+                "physical_ssd_bytes": 1745866240,
+                "promote_count": 126,
+                "promote_hit_rate": 1.0,
+                "promote_success": 126,
+                "read_amplification": 0.429724,
+                "total_cost": 204131,
+                "trace_time_us": 184222,
+                "valid_bytes": 4062757152
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.3747477410361171,
+              "valid": true,
+              "output_sha256": "46a34bcf5d63ef543558b67fba2ce7f4d2d20bb948d8192c85c26491ed0e52c7",
+              "metrics": {
+                "cache_hits": 654,
+                "cpu_cost": 17808,
+                "effective_bandwidth_mb_s": 21031.945966,
+                "evictions": 30,
+                "latency_p50_us": 346,
+                "latency_p95_us": 8966,
+                "latency_p99_us": 21849,
+                "npu_cost": 2101,
+                "physical_ssd_bytes": 1745866240,
+                "promote_count": 126,
+                "promote_hit_rate": 1.0,
+                "promote_success": 126,
+                "read_amplification": 0.429724,
+                "total_cost": 204131,
+                "trace_time_us": 184222,
+                "valid_bytes": 4062757152
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.06745049892924726,
+              "valid": true,
+              "output_sha256": "6128a37af6d1a1f63df634193a88ad579b5bb2de432b9c1c216decb1ed5ea947",
+              "metrics": {
+                "cache_hits": 2143,
+                "cpu_cost": 38913,
+                "effective_bandwidth_mb_s": 20434.728593,
+                "evictions": 193,
+                "latency_p50_us": 229,
+                "latency_p95_us": 5804,
+                "latency_p99_us": 19304,
+                "npu_cost": 3519,
+                "physical_ssd_bytes": 1704632320,
+                "promote_count": 336,
+                "promote_hit_rate": 1.0,
+                "promote_success": 336,
+                "read_amplification": 0.419575,
+                "total_cost": 232038,
+                "trace_time_us": 189606,
+                "valid_bytes": 4062757152
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.06752020702697337,
+              "valid": true,
+              "output_sha256": "6128a37af6d1a1f63df634193a88ad579b5bb2de432b9c1c216decb1ed5ea947",
+              "metrics": {
+                "cache_hits": 2143,
+                "cpu_cost": 38913,
+                "effective_bandwidth_mb_s": 20434.728593,
+                "evictions": 193,
+                "latency_p50_us": 229,
+                "latency_p95_us": 5804,
+                "latency_p99_us": 19304,
+                "npu_cost": 3519,
+                "physical_ssd_bytes": 1704632320,
+                "promote_count": 336,
+                "promote_hit_rate": 1.0,
+                "promote_success": 336,
+                "read_amplification": 0.419575,
+                "total_cost": 232038,
+                "trace_time_us": 189606,
+                "valid_bytes": 4062757152
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.06660089385695755,
+              "valid": true,
+              "output_sha256": "6128a37af6d1a1f63df634193a88ad579b5bb2de432b9c1c216decb1ed5ea947",
+              "metrics": {
+                "cache_hits": 2143,
+                "cpu_cost": 38913,
+                "effective_bandwidth_mb_s": 20434.728593,
+                "evictions": 193,
+                "latency_p50_us": 229,
+                "latency_p95_us": 5804,
+                "latency_p99_us": 19304,
+                "npu_cost": 3519,
+                "physical_ssd_bytes": 1704632320,
+                "promote_count": 336,
+                "promote_hit_rate": 1.0,
+                "promote_success": 336,
+                "read_amplification": 0.419575,
+                "total_cost": 232038,
+                "trace_time_us": 189606,
+                "valid_bytes": 4062757152
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "walking_hotspot_9511.json",
+      "family": "walking_hotspot",
+      "input_sha256": "273b6c6377d2c6cf10931adac1a63305a8488a39e213428adc4051f6297768db",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.925844153156504,
+              "valid": true,
+              "output_sha256": "d067e256da78de0bcb5ea7c776e9fddccc6785e3284330b71b52fe757b4f23e2",
+              "metrics": {
+                "cache_hits": 706,
+                "cpu_cost": 13675,
+                "effective_bandwidth_mb_s": 38403.520115,
+                "evictions": 0,
+                "latency_p50_us": 1109,
+                "latency_p95_us": 44165,
+                "latency_p99_us": 83609,
+                "npu_cost": 1970,
+                "physical_ssd_bytes": 2190308864,
+                "promote_count": 61,
+                "promote_hit_rate": 1.0,
+                "promote_success": 61,
+                "read_amplification": 0.4659,
+                "total_cost": 132391,
+                "trace_time_us": 116746,
+                "valid_bytes": 4701245784
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.9260609890334308,
+              "valid": true,
+              "output_sha256": "d067e256da78de0bcb5ea7c776e9fddccc6785e3284330b71b52fe757b4f23e2",
+              "metrics": {
+                "cache_hits": 706,
+                "cpu_cost": 13675,
+                "effective_bandwidth_mb_s": 38403.520115,
+                "evictions": 0,
+                "latency_p50_us": 1109,
+                "latency_p95_us": 44165,
+                "latency_p99_us": 83609,
+                "npu_cost": 1970,
+                "physical_ssd_bytes": 2190308864,
+                "promote_count": 61,
+                "promote_hit_rate": 1.0,
+                "promote_success": 61,
+                "read_amplification": 0.4659,
+                "total_cost": 132391,
+                "trace_time_us": 116746,
+                "valid_bytes": 4701245784
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.9211124579887837,
+              "valid": true,
+              "output_sha256": "d067e256da78de0bcb5ea7c776e9fddccc6785e3284330b71b52fe757b4f23e2",
+              "metrics": {
+                "cache_hits": 706,
+                "cpu_cost": 13675,
+                "effective_bandwidth_mb_s": 38403.520115,
+                "evictions": 0,
+                "latency_p50_us": 1109,
+                "latency_p95_us": 44165,
+                "latency_p99_us": 83609,
+                "npu_cost": 1970,
+                "physical_ssd_bytes": 2190308864,
+                "promote_count": 61,
+                "promote_hit_rate": 1.0,
+                "promote_success": 61,
+                "read_amplification": 0.4659,
+                "total_cost": 132391,
+                "trace_time_us": 116746,
+                "valid_bytes": 4701245784
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.04499008785933256,
+              "valid": true,
+              "output_sha256": "8afe073b5e46b1f5a512bb7a09ab42a2315701c7ed741fdff793295804577992",
+              "metrics": {
+                "cache_hits": 2552,
+                "cpu_cost": 21040,
+                "effective_bandwidth_mb_s": 48083.581173,
+                "evictions": 0,
+                "latency_p50_us": 235,
+                "latency_p95_us": 5183,
+                "latency_p99_us": 22815,
+                "npu_cost": 3280,
+                "physical_ssd_bytes": 1182191616,
+                "promote_count": 168,
+                "promote_hit_rate": 1.0,
+                "promote_success": 168,
+                "read_amplification": 0.251463,
+                "total_cost": 117563,
+                "trace_time_us": 93243,
+                "valid_bytes": 4701245784
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.04439798998646438,
+              "valid": true,
+              "output_sha256": "8afe073b5e46b1f5a512bb7a09ab42a2315701c7ed741fdff793295804577992",
+              "metrics": {
+                "cache_hits": 2552,
+                "cpu_cost": 21040,
+                "effective_bandwidth_mb_s": 48083.581173,
+                "evictions": 0,
+                "latency_p50_us": 235,
+                "latency_p95_us": 5183,
+                "latency_p99_us": 22815,
+                "npu_cost": 3280,
+                "physical_ssd_bytes": 1182191616,
+                "promote_count": 168,
+                "promote_hit_rate": 1.0,
+                "promote_success": 168,
+                "read_amplification": 0.251463,
+                "total_cost": 117563,
+                "trace_time_us": 93243,
+                "valid_bytes": 4701245784
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.04451135895214975,
+              "valid": true,
+              "output_sha256": "8afe073b5e46b1f5a512bb7a09ab42a2315701c7ed741fdff793295804577992",
+              "metrics": {
+                "cache_hits": 2552,
+                "cpu_cost": 21040,
+                "effective_bandwidth_mb_s": 48083.581173,
+                "evictions": 0,
+                "latency_p50_us": 235,
+                "latency_p95_us": 5183,
+                "latency_p99_us": 22815,
+                "npu_cost": 3280,
+                "physical_ssd_bytes": 1182191616,
+                "promote_count": 168,
+                "promote_hit_rate": 1.0,
+                "promote_success": 168,
+                "read_amplification": 0.251463,
+                "total_cost": 117563,
+                "trace_time_us": 93243,
+                "valid_bytes": 4701245784
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "random_epochs_9511.json",
+      "family": "random_epochs",
+      "input_sha256": "004d0337833fe7a3d8419fc61dcc12ddfad01de9d6f84f408eb7acc683d0428f",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 1.1674768629018217,
+              "valid": true,
+              "output_sha256": "1cc6b184c746bb4b3a750ef95309b8419ca302ea54c736914512b0bac8039ec9",
+              "metrics": {
+                "cache_hits": 240,
+                "cpu_cost": 18568,
+                "effective_bandwidth_mb_s": 30815.176203,
+                "evictions": 31,
+                "latency_p50_us": 795,
+                "latency_p95_us": 74454,
+                "latency_p99_us": 86398,
+                "npu_cost": 1720,
+                "physical_ssd_bytes": 3757056000,
+                "promote_count": 112,
+                "promote_hit_rate": 1.0,
+                "promote_success": 112,
+                "read_amplification": 0.660904,
+                "total_cost": 196220,
+                "trace_time_us": 175932,
+                "valid_bytes": 5684724320
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 1.1639451580122113,
+              "valid": true,
+              "output_sha256": "1cc6b184c746bb4b3a750ef95309b8419ca302ea54c736914512b0bac8039ec9",
+              "metrics": {
+                "cache_hits": 240,
+                "cpu_cost": 18568,
+                "effective_bandwidth_mb_s": 30815.176203,
+                "evictions": 31,
+                "latency_p50_us": 795,
+                "latency_p95_us": 74454,
+                "latency_p99_us": 86398,
+                "npu_cost": 1720,
+                "physical_ssd_bytes": 3757056000,
+                "promote_count": 112,
+                "promote_hit_rate": 1.0,
+                "promote_success": 112,
+                "read_amplification": 0.660904,
+                "total_cost": 196220,
+                "trace_time_us": 175932,
+                "valid_bytes": 5684724320
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 1.1667744359001517,
+              "valid": true,
+              "output_sha256": "1cc6b184c746bb4b3a750ef95309b8419ca302ea54c736914512b0bac8039ec9",
+              "metrics": {
+                "cache_hits": 240,
+                "cpu_cost": 18568,
+                "effective_bandwidth_mb_s": 30815.176203,
+                "evictions": 31,
+                "latency_p50_us": 795,
+                "latency_p95_us": 74454,
+                "latency_p99_us": 86398,
+                "npu_cost": 1720,
+                "physical_ssd_bytes": 3757056000,
+                "promote_count": 112,
+                "promote_hit_rate": 1.0,
+                "promote_success": 112,
+                "read_amplification": 0.660904,
+                "total_cost": 196220,
+                "trace_time_us": 175932,
+                "valid_bytes": 5684724320
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.10104214702732861,
+              "valid": true,
+              "output_sha256": "d04481876033a852eaf00e3f2955c21c3aa7f036205ddae95ce653fe0721441d",
+              "metrics": {
+                "cache_hits": 1682,
+                "cpu_cost": 46564,
+                "effective_bandwidth_mb_s": 28737.135602,
+                "evictions": 222,
+                "latency_p50_us": 444,
+                "latency_p95_us": 52984,
+                "latency_p99_us": 63253,
+                "npu_cost": 3710,
+                "physical_ssd_bytes": 4148664320,
+                "promote_count": 384,
+                "promote_hit_rate": 1.0,
+                "promote_success": 384,
+                "read_amplification": 0.729792,
+                "total_cost": 238928,
+                "trace_time_us": 188654,
+                "valid_bytes": 5684724320
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.10197493014857173,
+              "valid": true,
+              "output_sha256": "d04481876033a852eaf00e3f2955c21c3aa7f036205ddae95ce653fe0721441d",
+              "metrics": {
+                "cache_hits": 1682,
+                "cpu_cost": 46564,
+                "effective_bandwidth_mb_s": 28737.135602,
+                "evictions": 222,
+                "latency_p50_us": 444,
+                "latency_p95_us": 52984,
+                "latency_p99_us": 63253,
+                "npu_cost": 3710,
+                "physical_ssd_bytes": 4148664320,
+                "promote_count": 384,
+                "promote_hit_rate": 1.0,
+                "promote_success": 384,
+                "read_amplification": 0.729792,
+                "total_cost": 238928,
+                "trace_time_us": 188654,
+                "valid_bytes": 5684724320
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.10342774190939963,
+              "valid": true,
+              "output_sha256": "d04481876033a852eaf00e3f2955c21c3aa7f036205ddae95ce653fe0721441d",
+              "metrics": {
+                "cache_hits": 1682,
+                "cpu_cost": 46564,
+                "effective_bandwidth_mb_s": 28737.135602,
+                "evictions": 222,
+                "latency_p50_us": 444,
+                "latency_p95_us": 52984,
+                "latency_p99_us": 63253,
+                "npu_cost": 3710,
+                "physical_ssd_bytes": 4148664320,
+                "promote_count": 384,
+                "promote_hit_rate": 1.0,
+                "promote_success": 384,
+                "read_amplification": 0.729792,
+                "total_cost": 238928,
+                "trace_time_us": 188654,
+                "valid_bytes": 5684724320
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "size_heat_9511.json",
+      "family": "size_heat",
+      "input_sha256": "884d90e2fd9ba3926d037e62af437fe0deb60b90ce161bd6133cb8afa430a8e1",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.21143527003005147,
+              "valid": true,
+              "output_sha256": "4723cd27d18caf07bcd045b0647d82c57504b9662209d86f892f0d90f7d9d9d5",
+              "metrics": {
+                "cache_hits": 270,
+                "cpu_cost": 14710,
+                "effective_bandwidth_mb_s": 418.826618,
+                "evictions": 0,
+                "latency_p50_us": 238,
+                "latency_p95_us": 277,
+                "latency_p99_us": 312,
+                "npu_cost": 2194,
+                "physical_ssd_bytes": 79450112,
+                "promote_count": 80,
+                "promote_hit_rate": 1.0,
+                "promote_success": 80,
+                "read_amplification": 0.996887,
+                "total_cost": 198378,
+                "trace_time_us": 181474,
+                "valid_bytes": 79698216
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.21090573095716536,
+              "valid": true,
+              "output_sha256": "4723cd27d18caf07bcd045b0647d82c57504b9662209d86f892f0d90f7d9d9d5",
+              "metrics": {
+                "cache_hits": 270,
+                "cpu_cost": 14710,
+                "effective_bandwidth_mb_s": 418.826618,
+                "evictions": 0,
+                "latency_p50_us": 238,
+                "latency_p95_us": 277,
+                "latency_p99_us": 312,
+                "npu_cost": 2194,
+                "physical_ssd_bytes": 79450112,
+                "promote_count": 80,
+                "promote_hit_rate": 1.0,
+                "promote_success": 80,
+                "read_amplification": 0.996887,
+                "total_cost": 198378,
+                "trace_time_us": 181474,
+                "valid_bytes": 79698216
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.2077739790547639,
+              "valid": true,
+              "output_sha256": "4723cd27d18caf07bcd045b0647d82c57504b9662209d86f892f0d90f7d9d9d5",
+              "metrics": {
+                "cache_hits": 270,
+                "cpu_cost": 14710,
+                "effective_bandwidth_mb_s": 418.826618,
+                "evictions": 0,
+                "latency_p50_us": 238,
+                "latency_p95_us": 277,
+                "latency_p99_us": 312,
+                "npu_cost": 2194,
+                "physical_ssd_bytes": 79450112,
+                "promote_count": 80,
+                "promote_hit_rate": 1.0,
+                "promote_success": 80,
+                "read_amplification": 0.996887,
+                "total_cost": 198378,
+                "trace_time_us": 181474,
+                "valid_bytes": 79698216
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.057430013082921505,
+              "valid": true,
+              "output_sha256": "3a5efd75ee99fe196563b44a57fa10f54b45ca15e36801b20700267cc1a55086",
+              "metrics": {
+                "cache_hits": 2392,
+                "cpu_cost": 35640,
+                "effective_bandwidth_mb_s": 418.718174,
+                "evictions": 0,
+                "latency_p50_us": 18,
+                "latency_p95_us": 315,
+                "latency_p99_us": 390,
+                "npu_cost": 3632,
+                "physical_ssd_bytes": 75202560,
+                "promote_count": 304,
+                "promote_hit_rate": 1.0,
+                "promote_success": 304,
+                "read_amplification": 0.943592,
+                "total_cost": 220793,
+                "trace_time_us": 181521,
+                "valid_bytes": 79698216
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.05782666499726474,
+              "valid": true,
+              "output_sha256": "3a5efd75ee99fe196563b44a57fa10f54b45ca15e36801b20700267cc1a55086",
+              "metrics": {
+                "cache_hits": 2392,
+                "cpu_cost": 35640,
+                "effective_bandwidth_mb_s": 418.718174,
+                "evictions": 0,
+                "latency_p50_us": 18,
+                "latency_p95_us": 315,
+                "latency_p99_us": 390,
+                "npu_cost": 3632,
+                "physical_ssd_bytes": 75202560,
+                "promote_count": 304,
+                "promote_hit_rate": 1.0,
+                "promote_success": 304,
+                "read_amplification": 0.943592,
+                "total_cost": 220793,
+                "trace_time_us": 181521,
+                "valid_bytes": 79698216
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.057588818948715925,
+              "valid": true,
+              "output_sha256": "3a5efd75ee99fe196563b44a57fa10f54b45ca15e36801b20700267cc1a55086",
+              "metrics": {
+                "cache_hits": 2392,
+                "cpu_cost": 35640,
+                "effective_bandwidth_mb_s": 418.718174,
+                "evictions": 0,
+                "latency_p50_us": 18,
+                "latency_p95_us": 315,
+                "latency_p99_us": 390,
+                "npu_cost": 3632,
+                "physical_ssd_bytes": 75202560,
+                "promote_count": 304,
+                "promote_hit_rate": 1.0,
+                "promote_success": 304,
+                "read_amplification": 0.943592,
+                "total_cost": 220793,
+                "trace_time_us": 181521,
+                "valid_bytes": 79698216
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "barrier_bursts_9511.json",
+      "family": "barrier_bursts",
+      "input_sha256": "b68f7909a385102000518e8547cb57d3d621674ebbdcb7e8dad98c0b498060a1",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.849643454188481,
+              "valid": true,
+              "output_sha256": "c48066b180db2d46e6294e0033950f83b94f7a17672472752698336c98e58035",
+              "metrics": {
+                "cache_hits": 258,
+                "cpu_cost": 19097,
+                "effective_bandwidth_mb_s": 11400.99702,
+                "evictions": 39,
+                "latency_p50_us": 1857,
+                "latency_p95_us": 41736,
+                "latency_p99_us": 54411,
+                "npu_cost": 1894,
+                "physical_ssd_bytes": 2786827264,
+                "promote_count": 123,
+                "promote_hit_rate": 1.0,
+                "promote_success": 123,
+                "read_amplification": 0.627216,
+                "total_cost": 392655,
+                "trace_time_us": 371664,
+                "valid_bytes": 4443173192
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.8501158361323178,
+              "valid": true,
+              "output_sha256": "c48066b180db2d46e6294e0033950f83b94f7a17672472752698336c98e58035",
+              "metrics": {
+                "cache_hits": 258,
+                "cpu_cost": 19097,
+                "effective_bandwidth_mb_s": 11400.99702,
+                "evictions": 39,
+                "latency_p50_us": 1857,
+                "latency_p95_us": 41736,
+                "latency_p99_us": 54411,
+                "npu_cost": 1894,
+                "physical_ssd_bytes": 2786827264,
+                "promote_count": 123,
+                "promote_hit_rate": 1.0,
+                "promote_success": 123,
+                "read_amplification": 0.627216,
+                "total_cost": 392655,
+                "trace_time_us": 371664,
+                "valid_bytes": 4443173192
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.8388155910652131,
+              "valid": true,
+              "output_sha256": "c48066b180db2d46e6294e0033950f83b94f7a17672472752698336c98e58035",
+              "metrics": {
+                "cache_hits": 258,
+                "cpu_cost": 19097,
+                "effective_bandwidth_mb_s": 11400.99702,
+                "evictions": 39,
+                "latency_p50_us": 1857,
+                "latency_p95_us": 41736,
+                "latency_p99_us": 54411,
+                "npu_cost": 1894,
+                "physical_ssd_bytes": 2786827264,
+                "promote_count": 123,
+                "promote_hit_rate": 1.0,
+                "promote_success": 123,
+                "read_amplification": 0.627216,
+                "total_cost": 392655,
+                "trace_time_us": 371664,
+                "valid_bytes": 4443173192
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.11588563513942063,
+              "valid": true,
+              "output_sha256": "cbf317626f6f3ddd5459fb123b2d90e481c494186f0bb51d7102d6db636aa2c4",
+              "metrics": {
+                "cache_hits": 1226,
+                "cpu_cost": 47891,
+                "effective_bandwidth_mb_s": 11028.737371,
+                "evictions": 211,
+                "latency_p50_us": 1700,
+                "latency_p95_us": 27455,
+                "latency_p99_us": 41548,
+                "npu_cost": 3833,
+                "physical_ssd_bytes": 2419528192,
+                "promote_count": 336,
+                "promote_hit_rate": 1.0,
+                "promote_success": 336,
+                "read_amplification": 0.54455,
+                "total_cost": 435933,
+                "trace_time_us": 384209,
+                "valid_bytes": 4443173192
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.11635729693807662,
+              "valid": true,
+              "output_sha256": "cbf317626f6f3ddd5459fb123b2d90e481c494186f0bb51d7102d6db636aa2c4",
+              "metrics": {
+                "cache_hits": 1226,
+                "cpu_cost": 47891,
+                "effective_bandwidth_mb_s": 11028.737371,
+                "evictions": 211,
+                "latency_p50_us": 1700,
+                "latency_p95_us": 27455,
+                "latency_p99_us": 41548,
+                "npu_cost": 3833,
+                "physical_ssd_bytes": 2419528192,
+                "promote_count": 336,
+                "promote_hit_rate": 1.0,
+                "promote_success": 336,
+                "read_amplification": 0.54455,
+                "total_cost": 435933,
+                "trace_time_us": 384209,
+                "valid_bytes": 4443173192
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.11663197120651603,
+              "valid": true,
+              "output_sha256": "cbf317626f6f3ddd5459fb123b2d90e481c494186f0bb51d7102d6db636aa2c4",
+              "metrics": {
+                "cache_hits": 1226,
+                "cpu_cost": 47891,
+                "effective_bandwidth_mb_s": 11028.737371,
+                "evictions": 211,
+                "latency_p50_us": 1700,
+                "latency_p95_us": 27455,
+                "latency_p99_us": 41548,
+                "npu_cost": 3833,
+                "physical_ssd_bytes": 2419528192,
+                "promote_count": 336,
+                "promote_hit_rate": 1.0,
+                "promote_success": 336,
+                "read_amplification": 0.54455,
+                "total_cost": 435933,
+                "trace_time_us": 384209,
+                "valid_bytes": 4443173192
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "file": "sparse_revisits_9511.json",
+      "family": "sparse_revisits",
+      "input_sha256": "25c12352fcd8343cd3cd6bc623ab002c4697f4a021490ab951406a93baf40091",
+      "variants": {
+        "strategy": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.9248689310625196,
+              "valid": true,
+              "output_sha256": "a10f40ea464d3f91a256b30f59e24aef8174800cf8ab9db6402fcd2181def92e",
+              "metrics": {
+                "cache_hits": 104,
+                "cpu_cost": 14672,
+                "effective_bandwidth_mb_s": 20171.187253,
+                "evictions": 0,
+                "latency_p50_us": 1311,
+                "latency_p95_us": 67088,
+                "latency_p99_us": 102645,
+                "npu_cost": 2440,
+                "physical_ssd_bytes": 3647045632,
+                "promote_count": 24,
+                "promote_hit_rate": 1.0,
+                "promote_success": 24,
+                "read_amplification": 0.913758,
+                "total_cost": 205815,
+                "trace_time_us": 188703,
+                "valid_bytes": 3991261464
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.9545422201044858,
+              "valid": true,
+              "output_sha256": "a10f40ea464d3f91a256b30f59e24aef8174800cf8ab9db6402fcd2181def92e",
+              "metrics": {
+                "cache_hits": 104,
+                "cpu_cost": 14672,
+                "effective_bandwidth_mb_s": 20171.187253,
+                "evictions": 0,
+                "latency_p50_us": 1311,
+                "latency_p95_us": 67088,
+                "latency_p99_us": 102645,
+                "npu_cost": 2440,
+                "physical_ssd_bytes": 3647045632,
+                "promote_count": 24,
+                "promote_hit_rate": 1.0,
+                "promote_success": 24,
+                "read_amplification": 0.913758,
+                "total_cost": 205815,
+                "trace_time_us": 188703,
+                "valid_bytes": 3991261464
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.9223742671310902,
+              "valid": true,
+              "output_sha256": "a10f40ea464d3f91a256b30f59e24aef8174800cf8ab9db6402fcd2181def92e",
+              "metrics": {
+                "cache_hits": 104,
+                "cpu_cost": 14672,
+                "effective_bandwidth_mb_s": 20171.187253,
+                "evictions": 0,
+                "latency_p50_us": 1311,
+                "latency_p95_us": 67088,
+                "latency_p99_us": 102645,
+                "npu_cost": 2440,
+                "physical_ssd_bytes": 3647045632,
+                "promote_count": 24,
+                "promote_hit_rate": 1.0,
+                "promote_success": 24,
+                "read_amplification": 0.913758,
+                "total_cost": 205815,
+                "trace_time_us": 188703,
+                "valid_bytes": 3991261464
+              }
+            }
+          ]
+        },
+        "baseline": {
+          "valid": true,
+          "runs": [
+            {
+              "repetition": 1,
+              "seconds": 0.1590797482058406,
+              "valid": true,
+              "output_sha256": "b9bd7ecbd6a2329e3557fea95ecf12fea0c044c8a90d7db3aafcce9975997f1d",
+              "metrics": {
+                "cache_hits": 464,
+                "cpu_cost": 39488,
+                "effective_bandwidth_mb_s": 20137.252201,
+                "evictions": 0,
+                "latency_p50_us": 579,
+                "latency_p95_us": 53002,
+                "latency_p99_us": 82213,
+                "npu_cost": 3880,
+                "physical_ssd_bytes": 3560988672,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.892196,
+                "total_cost": 232389,
+                "trace_time_us": 189021,
+                "valid_bytes": 3991261464
+              }
+            },
+            {
+              "repetition": 2,
+              "seconds": 0.16274845995940268,
+              "valid": true,
+              "output_sha256": "b9bd7ecbd6a2329e3557fea95ecf12fea0c044c8a90d7db3aafcce9975997f1d",
+              "metrics": {
+                "cache_hits": 464,
+                "cpu_cost": 39488,
+                "effective_bandwidth_mb_s": 20137.252201,
+                "evictions": 0,
+                "latency_p50_us": 579,
+                "latency_p95_us": 53002,
+                "latency_p99_us": 82213,
+                "npu_cost": 3880,
+                "physical_ssd_bytes": 3560988672,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.892196,
+                "total_cost": 232389,
+                "trace_time_us": 189021,
+                "valid_bytes": 3991261464
+              }
+            },
+            {
+              "repetition": 3,
+              "seconds": 0.15998126985505223,
+              "valid": true,
+              "output_sha256": "b9bd7ecbd6a2329e3557fea95ecf12fea0c044c8a90d7db3aafcce9975997f1d",
+              "metrics": {
+                "cache_hits": 464,
+                "cpu_cost": 39488,
+                "effective_bandwidth_mb_s": 20137.252201,
+                "evictions": 0,
+                "latency_p50_us": 579,
+                "latency_p95_us": 53002,
+                "latency_p99_us": 82213,
+                "npu_cost": 3880,
+                "physical_ssd_bytes": 3560988672,
+                "promote_count": 144,
+                "promote_hit_rate": 1.0,
+                "promote_success": 144,
+                "read_amplification": 0.892196,
+                "total_cost": 232389,
+                "trace_time_us": 189021,
+                "valid_bytes": 3991261464
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "all": {
+      "cases": 24,
+      "valid_pairs": 24,
+      "wins": 23,
+      "ties": 0,
+      "losses": 1,
+      "geometric_ratio": 0.8558860225812343,
+      "worst_ratio": 1.1261281185406973
+    },
+    "barrier_bursts": {
+      "cases": 4,
+      "valid_pairs": 4,
+      "wins": 4,
+      "ties": 0,
+      "losses": 0,
+      "geometric_ratio": 0.8822158951648224,
+      "worst_ratio": 0.9007232762832821
+    },
+    "random_epochs": {
+      "cases": 4,
+      "valid_pairs": 4,
+      "wins": 4,
+      "ties": 0,
+      "losses": 0,
+      "geometric_ratio": 0.7662002289102277,
+      "worst_ratio": 0.8212515904372866
+    },
+    "renewal_hotspot": {
+      "cases": 4,
+      "valid_pairs": 4,
+      "wins": 4,
+      "ties": 0,
+      "losses": 0,
+      "geometric_ratio": 0.8173211609693043,
+      "worst_ratio": 0.8797309061446832
+    },
+    "size_heat": {
+      "cases": 4,
+      "valid_pairs": 4,
+      "wins": 4,
+      "ties": 0,
+      "losses": 0,
+      "geometric_ratio": 0.8875037198464927,
+      "worst_ratio": 0.9232711492372482
+    },
+    "sparse_revisits": {
+      "cases": 4,
+      "valid_pairs": 4,
+      "wins": 4,
+      "ties": 0,
+      "losses": 0,
+      "geometric_ratio": 0.8994923517417892,
+      "worst_ratio": 0.9250301500327676
+    },
+    "walking_hotspot": {
+      "cases": 4,
+      "valid_pairs": 4,
+      "wins": 3,
+      "ties": 0,
+      "losses": 1,
+      "geometric_ratio": 0.8912879768182673,
+      "worst_ratio": 1.1261281185406973
+    }
+  }
+}

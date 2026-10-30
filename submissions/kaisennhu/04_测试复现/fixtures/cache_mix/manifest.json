@@ -1,0 +1,218 @@
+[
+  {
+    "file": "size_rotation_9301.json",
+    "family": "size_rotation",
+    "seed": 9301,
+    "sha256": "8e0ccc2b959535684f6eea6a16a131d7fe867014f823310944bb939805779032",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "slot_pressure_9301.json",
+    "family": "slot_pressure",
+    "seed": 9301,
+    "sha256": "e7f94424bca284d8b2fd89892d475e718e547d0c116019d5a85d563cdcff2c73",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "alternating_bands_9301.json",
+    "family": "alternating_bands",
+    "seed": 9301,
+    "sha256": "e760eb16425ae8c6b55993068ada2ef554b0e9adb0241ac0cc50213b48a46b08",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_then_idle_9301.json",
+    "family": "burst_then_idle",
+    "seed": 9301,
+    "sha256": "a8efa0a5130369625c1721ed232b6fd6bde7fba1c5233c084cbaa777912fe9c7",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "cache_visibility_9301.json",
+    "family": "cache_visibility",
+    "seed": 9301,
+    "sha256": "de1d0f0d1b93583f6d9071af1630f0c9ff65e4ff3cfddd0975b5edb29b04899c",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_cold_switch_9301.json",
+    "family": "hot_cold_switch",
+    "seed": 9301,
+    "sha256": "71701863424f7f090be1a319369118a1e4e0925f8dda95c4aae2a4fb462bac24",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_rotation_9311.json",
+    "family": "size_rotation",
+    "seed": 9311,
+    "sha256": "e7441722c081975e3c6666c18204675fe28211f255d03c78e9f9a6242b9ec429",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "slot_pressure_9311.json",
+    "family": "slot_pressure",
+    "seed": 9311,
+    "sha256": "4c3793e5b69bfb873f73a38c09578f263d0a1f80a162a35b5c6a993dfe041a96",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "alternating_bands_9311.json",
+    "family": "alternating_bands",
+    "seed": 9311,
+    "sha256": "06cac6febd54ba30060097b967792b17e18d1839508aba062c5695768fdeaf0a",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_then_idle_9311.json",
+    "family": "burst_then_idle",
+    "seed": 9311,
+    "sha256": "e9f1bd7b18be5ab47f0632bd03d5853f78b289563cde169f317d3ecd45b9ad57",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "cache_visibility_9311.json",
+    "family": "cache_visibility",
+    "seed": 9311,
+    "sha256": "e918086d2546af79a31660582454e49b07898c23d0a16a3819e4616c643554cf",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_cold_switch_9311.json",
+    "family": "hot_cold_switch",
+    "seed": 9311,
+    "sha256": "516f38fb1832663b63c0429badc2686cab6531d9e9afbc1d13056f220ddbb5e6",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_rotation_9323.json",
+    "family": "size_rotation",
+    "seed": 9323,
+    "sha256": "6041e16becbc2f8fd6b9d91de417b982a9721645d84ba08313b423e0889e35e2",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "slot_pressure_9323.json",
+    "family": "slot_pressure",
+    "seed": 9323,
+    "sha256": "fedd6e5215cf0c1fa792ce34f436052b5939744d115f6948f8dbb2d3066a03e9",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "alternating_bands_9323.json",
+    "family": "alternating_bands",
+    "seed": 9323,
+    "sha256": "9a2a290c0679cbfb197a6b686a683f3560eb585dc81ec4b453d82a93a6185440",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_then_idle_9323.json",
+    "family": "burst_then_idle",
+    "seed": 9323,
+    "sha256": "0355d85c8e9081491691f77a6c7157f23dd27b30c330f13a070ffb431677421e",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "cache_visibility_9323.json",
+    "family": "cache_visibility",
+    "seed": 9323,
+    "sha256": "28806583b875f825f27d04faa182584bef78c3059372ea3e86b15208d83c5207",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_cold_switch_9323.json",
+    "family": "hot_cold_switch",
+    "seed": 9323,
+    "sha256": "9cef4198c835d26b7dc93ebea65fa5f647fb0fafbc0c31d2ec28b722c18bacd2",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_rotation_9337.json",
+    "family": "size_rotation",
+    "seed": 9337,
+    "sha256": "521092c8656fed445e660d4051b37ffb3b89814e44ccbad96afe01067b7c2060",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "slot_pressure_9337.json",
+    "family": "slot_pressure",
+    "seed": 9337,
+    "sha256": "e0ca7e110ccd9e477db106d4718d40d19bb63b6a3a101f9376c8cc2929ccd1f2",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "alternating_bands_9337.json",
+    "family": "alternating_bands",
+    "seed": 9337,
+    "sha256": "965a41fa46b6d0b2cc75a49f7dbf37b5f7ca4613db34eb7ca0d4e37ff0c01d6b",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_then_idle_9337.json",
+    "family": "burst_then_idle",
+    "seed": 9337,
+    "sha256": "24b1e60864aa424a9ce0e484cd3338f62d637136712e497a60096e87f86629e0",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "cache_visibility_9337.json",
+    "family": "cache_visibility",
+    "seed": 9337,
+    "sha256": "d7664c1e067970c29354825a0b799349f23481b7e6549f97b60b5dc1a9f75460",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_cold_switch_9337.json",
+    "family": "hot_cold_switch",
+    "seed": 9337,
+    "sha256": "701e2a6f9d70b13c88fd3abc965a591ea6026f98196d1d391b388a5fa4e6ad42",
+    "requests": 2560,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  }
+]

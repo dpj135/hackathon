@@ -1,0 +1,299 @@
+[
+  {
+    "file": "zipf_mixed_41029.json",
+    "family": "zipf_mixed",
+    "seed": 41029,
+    "sha256": "bab443ee76c8d282435f3561e8ea59c6be91aa2449eb3beb4ab4d32b14de57c2",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "zipf_phase_41029.json",
+    "family": "zipf_phase",
+    "seed": 41029,
+    "sha256": "f3b436c2533fa8af5ef0a527da8b458981ba8c880a260d546eec6ec0d67b9fd2",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_zipf_41029.json",
+    "family": "burst_zipf",
+    "seed": 41029,
+    "sha256": "181dece35ce8a2294a660688d07fd71b43f922dd8e1a4112298894ebf4f5445b",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "dense_staging_41029.json",
+    "family": "dense_staging",
+    "seed": 41029,
+    "sha256": "72ca182928b44df7296b1c45a2a99a09bd2e974bd0d49c032191e286c800c20e",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "two_hit_tail_41029.json",
+    "family": "two_hit_tail",
+    "seed": 41029,
+    "sha256": "0b0f2c5dc7aa7864d6dba43d34e9f957b55b10fff60d7bee15042de287f05c5a",
+    "requests": 128,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "persistent_hot_41029.json",
+    "family": "persistent_hot",
+    "seed": 41029,
+    "sha256": "56d4ce6f2e8be5d1d89738ecc6b7506176aa7ddc4bf0c4b0a3f698b81dab9ac8",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_scan_41029.json",
+    "family": "hot_scan",
+    "seed": 41029,
+    "sha256": "65093ef20c38e428795d1ca26c64c7c9506c0acb4135819881275f1ab697a821",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "ragged_ranges_41029.json",
+    "family": "ragged_ranges",
+    "seed": 41029,
+    "sha256": "4526b6d5b471e18f8f8458ca0b18c92e10976f62c1ab4a9726dabc500bfaf626",
+    "requests": 1536,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "zipf_mixed_41039.json",
+    "family": "zipf_mixed",
+    "seed": 41039,
+    "sha256": "d8ef09319688adfd6584ce15f5b393a2ff083a8d91cab005f7773429b4ef5280",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "zipf_phase_41039.json",
+    "family": "zipf_phase",
+    "seed": 41039,
+    "sha256": "c3b0174eb59e03fef13e47e8c76f11f7516845bce44f98f8f0ce0dab65519420",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_zipf_41039.json",
+    "family": "burst_zipf",
+    "seed": 41039,
+    "sha256": "633d64567fb6edd5be97c7dda31e1cac896fb83dad7ed1cbe8cfe98d55797a52",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "dense_staging_41039.json",
+    "family": "dense_staging",
+    "seed": 41039,
+    "sha256": "288413b4fa7ac61b4ca58ae54f4c640a405f9d7ebcb27aae9de1cbb49a0e08ac",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "two_hit_tail_41039.json",
+    "family": "two_hit_tail",
+    "seed": 41039,
+    "sha256": "d5febb85b54a0794367056af6a6692826bc7c9125cd315d92be5c79275885fda",
+    "requests": 512,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "persistent_hot_41039.json",
+    "family": "persistent_hot",
+    "seed": 41039,
+    "sha256": "8e8a9557a21bd1d63c8838aad9adf729945ca5108771a9a3945036d761b5aabe",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_scan_41039.json",
+    "family": "hot_scan",
+    "seed": 41039,
+    "sha256": "763259997f67ee7421365c4d813fe6808b241110bbd070ce2158ae98ae5207b9",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "ragged_ranges_41039.json",
+    "family": "ragged_ranges",
+    "seed": 41039,
+    "sha256": "9c78942c07530a4b04daced8d713044ac40fa3f48cb7ac0e000e6b8ed41c8ba0",
+    "requests": 6144,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "zipf_mixed_41047.json",
+    "family": "zipf_mixed",
+    "seed": 41047,
+    "sha256": "c8c1d68ea842fb3aed9e6ee28fe2c54566c2034abc1347ec812bbc43f9e36701",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "zipf_phase_41047.json",
+    "family": "zipf_phase",
+    "seed": 41047,
+    "sha256": "46f487f985d0596d1262ed1d20b7f3f945497cd69f02e0fb159c3de91f91240c",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "burst_zipf_41047.json",
+    "family": "burst_zipf",
+    "seed": 41047,
+    "sha256": "119c65e8df3b2acefa1b9d0dc9ba507a662a1bccb90f3a99c3f0dd9b805ea36c",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "dense_staging_41047.json",
+    "family": "dense_staging",
+    "seed": 41047,
+    "sha256": "ee6da6dda1a61acc1842f5607abd0c6726cd84a35de1fcf242a9a51bd43fc76f",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "two_hit_tail_41047.json",
+    "family": "two_hit_tail",
+    "seed": 41047,
+    "sha256": "da04bd1b75b3589a0025b8f62f8246d5d3ede0e05cf5ef43a787cc84f356932e",
+    "requests": 2048,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "persistent_hot_41047.json",
+    "family": "persistent_hot",
+    "seed": 41047,
+    "sha256": "75dcd9ee3ab058a63ceb43231e68bfbc6249e8a7facccd22536748f90dba2803",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "hot_scan_41047.json",
+    "family": "hot_scan",
+    "seed": 41047,
+    "sha256": "fff6446cbfc764581db669d0e9089ac15b8b55fd4f86d627301c9d9f2842c7d6",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "ragged_ranges_41047.json",
+    "family": "ragged_ranges",
+    "seed": 41047,
+    "sha256": "3dedd544e14175e0608fa616a14d1a1b1cf14f6c9e3534f23a4f77f5eeb50849",
+    "requests": 24576,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "length_1048576_batch_8.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "b73cb7daee64308f53994f8fe57ef29651fd369e367eba0665638b4bf03991d8",
+    "length": 1048576,
+    "batch_count": 8,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_1048576_batch_64.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "674748e607c6836378f5b6b2201f2ff37e5f63de15333ccea7409c2dbd20e6c5",
+    "length": 1048576,
+    "batch_count": 64,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_1048576_batch_256.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "68355daf116e7d0136eeb6008831d9390bffd157114521acb1e4c88fb39db883",
+    "length": 1048576,
+    "batch_count": 256,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_2097153_batch_8.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "91f9d5496d0d5bb5bf8f3df5df7008d34e805cb1400c7c46fd165d46056f9061",
+    "length": 2097153,
+    "batch_count": 8,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_2097153_batch_64.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "74ce821dc8643ab191830505f902a9056f9dbb32a3c7a842e40adbf7c279c679",
+    "length": 2097153,
+    "batch_count": 64,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_2097153_batch_256.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "3633103bd5a675b642185476e6cc9cb04f2ab74a38d3b0d19d55f50d2d3ad9db",
+    "length": 2097153,
+    "batch_count": 256,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_8388608_batch_8.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "ea8688748888a3ee243a5eccb6986c628745f0cdb202ada7a65eee72c63261c0",
+    "length": 8388608,
+    "batch_count": 8,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_8388608_batch_64.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "da8da521bef48c4ae62eece6bcb886effbb60774848f8d60b7c505e2cd9ef853",
+    "length": 8388608,
+    "batch_count": 64,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  },
+  {
+    "file": "length_8388608_batch_256.json",
+    "family": "in_range_unaligned_large",
+    "sha256": "f08d765fad201c6b14e2b88e73ab7d36681e868babdac7dd1e136500e0ed8273",
+    "length": 8388608,
+    "batch_count": 256,
+    "balanced_eight_cards": true,
+    "maximum_iov_bytes": 8388608
+  }
+]

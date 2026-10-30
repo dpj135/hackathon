@@ -1,0 +1,2 @@
+# Preserve the published SHA256 checksums on every checkout platform.
+submissions/kaisennhu/** -text
