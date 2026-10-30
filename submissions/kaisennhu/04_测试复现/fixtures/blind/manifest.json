@@ -1,0 +1,218 @@
+[
+  {
+    "file": "renewal_hotspot_9491.json",
+    "family": "renewal_hotspot",
+    "seed": 9491,
+    "sha256": "4bc42c6330c9b15b35aaeeabec0bee5945cc814e225c5630ef30d4ab9fb24983",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "walking_hotspot_9491.json",
+    "family": "walking_hotspot",
+    "seed": 9491,
+    "sha256": "f8f0d79c1d9f8867d45479e30dc1c5510d4eaf0101d42ddf792f3a05f16a01ea",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "random_epochs_9491.json",
+    "family": "random_epochs",
+    "seed": 9491,
+    "sha256": "35ce802fbbfbfb089f0acaa33f7dfad70d4be413fc0c13ad13550b47e556516e",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_heat_9491.json",
+    "family": "size_heat",
+    "seed": 9491,
+    "sha256": "d136a3dd055aa756d364cc24f1ec3c03b2dd2e1e518858fa702ebcd641db95ae",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "barrier_bursts_9491.json",
+    "family": "barrier_bursts",
+    "seed": 9491,
+    "sha256": "87b30c09954819772a5baea2888131071b55498c43ce64389160168759561cb3",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "sparse_revisits_9491.json",
+    "family": "sparse_revisits",
+    "seed": 9491,
+    "sha256": "e3fc029362cfbdbc38ee5baeda7b454b305ef17a7f6b06014bd168765bd29125",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "renewal_hotspot_9497.json",
+    "family": "renewal_hotspot",
+    "seed": 9497,
+    "sha256": "88bf537364df0544bf330484965300a0f0384c5a0b090493594f600123032385",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "walking_hotspot_9497.json",
+    "family": "walking_hotspot",
+    "seed": 9497,
+    "sha256": "9613c08c81a0eda12bccb05cc43de77d5e0ff6c21fe82dd39bf25c03fe436327",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "random_epochs_9497.json",
+    "family": "random_epochs",
+    "seed": 9497,
+    "sha256": "ac8931fd9fa3ea6dc2104e810584dc76ccab75766c9e664850b7d212b5d0a5cf",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_heat_9497.json",
+    "family": "size_heat",
+    "seed": 9497,
+    "sha256": "b429742b8968de92bf5db2468a3c1aa77f127b22f8c2a43ab286d5914b7fa635",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "barrier_bursts_9497.json",
+    "family": "barrier_bursts",
+    "seed": 9497,
+    "sha256": "649451ed6df7d3fd8e5628274169fcec69de7aaa73871d4740907a8ea7891563",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "sparse_revisits_9497.json",
+    "family": "sparse_revisits",
+    "seed": 9497,
+    "sha256": "011c244441252f0d76c69c8cb46aadaf0105ede424006650c7222ae95a1ad096",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "renewal_hotspot_9503.json",
+    "family": "renewal_hotspot",
+    "seed": 9503,
+    "sha256": "ce93749903f4dacd894dd1014d277b45c1a083c73ac1f78ca01d957eac955c67",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "walking_hotspot_9503.json",
+    "family": "walking_hotspot",
+    "seed": 9503,
+    "sha256": "5a89989c65ba53ec927c9e8ce493dfc5277781d07b1439e4d1c9daf3b3f72574",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "random_epochs_9503.json",
+    "family": "random_epochs",
+    "seed": 9503,
+    "sha256": "fbcb240b7e6024993016443aa7fbde2e2ddae10f67a931dc92476c551c913315",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_heat_9503.json",
+    "family": "size_heat",
+    "seed": 9503,
+    "sha256": "ce7a8dd0df60364acf5ff4cf81cce50d843df464ebf11875724c4b5410e8ef00",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "barrier_bursts_9503.json",
+    "family": "barrier_bursts",
+    "seed": 9503,
+    "sha256": "3c59a1cd43bb21b95ed603134f803f1d1e45da52d0d6ff99dd1d10d8a65eaa21",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "sparse_revisits_9503.json",
+    "family": "sparse_revisits",
+    "seed": 9503,
+    "sha256": "d0ba58fade963c994238249dddc946480f4b26743fee4339ba9c02eca0806b80",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "renewal_hotspot_9511.json",
+    "family": "renewal_hotspot",
+    "seed": 9511,
+    "sha256": "5ebbc2a1fd1e63613d50df0c9418fc405cd40b1305905086e338f8ee6523263b",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "walking_hotspot_9511.json",
+    "family": "walking_hotspot",
+    "seed": 9511,
+    "sha256": "273b6c6377d2c6cf10931adac1a63305a8488a39e213428adc4051f6297768db",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "random_epochs_9511.json",
+    "family": "random_epochs",
+    "seed": 9511,
+    "sha256": "004d0337833fe7a3d8419fc61dcc12ddfad01de9d6f84f408eb7acc683d0428f",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "size_heat_9511.json",
+    "family": "size_heat",
+    "seed": 9511,
+    "sha256": "884d90e2fd9ba3926d037e62af437fe0deb60b90ce161bd6133cb8afa430a8e1",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "barrier_bursts_9511.json",
+    "family": "barrier_bursts",
+    "seed": 9511,
+    "sha256": "b68f7909a385102000518e8547cb57d3d621674ebbdcb7e8dad98c0b498060a1",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  },
+  {
+    "file": "sparse_revisits_9511.json",
+    "family": "sparse_revisits",
+    "seed": 9511,
+    "sha256": "25c12352fcd8343cd3cd6bc623ab002c4697f4a021490ab951406a93baf40091",
+    "requests": 3072,
+    "balanced_eight_cards": true,
+    "independent_generator": true
+  }
+]

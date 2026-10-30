@@ -1,0 +1,29 @@
+{
+  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
+  "cases": [
+    {
+      "case": "small_mixed",
+      "valid": true,
+      "static_dynamic_outputs_equal": true,
+      "sha256": "5e962764d1245bbbe26804eee1209ccae6477cc7000f0879352debdda3efd977"
+    },
+    {
+      "case": "read_fallback_high",
+      "valid": true,
+      "static_dynamic_outputs_equal": true,
+      "sha256": "83750f8d62243c8a49c4021554004195546b7fe524ef0983386fe2c02725329d"
+    },
+    {
+      "case": "promote_hbm_mid",
+      "valid": true,
+      "static_dynamic_outputs_equal": true,
+      "sha256": "9e36f21928b07b4b2d14fbbe9115e3c87916da67ff20993282852bd473f9d403"
+    },
+    {
+      "case": "promote_high",
+      "valid": true,
+      "static_dynamic_outputs_equal": true,
+      "sha256": "77b2d339802fc4b9cf5dedbfc9f49192db8bdcae0806118375c62867ababe91b"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
+  "binary_sha256": "9a92f68626e5062a9761fb7b5da13459f5896ab3668d13ee83d22403fbd3c23d",
+  "upstream_sha": "6b1666eb908a4cb55a84dc20832d9e57ffc1e4c4",
+  "frozen_utc": "2026-10-29T18:43:51.916393+00:00",
+  "independent_families": [
+    "renewal_hotspot",
+    "walking_hotspot",
+    "random_epochs",
+    "size_heat",
+    "barrier_bursts",
+    "sparse_revisits"
+  ],
+  "selection": "Known-case legality and cost checked. Subsequent independent-family results are reported without retuning."
+}
