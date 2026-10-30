@@ -5,6 +5,7 @@
 | 入口 | 内容 |
 | --- | --- |
 | [官方选手包](public/) | engine、接口、公开数据与评分器 |
+| [655 条完整回归集](datasets/nds-regression-655/) | 官方与补充输入、分组来源、哈希核验及完整运行方法 |
 | [方案目录与运行入口](submissions/kaisennhu/) | 唯一策略、复现脚本与验证摘要 |
 | [零基础介绍](submissions/kaisennhu/00_快速入门/方案介绍.md) | 任务、术语、计费与整体流程 |
 | [算法设计](submissions/kaisennhu/02_算法方案/算法设计.md) | 调度规则、公式、设计依据与通用性边界 |

@@ -1,0 +1,149 @@
+{
+  "events": [
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 0,
+        "iocbs": [
+          {
+            "device_id": 7,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 98784247808,
+                "iov_id": 0,
+                "length": 1048576
+              }
+            ],
+            "length": 1048576,
+            "opcode": "READV",
+            "ssd_offset": 30065827840
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 98785300480,
+                "iov_id": 0,
+                "length": 65536
+              }
+            ],
+            "length": 65536,
+            "opcode": "READV",
+            "ssd_offset": 30066887680
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 3,
+            "iovs": [
+              {
+                "hbm_addr": 98785370112,
+                "iov_id": 0,
+                "length": 1048576
+              }
+            ],
+            "length": 1048576,
+            "opcode": "READV",
+            "ssd_offset": 30066955264
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 4,
+            "iovs": [
+              {
+                "hbm_addr": 90194313216,
+                "iov_id": 0,
+                "length": 32768
+              }
+            ],
+            "length": 32768,
+            "opcode": "READV",
+            "ssd_offset": 21475885568
+          }
+        ],
+        "submit_id": 1
+      },
+      "time_us": 0
+    }
+  ],
+  "generator_metadata": {
+    "actual_hbm_fragment_rate": 0.0,
+    "actual_logical_unaligned_rate": 0.0,
+    "actual_new_object_adjacent_rate": 0.0,
+    "actual_new_object_unaligned_rate": 0.0,
+    "actual_reuse_rate": 0.0,
+    "arrival_gap_us": 0,
+    "arrival_jitter_us": 0,
+    "average_iovs_per_iocb": 1.0,
+    "balance_cards": false,
+    "cards": 8,
+    "cycle_per_card": 0,
+    "hotset_size": 64,
+    "iocbs_per_submit_max": 4,
+    "iocbs_per_submit_min": 4,
+    "iovs_per_iocb_max": 1,
+    "iovs_per_iocb_min": 1,
+    "logical_bytes": 2195456,
+    "logical_iocb_count": 4,
+    "logical_iov_size_counts": {
+      "1048576": 2,
+      "32768": 1,
+      "65536": 1
+    },
+    "preset": "aligned",
+    "requested_adjacent_rate": 0.0,
+    "requested_hbm_fragment_rate": 0.0,
+    "requested_reuse_rate": 0.0,
+    "requested_unaligned_rate": 0.0,
+    "seed": 39002,
+    "size_profile": "mixed",
+    "sizes": [
+      32768,
+      65536,
+      1048576
+    ],
+    "submit_count": 1,
+    "total_iov_count": 4,
+    "unique_object_count": 4
+  },
+  "instance": {
+    "instance_id": "public-small_aligned__v3",
+    "resources": {
+      "nvme_bw": 21504,
+      "iocb_capacity": 1024,
+      "hbm_capacity": 256,
+      "ddr_capacity": 1024,
+      "cpu_copy_bw": 30720,
+      "h2d_bw": 20480,
+      "d2h_bw": 20480,
+      "d2d_bw": 1572864,
+      "hbm_copy_concurrency": 1024,
+      "h2d_copy_concurrency": 1024,
+      "d2h_copy_concurrency": 10,
+      "mooncake_capacity": 10248576
+    },
+    "runtime_limits": {
+      "max_cpus": 8,
+      "max_processes": 32,
+      "max_memory_mb": 16384,
+      "decision_timeout_ms": 60000
+    },
+    "fixed_parameters": {
+      "promote_ttl_us": 60000000,
+      "time_cost_per_us": 1,
+      "CPU_NDS_FIXED_COST": 1,
+      "CPU_NDS_PER_CMD_COST": 1,
+      "CPU_PROMOTE_FIXED_COST": 80,
+      "CPU_PROMOTE_PER_CMD_COST": 1,
+      "CPU_FALLBACK_FIXED_COST": 8,
+      "CPU_FALLBACK_PER_CMD_COST": 2,
+      "CPU_H2D_CALL_COST": 1,
+      "CPU_D2H_CALL_COST": 1,
+      "CPU_D2D_CALL_COST": 2,
+      "NPU_H2D_CALL_COST": 1,
+      "NPU_D2H_CALL_COST": 1,
+      "NPU_D2D_CALL_COST": 1
+    }
+  }
+}
