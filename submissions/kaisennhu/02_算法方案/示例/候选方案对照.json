@@ -1,7 +1,7 @@
 {
-  "source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
+  "source_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
   "sdk_commit": "dd321261c9d3002d548a8097fd29affc019034b8",
-  "purpose": "教学示例；不计入529条冻结验证矩阵；候选均经官方模拟器执行与校验",
+  "purpose": "教学候选；选中计划来自当前策略；所有输出经同版本官方回放；不混入公开评分",
   "cases": [
     {
       "input": "相邻对齐小读输入.json",

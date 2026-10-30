@@ -1,0 +1,242 @@
+[
+  {
+    "file": "arrival_ramp_311009.json",
+    "family": "arrival_ramp",
+    "seed": 311009,
+    "requests": 384,
+    "sha256": "88c904c88e256a5e351dca6de624a30a92d8ac9e9b888396fb0810148a0eda27",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "staggered_hotsets_311009.json",
+    "family": "staggered_hotsets",
+    "seed": 311009,
+    "requests": 384,
+    "sha256": "33b31cfe6a52ed8adb288b18f0938b0504b7491ebc6b731faf605595c91b8213",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "ttl_turnover_311009.json",
+    "family": "ttl_turnover",
+    "seed": 311009,
+    "requests": 384,
+    "sha256": "f863773725c88a2ff7098d78d12dd509186549b0f73e2cec0ec4f7c89860c968",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "asymmetric_reuse_311009.json",
+    "family": "asymmetric_reuse",
+    "seed": 311009,
+    "requests": 384,
+    "sha256": "0c58202643d99ea54c030634df95052f0dcdc470aa0ae36d02059e20545c0f40",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "arrival_ramp_311017.json",
+    "family": "arrival_ramp",
+    "seed": 311017,
+    "requests": 768,
+    "sha256": "22f1f61b1e3d43452d1cce9fe9211a6183dc4c2b1d2126b47903bce4a1ff70b9",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "staggered_hotsets_311017.json",
+    "family": "staggered_hotsets",
+    "seed": 311017,
+    "requests": 768,
+    "sha256": "3107a1135c02df0d4454323ab7b53106789243c9051739e67d46c35bc7ae4d95",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "ttl_turnover_311017.json",
+    "family": "ttl_turnover",
+    "seed": 311017,
+    "requests": 768,
+    "sha256": "e30f2ead6b6d8d15bb086bc97a389f4a9ad989349e229f03b17f2db308801be7",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "asymmetric_reuse_311017.json",
+    "family": "asymmetric_reuse",
+    "seed": 311017,
+    "requests": 768,
+    "sha256": "763469cf482494847b0a579edeaa2a69ca0e643eb7a1a46a21d3de4aed11b31a",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "arrival_ramp_311023.json",
+    "family": "arrival_ramp",
+    "seed": 311023,
+    "requests": 384,
+    "sha256": "627e718e6b37b1b7e29ee7c879f4aa24c682f4d7d3754f0caedfa05e693e7ee3",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "staggered_hotsets_311023.json",
+    "family": "staggered_hotsets",
+    "seed": 311023,
+    "requests": 384,
+    "sha256": "b109456df60449cdbf07c8875c1d383a941a8e13d09f4d110c888d0c31cbb7f3",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "ttl_turnover_311023.json",
+    "family": "ttl_turnover",
+    "seed": 311023,
+    "requests": 384,
+    "sha256": "ba803f62d9de01df2bb3af65de80e2a133e609596883e5dda0101b9340dfe4ca",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "asymmetric_reuse_311023.json",
+    "family": "asymmetric_reuse",
+    "seed": 311023,
+    "requests": 384,
+    "sha256": "9025d9c3d32a5fb0a7af557723077b1eddf129d9150718b5e44adda1e0c27a99",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "arrival_ramp_311041.json",
+    "family": "arrival_ramp",
+    "seed": 311041,
+    "requests": 1536,
+    "sha256": "f85b69a922626db6ab0f17d998ae427c849f498b5b15f9663cfe032467a130d2",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "staggered_hotsets_311041.json",
+    "family": "staggered_hotsets",
+    "seed": 311041,
+    "requests": 1536,
+    "sha256": "4175e133a62cfcca647a490c5526768434bfba494c468cd04f7ae33342411dcd",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "ttl_turnover_311041.json",
+    "family": "ttl_turnover",
+    "seed": 311041,
+    "requests": 1536,
+    "sha256": "969da044fb84e15f33f924301fd6b97eed3077fe65e002e86731f9be5c96d2e7",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "asymmetric_reuse_311041.json",
+    "family": "asymmetric_reuse",
+    "seed": 311041,
+    "requests": 1536,
+    "sha256": "fd122721802b62ef3edf010c0702458f714b820f3898639da4951fbaf0eff730",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "arrival_ramp_311047.json",
+    "family": "arrival_ramp",
+    "seed": 311047,
+    "requests": 768,
+    "sha256": "c340f43296c2a93a56cbf2eba9ecb647413e0d98b14c23a9c3dff9ad61b5916e",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "staggered_hotsets_311047.json",
+    "family": "staggered_hotsets",
+    "seed": 311047,
+    "requests": 768,
+    "sha256": "205df746915da4d1385a340171fdd969b289775620dfe53ba1d816eb7b4f3062",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "ttl_turnover_311047.json",
+    "family": "ttl_turnover",
+    "seed": 311047,
+    "requests": 768,
+    "sha256": "3eb2784f56ac43a435002e2899296fa64d956c7e96ab065ab7c7830372c3f2dc",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "asymmetric_reuse_311047.json",
+    "family": "asymmetric_reuse",
+    "seed": 311047,
+    "requests": 768,
+    "sha256": "f0c2ec0837692570b2a30223945ee23db41afa9a92e0093f8e3b3d1fd72fc990",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "arrival_ramp_311059.json",
+    "family": "arrival_ramp",
+    "seed": 311059,
+    "requests": 384,
+    "sha256": "777a6802a8a48f09071fa67ad1b931d9df584f71ec76299a71409293843d5a8b",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "staggered_hotsets_311059.json",
+    "family": "staggered_hotsets",
+    "seed": 311059,
+    "requests": 384,
+    "sha256": "29a949683d336ed6a9ae087bd86b4f82a11c4be48cce08a635fff1eb25ed928e",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "ttl_turnover_311059.json",
+    "family": "ttl_turnover",
+    "seed": 311059,
+    "requests": 384,
+    "sha256": "b02726d2f01c26a7b36b0df4a5aa09a43b315fab227bc0f7cbae371ef43a5b0d",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  },
+  {
+    "file": "asymmetric_reuse_311059.json",
+    "family": "asymmetric_reuse",
+    "seed": 311059,
+    "requests": 384,
+    "sha256": "3c75e91d168375031265e8eca9441dddea429c235fbff70d30a0570477f8fb3d",
+    "source_freeze_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "selection": "Generated after policy and engine freeze; not used for retuning",
+    "engine_freeze_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13"
+  }
+]

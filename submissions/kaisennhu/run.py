@@ -82,6 +82,7 @@ def main():
         run(['python3',test/'admission_checks.py','--code',code,'--output',out/'admission_checks.json'])
         run(['python3',test/'gate_tests.py','--output',out/'gate_checks.json'])
         run(['python3',test/'engine_checks.py','--code',code,'--output',out/'engine_checks.json'])
+        run(['python3',test/'planning_checks.py','--code',code,'--repeat',a.repeat,'--output',out/'planning'])
     if a.mode in ['score','compare','all']:
         run(['g++','-O2','-std=c++17','-I'+str(code/'include'),code/'src/json.cpp',code/'src/framework.cpp',code/'src/player_main.cpp',test/'greedy_policy.cpp','-o',code/'nds_greedy_metered'])
     if a.mode in ['score','all']:
@@ -98,7 +99,7 @@ def main():
     if a.mode=='demo':
         prepare.fixtures(code,['resources','admission'])
     if a.mode in ['extended','all']:
-        groups=[('additional',a.data.resolve())] if a.data else [('official',code/'data')]+[(n,test/'fixtures'/n) for n in ['resources','coverage','distribution','regression','robustness','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout']]
+        groups=[('additional',a.data.resolve())] if a.data else [('official',code/'data')]+[(n,test/'fixtures'/n) for n in ['resources','coverage','distribution','regression','robustness','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout','transfer_holdout']]
         for name,data in groups:
             print(f'正在验证 {name}，每个输入重复 {a.repeat} 次……',flush=True)
             run(['python3',test/'evaluate.py','--code',code,'--data',data,'--repeat',a.repeat,'--cpu',min(os.sched_getaffinity(0)),
@@ -106,7 +107,7 @@ def main():
             summary=json.loads((out/(name+'.json')).read_text())['summary']
             print(f"  {summary['valid']}/{summary['cases']} 合法，{summary['deterministic']} 条重复输出一致。",flush=True)
     if a.mode in ['compare','all']:
-        groups=[('additional',a.data.resolve())] if a.data else [(n,test/'fixtures'/n) for n in ['regression','robustness','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout']]
+        groups=[('additional',a.data.resolve())] if a.data else [(n,test/'fixtures'/n) for n in ['regression','robustness','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout','transfer_holdout']]
         for name,data in groups:
             print(f'正在比较提交策略与官方贪心：{name}',flush=True)
             run(['python3',test/'compare.py','--code',code,'--data',data,'--repeat',a.repeat,

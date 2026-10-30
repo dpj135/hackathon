@@ -1,5 +1,5 @@
 {
-  "source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
+  "source_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
   "upstream_sha": "dd321261c9d3002d548a8097fd29affc019034b8",
   "engine_files_sha256": {
     "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
@@ -7,7 +7,7 @@
     "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
   },
   "input_sha256": "127ffbdfc4b6701817e60377d323687d77ccd3c730921a712738f57b4fd1f6c7",
-  "purpose": "教学候选对照；不并入529条验证矩阵，不用于调参",
+  "purpose": "教学候选；选中计划来自当前策略；所有输出经同版本官方回放；不混入公开评分",
   "candidates": [
     {
       "label": "A聚合_B聚合",
