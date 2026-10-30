@@ -1,7 +1,7 @@
 {
   "passed": 74,
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
-  "binary_sha256": "9a92f68626e5062a9761fb7b5da13459f5896ab3668d13ee83d22403fbd3c23d",
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
+  "binary_sha256": "5e920469d0c24ae3cac16f23d691d5d83d5748e370139481f6f6240eaba34c2f",
   "tests": [
     {
       "name": "length_1_hbm_0",
@@ -1015,23 +1015,23 @@
       "name": "cache_size_1048575",
       "passed": true,
       "input_sha256": "fb41b354308bdd2d9f1f29eb77e24ec3f5fb119622ad28cb8f6295bed935f302",
-      "output_sha256": "9c1f6709bda77876550238f6243429dc2df711cbdcc835723337a0221939c334",
+      "output_sha256": "5a5fe330bc3caeea2075331aa98dd5a7e57d24d900aa234529875d50bdc16d6a",
       "metrics": {
         "cache_hits": 3,
-        "cpu_cost": 734,
-        "effective_bandwidth_mb_s": 4490.341474,
-        "evictions": 3,
+        "cpu_cost": 491,
+        "effective_bandwidth_mb_s": 4538.230299,
+        "evictions": 0,
         "latency_p50_us": 814,
         "latency_p95_us": 872,
         "latency_p99_us": 872,
         "npu_cost": 40,
-        "physical_ssd_bytes": 42991616,
-        "promote_count": 4,
+        "physical_ssd_bytes": 39845888,
+        "promote_count": 1,
         "promote_hit_rate": 1.0,
-        "promote_success": 4,
-        "read_amplification": 1.025001,
-        "total_cost": 9682,
-        "trace_time_us": 8908,
+        "promote_success": 1,
+        "read_amplification": 0.950001,
+        "total_cost": 9345,
+        "trace_time_us": 8814,
         "valid_bytes": 41943000
       }
     },

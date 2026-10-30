@@ -1,0 +1,95 @@
+{
+  "instance": {
+    "fixed_parameters": {
+      "CPU_D2D_CALL_COST": 2,
+      "CPU_D2H_CALL_COST": 1,
+      "CPU_FALLBACK_FIXED_COST": 8,
+      "CPU_FALLBACK_PER_CMD_COST": 2,
+      "CPU_H2D_CALL_COST": 1,
+      "CPU_NDS_FIXED_COST": 1,
+      "CPU_NDS_PER_CMD_COST": 1,
+      "CPU_PROMOTE_FIXED_COST": 80,
+      "CPU_PROMOTE_PER_CMD_COST": 1,
+      "NPU_D2D_CALL_COST": 1,
+      "NPU_D2H_CALL_COST": 1,
+      "NPU_H2D_CALL_COST": 1,
+      "promote_ttl_us": 60000000,
+      "time_cost_per_us": 1
+    },
+    "instance_id": "three-reads-explained",
+    "resources": {
+      "cpu_copy_bw": 30720,
+      "d2d_bw": 1572864,
+      "d2h_bw": 20480,
+      "d2h_copy_concurrency": 1,
+      "ddr_capacity": 1024,
+      "h2d_bw": 20480,
+      "h2d_copy_concurrency": 1024,
+      "hbm_capacity": 256,
+      "hbm_copy_concurrency": 1024,
+      "iocb_capacity": 1024,
+      "kvcache_pool_capacity": 10248576,
+      "nvme_bw": 21504
+    },
+    "runtime_limits": {
+      "decision_timeout_ms": 60000,
+      "max_cpus": 8,
+      "max_memory_mb": 16384,
+      "max_processes": 32
+    }
+  },
+  "events": [
+    {
+      "event": "IO_SUBMIT",
+      "time_us": 0,
+      "submit": {
+        "submit_id": 1,
+        "arrival_us": 0,
+        "iocbs": [
+          {
+            "iocb_id": 1,
+            "opcode": "READV",
+            "device_id": 0,
+            "ssd_offset": 0,
+            "length": 4096,
+            "iovs": [
+              {
+                "iov_id": 0,
+                "hbm_addr": 68719476737,
+                "length": 4096
+              }
+            ]
+          },
+          {
+            "iocb_id": 2,
+            "opcode": "READV",
+            "device_id": 0,
+            "ssd_offset": 4096,
+            "length": 4096,
+            "iovs": [
+              {
+                "iov_id": 0,
+                "hbm_addr": 68719484929,
+                "length": 4096
+              }
+            ]
+          },
+          {
+            "iocb_id": 3,
+            "opcode": "READV",
+            "device_id": 0,
+            "ssd_offset": 8192,
+            "length": 4096,
+            "iovs": [
+              {
+                "iov_id": 0,
+                "hbm_addr": 68719493121,
+                "length": 4096
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -60,7 +60,7 @@ def render(title,files,dest):
         doc.add_heading(title,0)
         doc.add_paragraph('观察窗口调度与复用感知缓存',style='Subtitle')
         doc.add_paragraph('请求到达时，联合决定分块、合并与传输路径；请求完成后，再根据复用证据和预算决定是否建立缓存。有限观察窗口用于比较可见批次之间的资源竞争。')
-        doc.add_paragraph('阅读顺序：设计依据与baseline对照 → 整体算法与完整例子 → 通用性和边界 → 验证证据 → 运行复现 → 官方依据。实现预算、复杂度和代码定位放在算法附录。')
+        doc.add_paragraph('阅读顺序：整体流程 → 分组、选路和缓存的具体规则 → 可复算例子 → 设计依据与baseline对照 → 通用性和验证 → 运行复现。实现预算、复杂度和代码定位放在算法附录。')
         doc.add_paragraph('团队 / 作者：________________')
         content.append('<h1>'+html.escape(title)+'</h1><p>观察窗口调度与复用感知缓存</p>')
     for index,file in enumerate(files):
@@ -105,6 +105,6 @@ def render(title,files,dest):
     path.with_suffix('.html').write_text(page,encoding='utf-8');print(path)
 
 render('从零认识我们的 NDS 调度方案',['00_快速入门/方案介绍.md'],'00_快速入门/方案介绍')
-render('NDS 解题方案与验证报告',['02_算法方案/设计依据与优化评述.md','02_算法方案/算法设计.md','02_算法方案/通用性与边界条件.md','05_验证结果/验证报告.md','04_测试复现/测试操作手册.md','01_题目与依据/材料来源.md'],'02_算法方案/解题方案与验证报告')
+render('NDS 解题方案与验证报告',['02_算法方案/算法设计.md','02_算法方案/设计依据与优化评述.md','02_算法方案/通用性与边界条件.md','05_验证结果/验证报告.md','04_测试复现/测试操作手册.md','01_题目与依据/材料来源.md'],'02_算法方案/解题方案与验证报告')
 
 render('验证报告',['05_验证结果/验证报告.md'],'05_验证结果/验证报告')

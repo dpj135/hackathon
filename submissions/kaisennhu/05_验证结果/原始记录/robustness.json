@@ -1,25 +1,25 @@
 {
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
-  "binary_sha256": "9a92f68626e5062a9761fb7b5da13459f5896ab3668d13ee83d22403fbd3c23d",
-  "baseline_binary_sha256": "945638f5839f8a9855bdd90e3ae6c823493b980d8781ba1934669d9270ac9e75",
-  "baseline_record_verified": true,
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
+  "binary_sha256": "5e920469d0c24ae3cac16f23d691d5d83d5748e370139481f6f6240eaba34c2f",
   "repeat": 3,
   "cpu_affinity": [
-    233
+    120
   ],
   "cases": [
     {
       "file": "zipf_mixed_41029.json",
       "family": "zipf_mixed",
       "input_sha256": "bab443ee76c8d282435f3561e8ea59c6be91aa2449eb3beb4ab4d32b14de57c2",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.9832047920208424,
               "valid": true,
-              "seconds": 0.9871474159881473,
               "output_sha256": "58ae5d17f413171470e6306403051dd77344b36ea4604cdb7e6cafb87ea83acc",
               "metrics": {
                 "cache_hits": 0,
@@ -42,8 +42,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.9791293449234217,
               "valid": true,
-              "seconds": 0.9949759738519788,
               "output_sha256": "58ae5d17f413171470e6306403051dd77344b36ea4604cdb7e6cafb87ea83acc",
               "metrics": {
                 "cache_hits": 0,
@@ -66,8 +66,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 1.004412637790665,
               "valid": true,
-              "seconds": 1.0018293478060514,
               "output_sha256": "58ae5d17f413171470e6306403051dd77344b36ea4604cdb7e6cafb87ea83acc",
               "metrics": {
                 "cache_hits": 0,
@@ -173,14 +173,16 @@
       "file": "zipf_phase_41029.json",
       "family": "zipf_phase",
       "input_sha256": "f3b436c2533fa8af5ef0a527da8b458981ba8c880a260d546eec6ec0d67b9fd2",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.9888470999430865,
               "valid": true,
-              "seconds": 1.004664536099881,
               "output_sha256": "85bd1a1ee47d92a573e5a92ce7ca4ab9cf0d9d7f2880cf832626fec6bffed883",
               "metrics": {
                 "cache_hits": 0,
@@ -203,8 +205,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.9842358829919249,
               "valid": true,
-              "seconds": 0.98322594887577,
               "output_sha256": "85bd1a1ee47d92a573e5a92ce7ca4ab9cf0d9d7f2880cf832626fec6bffed883",
               "metrics": {
                 "cache_hits": 0,
@@ -227,8 +229,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.9834077479317784,
               "valid": true,
-              "seconds": 0.9869150209706277,
               "output_sha256": "85bd1a1ee47d92a573e5a92ce7ca4ab9cf0d9d7f2880cf832626fec6bffed883",
               "metrics": {
                 "cache_hits": 0,
@@ -334,79 +336,81 @@
       "file": "burst_zipf_41029.json",
       "family": "burst_zipf",
       "input_sha256": "181dece35ce8a2294a660688d07fd71b43f922dd8e1a4112298894ebf4f5445b",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.4115486331284046,
               "valid": true,
-              "seconds": 0.39789730100892484,
-              "output_sha256": "ffa24546865a48888a8a8e16896329906d5e1085719dc108a5f9ca369b59d425",
+              "output_sha256": "51cb7c7dbc5895c19da5eff460b0ca58a5002caaeb4a5ce9a35127717cc4e4f0",
               "metrics": {
-                "cache_hits": 88,
-                "cpu_cost": 6992,
-                "effective_bandwidth_mb_s": 2046.073462,
+                "cache_hits": 0,
+                "cpu_cost": 3840,
+                "effective_bandwidth_mb_s": 2021.350069,
                 "evictions": 0,
-                "latency_p50_us": 628,
+                "latency_p50_us": 656,
                 "latency_p95_us": 4103,
                 "latency_p99_us": 4520,
-                "npu_cost": 616,
-                "physical_ssd_bytes": 230285312,
-                "promote_count": 40,
-                "promote_hit_rate": 1.0,
-                "promote_success": 40,
-                "read_amplification": 0.705828,
-                "total_cost": 159679,
-                "trace_time_us": 152071,
+                "npu_cost": 488,
+                "physical_ssd_bytes": 322560000,
+                "promote_count": 0,
+                "promote_hit_rate": 0.0,
+                "promote_success": 0,
+                "read_amplification": 0.988651,
+                "total_cost": 158259,
+                "trace_time_us": 153931,
                 "valid_bytes": 326262784
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 0.41495288093574345,
               "valid": true,
-              "seconds": 0.39698565704748034,
-              "output_sha256": "ffa24546865a48888a8a8e16896329906d5e1085719dc108a5f9ca369b59d425",
+              "output_sha256": "51cb7c7dbc5895c19da5eff460b0ca58a5002caaeb4a5ce9a35127717cc4e4f0",
               "metrics": {
-                "cache_hits": 88,
-                "cpu_cost": 6992,
-                "effective_bandwidth_mb_s": 2046.073462,
+                "cache_hits": 0,
+                "cpu_cost": 3840,
+                "effective_bandwidth_mb_s": 2021.350069,
                 "evictions": 0,
-                "latency_p50_us": 628,
+                "latency_p50_us": 656,
                 "latency_p95_us": 4103,
                 "latency_p99_us": 4520,
-                "npu_cost": 616,
-                "physical_ssd_bytes": 230285312,
-                "promote_count": 40,
-                "promote_hit_rate": 1.0,
-                "promote_success": 40,
-                "read_amplification": 0.705828,
-                "total_cost": 159679,
-                "trace_time_us": 152071,
+                "npu_cost": 488,
+                "physical_ssd_bytes": 322560000,
+                "promote_count": 0,
+                "promote_hit_rate": 0.0,
+                "promote_success": 0,
+                "read_amplification": 0.988651,
+                "total_cost": 158259,
+                "trace_time_us": 153931,
                 "valid_bytes": 326262784
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 0.4087669630534947,
               "valid": true,
-              "seconds": 0.39808215806260705,
-              "output_sha256": "ffa24546865a48888a8a8e16896329906d5e1085719dc108a5f9ca369b59d425",
+              "output_sha256": "51cb7c7dbc5895c19da5eff460b0ca58a5002caaeb4a5ce9a35127717cc4e4f0",
               "metrics": {
-                "cache_hits": 88,
-                "cpu_cost": 6992,
-                "effective_bandwidth_mb_s": 2046.073462,
+                "cache_hits": 0,
+                "cpu_cost": 3840,
+                "effective_bandwidth_mb_s": 2021.350069,
                 "evictions": 0,
-                "latency_p50_us": 628,
+                "latency_p50_us": 656,
                 "latency_p95_us": 4103,
                 "latency_p99_us": 4520,
-                "npu_cost": 616,
-                "physical_ssd_bytes": 230285312,
-                "promote_count": 40,
-                "promote_hit_rate": 1.0,
-                "promote_success": 40,
-                "read_amplification": 0.705828,
-                "total_cost": 159679,
-                "trace_time_us": 152071,
+                "npu_cost": 488,
+                "physical_ssd_bytes": 322560000,
+                "promote_count": 0,
+                "promote_hit_rate": 0.0,
+                "promote_success": 0,
+                "read_amplification": 0.988651,
+                "total_cost": 158259,
+                "trace_time_us": 153931,
                 "valid_bytes": 326262784
               }
             }
@@ -495,14 +499,16 @@
       "file": "dense_staging_41029.json",
       "family": "dense_staging",
       "input_sha256": "72ca182928b44df7296b1c45a2a99a09bd2e974bd0d49c032191e286c800c20e",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.03195538301952183,
               "valid": true,
-              "seconds": 0.032006096094846725,
               "output_sha256": "3488091d7f4c3c6202d5381ea50896748927492f5246ad224299765d1eff6b64",
               "metrics": {
                 "cache_hits": 0,
@@ -525,8 +531,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.031462201150134206,
               "valid": true,
-              "seconds": 0.031010433100163937,
               "output_sha256": "3488091d7f4c3c6202d5381ea50896748927492f5246ad224299765d1eff6b64",
               "metrics": {
                 "cache_hits": 0,
@@ -549,8 +555,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.030988201033324003,
               "valid": true,
-              "seconds": 0.03137171594426036,
               "output_sha256": "3488091d7f4c3c6202d5381ea50896748927492f5246ad224299765d1eff6b64",
               "metrics": {
                 "cache_hits": 0,
@@ -656,14 +662,16 @@
       "file": "two_hit_tail_41029.json",
       "family": "two_hit_tail",
       "input_sha256": "0b0f2c5dc7aa7864d6dba43d34e9f957b55b10fff60d7bee15042de287f05c5a",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.005697757005691528,
               "valid": true,
-              "seconds": 0.006013229954987764,
               "output_sha256": "c948cbbe4bca581460c3e7eec24a7730c6e79ab7e8c5397907a3d7e59513bd91",
               "metrics": {
                 "cache_hits": 0,
@@ -686,8 +694,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.005320453085005283,
               "valid": true,
-              "seconds": 0.005622596945613623,
               "output_sha256": "c948cbbe4bca581460c3e7eec24a7730c6e79ab7e8c5397907a3d7e59513bd91",
               "metrics": {
                 "cache_hits": 0,
@@ -710,8 +718,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.005299494136124849,
               "valid": true,
-              "seconds": 0.005546638974919915,
               "output_sha256": "c948cbbe4bca581460c3e7eec24a7730c6e79ab7e8c5397907a3d7e59513bd91",
               "metrics": {
                 "cache_hits": 0,
@@ -817,14 +825,16 @@
       "file": "persistent_hot_41029.json",
       "family": "persistent_hot",
       "input_sha256": "56d4ce6f2e8be5d1d89738ecc6b7506176aa7ddc4bf0c4b0a3f698b81dab9ac8",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.040356829995289445,
               "valid": true,
-              "seconds": 0.04020434385165572,
               "output_sha256": "2b7285153b68eacf691aaa7d4ce337de7727e7059e74ac1cbf4028422ca1af7a",
               "metrics": {
                 "cache_hits": 0,
@@ -847,8 +857,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.041333192959427834,
               "valid": true,
-              "seconds": 0.04334671702235937,
               "output_sha256": "2b7285153b68eacf691aaa7d4ce337de7727e7059e74ac1cbf4028422ca1af7a",
               "metrics": {
                 "cache_hits": 0,
@@ -871,8 +881,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.04109871806576848,
               "valid": true,
-              "seconds": 0.041380563052371144,
               "output_sha256": "2b7285153b68eacf691aaa7d4ce337de7727e7059e74ac1cbf4028422ca1af7a",
               "metrics": {
                 "cache_hits": 0,
@@ -978,14 +988,16 @@
       "file": "hot_scan_41029.json",
       "family": "hot_scan",
       "input_sha256": "65093ef20c38e428795d1ca26c64c7c9506c0acb4135819881275f1ab697a821",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.9876234410330653,
               "valid": true,
-              "seconds": 0.9917304229456931,
               "output_sha256": "fdb22c70f1db6075a4ca65fe66c5cc6b838d7a862cd5a2bb622777f4de8f7232",
               "metrics": {
                 "cache_hits": 0,
@@ -1008,8 +1020,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.9898867509327829,
               "valid": true,
-              "seconds": 0.9979423200711608,
               "output_sha256": "fdb22c70f1db6075a4ca65fe66c5cc6b838d7a862cd5a2bb622777f4de8f7232",
               "metrics": {
                 "cache_hits": 0,
@@ -1032,8 +1044,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.9916467689909041,
               "valid": true,
-              "seconds": 1.0043555430602282,
               "output_sha256": "fdb22c70f1db6075a4ca65fe66c5cc6b838d7a862cd5a2bb622777f4de8f7232",
               "metrics": {
                 "cache_hits": 0,
@@ -1139,14 +1151,16 @@
       "file": "ragged_ranges_41029.json",
       "family": "ragged_ranges",
       "input_sha256": "4526b6d5b471e18f8f8458ca0b18c92e10976f62c1ab4a9726dabc500bfaf626",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.17651081993244588,
               "valid": true,
-              "seconds": 0.17543624504469335,
               "output_sha256": "5eafb074e1778a1ade096ec3cdceca1ed66e94e38593ae334f9fb4a5d83066d6",
               "metrics": {
                 "cache_hits": 0,
@@ -1169,8 +1183,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.17340319696813822,
               "valid": true,
-              "seconds": 0.1727722529321909,
               "output_sha256": "5eafb074e1778a1ade096ec3cdceca1ed66e94e38593ae334f9fb4a5d83066d6",
               "metrics": {
                 "cache_hits": 0,
@@ -1193,8 +1207,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.17333313799463212,
               "valid": true,
-              "seconds": 0.1762187611311674,
               "output_sha256": "5eafb074e1778a1ade096ec3cdceca1ed66e94e38593ae334f9fb4a5d83066d6",
               "metrics": {
                 "cache_hits": 0,
@@ -1300,79 +1314,81 @@
       "file": "zipf_mixed_41039.json",
       "family": "zipf_mixed",
       "input_sha256": "d8ef09319688adfd6584ce15f5b393a2ff083a8d91cab005f7773429b4ef5280",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.3658224290702492,
               "valid": true,
-              "seconds": 0.3632194350939244,
-              "output_sha256": "918ac9f6a0e02005c2367bc69601bfc9c9a337380e42aa00b5c6825eca8abb5b",
+              "output_sha256": "26ac2579fb7a05fd1a94b05b681ed305f7ce3a12b173d42661fd9a3bda4f11f3",
               "metrics": {
-                "cache_hits": 910,
-                "cpu_cost": 16583,
-                "effective_bandwidth_mb_s": 29805.013103,
+                "cache_hits": 792,
+                "cpu_cost": 14919,
+                "effective_bandwidth_mb_s": 28495.748962,
                 "evictions": 0,
-                "latency_p50_us": 214,
-                "latency_p95_us": 490,
-                "latency_p99_us": 1969,
-                "npu_cost": 2082,
-                "physical_ssd_bytes": 270684160,
-                "promote_count": 85,
+                "latency_p50_us": 218,
+                "latency_p95_us": 894,
+                "latency_p99_us": 2016,
+                "npu_cost": 1942,
+                "physical_ssd_bytes": 394416128,
+                "promote_count": 63,
                 "promote_hit_rate": 1.0,
-                "promote_success": 85,
-                "read_amplification": 0.21877,
-                "total_cost": 58255,
-                "trace_time_us": 39590,
+                "promote_success": 63,
+                "read_amplification": 0.318772,
+                "total_cost": 58270,
+                "trace_time_us": 41409,
                 "valid_bytes": 1237299200
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 0.3599181859754026,
               "valid": true,
-              "seconds": 0.36465960810892284,
-              "output_sha256": "918ac9f6a0e02005c2367bc69601bfc9c9a337380e42aa00b5c6825eca8abb5b",
+              "output_sha256": "26ac2579fb7a05fd1a94b05b681ed305f7ce3a12b173d42661fd9a3bda4f11f3",
               "metrics": {
-                "cache_hits": 910,
-                "cpu_cost": 16583,
-                "effective_bandwidth_mb_s": 29805.013103,
+                "cache_hits": 792,
+                "cpu_cost": 14919,
+                "effective_bandwidth_mb_s": 28495.748962,
                 "evictions": 0,
-                "latency_p50_us": 214,
-                "latency_p95_us": 490,
-                "latency_p99_us": 1969,
-                "npu_cost": 2082,
-                "physical_ssd_bytes": 270684160,
-                "promote_count": 85,
+                "latency_p50_us": 218,
+                "latency_p95_us": 894,
+                "latency_p99_us": 2016,
+                "npu_cost": 1942,
+                "physical_ssd_bytes": 394416128,
+                "promote_count": 63,
                 "promote_hit_rate": 1.0,
-                "promote_success": 85,
-                "read_amplification": 0.21877,
-                "total_cost": 58255,
-                "trace_time_us": 39590,
+                "promote_success": 63,
+                "read_amplification": 0.318772,
+                "total_cost": 58270,
+                "trace_time_us": 41409,
                 "valid_bytes": 1237299200
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 0.3594493540003896,
               "valid": true,
-              "seconds": 0.36177893192507327,
-              "output_sha256": "918ac9f6a0e02005c2367bc69601bfc9c9a337380e42aa00b5c6825eca8abb5b",
+              "output_sha256": "26ac2579fb7a05fd1a94b05b681ed305f7ce3a12b173d42661fd9a3bda4f11f3",
               "metrics": {
-                "cache_hits": 910,
-                "cpu_cost": 16583,
-                "effective_bandwidth_mb_s": 29805.013103,
+                "cache_hits": 792,
+                "cpu_cost": 14919,
+                "effective_bandwidth_mb_s": 28495.748962,
                 "evictions": 0,
-                "latency_p50_us": 214,
-                "latency_p95_us": 490,
-                "latency_p99_us": 1969,
-                "npu_cost": 2082,
-                "physical_ssd_bytes": 270684160,
-                "promote_count": 85,
+                "latency_p50_us": 218,
+                "latency_p95_us": 894,
+                "latency_p99_us": 2016,
+                "npu_cost": 1942,
+                "physical_ssd_bytes": 394416128,
+                "promote_count": 63,
                 "promote_hit_rate": 1.0,
-                "promote_success": 85,
-                "read_amplification": 0.21877,
-                "total_cost": 58255,
-                "trace_time_us": 39590,
+                "promote_success": 63,
+                "read_amplification": 0.318772,
+                "total_cost": 58270,
+                "trace_time_us": 41409,
                 "valid_bytes": 1237299200
               }
             }
@@ -1461,79 +1477,81 @@
       "file": "zipf_phase_41039.json",
       "family": "zipf_phase",
       "input_sha256": "c3b0174eb59e03fef13e47e8c76f11f7516845bce44f98f8f0ce0dab65519420",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.6888685110025108,
               "valid": true,
-              "seconds": 0.6649450431577861,
-              "output_sha256": "43f7a80bdbf868f64245ef993df28a28e92f797137356a94e70659e03c597e41",
+              "output_sha256": "fee21b97b27f560c20e4345d8573e7d9f66a7f8d0021479a8259f7ba271830f2",
               "metrics": {
-                "cache_hits": 247,
-                "cpu_cost": 23648,
-                "effective_bandwidth_mb_s": 28766.680532,
-                "evictions": 63,
+                "cache_hits": 226,
+                "cpu_cost": 22049,
+                "effective_bandwidth_mb_s": 28317.945445,
+                "evictions": 43,
                 "latency_p50_us": 231,
-                "latency_p95_us": 2353,
+                "latency_p95_us": 2373,
                 "latency_p99_us": 3116,
-                "npu_cost": 1686,
-                "physical_ssd_bytes": 671248384,
-                "promote_count": 127,
+                "npu_cost": 1645,
+                "physical_ssd_bytes": 693268480,
+                "promote_count": 107,
                 "promote_hit_rate": 1.0,
-                "promote_success": 127,
-                "read_amplification": 0.542511,
-                "total_cost": 66353,
-                "trace_time_us": 41019,
+                "promote_success": 107,
+                "read_amplification": 0.560308,
+                "total_cost": 65363,
+                "trace_time_us": 41669,
                 "valid_bytes": 1237299200
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 0.6891219671815634,
               "valid": true,
-              "seconds": 0.6687479550018907,
-              "output_sha256": "43f7a80bdbf868f64245ef993df28a28e92f797137356a94e70659e03c597e41",
+              "output_sha256": "fee21b97b27f560c20e4345d8573e7d9f66a7f8d0021479a8259f7ba271830f2",
               "metrics": {
-                "cache_hits": 247,
-                "cpu_cost": 23648,
-                "effective_bandwidth_mb_s": 28766.680532,
-                "evictions": 63,
+                "cache_hits": 226,
+                "cpu_cost": 22049,
+                "effective_bandwidth_mb_s": 28317.945445,
+                "evictions": 43,
                 "latency_p50_us": 231,
-                "latency_p95_us": 2353,
+                "latency_p95_us": 2373,
                 "latency_p99_us": 3116,
-                "npu_cost": 1686,
-                "physical_ssd_bytes": 671248384,
-                "promote_count": 127,
+                "npu_cost": 1645,
+                "physical_ssd_bytes": 693268480,
+                "promote_count": 107,
                 "promote_hit_rate": 1.0,
-                "promote_success": 127,
-                "read_amplification": 0.542511,
-                "total_cost": 66353,
-                "trace_time_us": 41019,
+                "promote_success": 107,
+                "read_amplification": 0.560308,
+                "total_cost": 65363,
+                "trace_time_us": 41669,
                 "valid_bytes": 1237299200
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 0.6866202920209616,
               "valid": true,
-              "seconds": 0.6633739131502807,
-              "output_sha256": "43f7a80bdbf868f64245ef993df28a28e92f797137356a94e70659e03c597e41",
+              "output_sha256": "fee21b97b27f560c20e4345d8573e7d9f66a7f8d0021479a8259f7ba271830f2",
               "metrics": {
-                "cache_hits": 247,
-                "cpu_cost": 23648,
-                "effective_bandwidth_mb_s": 28766.680532,
-                "evictions": 63,
+                "cache_hits": 226,
+                "cpu_cost": 22049,
+                "effective_bandwidth_mb_s": 28317.945445,
+                "evictions": 43,
                 "latency_p50_us": 231,
-                "latency_p95_us": 2353,
+                "latency_p95_us": 2373,
                 "latency_p99_us": 3116,
-                "npu_cost": 1686,
-                "physical_ssd_bytes": 671248384,
-                "promote_count": 127,
+                "npu_cost": 1645,
+                "physical_ssd_bytes": 693268480,
+                "promote_count": 107,
                 "promote_hit_rate": 1.0,
-                "promote_success": 127,
-                "read_amplification": 0.542511,
-                "total_cost": 66353,
-                "trace_time_us": 41019,
+                "promote_success": 107,
+                "read_amplification": 0.560308,
+                "total_cost": 65363,
+                "trace_time_us": 41669,
                 "valid_bytes": 1237299200
               }
             }
@@ -1622,79 +1640,81 @@
       "file": "burst_zipf_41039.json",
       "family": "burst_zipf",
       "input_sha256": "633d64567fb6edd5be97c7dda31e1cac896fb83dad7ed1cbe8cfe98d55797a52",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 1.0475541581399739,
               "valid": true,
-              "seconds": 1.0421833631116897,
-              "output_sha256": "0ea83b61c209f408f06800f49579bd8d6a666ce55e03f339c5b530e926441a93",
+              "output_sha256": "783d22dc7e097deaa57612d72b47de6629343afc1099ea47cb91f89d79abd5d8",
               "metrics": {
-                "cache_hits": 388,
-                "cpu_cost": 17200,
-                "effective_bandwidth_mb_s": 7636.326664,
+                "cache_hits": 64,
+                "cpu_cost": 14812,
+                "effective_bandwidth_mb_s": 7374.232684,
                 "evictions": 0,
-                "latency_p50_us": 931,
-                "latency_p95_us": 10817,
+                "latency_p50_us": 959,
+                "latency_p95_us": 10903,
                 "latency_p99_us": 12567,
-                "npu_cost": 1756,
-                "physical_ssd_bytes": 567439360,
-                "promote_count": 72,
+                "npu_cost": 1434,
+                "physical_ssd_bytes": 772960256,
+                "promote_count": 32,
                 "promote_hit_rate": 1.0,
-                "promote_success": 72,
-                "read_amplification": 0.458611,
-                "total_cost": 173478,
-                "trace_time_us": 154522,
+                "promote_success": 32,
+                "read_amplification": 0.624716,
+                "total_cost": 176260,
+                "trace_time_us": 160014,
                 "valid_bytes": 1237299200
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 1.0484211940784007,
               "valid": true,
-              "seconds": 1.040528133045882,
-              "output_sha256": "0ea83b61c209f408f06800f49579bd8d6a666ce55e03f339c5b530e926441a93",
+              "output_sha256": "783d22dc7e097deaa57612d72b47de6629343afc1099ea47cb91f89d79abd5d8",
               "metrics": {
-                "cache_hits": 388,
-                "cpu_cost": 17200,
-                "effective_bandwidth_mb_s": 7636.326664,
+                "cache_hits": 64,
+                "cpu_cost": 14812,
+                "effective_bandwidth_mb_s": 7374.232684,
                 "evictions": 0,
-                "latency_p50_us": 931,
-                "latency_p95_us": 10817,
+                "latency_p50_us": 959,
+                "latency_p95_us": 10903,
                 "latency_p99_us": 12567,
-                "npu_cost": 1756,
-                "physical_ssd_bytes": 567439360,
-                "promote_count": 72,
+                "npu_cost": 1434,
+                "physical_ssd_bytes": 772960256,
+                "promote_count": 32,
                 "promote_hit_rate": 1.0,
-                "promote_success": 72,
-                "read_amplification": 0.458611,
-                "total_cost": 173478,
-                "trace_time_us": 154522,
+                "promote_success": 32,
+                "read_amplification": 0.624716,
+                "total_cost": 176260,
+                "trace_time_us": 160014,
                 "valid_bytes": 1237299200
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 1.0410859151743352,
               "valid": true,
-              "seconds": 1.042120184050873,
-              "output_sha256": "0ea83b61c209f408f06800f49579bd8d6a666ce55e03f339c5b530e926441a93",
+              "output_sha256": "783d22dc7e097deaa57612d72b47de6629343afc1099ea47cb91f89d79abd5d8",
               "metrics": {
-                "cache_hits": 388,
-                "cpu_cost": 17200,
-                "effective_bandwidth_mb_s": 7636.326664,
+                "cache_hits": 64,
+                "cpu_cost": 14812,
+                "effective_bandwidth_mb_s": 7374.232684,
                 "evictions": 0,
-                "latency_p50_us": 931,
-                "latency_p95_us": 10817,
+                "latency_p50_us": 959,
+                "latency_p95_us": 10903,
                 "latency_p99_us": 12567,
-                "npu_cost": 1756,
-                "physical_ssd_bytes": 567439360,
-                "promote_count": 72,
+                "npu_cost": 1434,
+                "physical_ssd_bytes": 772960256,
+                "promote_count": 32,
                 "promote_hit_rate": 1.0,
-                "promote_success": 72,
-                "read_amplification": 0.458611,
-                "total_cost": 173478,
-                "trace_time_us": 154522,
+                "promote_success": 32,
+                "read_amplification": 0.624716,
+                "total_cost": 176260,
+                "trace_time_us": 160014,
                 "valid_bytes": 1237299200
               }
             }
@@ -1783,14 +1803,16 @@
       "file": "dense_staging_41039.json",
       "family": "dense_staging",
       "input_sha256": "288413b4fa7ac61b4ca58ae54f4c640a405f9d7ebcb27aae9de1cbb49a0e08ac",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.18866084003821015,
               "valid": true,
-              "seconds": 0.19123103702440858,
               "output_sha256": "861ff820c076ccd96985b12404808d9615565c014c472ed3045a9d7c5de744ef",
               "metrics": {
                 "cache_hits": 0,
@@ -1813,8 +1835,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.1929290529806167,
               "valid": true,
-              "seconds": 0.1910409398842603,
               "output_sha256": "861ff820c076ccd96985b12404808d9615565c014c472ed3045a9d7c5de744ef",
               "metrics": {
                 "cache_hits": 0,
@@ -1837,8 +1859,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.18976100999861956,
               "valid": true,
-              "seconds": 0.191398193128407,
               "output_sha256": "861ff820c076ccd96985b12404808d9615565c014c472ed3045a9d7c5de744ef",
               "metrics": {
                 "cache_hits": 0,
@@ -1944,14 +1966,16 @@
       "file": "two_hit_tail_41039.json",
       "family": "two_hit_tail",
       "input_sha256": "d5febb85b54a0794367056af6a6692826bc7c9125cd315d92be5c79275885fda",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.018043682910501957,
               "valid": true,
-              "seconds": 0.018113197991624475,
               "output_sha256": "026f9c86f00885691e81fd4bbc8070a96ab601f9bab12b11c7adc6aa3bbc4ca3",
               "metrics": {
                 "cache_hits": 0,
@@ -1974,8 +1998,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.0160761799197644,
               "valid": true,
-              "seconds": 0.016424870118498802,
               "output_sha256": "026f9c86f00885691e81fd4bbc8070a96ab601f9bab12b11c7adc6aa3bbc4ca3",
               "metrics": {
                 "cache_hits": 0,
@@ -1998,8 +2022,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.01603761105798185,
               "valid": true,
-              "seconds": 0.016518027987331152,
               "output_sha256": "026f9c86f00885691e81fd4bbc8070a96ab601f9bab12b11c7adc6aa3bbc4ca3",
               "metrics": {
                 "cache_hits": 0,
@@ -2105,79 +2129,81 @@
       "file": "persistent_hot_41039.json",
       "family": "persistent_hot",
       "input_sha256": "8e8a9557a21bd1d63c8838aad9adf729945ca5108771a9a3945036d761b5aabe",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.19794732192531228,
               "valid": true,
-              "seconds": 0.16641679918393493,
-              "output_sha256": "80525321174a46a59d68480ef107362a8a821c7e438dc5a665029a55cc549d2b",
+              "output_sha256": "c7c86bb4e3674726c4d9bdab2145e790c037a77e92c309a1cab3f51193f9ecd1",
               "metrics": {
-                "cache_hits": 1536,
-                "cpu_cost": 31488,
-                "effective_bandwidth_mb_s": 9755.106188,
+                "cache_hits": 0,
+                "cpu_cost": 12288,
+                "effective_bandwidth_mb_s": 9637.344711,
                 "evictions": 0,
                 "latency_p50_us": 745,
                 "latency_p95_us": 745,
                 "latency_p99_us": 745,
-                "npu_cost": 1785,
-                "physical_ssd_bytes": 302448640,
-                "promote_count": 256,
-                "promote_hit_rate": 1.0,
-                "promote_success": 256,
-                "read_amplification": 0.751139,
-                "total_cost": 72637,
-                "trace_time_us": 39364,
+                "npu_cost": 0,
+                "physical_ssd_bytes": 402653184,
+                "promote_count": 0,
+                "promote_hit_rate": 0.0,
+                "promote_success": 0,
+                "read_amplification": 1.0,
+                "total_cost": 52133,
+                "trace_time_us": 39845,
                 "valid_bytes": 402653184
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 0.19891517516225576,
               "valid": true,
-              "seconds": 0.16916893003508449,
-              "output_sha256": "80525321174a46a59d68480ef107362a8a821c7e438dc5a665029a55cc549d2b",
+              "output_sha256": "c7c86bb4e3674726c4d9bdab2145e790c037a77e92c309a1cab3f51193f9ecd1",
               "metrics": {
-                "cache_hits": 1536,
-                "cpu_cost": 31488,
-                "effective_bandwidth_mb_s": 9755.106188,
+                "cache_hits": 0,
+                "cpu_cost": 12288,
+                "effective_bandwidth_mb_s": 9637.344711,
                 "evictions": 0,
                 "latency_p50_us": 745,
                 "latency_p95_us": 745,
                 "latency_p99_us": 745,
-                "npu_cost": 1785,
-                "physical_ssd_bytes": 302448640,
-                "promote_count": 256,
-                "promote_hit_rate": 1.0,
-                "promote_success": 256,
-                "read_amplification": 0.751139,
-                "total_cost": 72637,
-                "trace_time_us": 39364,
+                "npu_cost": 0,
+                "physical_ssd_bytes": 402653184,
+                "promote_count": 0,
+                "promote_hit_rate": 0.0,
+                "promote_success": 0,
+                "read_amplification": 1.0,
+                "total_cost": 52133,
+                "trace_time_us": 39845,
                 "valid_bytes": 402653184
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 0.1989767448976636,
               "valid": true,
-              "seconds": 0.16793138301,
-              "output_sha256": "80525321174a46a59d68480ef107362a8a821c7e438dc5a665029a55cc549d2b",
+              "output_sha256": "c7c86bb4e3674726c4d9bdab2145e790c037a77e92c309a1cab3f51193f9ecd1",
               "metrics": {
-                "cache_hits": 1536,
-                "cpu_cost": 31488,
-                "effective_bandwidth_mb_s": 9755.106188,
+                "cache_hits": 0,
+                "cpu_cost": 12288,
+                "effective_bandwidth_mb_s": 9637.344711,
                 "evictions": 0,
                 "latency_p50_us": 745,
                 "latency_p95_us": 745,
                 "latency_p99_us": 745,
-                "npu_cost": 1785,
-                "physical_ssd_bytes": 302448640,
-                "promote_count": 256,
-                "promote_hit_rate": 1.0,
-                "promote_success": 256,
-                "read_amplification": 0.751139,
-                "total_cost": 72637,
-                "trace_time_us": 39364,
+                "npu_cost": 0,
+                "physical_ssd_bytes": 402653184,
+                "promote_count": 0,
+                "promote_hit_rate": 0.0,
+                "promote_success": 0,
+                "read_amplification": 1.0,
+                "total_cost": 52133,
+                "trace_time_us": 39845,
                 "valid_bytes": 402653184
               }
             }
@@ -2266,14 +2292,16 @@
       "file": "hot_scan_41039.json",
       "family": "hot_scan",
       "input_sha256": "763259997f67ee7421365c4d813fe6808b241110bbd070ce2158ae98ae5207b9",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.98889689007774,
               "valid": true,
-              "seconds": 0.9938150369562209,
               "output_sha256": "c5dc4a3083cd34291cde89502616a11462f820aa2bc95f4514bf9fd539ecc24b",
               "metrics": {
                 "cache_hits": 304,
@@ -2296,8 +2324,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.9837974701076746,
               "valid": true,
-              "seconds": 0.9762987769208848,
               "output_sha256": "c5dc4a3083cd34291cde89502616a11462f820aa2bc95f4514bf9fd539ecc24b",
               "metrics": {
                 "cache_hits": 304,
@@ -2320,8 +2348,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.9918333059176803,
               "valid": true,
-              "seconds": 0.9977351571433246,
               "output_sha256": "c5dc4a3083cd34291cde89502616a11462f820aa2bc95f4514bf9fd539ecc24b",
               "metrics": {
                 "cache_hits": 304,
@@ -2427,14 +2455,16 @@
       "file": "ragged_ranges_41039.json",
       "family": "ragged_ranges",
       "input_sha256": "9c78942c07530a4b04daced8d713044ac40fa3f48cb7ac0e000e6b8ed41c8ba0",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.27677030791528523,
               "valid": true,
-              "seconds": 0.27710046898573637,
               "output_sha256": "4c235a2c72d9b30656c6b0b9506ce09282b6f653b957527aedff3921ba657147",
               "metrics": {
                 "cache_hits": 0,
@@ -2457,8 +2487,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.28013086784631014,
               "valid": true,
-              "seconds": 0.27836397592909634,
               "output_sha256": "4c235a2c72d9b30656c6b0b9506ce09282b6f653b957527aedff3921ba657147",
               "metrics": {
                 "cache_hits": 0,
@@ -2481,8 +2511,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.27955632912926376,
               "valid": true,
-              "seconds": 0.2902026798110455,
               "output_sha256": "4c235a2c72d9b30656c6b0b9506ce09282b6f653b957527aedff3921ba657147",
               "metrics": {
                 "cache_hits": 0,
@@ -2588,79 +2618,81 @@
       "file": "zipf_mixed_41047.json",
       "family": "zipf_mixed",
       "input_sha256": "c8c1d68ea842fb3aed9e6ee28fe2c54566c2034abc1347ec812bbc43f9e36701",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.8244821110274643,
               "valid": true,
-              "seconds": 0.807764156954363,
-              "output_sha256": "cae2bdfed6d40228b6a6114be17c601cb7306ce1ab77f30c2d0bb2f13a2f9e02",
+              "output_sha256": "2b175fb6d5fffec21c3f403b6121ec81fd097012e39a5cb9e4d803f6ded9bc30",
               "metrics": {
-                "cache_hits": 2882,
-                "cpu_cost": 33938,
-                "effective_bandwidth_mb_s": 57929.735037,
+                "cache_hits": 1930,
+                "cpu_cost": 33442,
+                "effective_bandwidth_mb_s": 57720.538793,
                 "evictions": 0,
-                "latency_p50_us": 898,
-                "latency_p95_us": 22558,
-                "latency_p99_us": 24370,
-                "npu_cost": 6446,
-                "physical_ssd_bytes": 974397440,
-                "promote_count": 144,
+                "latency_p50_us": 1035,
+                "latency_p95_us": 22987,
+                "latency_p99_us": 25833,
+                "npu_cost": 5783,
+                "physical_ssd_bytes": 1366138880,
+                "promote_count": 136,
                 "promote_hit_rate": 1.0,
-                "promote_success": 144,
-                "read_amplification": 0.070986,
-                "total_cost": 266359,
-                "trace_time_us": 225975,
+                "promote_success": 136,
+                "read_amplification": 0.099525,
+                "total_cost": 266019,
+                "trace_time_us": 226794,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 0.821272348985076,
               "valid": true,
-              "seconds": 0.8183900620788336,
-              "output_sha256": "cae2bdfed6d40228b6a6114be17c601cb7306ce1ab77f30c2d0bb2f13a2f9e02",
+              "output_sha256": "2b175fb6d5fffec21c3f403b6121ec81fd097012e39a5cb9e4d803f6ded9bc30",
               "metrics": {
-                "cache_hits": 2882,
-                "cpu_cost": 33938,
-                "effective_bandwidth_mb_s": 57929.735037,
+                "cache_hits": 1930,
+                "cpu_cost": 33442,
+                "effective_bandwidth_mb_s": 57720.538793,
                 "evictions": 0,
-                "latency_p50_us": 898,
-                "latency_p95_us": 22558,
-                "latency_p99_us": 24370,
-                "npu_cost": 6446,
-                "physical_ssd_bytes": 974397440,
-                "promote_count": 144,
+                "latency_p50_us": 1035,
+                "latency_p95_us": 22987,
+                "latency_p99_us": 25833,
+                "npu_cost": 5783,
+                "physical_ssd_bytes": 1366138880,
+                "promote_count": 136,
                 "promote_hit_rate": 1.0,
-                "promote_success": 144,
-                "read_amplification": 0.070986,
-                "total_cost": 266359,
-                "trace_time_us": 225975,
+                "promote_success": 136,
+                "read_amplification": 0.099525,
+                "total_cost": 266019,
+                "trace_time_us": 226794,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 0.854937510099262,
               "valid": true,
-              "seconds": 0.8096311930567026,
-              "output_sha256": "cae2bdfed6d40228b6a6114be17c601cb7306ce1ab77f30c2d0bb2f13a2f9e02",
+              "output_sha256": "2b175fb6d5fffec21c3f403b6121ec81fd097012e39a5cb9e4d803f6ded9bc30",
               "metrics": {
-                "cache_hits": 2882,
-                "cpu_cost": 33938,
-                "effective_bandwidth_mb_s": 57929.735037,
+                "cache_hits": 1930,
+                "cpu_cost": 33442,
+                "effective_bandwidth_mb_s": 57720.538793,
                 "evictions": 0,
-                "latency_p50_us": 898,
-                "latency_p95_us": 22558,
-                "latency_p99_us": 24370,
-                "npu_cost": 6446,
-                "physical_ssd_bytes": 974397440,
-                "promote_count": 144,
+                "latency_p50_us": 1035,
+                "latency_p95_us": 22987,
+                "latency_p99_us": 25833,
+                "npu_cost": 5783,
+                "physical_ssd_bytes": 1366138880,
+                "promote_count": 136,
                 "promote_hit_rate": 1.0,
-                "promote_success": 144,
-                "read_amplification": 0.070986,
-                "total_cost": 266359,
-                "trace_time_us": 225975,
+                "promote_success": 136,
+                "read_amplification": 0.099525,
+                "total_cost": 266019,
+                "trace_time_us": 226794,
                 "valid_bytes": 13726564352
               }
             }
@@ -2749,79 +2781,81 @@
       "file": "zipf_phase_41047.json",
       "family": "zipf_phase",
       "input_sha256": "46f487f985d0596d1262ed1d20b7f3f945497cd69f02e0fb159c3de91f91240c",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.8468346358276904,
               "valid": true,
-              "seconds": 0.837373506044969,
-              "output_sha256": "44fcdd70aa4b0efe2df22db4e53f7949301428ffb8020b144b494d5ddce80bde",
+              "output_sha256": "2dfe61566ba2c81e0fa19cb5c5f7099ec150b6efcd1e39e8c8ab9440c8d6bf28",
               "metrics": {
-                "cache_hits": 455,
-                "cpu_cost": 36622,
-                "effective_bandwidth_mb_s": 57709.59709,
-                "evictions": 99,
-                "latency_p50_us": 3167,
-                "latency_p95_us": 24039,
-                "latency_p99_us": 28344,
-                "npu_cost": 5013,
-                "physical_ssd_bytes": 1949503488,
-                "promote_count": 163,
+                "cache_hits": 64,
+                "cpu_cost": 25892,
+                "effective_bandwidth_mb_s": 57493.145864,
+                "evictions": 0,
+                "latency_p50_us": 4249,
+                "latency_p95_us": 24793,
+                "latency_p99_us": 28239,
+                "npu_cost": 4580,
+                "physical_ssd_bytes": 2164461568,
+                "promote_count": 28,
                 "promote_hit_rate": 1.0,
-                "promote_success": 163,
-                "read_amplification": 0.142024,
-                "total_cost": 268472,
-                "trace_time_us": 226837,
+                "promote_success": 28,
+                "read_amplification": 0.157684,
+                "total_cost": 258163,
+                "trace_time_us": 227691,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 0.8503368038218468,
               "valid": true,
-              "seconds": 0.8549886550754309,
-              "output_sha256": "44fcdd70aa4b0efe2df22db4e53f7949301428ffb8020b144b494d5ddce80bde",
+              "output_sha256": "2dfe61566ba2c81e0fa19cb5c5f7099ec150b6efcd1e39e8c8ab9440c8d6bf28",
               "metrics": {
-                "cache_hits": 455,
-                "cpu_cost": 36622,
-                "effective_bandwidth_mb_s": 57709.59709,
-                "evictions": 99,
-                "latency_p50_us": 3167,
-                "latency_p95_us": 24039,
-                "latency_p99_us": 28344,
-                "npu_cost": 5013,
-                "physical_ssd_bytes": 1949503488,
-                "promote_count": 163,
+                "cache_hits": 64,
+                "cpu_cost": 25892,
+                "effective_bandwidth_mb_s": 57493.145864,
+                "evictions": 0,
+                "latency_p50_us": 4249,
+                "latency_p95_us": 24793,
+                "latency_p99_us": 28239,
+                "npu_cost": 4580,
+                "physical_ssd_bytes": 2164461568,
+                "promote_count": 28,
                 "promote_hit_rate": 1.0,
-                "promote_success": 163,
-                "read_amplification": 0.142024,
-                "total_cost": 268472,
-                "trace_time_us": 226837,
+                "promote_success": 28,
+                "read_amplification": 0.157684,
+                "total_cost": 258163,
+                "trace_time_us": 227691,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 0.8463967449497432,
               "valid": true,
-              "seconds": 0.8444802770391107,
-              "output_sha256": "44fcdd70aa4b0efe2df22db4e53f7949301428ffb8020b144b494d5ddce80bde",
+              "output_sha256": "2dfe61566ba2c81e0fa19cb5c5f7099ec150b6efcd1e39e8c8ab9440c8d6bf28",
               "metrics": {
-                "cache_hits": 455,
-                "cpu_cost": 36622,
-                "effective_bandwidth_mb_s": 57709.59709,
-                "evictions": 99,
-                "latency_p50_us": 3167,
-                "latency_p95_us": 24039,
-                "latency_p99_us": 28344,
-                "npu_cost": 5013,
-                "physical_ssd_bytes": 1949503488,
-                "promote_count": 163,
+                "cache_hits": 64,
+                "cpu_cost": 25892,
+                "effective_bandwidth_mb_s": 57493.145864,
+                "evictions": 0,
+                "latency_p50_us": 4249,
+                "latency_p95_us": 24793,
+                "latency_p99_us": 28239,
+                "npu_cost": 4580,
+                "physical_ssd_bytes": 2164461568,
+                "promote_count": 28,
                 "promote_hit_rate": 1.0,
-                "promote_success": 163,
-                "read_amplification": 0.142024,
-                "total_cost": 268472,
-                "trace_time_us": 226837,
+                "promote_success": 28,
+                "read_amplification": 0.157684,
+                "total_cost": 258163,
+                "trace_time_us": 227691,
                 "valid_bytes": 13726564352
               }
             }
@@ -2910,79 +2944,81 @@
       "file": "burst_zipf_41047.json",
       "family": "burst_zipf",
       "input_sha256": "119c65e8df3b2acefa1b9d0dc9ba507a662a1bccb90f3a99c3f0dd9b805ea36c",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 1.5955971949733794,
               "valid": true,
-              "seconds": 1.6402955520898104,
-              "output_sha256": "77712fc4c9d3b89592943dab93eb6282a020e0566f46ca7475561648e699e099",
+              "output_sha256": "b18321c0df8baa06a96ad2734f5cb54161334bafa749288905e4f945d67e0b26",
               "metrics": {
-                "cache_hits": 961,
-                "cpu_cost": 30271,
-                "effective_bandwidth_mb_s": 68025.753234,
+                "cache_hits": 782,
+                "cpu_cost": 29296,
+                "effective_bandwidth_mb_s": 66876.491106,
                 "evictions": 0,
-                "latency_p50_us": 15321,
-                "latency_p95_us": 47106,
-                "latency_p99_us": 51036,
-                "npu_cost": 5241,
-                "physical_ssd_bytes": 1586696192,
-                "promote_count": 92,
+                "latency_p50_us": 15883,
+                "latency_p95_us": 47402,
+                "latency_p99_us": 52551,
+                "npu_cost": 5086,
+                "physical_ssd_bytes": 1724059648,
+                "promote_count": 78,
                 "promote_hit_rate": 1.0,
-                "promote_success": 92,
-                "read_amplification": 0.115593,
-                "total_cost": 227949,
-                "trace_time_us": 192437,
+                "promote_success": 78,
+                "read_amplification": 0.1256,
+                "total_cost": 230126,
+                "trace_time_us": 195744,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 1.5692668610718101,
               "valid": true,
-              "seconds": 1.6601396319456398,
-              "output_sha256": "77712fc4c9d3b89592943dab93eb6282a020e0566f46ca7475561648e699e099",
+              "output_sha256": "b18321c0df8baa06a96ad2734f5cb54161334bafa749288905e4f945d67e0b26",
               "metrics": {
-                "cache_hits": 961,
-                "cpu_cost": 30271,
-                "effective_bandwidth_mb_s": 68025.753234,
+                "cache_hits": 782,
+                "cpu_cost": 29296,
+                "effective_bandwidth_mb_s": 66876.491106,
                 "evictions": 0,
-                "latency_p50_us": 15321,
-                "latency_p95_us": 47106,
-                "latency_p99_us": 51036,
-                "npu_cost": 5241,
-                "physical_ssd_bytes": 1586696192,
-                "promote_count": 92,
+                "latency_p50_us": 15883,
+                "latency_p95_us": 47402,
+                "latency_p99_us": 52551,
+                "npu_cost": 5086,
+                "physical_ssd_bytes": 1724059648,
+                "promote_count": 78,
                 "promote_hit_rate": 1.0,
-                "promote_success": 92,
-                "read_amplification": 0.115593,
-                "total_cost": 227949,
-                "trace_time_us": 192437,
+                "promote_success": 78,
+                "read_amplification": 0.1256,
+                "total_cost": 230126,
+                "trace_time_us": 195744,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 1.6216882630251348,
               "valid": true,
-              "seconds": 1.6419808838982135,
-              "output_sha256": "77712fc4c9d3b89592943dab93eb6282a020e0566f46ca7475561648e699e099",
+              "output_sha256": "b18321c0df8baa06a96ad2734f5cb54161334bafa749288905e4f945d67e0b26",
               "metrics": {
-                "cache_hits": 961,
-                "cpu_cost": 30271,
-                "effective_bandwidth_mb_s": 68025.753234,
+                "cache_hits": 782,
+                "cpu_cost": 29296,
+                "effective_bandwidth_mb_s": 66876.491106,
                 "evictions": 0,
-                "latency_p50_us": 15321,
-                "latency_p95_us": 47106,
-                "latency_p99_us": 51036,
-                "npu_cost": 5241,
-                "physical_ssd_bytes": 1586696192,
-                "promote_count": 92,
+                "latency_p50_us": 15883,
+                "latency_p95_us": 47402,
+                "latency_p99_us": 52551,
+                "npu_cost": 5086,
+                "physical_ssd_bytes": 1724059648,
+                "promote_count": 78,
                 "promote_hit_rate": 1.0,
-                "promote_success": 92,
-                "read_amplification": 0.115593,
-                "total_cost": 227949,
-                "trace_time_us": 192437,
+                "promote_success": 78,
+                "read_amplification": 0.1256,
+                "total_cost": 230126,
+                "trace_time_us": 195744,
                 "valid_bytes": 13726564352
               }
             }
@@ -3071,14 +3107,16 @@
       "file": "dense_staging_41047.json",
       "family": "dense_staging",
       "input_sha256": "ee6da6dda1a61acc1842f5607abd0c6726cd84a35de1fcf242a9a51bd43fc76f",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 1.9643827709369361,
               "valid": true,
-              "seconds": 1.9640513029880822,
               "output_sha256": "ce80ea219f420e22ca4f63885db82c3b8e3669df1e9a9d5cde239c411e461f90",
               "metrics": {
                 "cache_hits": 0,
@@ -3101,8 +3139,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 1.9329839390702546,
               "valid": true,
-              "seconds": 2.006923581007868,
               "output_sha256": "ce80ea219f420e22ca4f63885db82c3b8e3669df1e9a9d5cde239c411e461f90",
               "metrics": {
                 "cache_hits": 0,
@@ -3125,8 +3163,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 1.9509735938627273,
               "valid": true,
-              "seconds": 2.024803675012663,
               "output_sha256": "ce80ea219f420e22ca4f63885db82c3b8e3669df1e9a9d5cde239c411e461f90",
               "metrics": {
                 "cache_hits": 0,
@@ -3232,14 +3270,16 @@
       "file": "two_hit_tail_41047.json",
       "family": "two_hit_tail",
       "input_sha256": "da04bd1b75b3589a0025b8f62f8246d5d3ede0e05cf5ef43a787cc84f356932e",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.0627872550394386,
               "valid": true,
-              "seconds": 0.08352970494888723,
               "output_sha256": "7306e4fd52b3c6f1979b18750b0127942c4ffe36dc5d86f1910d282e7d5f6992",
               "metrics": {
                 "cache_hits": 0,
@@ -3262,8 +3302,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.060877100098878145,
               "valid": true,
-              "seconds": 0.060934677021577954,
               "output_sha256": "7306e4fd52b3c6f1979b18750b0127942c4ffe36dc5d86f1910d282e7d5f6992",
               "metrics": {
                 "cache_hits": 0,
@@ -3286,8 +3326,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.06102688703685999,
               "valid": true,
-              "seconds": 0.06144192791543901,
               "output_sha256": "7306e4fd52b3c6f1979b18750b0127942c4ffe36dc5d86f1910d282e7d5f6992",
               "metrics": {
                 "cache_hits": 0,
@@ -3393,14 +3433,16 @@
       "file": "persistent_hot_41047.json",
       "family": "persistent_hot",
       "input_sha256": "75dcd9ee3ab058a63ceb43231e68bfbc6249e8a7facccd22536748f90dba2803",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.5824723129626364,
               "valid": true,
-              "seconds": 0.5581214190460742,
               "output_sha256": "4d9513bf25bc1804a201e1854184580e67f287ea4fcdf449df42e1cfd9be0b61",
               "metrics": {
                 "cache_hits": 18210,
@@ -3423,8 +3465,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.5835296139121056,
               "valid": true,
-              "seconds": 0.5513974418863654,
               "output_sha256": "4d9513bf25bc1804a201e1854184580e67f287ea4fcdf449df42e1cfd9be0b61",
               "metrics": {
                 "cache_hits": 18210,
@@ -3447,8 +3489,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.5802167740184814,
               "valid": true,
-              "seconds": 0.5592402871698141,
               "output_sha256": "4d9513bf25bc1804a201e1854184580e67f287ea4fcdf449df42e1cfd9be0b61",
               "metrics": {
                 "cache_hits": 18210,
@@ -3554,79 +3596,81 @@
       "file": "hot_scan_41047.json",
       "family": "hot_scan",
       "input_sha256": "fff6446cbfc764581db669d0e9089ac15b8b55fd4f86d627301c9d9f2842c7d6",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 10.599841173971072,
               "valid": true,
-              "seconds": 11.088442077860236,
-              "output_sha256": "7f73f57ef35f10fa4ecd1785d35d5faa91fc2a187a9a85aa8a39f6d5e3c259f1",
+              "output_sha256": "8aec2043a7987168a4c8c63e857658464687a1485af43645527df5e0b7e5366b",
               "metrics": {
-                "cache_hits": 375,
-                "cpu_cost": 54349,
-                "effective_bandwidth_mb_s": 35185.438102,
-                "evictions": 8,
-                "latency_p50_us": 34942,
-                "latency_p95_us": 180087,
-                "latency_p99_us": 195592,
-                "npu_cost": 8499,
-                "physical_ssd_bytes": 7907450880,
-                "promote_count": 72,
+                "cache_hits": 337,
+                "cpu_cost": 54290,
+                "effective_bandwidth_mb_s": 35088.297554,
+                "evictions": 7,
+                "latency_p50_us": 36291,
+                "latency_p95_us": 180472,
+                "latency_p99_us": 195817,
+                "npu_cost": 8468,
+                "physical_ssd_bytes": 7930519552,
+                "promote_count": 71,
                 "promote_hit_rate": 1.0,
-                "promote_success": 72,
-                "read_amplification": 0.576069,
-                "total_cost": 434896,
-                "trace_time_us": 372048,
+                "promote_success": 71,
+                "read_amplification": 0.57775,
+                "total_cost": 435836,
+                "trace_time_us": 373078,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 2,
+              "player_seconds": 10.654153210809454,
               "valid": true,
-              "seconds": 11.187866576947272,
-              "output_sha256": "7f73f57ef35f10fa4ecd1785d35d5faa91fc2a187a9a85aa8a39f6d5e3c259f1",
+              "output_sha256": "8aec2043a7987168a4c8c63e857658464687a1485af43645527df5e0b7e5366b",
               "metrics": {
-                "cache_hits": 375,
-                "cpu_cost": 54349,
-                "effective_bandwidth_mb_s": 35185.438102,
-                "evictions": 8,
-                "latency_p50_us": 34942,
-                "latency_p95_us": 180087,
-                "latency_p99_us": 195592,
-                "npu_cost": 8499,
-                "physical_ssd_bytes": 7907450880,
-                "promote_count": 72,
+                "cache_hits": 337,
+                "cpu_cost": 54290,
+                "effective_bandwidth_mb_s": 35088.297554,
+                "evictions": 7,
+                "latency_p50_us": 36291,
+                "latency_p95_us": 180472,
+                "latency_p99_us": 195817,
+                "npu_cost": 8468,
+                "physical_ssd_bytes": 7930519552,
+                "promote_count": 71,
                 "promote_hit_rate": 1.0,
-                "promote_success": 72,
-                "read_amplification": 0.576069,
-                "total_cost": 434896,
-                "trace_time_us": 372048,
+                "promote_success": 71,
+                "read_amplification": 0.57775,
+                "total_cost": 435836,
+                "trace_time_us": 373078,
                 "valid_bytes": 13726564352
               }
             },
             {
               "repetition": 3,
+              "player_seconds": 10.685565375955775,
               "valid": true,
-              "seconds": 10.998912018956617,
-              "output_sha256": "7f73f57ef35f10fa4ecd1785d35d5faa91fc2a187a9a85aa8a39f6d5e3c259f1",
+              "output_sha256": "8aec2043a7987168a4c8c63e857658464687a1485af43645527df5e0b7e5366b",
               "metrics": {
-                "cache_hits": 375,
-                "cpu_cost": 54349,
-                "effective_bandwidth_mb_s": 35185.438102,
-                "evictions": 8,
-                "latency_p50_us": 34942,
-                "latency_p95_us": 180087,
-                "latency_p99_us": 195592,
-                "npu_cost": 8499,
-                "physical_ssd_bytes": 7907450880,
-                "promote_count": 72,
+                "cache_hits": 337,
+                "cpu_cost": 54290,
+                "effective_bandwidth_mb_s": 35088.297554,
+                "evictions": 7,
+                "latency_p50_us": 36291,
+                "latency_p95_us": 180472,
+                "latency_p99_us": 195817,
+                "npu_cost": 8468,
+                "physical_ssd_bytes": 7930519552,
+                "promote_count": 71,
                 "promote_hit_rate": 1.0,
-                "promote_success": 72,
-                "read_amplification": 0.576069,
-                "total_cost": 434896,
-                "trace_time_us": 372048,
+                "promote_success": 71,
+                "read_amplification": 0.57775,
+                "total_cost": 435836,
+                "trace_time_us": 373078,
                 "valid_bytes": 13726564352
               }
             }
@@ -3715,14 +3759,16 @@
       "file": "ragged_ranges_41047.json",
       "family": "ragged_ranges",
       "input_sha256": "3dedd544e14175e0608fa616a14d1a1b1cf14f6c9e3534f23a4f77f5eeb50849",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 1.1837468780577183,
               "valid": true,
-              "seconds": 1.1987278410233557,
               "output_sha256": "3af3f19e3cb025e7c164728d952b473ba5ec66f1756d97db40d6feff3364f9f1",
               "metrics": {
                 "cache_hits": 0,
@@ -3745,8 +3791,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 1.2034192411229014,
               "valid": true,
-              "seconds": 1.193322560051456,
               "output_sha256": "3af3f19e3cb025e7c164728d952b473ba5ec66f1756d97db40d6feff3364f9f1",
               "metrics": {
                 "cache_hits": 0,
@@ -3769,8 +3815,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 1.187415871070698,
               "valid": true,
-              "seconds": 1.199349501170218,
               "output_sha256": "3af3f19e3cb025e7c164728d952b473ba5ec66f1756d97db40d6feff3364f9f1",
               "metrics": {
                 "cache_hits": 0,
@@ -3876,14 +3922,16 @@
       "file": "length_1048576_batch_8.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "b73cb7daee64308f53994f8fe57ef29651fd369e367eba0665638b4bf03991d8",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.03335414710454643,
               "valid": true,
-              "seconds": 0.03414007602259517,
               "output_sha256": "ba80d20b869d1fe98582bb63df2ad5adcee39354148f08f5112f3c67d0ce30db",
               "metrics": {
                 "cache_hits": 0,
@@ -3906,8 +3954,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.030220794025808573,
               "valid": true,
-              "seconds": 0.03073839913122356,
               "output_sha256": "ba80d20b869d1fe98582bb63df2ad5adcee39354148f08f5112f3c67d0ce30db",
               "metrics": {
                 "cache_hits": 0,
@@ -3930,8 +3978,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.03058127616532147,
               "valid": true,
-              "seconds": 0.029846305027604103,
               "output_sha256": "ba80d20b869d1fe98582bb63df2ad5adcee39354148f08f5112f3c67d0ce30db",
               "metrics": {
                 "cache_hits": 0,
@@ -4037,14 +4085,16 @@
       "file": "length_1048576_batch_64.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "674748e607c6836378f5b6b2201f2ff37e5f63de15333ccea7409c2dbd20e6c5",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.24184191809035838,
               "valid": true,
-              "seconds": 0.2373154789675027,
               "output_sha256": "efb98f0fb57170c1ac1cb4bf40af380fe83a16307481bfaaac069a2e8c30a1c1",
               "metrics": {
                 "cache_hits": 0,
@@ -4067,8 +4117,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.23679690109565854,
               "valid": true,
-              "seconds": 0.23816427309066057,
               "output_sha256": "efb98f0fb57170c1ac1cb4bf40af380fe83a16307481bfaaac069a2e8c30a1c1",
               "metrics": {
                 "cache_hits": 0,
@@ -4091,8 +4141,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.239136059070006,
               "valid": true,
-              "seconds": 0.2368823669385165,
               "output_sha256": "efb98f0fb57170c1ac1cb4bf40af380fe83a16307481bfaaac069a2e8c30a1c1",
               "metrics": {
                 "cache_hits": 0,
@@ -4198,14 +4248,16 @@
       "file": "length_1048576_batch_256.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "68355daf116e7d0136eeb6008831d9390bffd157114521acb1e4c88fb39db883",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.503331083105877,
               "valid": true,
-              "seconds": 0.5007397509180009,
               "output_sha256": "53ad2b34542b8fbb99069ead34acc1dccb7f00defaba4898db15c2b041b876f8",
               "metrics": {
                 "cache_hits": 0,
@@ -4228,8 +4280,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.5059804772026837,
               "valid": true,
-              "seconds": 0.5065433951094747,
               "output_sha256": "53ad2b34542b8fbb99069ead34acc1dccb7f00defaba4898db15c2b041b876f8",
               "metrics": {
                 "cache_hits": 0,
@@ -4252,8 +4304,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.5029845309909433,
               "valid": true,
-              "seconds": 0.507994927931577,
               "output_sha256": "53ad2b34542b8fbb99069ead34acc1dccb7f00defaba4898db15c2b041b876f8",
               "metrics": {
                 "cache_hits": 0,
@@ -4359,14 +4411,16 @@
       "file": "length_2097153_batch_8.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "91f9d5496d0d5bb5bf8f3df5df7008d34e805cb1400c7c46fd165d46056f9061",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.0366497877985239,
               "valid": true,
-              "seconds": 0.03620555903762579,
               "output_sha256": "343ce4ed978b392fe31c2aef303dc1174a2701d76dfbc3d94f541a49c6a2c7e6",
               "metrics": {
                 "cache_hits": 0,
@@ -4389,8 +4443,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.035058456007391214,
               "valid": true,
-              "seconds": 0.034556688042357564,
               "output_sha256": "343ce4ed978b392fe31c2aef303dc1174a2701d76dfbc3d94f541a49c6a2c7e6",
               "metrics": {
                 "cache_hits": 0,
@@ -4413,8 +4467,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.034895470133051276,
               "valid": true,
-              "seconds": 0.03452300908975303,
               "output_sha256": "343ce4ed978b392fe31c2aef303dc1174a2701d76dfbc3d94f541a49c6a2c7e6",
               "metrics": {
                 "cache_hits": 0,
@@ -4520,14 +4574,16 @@
       "file": "length_2097153_batch_64.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "74ce821dc8643ab191830505f902a9056f9dbb32a3c7a842e40adbf7c279c679",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.27274844190105796,
               "valid": true,
-              "seconds": 0.2735381780657917,
               "output_sha256": "ea5e2a29e79df7bf9540c0ecb665e6b5b35413a5298c95f0e5525bdac816cef8",
               "metrics": {
                 "cache_hits": 0,
@@ -4550,8 +4606,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.27505103894509375,
               "valid": true,
-              "seconds": 0.27558643999509513,
               "output_sha256": "ea5e2a29e79df7bf9540c0ecb665e6b5b35413a5298c95f0e5525bdac816cef8",
               "metrics": {
                 "cache_hits": 0,
@@ -4574,8 +4630,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.27493602107279,
               "valid": true,
-              "seconds": 0.2741745461244136,
               "output_sha256": "ea5e2a29e79df7bf9540c0ecb665e6b5b35413a5298c95f0e5525bdac816cef8",
               "metrics": {
                 "cache_hits": 0,
@@ -4681,14 +4737,16 @@
       "file": "length_2097153_batch_256.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "3633103bd5a675b642185476e6cc9cb04f2ab74a38d3b0d19d55f50d2d3ad9db",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.40451685921289027,
               "valid": true,
-              "seconds": 0.41803201008588076,
               "output_sha256": "c9dd6761b348470c568e6b343ff87f57b540e50ae2e302d485dcc1f76923cd31",
               "metrics": {
                 "cache_hits": 0,
@@ -4711,8 +4769,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.4070925328414887,
               "valid": true,
-              "seconds": 0.41645161900669336,
               "output_sha256": "c9dd6761b348470c568e6b343ff87f57b540e50ae2e302d485dcc1f76923cd31",
               "metrics": {
                 "cache_hits": 0,
@@ -4735,8 +4793,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.40930035221390426,
               "valid": true,
-              "seconds": 0.4151360630057752,
               "output_sha256": "c9dd6761b348470c568e6b343ff87f57b540e50ae2e302d485dcc1f76923cd31",
               "metrics": {
                 "cache_hits": 0,
@@ -4842,14 +4900,16 @@
       "file": "length_8388608_batch_8.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "ea8688748888a3ee243a5eccb6986c628745f0cdb202ada7a65eee72c63261c0",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.10230353195220232,
               "valid": true,
-              "seconds": 0.10283867199905217,
               "output_sha256": "740c44647334f6dfec8bcfaf29fbbd657f05f01b360363d352e9d30137fd65f7",
               "metrics": {
                 "cache_hits": 0,
@@ -4872,8 +4932,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.1002028991933912,
               "valid": true,
-              "seconds": 0.1010362459346652,
               "output_sha256": "740c44647334f6dfec8bcfaf29fbbd657f05f01b360363d352e9d30137fd65f7",
               "metrics": {
                 "cache_hits": 0,
@@ -4896,8 +4956,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.0997245879843831,
               "valid": true,
-              "seconds": 0.10074911103583872,
               "output_sha256": "740c44647334f6dfec8bcfaf29fbbd657f05f01b360363d352e9d30137fd65f7",
               "metrics": {
                 "cache_hits": 0,
@@ -5003,14 +5063,16 @@
       "file": "length_8388608_batch_64.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "da8da521bef48c4ae62eece6bcb886effbb60774848f8d60b7c505e2cd9ef853",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.08208509697578847,
               "valid": true,
-              "seconds": 0.08644578303210437,
               "output_sha256": "fd7edb1085389eb406b31b13829420eb4bb23e42982a61065a8a4ba31c3de04c",
               "metrics": {
                 "cache_hits": 0,
@@ -5033,8 +5095,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.08350552106276155,
               "valid": true,
-              "seconds": 0.08961966494098306,
               "output_sha256": "fd7edb1085389eb406b31b13829420eb4bb23e42982a61065a8a4ba31c3de04c",
               "metrics": {
                 "cache_hits": 0,
@@ -5057,8 +5119,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.08374729589559138,
               "valid": true,
-              "seconds": 0.08661622903309762,
               "output_sha256": "fd7edb1085389eb406b31b13829420eb4bb23e42982a61065a8a4ba31c3de04c",
               "metrics": {
                 "cache_hits": 0,
@@ -5164,14 +5226,16 @@
       "file": "length_8388608_batch_256.json",
       "family": "in_range_unaligned_large",
       "input_sha256": "f08d765fad201c6b14e2b88e73ab7d36681e868babdac7dd1e136500e0ed8273",
+      "valid": true,
+      "deterministic": true,
       "variants": {
         "strategy": {
           "valid": true,
           "runs": [
             {
               "repetition": 1,
+              "player_seconds": 0.35595545801334083,
               "valid": true,
-              "seconds": 0.3710871268995106,
               "output_sha256": "6233b1f97c71423525bc81be5acb4daafe3ba2bf4febf247f16c870a5308a78d",
               "metrics": {
                 "cache_hits": 0,
@@ -5194,8 +5258,8 @@
             },
             {
               "repetition": 2,
+              "player_seconds": 0.3549541749525815,
               "valid": true,
-              "seconds": 0.36570102581754327,
               "output_sha256": "6233b1f97c71423525bc81be5acb4daafe3ba2bf4febf247f16c870a5308a78d",
               "metrics": {
                 "cache_hits": 0,
@@ -5218,8 +5282,8 @@
             },
             {
               "repetition": 3,
+              "player_seconds": 0.358512741047889,
               "valid": true,
-              "seconds": 0.36527407402172685,
               "output_sha256": "6233b1f97c71423525bc81be5acb4daafe3ba2bf4febf247f16c870a5308a78d",
               "metrics": {
                 "cache_hits": 0,
@@ -5323,95 +5387,11 @@
     }
   ],
   "summary": {
-    "all": {
-      "cases": 33,
-      "valid_pairs": 33,
-      "wins": 26,
-      "ties": 0,
-      "losses": 7,
-      "geometric_ratio": 0.5183866912015853,
-      "worst_ratio": 1.1225264299268094
-    },
-    "burst_zipf": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.7764749146859783,
-      "worst_ratio": 0.8942195690157251
-    },
-    "dense_staging": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.46210172728131266,
-      "worst_ratio": 0.6303662484395828
-    },
-    "hot_scan": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.5104951247845148,
-      "worst_ratio": 0.5450406136005502
-    },
-    "in_range_unaligned_large": {
-      "cases": 9,
-      "valid_pairs": 9,
-      "wins": 3,
-      "ties": 0,
-      "losses": 6,
-      "geometric_ratio": 1.003727540203927,
-      "worst_ratio": 1.1225264299268094
-    },
-    "persistent_hot": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 2,
-      "ties": 0,
-      "losses": 1,
-      "geometric_ratio": 0.7886997744780261,
-      "worst_ratio": 1.0104293224230432
-    },
-    "ragged_ranges": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.15490478279092143,
-      "worst_ratio": 0.26717621700448363
-    },
-    "two_hit_tail": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.17349262111343222,
-      "worst_ratio": 0.5419169353474848
-    },
-    "zipf_mixed": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.5672317136722403,
-      "worst_ratio": 0.7937958760367276
-    },
-    "zipf_phase": {
-      "cases": 3,
-      "valid_pairs": 3,
-      "wins": 3,
-      "ties": 0,
-      "losses": 0,
-      "geometric_ratio": 0.32618957477867183,
-      "worst_ratio": 0.40284987462737315
-    }
-  }
+    "cases": 33,
+    "valid": 33,
+    "deterministic": 33,
+    "player_runs": 99
+  },
+  "baseline_record_verified": true,
+  "baseline_binary_sha256": "945638f5839f8a9855bdd90e3ae6c823493b980d8781ba1934669d9270ac9e75"
 }

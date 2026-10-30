@@ -1,15 +1,8 @@
 {
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
-  "binary_sha256": "9a92f68626e5062a9761fb7b5da13459f5896ab3668d13ee83d22403fbd3c23d",
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
+  "binary_sha256": "5e920469d0c24ae3cac16f23d691d5d83d5748e370139481f6f6240eaba34c2f",
   "upstream_sha": "6b1666eb908a4cb55a84dc20832d9e57ffc1e4c4",
-  "frozen_utc": "2026-10-29T18:43:51.916393+00:00",
-  "independent_families": [
-    "renewal_hotspot",
-    "walking_hotspot",
-    "random_epochs",
-    "size_heat",
-    "barrier_bursts",
-    "sparse_revisits"
-  ],
-  "selection": "Known-case legality and cost checked. Subsequent independent-family results are reported without retuning."
+  "frozen_utc": "2026-10-30T05:40:53.171489+00:00",
+  "base_commit": "96928e0cc74c20f582f30f0692b0e8acb1f48652",
+  "selection": "Existing workloads and admission counterexamples are visible regression inputs. Holdout inputs will be generated only after this freeze; do not retune against them."
 }

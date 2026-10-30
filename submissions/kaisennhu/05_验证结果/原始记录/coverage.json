@@ -1,9 +1,9 @@
 {
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
-  "binary_sha256": "9a92f68626e5062a9761fb7b5da13459f5896ab3668d13ee83d22403fbd3c23d",
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
+  "binary_sha256": "5e920469d0c24ae3cac16f23d691d5d83d5748e370139481f6f6240eaba34c2f",
   "repeat": 3,
   "cpu_affinity": [
-    236
+    0
   ],
   "cases": [
     {
@@ -13,7 +13,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.4059714959003031,
+          "player_seconds": 0.41676326794549823,
           "valid": true,
           "output_sha256": "ff13591c9b213156b0c46a12f8d5f682096b757298b75179f13de47e7ba88925",
           "metrics": {
@@ -37,7 +37,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.403370623011142,
+          "player_seconds": 0.4154584521893412,
           "valid": true,
           "output_sha256": "ff13591c9b213156b0c46a12f8d5f682096b757298b75179f13de47e7ba88925",
           "metrics": {
@@ -61,7 +61,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.39486487791873515,
+          "player_seconds": 0.40700928401201963,
           "valid": true,
           "output_sha256": "ff13591c9b213156b0c46a12f8d5f682096b757298b75179f13de47e7ba88925",
           "metrics": {
@@ -94,7 +94,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.4138426408171654,
+          "player_seconds": 0.42728430801071227,
           "valid": true,
           "output_sha256": "755a6e72bb959fc9378e228d3fe88c43b4d5dfab105e4ad6a6b4c441847754ca",
           "metrics": {
@@ -118,7 +118,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.42208536085672677,
+          "player_seconds": 0.43073951709084213,
           "valid": true,
           "output_sha256": "755a6e72bb959fc9378e228d3fe88c43b4d5dfab105e4ad6a6b4c441847754ca",
           "metrics": {
@@ -142,7 +142,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.4197931631933898,
+          "player_seconds": 0.4376672809012234,
           "valid": true,
           "output_sha256": "755a6e72bb959fc9378e228d3fe88c43b4d5dfab105e4ad6a6b4c441847754ca",
           "metrics": {
@@ -175,7 +175,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.40096739609725773,
+          "player_seconds": 0.41069331811740994,
           "valid": true,
           "output_sha256": "be0e48c40a2d132a3d1b4cbbd37b4fd1b2a8756d25ed25848d6ef17b4a06eacd",
           "metrics": {
@@ -199,7 +199,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.3988662138581276,
+          "player_seconds": 0.406863106880337,
           "valid": true,
           "output_sha256": "be0e48c40a2d132a3d1b4cbbd37b4fd1b2a8756d25ed25848d6ef17b4a06eacd",
           "metrics": {
@@ -223,7 +223,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.4016714240424335,
+          "player_seconds": 0.40486359293572605,
           "valid": true,
           "output_sha256": "be0e48c40a2d132a3d1b4cbbd37b4fd1b2a8756d25ed25848d6ef17b4a06eacd",
           "metrics": {
@@ -256,7 +256,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.3223901588935405,
+          "player_seconds": 0.33324117702431977,
           "valid": true,
           "output_sha256": "a69546cc6e341746d710cd9e3ef257bea807b4b3192e1e49b439761cb1a69200",
           "metrics": {
@@ -280,7 +280,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.3231660760939121,
+          "player_seconds": 0.33232019399292767,
           "valid": true,
           "output_sha256": "a69546cc6e341746d710cd9e3ef257bea807b4b3192e1e49b439761cb1a69200",
           "metrics": {
@@ -304,7 +304,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.325088270008564,
+          "player_seconds": 0.33651135908439755,
           "valid": true,
           "output_sha256": "a69546cc6e341746d710cd9e3ef257bea807b4b3192e1e49b439761cb1a69200",
           "metrics": {
@@ -337,7 +337,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.33076050598174334,
+          "player_seconds": 0.33595190895721316,
           "valid": true,
           "output_sha256": "f1e5b9f0331d9769d4857df1f360692eaa3a2bd9e888a7a6d8a19be34455a8af",
           "metrics": {
@@ -361,7 +361,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.32536358502693474,
+          "player_seconds": 0.33599717798642814,
           "valid": true,
           "output_sha256": "f1e5b9f0331d9769d4857df1f360692eaa3a2bd9e888a7a6d8a19be34455a8af",
           "metrics": {
@@ -385,7 +385,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.3269664770923555,
+          "player_seconds": 0.3356426041573286,
           "valid": true,
           "output_sha256": "f1e5b9f0331d9769d4857df1f360692eaa3a2bd9e888a7a6d8a19be34455a8af",
           "metrics": {
@@ -418,7 +418,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.3430673030670732,
+          "player_seconds": 0.34388061496429145,
           "valid": true,
           "output_sha256": "0c8939ed338d206c3b71fe3386a64565927fe3d05ddf4da16462a525c0b1be73",
           "metrics": {
@@ -442,7 +442,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.337868477916345,
+          "player_seconds": 0.3448980168905109,
           "valid": true,
           "output_sha256": "0c8939ed338d206c3b71fe3386a64565927fe3d05ddf4da16462a525c0b1be73",
           "metrics": {
@@ -466,7 +466,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.34106495999731123,
+          "player_seconds": 0.3457365520298481,
           "valid": true,
           "output_sha256": "0c8939ed338d206c3b71fe3386a64565927fe3d05ddf4da16462a525c0b1be73",
           "metrics": {
@@ -499,7 +499,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.20169450109824538,
+          "player_seconds": 0.20427675801329315,
           "valid": true,
           "output_sha256": "363e4fa8d13346ea9b7b2d028f7859e1d42a45da1516d8b83ee961258acef525",
           "metrics": {
@@ -523,7 +523,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.20319268386811018,
+          "player_seconds": 0.2053266989532858,
           "valid": true,
           "output_sha256": "363e4fa8d13346ea9b7b2d028f7859e1d42a45da1516d8b83ee961258acef525",
           "metrics": {
@@ -547,7 +547,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.20117498002946377,
+          "player_seconds": 0.20966540998779237,
           "valid": true,
           "output_sha256": "363e4fa8d13346ea9b7b2d028f7859e1d42a45da1516d8b83ee961258acef525",
           "metrics": {
@@ -580,7 +580,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.1826985280495137,
+          "player_seconds": 0.19243242195807397,
           "valid": true,
           "output_sha256": "7538ff8b2add54c380a538237afe7776f4db057b1ad97d943f59cb73703f2872",
           "metrics": {
@@ -604,7 +604,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.1823596938047558,
+          "player_seconds": 0.1895575849339366,
           "valid": true,
           "output_sha256": "7538ff8b2add54c380a538237afe7776f4db057b1ad97d943f59cb73703f2872",
           "metrics": {
@@ -628,7 +628,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.1814650499727577,
+          "player_seconds": 0.1900996940676123,
           "valid": true,
           "output_sha256": "7538ff8b2add54c380a538237afe7776f4db057b1ad97d943f59cb73703f2872",
           "metrics": {
@@ -661,7 +661,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.18326705694198608,
+          "player_seconds": 0.19704851997084916,
           "valid": true,
           "output_sha256": "c082a0bd96d61a8b63d0ba96f98d712ddb7a47148c9195184c5c9e7cd7df2c5b",
           "metrics": {
@@ -685,7 +685,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.18314425996504724,
+          "player_seconds": 0.19277989608235657,
           "valid": true,
           "output_sha256": "c082a0bd96d61a8b63d0ba96f98d712ddb7a47148c9195184c5c9e7cd7df2c5b",
           "metrics": {
@@ -709,7 +709,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.18529550009407103,
+          "player_seconds": 0.1890292540192604,
           "valid": true,
           "output_sha256": "c082a0bd96d61a8b63d0ba96f98d712ddb7a47148c9195184c5c9e7cd7df2c5b",
           "metrics": {
@@ -742,73 +742,73 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.01039856020361185,
+          "player_seconds": 0.023099753074347973,
           "valid": true,
-          "output_sha256": "6dca329900f1ce19d953b3db4259e12c41cb311342bf9f7460656e3f03bd645c",
+          "output_sha256": "c61528a706eee7ed3a87246d77aefaba7b701bf16d00700840f3494946257b23",
           "metrics": {
-            "cache_hits": 496,
-            "cpu_cost": 5714,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 900,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
+            "latency_p50_us": 2977,
             "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 558,
-            "physical_ssd_bytes": 150994944,
-            "promote_count": 62,
-            "promote_hit_rate": 1.0,
-            "promote_success": 62,
-            "read_amplification": 0.225,
-            "total_cost": 42707,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39877,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.00997034809552133,
+          "player_seconds": 0.02310157287865877,
           "valid": true,
-          "output_sha256": "6dca329900f1ce19d953b3db4259e12c41cb311342bf9f7460656e3f03bd645c",
+          "output_sha256": "c61528a706eee7ed3a87246d77aefaba7b701bf16d00700840f3494946257b23",
           "metrics": {
-            "cache_hits": 496,
-            "cpu_cost": 5714,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 900,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
+            "latency_p50_us": 2977,
             "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 558,
-            "physical_ssd_bytes": 150994944,
-            "promote_count": 62,
-            "promote_hit_rate": 1.0,
-            "promote_success": 62,
-            "read_amplification": 0.225,
-            "total_cost": 42707,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39877,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.009874189971014857,
+          "player_seconds": 0.022536083124578,
           "valid": true,
-          "output_sha256": "6dca329900f1ce19d953b3db4259e12c41cb311342bf9f7460656e3f03bd645c",
+          "output_sha256": "c61528a706eee7ed3a87246d77aefaba7b701bf16d00700840f3494946257b23",
           "metrics": {
-            "cache_hits": 496,
-            "cpu_cost": 5714,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 900,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
+            "latency_p50_us": 2977,
             "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 558,
-            "physical_ssd_bytes": 150994944,
-            "promote_count": 62,
-            "promote_hit_rate": 1.0,
-            "promote_success": 62,
-            "read_amplification": 0.225,
-            "total_cost": 42707,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39877,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         }
@@ -823,73 +823,73 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.01002490590326488,
+          "player_seconds": 0.023295828839764,
           "valid": true,
-          "output_sha256": "9fd82e2f12e675464e97e54c9624b0fe155b37d2b659aa740d01d3b8b19ece92",
+          "output_sha256": "1ff043fa5d088d85414d0da37ce59a95745d0bcc964eef94d81861ec31027d90",
           "metrics": {
-            "cache_hits": 488,
-            "cpu_cost": 5621,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 880,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
-            "latency_p95_us": 2744,
+            "latency_p50_us": 2744,
+            "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 549,
-            "physical_ssd_bytes": 159383552,
-            "promote_count": 61,
-            "promote_hit_rate": 1.0,
-            "promote_success": 61,
-            "read_amplification": 0.2375,
-            "total_cost": 42605,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39857,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.010231333086267114,
+          "player_seconds": 0.02305507310666144,
           "valid": true,
-          "output_sha256": "9fd82e2f12e675464e97e54c9624b0fe155b37d2b659aa740d01d3b8b19ece92",
+          "output_sha256": "1ff043fa5d088d85414d0da37ce59a95745d0bcc964eef94d81861ec31027d90",
           "metrics": {
-            "cache_hits": 488,
-            "cpu_cost": 5621,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 880,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
-            "latency_p95_us": 2744,
+            "latency_p50_us": 2744,
+            "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 549,
-            "physical_ssd_bytes": 159383552,
-            "promote_count": 61,
-            "promote_hit_rate": 1.0,
-            "promote_success": 61,
-            "read_amplification": 0.2375,
-            "total_cost": 42605,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39857,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.01002175803296268,
+          "player_seconds": 0.02338580903597176,
           "valid": true,
-          "output_sha256": "9fd82e2f12e675464e97e54c9624b0fe155b37d2b659aa740d01d3b8b19ece92",
+          "output_sha256": "1ff043fa5d088d85414d0da37ce59a95745d0bcc964eef94d81861ec31027d90",
           "metrics": {
-            "cache_hits": 488,
-            "cpu_cost": 5621,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 880,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
-            "latency_p95_us": 2744,
+            "latency_p50_us": 2744,
+            "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 549,
-            "physical_ssd_bytes": 159383552,
-            "promote_count": 61,
-            "promote_hit_rate": 1.0,
-            "promote_success": 61,
-            "read_amplification": 0.2375,
-            "total_cost": 42605,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39857,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         }
@@ -904,73 +904,73 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.010259353090077639,
+          "player_seconds": 0.02421805285848677,
           "valid": true,
-          "output_sha256": "21d58ab1518bb4be432a0062fa42abca2200ded3ba02c015b4141d892d16cd7d",
+          "output_sha256": "4296a26044358bf06b4948f729092663370b638b96dc055501e5212554e6a00b",
           "metrics": {
-            "cache_hits": 488,
-            "cpu_cost": 5637,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 960,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
-            "latency_p95_us": 2744,
+            "latency_p50_us": 2233,
+            "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 549,
-            "physical_ssd_bytes": 159383552,
-            "promote_count": 61,
-            "promote_hit_rate": 1.0,
-            "promote_success": 61,
-            "read_amplification": 0.2375,
-            "total_cost": 42621,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39937,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.01018347404897213,
+          "player_seconds": 0.024074284126982093,
           "valid": true,
-          "output_sha256": "21d58ab1518bb4be432a0062fa42abca2200ded3ba02c015b4141d892d16cd7d",
+          "output_sha256": "4296a26044358bf06b4948f729092663370b638b96dc055501e5212554e6a00b",
           "metrics": {
-            "cache_hits": 488,
-            "cpu_cost": 5637,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 960,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
-            "latency_p95_us": 2744,
+            "latency_p50_us": 2233,
+            "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 549,
-            "physical_ssd_bytes": 159383552,
-            "promote_count": 61,
-            "promote_hit_rate": 1.0,
-            "promote_success": 61,
-            "read_amplification": 0.2375,
-            "total_cost": 42621,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39937,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.010175174102187157,
+          "player_seconds": 0.024191282922402024,
           "valid": true,
-          "output_sha256": "21d58ab1518bb4be432a0062fa42abca2200ded3ba02c015b4141d892d16cd7d",
+          "output_sha256": "4296a26044358bf06b4948f729092663370b638b96dc055501e5212554e6a00b",
           "metrics": {
-            "cache_hits": 488,
-            "cpu_cost": 5637,
-            "effective_bandwidth_mb_s": 17565.527652,
+            "cache_hits": 0,
+            "cpu_cost": 960,
+            "effective_bandwidth_mb_s": 16419.939965,
             "evictions": 0,
-            "latency_p50_us": 435,
-            "latency_p95_us": 2744,
+            "latency_p50_us": 2233,
+            "latency_p95_us": 2977,
             "latency_p99_us": 2977,
-            "npu_cost": 549,
-            "physical_ssd_bytes": 159383552,
-            "promote_count": 61,
-            "promote_hit_rate": 1.0,
-            "promote_success": 61,
-            "read_amplification": 0.2375,
-            "total_cost": 42621,
-            "trace_time_us": 36435,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 671088640,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 39937,
+            "trace_time_us": 38977,
             "valid_bytes": 671088640
           }
         }
@@ -985,7 +985,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.01803949987515807,
+          "player_seconds": 0.018213000847026706,
           "valid": true,
           "output_sha256": "11fe1b693e122686cef7d0d1aa5c1b8dfdfc94151cc907dbc2e623f3f9f6fe8b",
           "metrics": {
@@ -1009,7 +1009,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.017849575029686093,
+          "player_seconds": 0.01840504794381559,
           "valid": true,
           "output_sha256": "11fe1b693e122686cef7d0d1aa5c1b8dfdfc94151cc907dbc2e623f3f9f6fe8b",
           "metrics": {
@@ -1033,7 +1033,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.01777470507659018,
+          "player_seconds": 0.018107661977410316,
           "valid": true,
           "output_sha256": "11fe1b693e122686cef7d0d1aa5c1b8dfdfc94151cc907dbc2e623f3f9f6fe8b",
           "metrics": {
@@ -1066,7 +1066,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.01892489497549832,
+          "player_seconds": 0.01926918188109994,
           "valid": true,
           "output_sha256": "7b18577a101b4726c411cad71506541035eeaee7622fbb71553d911412ceb76b",
           "metrics": {
@@ -1090,7 +1090,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.030363475205376744,
+          "player_seconds": 0.01938394899480045,
           "valid": true,
           "output_sha256": "7b18577a101b4726c411cad71506541035eeaee7622fbb71553d911412ceb76b",
           "metrics": {
@@ -1114,7 +1114,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.018923436058685184,
+          "player_seconds": 0.019192774081602693,
           "valid": true,
           "output_sha256": "7b18577a101b4726c411cad71506541035eeaee7622fbb71553d911412ceb76b",
           "metrics": {
@@ -1147,7 +1147,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.019471385050565004,
+          "player_seconds": 0.019896900048479438,
           "valid": true,
           "output_sha256": "3893467002d242de9c663c2ff94e9f47627a0f29ff59bc0fe0d9254f18b6083a",
           "metrics": {
@@ -1171,7 +1171,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.019623921951279044,
+          "player_seconds": 0.019782572984695435,
           "valid": true,
           "output_sha256": "3893467002d242de9c663c2ff94e9f47627a0f29ff59bc0fe0d9254f18b6083a",
           "metrics": {
@@ -1195,7 +1195,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.01959373103454709,
+          "player_seconds": 0.019891811069101095,
           "valid": true,
           "output_sha256": "3893467002d242de9c663c2ff94e9f47627a0f29ff59bc0fe0d9254f18b6083a",
           "metrics": {
@@ -1228,7 +1228,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.2828351410571486,
+          "player_seconds": 0.2906442389357835,
           "valid": true,
           "output_sha256": "ef0146eb4c69e10fdf7fbbc1f4ff41832128f5c0cf45a693205b508cb559bcb4",
           "metrics": {
@@ -1252,7 +1252,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.2823954690247774,
+          "player_seconds": 0.2909251118544489,
           "valid": true,
           "output_sha256": "ef0146eb4c69e10fdf7fbbc1f4ff41832128f5c0cf45a693205b508cb559bcb4",
           "metrics": {
@@ -1276,7 +1276,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.28484370396472514,
+          "player_seconds": 0.28953215782530606,
           "valid": true,
           "output_sha256": "ef0146eb4c69e10fdf7fbbc1f4ff41832128f5c0cf45a693205b508cb559bcb4",
           "metrics": {
@@ -1309,7 +1309,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.281882890034467,
+          "player_seconds": 0.29139381484128535,
           "valid": true,
           "output_sha256": "49d2178a7e9c1af8d29d18af7662f233335a9e14a186ac76b17b37e03b8f175b",
           "metrics": {
@@ -1333,7 +1333,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.28271204396151006,
+          "player_seconds": 0.2872047999408096,
           "valid": true,
           "output_sha256": "49d2178a7e9c1af8d29d18af7662f233335a9e14a186ac76b17b37e03b8f175b",
           "metrics": {
@@ -1357,7 +1357,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.28434366383589804,
+          "player_seconds": 0.2880719448439777,
           "valid": true,
           "output_sha256": "49d2178a7e9c1af8d29d18af7662f233335a9e14a186ac76b17b37e03b8f175b",
           "metrics": {
@@ -1390,7 +1390,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.2595313561614603,
+          "player_seconds": 0.26287120999768376,
           "valid": true,
           "output_sha256": "7a4af347301255cdc63457231bcd4ef90a0cbe2eeda840efc7ba935ee9853444",
           "metrics": {
@@ -1414,7 +1414,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.2573094069957733,
+          "player_seconds": 0.26114365993998945,
           "valid": true,
           "output_sha256": "7a4af347301255cdc63457231bcd4ef90a0cbe2eeda840efc7ba935ee9853444",
           "metrics": {
@@ -1438,7 +1438,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.2569863530807197,
+          "player_seconds": 0.2634832179173827,
           "valid": true,
           "output_sha256": "7a4af347301255cdc63457231bcd4ef90a0cbe2eeda840efc7ba935ee9853444",
           "metrics": {
@@ -1471,7 +1471,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.4184000878594816,
+          "player_seconds": 0.425203497055918,
           "valid": true,
           "output_sha256": "d527c49efdf9a082d6877f72745fcdb19d6e71fe4c174999203528b909068429",
           "metrics": {
@@ -1495,7 +1495,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.41819503204897046,
+          "player_seconds": 0.42733880691230297,
           "valid": true,
           "output_sha256": "d527c49efdf9a082d6877f72745fcdb19d6e71fe4c174999203528b909068429",
           "metrics": {
@@ -1519,7 +1519,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.4212296479381621,
+          "player_seconds": 0.42344714794307947,
           "valid": true,
           "output_sha256": "d527c49efdf9a082d6877f72745fcdb19d6e71fe4c174999203528b909068429",
           "metrics": {
@@ -1552,7 +1552,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.4874081411398947,
+          "player_seconds": 0.5007823300547898,
           "valid": true,
           "output_sha256": "9daa73979e9df40d7760c39a22d217838db24785396632555f245958b8ac1503",
           "metrics": {
@@ -1576,7 +1576,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.48641407885588706,
+          "player_seconds": 0.49629251193255186,
           "valid": true,
           "output_sha256": "9daa73979e9df40d7760c39a22d217838db24785396632555f245958b8ac1503",
           "metrics": {
@@ -1600,7 +1600,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.48891542316414416,
+          "player_seconds": 0.5079653600696474,
           "valid": true,
           "output_sha256": "9daa73979e9df40d7760c39a22d217838db24785396632555f245958b8ac1503",
           "metrics": {
@@ -1633,7 +1633,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.42001044005155563,
+          "player_seconds": 0.43004820914939046,
           "valid": true,
           "output_sha256": "a2ffd03e77f03b6ed7bcc2eac1ec6d4457709d75ff4e7ab72d38e964291d11cf",
           "metrics": {
@@ -1657,7 +1657,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.41838019993156195,
+          "player_seconds": 0.4300522480625659,
           "valid": true,
           "output_sha256": "a2ffd03e77f03b6ed7bcc2eac1ec6d4457709d75ff4e7ab72d38e964291d11cf",
           "metrics": {
@@ -1681,7 +1681,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.4223318980075419,
+          "player_seconds": 0.4350603080820292,
           "valid": true,
           "output_sha256": "a2ffd03e77f03b6ed7bcc2eac1ec6d4457709d75ff4e7ab72d38e964291d11cf",
           "metrics": {
@@ -1714,7 +1714,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.16393593000248075,
+          "player_seconds": 0.17311821086332202,
           "valid": true,
           "output_sha256": "c536e0cadcf7ab57f1e04d1674af5620e1133e998cebf731fa3c412355325660",
           "metrics": {
@@ -1738,7 +1738,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.16450936999171972,
+          "player_seconds": 0.1685893030371517,
           "valid": true,
           "output_sha256": "c536e0cadcf7ab57f1e04d1674af5620e1133e998cebf731fa3c412355325660",
           "metrics": {
@@ -1762,7 +1762,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.1652136668562889,
+          "player_seconds": 0.16873364010825753,
           "valid": true,
           "output_sha256": "c536e0cadcf7ab57f1e04d1674af5620e1133e998cebf731fa3c412355325660",
           "metrics": {
@@ -1795,7 +1795,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.16639268514700234,
+          "player_seconds": 0.1721200600732118,
           "valid": true,
           "output_sha256": "39c9e34e1664c19f5a59efe8830c516851345a90730cf50ae932db03896b2c8e",
           "metrics": {
@@ -1819,7 +1819,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.16603141091763973,
+          "player_seconds": 0.16935976897366345,
           "valid": true,
           "output_sha256": "39c9e34e1664c19f5a59efe8830c516851345a90730cf50ae932db03896b2c8e",
           "metrics": {
@@ -1843,7 +1843,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.16661368194036186,
+          "player_seconds": 0.1717156060039997,
           "valid": true,
           "output_sha256": "39c9e34e1664c19f5a59efe8830c516851345a90730cf50ae932db03896b2c8e",
           "metrics": {
@@ -1876,7 +1876,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.16338195092976093,
+          "player_seconds": 0.16859968402422965,
           "valid": true,
           "output_sha256": "1fbfdc421f88652094ddb7d12eb2436a6e3996dc6e12d048f7e141129e9a81ab",
           "metrics": {
@@ -1900,7 +1900,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.16381514188833535,
+          "player_seconds": 0.1706558361183852,
           "valid": true,
           "output_sha256": "1fbfdc421f88652094ddb7d12eb2436a6e3996dc6e12d048f7e141129e9a81ab",
           "metrics": {
@@ -1924,7 +1924,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.16426394507288933,
+          "player_seconds": 0.1722989168483764,
           "valid": true,
           "output_sha256": "1fbfdc421f88652094ddb7d12eb2436a6e3996dc6e12d048f7e141129e9a81ab",
           "metrics": {
@@ -1957,7 +1957,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.1806562850251794,
+          "player_seconds": 0.18844706611707807,
           "valid": true,
           "output_sha256": "f5790c7629d5bac6b43e9f4411c8dd50cfeabf5813d9c50ea4a92df51db12944",
           "metrics": {
@@ -1981,7 +1981,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.182864794973284,
+          "player_seconds": 0.1877141878940165,
           "valid": true,
           "output_sha256": "f5790c7629d5bac6b43e9f4411c8dd50cfeabf5813d9c50ea4a92df51db12944",
           "metrics": {
@@ -2005,7 +2005,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.1803177308756858,
+          "player_seconds": 0.18642309098504484,
           "valid": true,
           "output_sha256": "f5790c7629d5bac6b43e9f4411c8dd50cfeabf5813d9c50ea4a92df51db12944",
           "metrics": {
@@ -2038,7 +2038,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.16422991594299674,
+          "player_seconds": 0.17260973108932376,
           "valid": true,
           "output_sha256": "5422cee01d4c29525fdf1a8fc9695fb266d1b6f59b7c571fb7b0fa1a7555e95b",
           "metrics": {
@@ -2062,7 +2062,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.165119739016518,
+          "player_seconds": 0.1737045410554856,
           "valid": true,
           "output_sha256": "5422cee01d4c29525fdf1a8fc9695fb266d1b6f59b7c571fb7b0fa1a7555e95b",
           "metrics": {
@@ -2086,7 +2086,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.16433430183678865,
+          "player_seconds": 0.1738105088006705,
           "valid": true,
           "output_sha256": "5422cee01d4c29525fdf1a8fc9695fb266d1b6f59b7c571fb7b0fa1a7555e95b",
           "metrics": {
@@ -2119,7 +2119,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.16183455917052925,
+          "player_seconds": 0.16877533006481826,
           "valid": true,
           "output_sha256": "2f547ce65ecb71c3336a3d328ae33fb29c0ec6c69e59e4bf98918f07a831ebb7",
           "metrics": {
@@ -2143,7 +2143,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.16179526899941266,
+          "player_seconds": 0.16679928498342633,
           "valid": true,
           "output_sha256": "2f547ce65ecb71c3336a3d328ae33fb29c0ec6c69e59e4bf98918f07a831ebb7",
           "metrics": {
@@ -2167,7 +2167,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.16487709316425025,
+          "player_seconds": 0.16605415800586343,
           "valid": true,
           "output_sha256": "2f547ce65ecb71c3336a3d328ae33fb29c0ec6c69e59e4bf98918f07a831ebb7",
           "metrics": {
@@ -2200,7 +2200,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.022444650996476412,
+          "player_seconds": 0.022995292907580733,
           "valid": true,
           "output_sha256": "b503b846a97daca373ccb81d4f90cb3dd965788b1cba524c9c682bd60eda6be9",
           "metrics": {
@@ -2224,7 +2224,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.022611847845837474,
+          "player_seconds": 0.022742829052731395,
           "valid": true,
           "output_sha256": "b503b846a97daca373ccb81d4f90cb3dd965788b1cba524c9c682bd60eda6be9",
           "metrics": {
@@ -2248,7 +2248,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.02224199497140944,
+          "player_seconds": 0.022794948192313313,
           "valid": true,
           "output_sha256": "b503b846a97daca373ccb81d4f90cb3dd965788b1cba524c9c682bd60eda6be9",
           "metrics": {
@@ -2281,7 +2281,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.02240214217454195,
+          "player_seconds": 0.02321490994654596,
           "valid": true,
           "output_sha256": "2c5423e2d4e704e36eecf85c8d4cba5cd2c517871f1a01137c67c65580944a88",
           "metrics": {
@@ -2305,7 +2305,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.022440830944105983,
+          "player_seconds": 0.023003295063972473,
           "valid": true,
           "output_sha256": "2c5423e2d4e704e36eecf85c8d4cba5cd2c517871f1a01137c67c65580944a88",
           "metrics": {
@@ -2329,7 +2329,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.022391801001504064,
+          "player_seconds": 0.02295057405717671,
           "valid": true,
           "output_sha256": "2c5423e2d4e704e36eecf85c8d4cba5cd2c517871f1a01137c67c65580944a88",
           "metrics": {
@@ -2362,7 +2362,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.022173934848979115,
+          "player_seconds": 0.023220489965751767,
           "valid": true,
           "output_sha256": "7e5dd5ceacbfecb409ce517b6a9181b158a2228b0ec491e42e536895d58dc591",
           "metrics": {
@@ -2386,7 +2386,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.022347733145579696,
+          "player_seconds": 0.023120491998270154,
           "valid": true,
           "output_sha256": "7e5dd5ceacbfecb409ce517b6a9181b158a2228b0ec491e42e536895d58dc591",
           "metrics": {
@@ -2410,7 +2410,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.02238974184729159,
+          "player_seconds": 0.022782628890126944,
           "valid": true,
           "output_sha256": "7e5dd5ceacbfecb409ce517b6a9181b158a2228b0ec491e42e536895d58dc591",
           "metrics": {
@@ -2443,7 +2443,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.8622340250294656,
+          "player_seconds": 0.8792898289393634,
           "valid": true,
           "output_sha256": "5373546a14c083acb9489ebadbb9813b8626ccf070bd3e788ae8fb0d82d83ad7",
           "metrics": {
@@ -2467,7 +2467,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.8554462289903313,
+          "player_seconds": 0.8797025419771671,
           "valid": true,
           "output_sha256": "5373546a14c083acb9489ebadbb9813b8626ccf070bd3e788ae8fb0d82d83ad7",
           "metrics": {
@@ -2491,7 +2491,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.8565438881050795,
+          "player_seconds": 0.8700056970119476,
           "valid": true,
           "output_sha256": "5373546a14c083acb9489ebadbb9813b8626ccf070bd3e788ae8fb0d82d83ad7",
           "metrics": {
@@ -2524,7 +2524,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.7979383179917932,
+          "player_seconds": 0.8111945521086454,
           "valid": true,
           "output_sha256": "67a2919da6a0f2116f0d3b0cb3858a985ca896f5f4b4290cbfcc1eaee2bf3479",
           "metrics": {
@@ -2548,7 +2548,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.7987980721518397,
+          "player_seconds": 0.8234648799989372,
           "valid": true,
           "output_sha256": "67a2919da6a0f2116f0d3b0cb3858a985ca896f5f4b4290cbfcc1eaee2bf3479",
           "metrics": {
@@ -2572,7 +2572,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.7958638439886272,
+          "player_seconds": 0.8162987681571394,
           "valid": true,
           "output_sha256": "67a2919da6a0f2116f0d3b0cb3858a985ca896f5f4b4290cbfcc1eaee2bf3479",
           "metrics": {
@@ -2605,7 +2605,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.6347004640847445,
+          "player_seconds": 0.6420898160431534,
           "valid": true,
           "output_sha256": "804ea36a791c1bd9aef2e470620c3b61edc2687c91429074ae4d1857c1c98c81",
           "metrics": {
@@ -2629,7 +2629,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.6351986359804869,
+          "player_seconds": 0.6414064380805939,
           "valid": true,
           "output_sha256": "804ea36a791c1bd9aef2e470620c3b61edc2687c91429074ae4d1857c1c98c81",
           "metrics": {
@@ -2653,7 +2653,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.6293579819612205,
+          "player_seconds": 0.6570476959459484,
           "valid": true,
           "output_sha256": "804ea36a791c1bd9aef2e470620c3b61edc2687c91429074ae4d1857c1c98c81",
           "metrics": {
@@ -2686,7 +2686,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.5577950661536306,
+          "player_seconds": 0.5761997981462628,
           "valid": true,
           "output_sha256": "bd0a4cf5b3fa3613af2eb61fa0c1c03b7e0d6e406469a18e3662834f2ddab5df",
           "metrics": {
@@ -2710,7 +2710,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.5584266858641058,
+          "player_seconds": 0.5851995840203017,
           "valid": true,
           "output_sha256": "bd0a4cf5b3fa3613af2eb61fa0c1c03b7e0d6e406469a18e3662834f2ddab5df",
           "metrics": {
@@ -2734,7 +2734,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.5544787279795855,
+          "player_seconds": 0.580451630987227,
           "valid": true,
           "output_sha256": "bd0a4cf5b3fa3613af2eb61fa0c1c03b7e0d6e406469a18e3662834f2ddab5df",
           "metrics": {
@@ -2767,7 +2767,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.29530905396677554,
+          "player_seconds": 0.3043384710326791,
           "valid": true,
           "output_sha256": "c41eeeb20d375c2a987995b09595b3e1ac0542a027c3385313fd7b3538e9eca4",
           "metrics": {
@@ -2791,7 +2791,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.2930133759509772,
+          "player_seconds": 0.3055513468571007,
           "valid": true,
           "output_sha256": "c41eeeb20d375c2a987995b09595b3e1ac0542a027c3385313fd7b3538e9eca4",
           "metrics": {
@@ -2815,7 +2815,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.2911009618546814,
+          "player_seconds": 0.3007138459943235,
           "valid": true,
           "output_sha256": "c41eeeb20d375c2a987995b09595b3e1ac0542a027c3385313fd7b3538e9eca4",
           "metrics": {
@@ -2848,7 +2848,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.28463354893028736,
+          "player_seconds": 0.29508121800608933,
           "valid": true,
           "output_sha256": "76ca6ef78ca59efc8c77760cc7278f53af7343a779e60581eb7a70e8345f8158",
           "metrics": {
@@ -2872,7 +2872,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.2884214799851179,
+          "player_seconds": 0.29720632010139525,
           "valid": true,
           "output_sha256": "76ca6ef78ca59efc8c77760cc7278f53af7343a779e60581eb7a70e8345f8158",
           "metrics": {
@@ -2896,7 +2896,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.28619060991331935,
+          "player_seconds": 0.2944385090377182,
           "valid": true,
           "output_sha256": "76ca6ef78ca59efc8c77760cc7278f53af7343a779e60581eb7a70e8345f8158",
           "metrics": {
@@ -2929,7 +2929,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.04956777603365481,
+          "player_seconds": 0.050571965985000134,
           "valid": true,
           "output_sha256": "1008c17f2a18d5557b9aa16972556ac218f86ab76b12ffb74011388cb2f379df",
           "metrics": {
@@ -2953,7 +2953,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.05021673417650163,
+          "player_seconds": 0.051322682993486524,
           "valid": true,
           "output_sha256": "1008c17f2a18d5557b9aa16972556ac218f86ab76b12ffb74011388cb2f379df",
           "metrics": {
@@ -2977,7 +2977,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.050554587971419096,
+          "player_seconds": 0.051471851067617536,
           "valid": true,
           "output_sha256": "1008c17f2a18d5557b9aa16972556ac218f86ab76b12ffb74011388cb2f379df",
           "metrics": {
@@ -3010,7 +3010,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.051529529970139265,
+          "player_seconds": 0.052019770024344325,
           "valid": true,
           "output_sha256": "595f4e8f98b538b80d6eeca1e16370358c8a52f852e977e55487d49ba9f7c0e5",
           "metrics": {
@@ -3034,7 +3034,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.05147520010359585,
+          "player_seconds": 0.05259559885598719,
           "valid": true,
           "output_sha256": "595f4e8f98b538b80d6eeca1e16370358c8a52f852e977e55487d49ba9f7c0e5",
           "metrics": {
@@ -3058,7 +3058,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.05183105496689677,
+          "player_seconds": 0.052635797997936606,
           "valid": true,
           "output_sha256": "595f4e8f98b538b80d6eeca1e16370358c8a52f852e977e55487d49ba9f7c0e5",
           "metrics": {
@@ -3091,73 +3091,73 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.03789976914413273,
+          "player_seconds": 0.0426386499311775,
           "valid": true,
-          "output_sha256": "d88822ab89c772fa484ea515376e85ad3b9833e77ad06ec6883335462541057d",
+          "output_sha256": "b90d47e930e8e5c10e9056e2fd3e03a68b2adb6022d899bf88c45bb3fd9c220e",
           "metrics": {
-            "cache_hits": 156,
-            "cpu_cost": 3487,
-            "effective_bandwidth_mb_s": 9909.566034,
+            "cache_hits": 0,
+            "cpu_cost": 2064,
+            "effective_bandwidth_mb_s": 9656.652361,
             "evictions": 0,
-            "latency_p50_us": 529,
-            "latency_p95_us": 922,
+            "latency_p50_us": 749,
+            "latency_p95_us": 936,
             "latency_p99_us": 975,
-            "npu_cost": 175,
-            "physical_ssd_bytes": 141557760,
-            "promote_count": 19,
-            "promote_hit_rate": 1.0,
-            "promote_success": 19,
-            "read_amplification": 0.8,
-            "total_cost": 20691,
-            "trace_time_us": 17029,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 176947200,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 19539,
+            "trace_time_us": 17475,
             "valid_bytes": 176947200
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.037473466945812106,
+          "player_seconds": 0.042205097153782845,
           "valid": true,
-          "output_sha256": "d88822ab89c772fa484ea515376e85ad3b9833e77ad06ec6883335462541057d",
+          "output_sha256": "b90d47e930e8e5c10e9056e2fd3e03a68b2adb6022d899bf88c45bb3fd9c220e",
           "metrics": {
-            "cache_hits": 156,
-            "cpu_cost": 3487,
-            "effective_bandwidth_mb_s": 9909.566034,
+            "cache_hits": 0,
+            "cpu_cost": 2064,
+            "effective_bandwidth_mb_s": 9656.652361,
             "evictions": 0,
-            "latency_p50_us": 529,
-            "latency_p95_us": 922,
+            "latency_p50_us": 749,
+            "latency_p95_us": 936,
             "latency_p99_us": 975,
-            "npu_cost": 175,
-            "physical_ssd_bytes": 141557760,
-            "promote_count": 19,
-            "promote_hit_rate": 1.0,
-            "promote_success": 19,
-            "read_amplification": 0.8,
-            "total_cost": 20691,
-            "trace_time_us": 17029,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 176947200,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 19539,
+            "trace_time_us": 17475,
             "valid_bytes": 176947200
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.03739589895121753,
+          "player_seconds": 0.04240372381173074,
           "valid": true,
-          "output_sha256": "d88822ab89c772fa484ea515376e85ad3b9833e77ad06ec6883335462541057d",
+          "output_sha256": "b90d47e930e8e5c10e9056e2fd3e03a68b2adb6022d899bf88c45bb3fd9c220e",
           "metrics": {
-            "cache_hits": 156,
-            "cpu_cost": 3487,
-            "effective_bandwidth_mb_s": 9909.566034,
+            "cache_hits": 0,
+            "cpu_cost": 2064,
+            "effective_bandwidth_mb_s": 9656.652361,
             "evictions": 0,
-            "latency_p50_us": 529,
-            "latency_p95_us": 922,
+            "latency_p50_us": 749,
+            "latency_p95_us": 936,
             "latency_p99_us": 975,
-            "npu_cost": 175,
-            "physical_ssd_bytes": 141557760,
-            "promote_count": 19,
-            "promote_hit_rate": 1.0,
-            "promote_success": 19,
-            "read_amplification": 0.8,
-            "total_cost": 20691,
-            "trace_time_us": 17029,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 176947200,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 19539,
+            "trace_time_us": 17475,
             "valid_bytes": 176947200
           }
         }
@@ -3172,73 +3172,73 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.036208368837833405,
+          "player_seconds": 0.04326553805731237,
           "valid": true,
-          "output_sha256": "9ec6f49b2f894887c7f8f014b99b0892d9c715f5f400c0755904cc44474edc3a",
+          "output_sha256": "1e50c0de0806bef5eec3db7685cc09a183795fef0546c7aad85aa78dc9023645",
           "metrics": {
-            "cache_hits": 204,
-            "cpu_cost": 3688,
-            "effective_bandwidth_mb_s": 10743.338835,
+            "cache_hits": 0,
+            "cpu_cost": 2040,
+            "effective_bandwidth_mb_s": 10372.2042,
             "evictions": 0,
-            "latency_p50_us": 548,
-            "latency_p95_us": 1003,
+            "latency_p50_us": 790,
+            "latency_p95_us": 1032,
             "latency_p99_us": 1071,
-            "npu_cost": 226,
-            "physical_ssd_bytes": 143720448,
-            "promote_count": 22,
-            "promote_hit_rate": 1.0,
-            "promote_success": 22,
-            "read_amplification": 0.752058,
-            "total_cost": 20878,
-            "trace_time_us": 16964,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 191102976,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 19611,
+            "trace_time_us": 17571,
             "valid_bytes": 191102976
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.036206129007041454,
+          "player_seconds": 0.04201047099195421,
           "valid": true,
-          "output_sha256": "9ec6f49b2f894887c7f8f014b99b0892d9c715f5f400c0755904cc44474edc3a",
+          "output_sha256": "1e50c0de0806bef5eec3db7685cc09a183795fef0546c7aad85aa78dc9023645",
           "metrics": {
-            "cache_hits": 204,
-            "cpu_cost": 3688,
-            "effective_bandwidth_mb_s": 10743.338835,
+            "cache_hits": 0,
+            "cpu_cost": 2040,
+            "effective_bandwidth_mb_s": 10372.2042,
             "evictions": 0,
-            "latency_p50_us": 548,
-            "latency_p95_us": 1003,
+            "latency_p50_us": 790,
+            "latency_p95_us": 1032,
             "latency_p99_us": 1071,
-            "npu_cost": 226,
-            "physical_ssd_bytes": 143720448,
-            "promote_count": 22,
-            "promote_hit_rate": 1.0,
-            "promote_success": 22,
-            "read_amplification": 0.752058,
-            "total_cost": 20878,
-            "trace_time_us": 16964,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 191102976,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 19611,
+            "trace_time_us": 17571,
             "valid_bytes": 191102976
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.03644735598936677,
+          "player_seconds": 0.04199565201997757,
           "valid": true,
-          "output_sha256": "9ec6f49b2f894887c7f8f014b99b0892d9c715f5f400c0755904cc44474edc3a",
+          "output_sha256": "1e50c0de0806bef5eec3db7685cc09a183795fef0546c7aad85aa78dc9023645",
           "metrics": {
-            "cache_hits": 204,
-            "cpu_cost": 3688,
-            "effective_bandwidth_mb_s": 10743.338835,
+            "cache_hits": 0,
+            "cpu_cost": 2040,
+            "effective_bandwidth_mb_s": 10372.2042,
             "evictions": 0,
-            "latency_p50_us": 548,
-            "latency_p95_us": 1003,
+            "latency_p50_us": 790,
+            "latency_p95_us": 1032,
             "latency_p99_us": 1071,
-            "npu_cost": 226,
-            "physical_ssd_bytes": 143720448,
-            "promote_count": 22,
-            "promote_hit_rate": 1.0,
-            "promote_success": 22,
-            "read_amplification": 0.752058,
-            "total_cost": 20878,
-            "trace_time_us": 16964,
+            "npu_cost": 0,
+            "physical_ssd_bytes": 191102976,
+            "promote_count": 0,
+            "promote_hit_rate": 0.0,
+            "promote_success": 0,
+            "read_amplification": 1.0,
+            "total_cost": 19611,
+            "trace_time_us": 17571,
             "valid_bytes": 191102976
           }
         }
@@ -3253,7 +3253,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.19009404303506017,
+          "player_seconds": 0.1915847270283848,
           "valid": true,
           "output_sha256": "0e046c83e716fe1883855c8ca856e34f209db53bb3a4667cc7b28dffaefceb58",
           "metrics": {
@@ -3277,7 +3277,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.1914720970671624,
+          "player_seconds": 0.1943938669282943,
           "valid": true,
           "output_sha256": "0e046c83e716fe1883855c8ca856e34f209db53bb3a4667cc7b28dffaefceb58",
           "metrics": {
@@ -3301,7 +3301,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.19183429097756743,
+          "player_seconds": 0.1913807219825685,
           "valid": true,
           "output_sha256": "0e046c83e716fe1883855c8ca856e34f209db53bb3a4667cc7b28dffaefceb58",
           "metrics": {
@@ -3334,7 +3334,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.20528343599289656,
+          "player_seconds": 0.20817743707448244,
           "valid": true,
           "output_sha256": "cee791ae10b557edb1185bfb7638d04a43a176fc920644dfa83bace6c664f3c4",
           "metrics": {
@@ -3358,7 +3358,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.20456442004069686,
+          "player_seconds": 0.20801278087310493,
           "valid": true,
           "output_sha256": "cee791ae10b557edb1185bfb7638d04a43a176fc920644dfa83bace6c664f3c4",
           "metrics": {
@@ -3382,7 +3382,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.20457955915480852,
+          "player_seconds": 0.2076207078061998,
           "valid": true,
           "output_sha256": "cee791ae10b557edb1185bfb7638d04a43a176fc920644dfa83bace6c664f3c4",
           "metrics": {
@@ -3415,7 +3415,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.6674808480311185,
+          "player_seconds": 0.6784946490079165,
           "valid": true,
           "output_sha256": "6d3398e7a0976742dce0f72f1920cae9d7e05815844bc9a0d3047c38a4e2e903",
           "metrics": {
@@ -3439,7 +3439,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.6701151388697326,
+          "player_seconds": 0.6815797619055957,
           "valid": true,
           "output_sha256": "6d3398e7a0976742dce0f72f1920cae9d7e05815844bc9a0d3047c38a4e2e903",
           "metrics": {
@@ -3463,7 +3463,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.6692983051761985,
+          "player_seconds": 0.6745896898210049,
           "valid": true,
           "output_sha256": "6d3398e7a0976742dce0f72f1920cae9d7e05815844bc9a0d3047c38a4e2e903",
           "metrics": {
@@ -3496,7 +3496,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.659588570939377,
+          "player_seconds": 0.6732335439883173,
           "valid": true,
           "output_sha256": "3175e816bbdec4fa1a3938d0a0271eac4ecc4191091f13e3de5f7ee790bcbad1",
           "metrics": {
@@ -3520,7 +3520,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.662429919000715,
+          "player_seconds": 0.6638286239467561,
           "valid": true,
           "output_sha256": "3175e816bbdec4fa1a3938d0a0271eac4ecc4191091f13e3de5f7ee790bcbad1",
           "metrics": {
@@ -3544,7 +3544,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.6556404430884868,
+          "player_seconds": 0.6633186819963157,
           "valid": true,
           "output_sha256": "3175e816bbdec4fa1a3938d0a0271eac4ecc4191091f13e3de5f7ee790bcbad1",
           "metrics": {
@@ -3577,7 +3577,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.29020150704309344,
+          "player_seconds": 0.29799108509905636,
           "valid": true,
           "output_sha256": "e0d483e5b79132e98722840b5c26def42c3451cf49eb44e0100cf6a0f02b4ac2",
           "metrics": {
@@ -3601,7 +3601,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.2876692039426416,
+          "player_seconds": 0.29420837410725653,
           "valid": true,
           "output_sha256": "e0d483e5b79132e98722840b5c26def42c3451cf49eb44e0100cf6a0f02b4ac2",
           "metrics": {
@@ -3625,7 +3625,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.2861790999304503,
+          "player_seconds": 0.2948709209449589,
           "valid": true,
           "output_sha256": "e0d483e5b79132e98722840b5c26def42c3451cf49eb44e0100cf6a0f02b4ac2",
           "metrics": {
@@ -3658,7 +3658,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.2985931651201099,
+          "player_seconds": 0.3045817550737411,
           "valid": true,
           "output_sha256": "cc363719d0368456737ae14fcd4282859518c7b212f9b4a4393f58147db7a29f",
           "metrics": {
@@ -3682,7 +3682,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.29800001601688564,
+          "player_seconds": 0.30695409304462373,
           "valid": true,
           "output_sha256": "cc363719d0368456737ae14fcd4282859518c7b212f9b4a4393f58147db7a29f",
           "metrics": {
@@ -3706,7 +3706,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.2982647609896958,
+          "player_seconds": 0.3070475119166076,
           "valid": true,
           "output_sha256": "cc363719d0368456737ae14fcd4282859518c7b212f9b4a4393f58147db7a29f",
           "metrics": {
@@ -3739,7 +3739,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 1.2384763739537448,
+          "player_seconds": 1.2676140230614692,
           "valid": true,
           "output_sha256": "674a134ce247cac454606c9a760d31461072a52f1b2922535a75afbcf595841f",
           "metrics": {
@@ -3763,7 +3763,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 1.2510941149666905,
+          "player_seconds": 1.2564444937743247,
           "valid": true,
           "output_sha256": "674a134ce247cac454606c9a760d31461072a52f1b2922535a75afbcf595841f",
           "metrics": {
@@ -3787,7 +3787,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 1.2430753710214049,
+          "player_seconds": 1.275456910021603,
           "valid": true,
           "output_sha256": "674a134ce247cac454606c9a760d31461072a52f1b2922535a75afbcf595841f",
           "metrics": {
@@ -3820,7 +3820,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 1.1913775040302426,
+          "player_seconds": 1.2082376258913428,
           "valid": true,
           "output_sha256": "2b4dffb53362fe66a2565741d0a4cf8f315b37876afb6e04cac10d625c1df1ee",
           "metrics": {
@@ -3844,7 +3844,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 1.1954622690100223,
+          "player_seconds": 1.215033823158592,
           "valid": true,
           "output_sha256": "2b4dffb53362fe66a2565741d0a4cf8f315b37876afb6e04cac10d625c1df1ee",
           "metrics": {
@@ -3868,7 +3868,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 1.1938106608577073,
+          "player_seconds": 1.2004519761539996,
           "valid": true,
           "output_sha256": "2b4dffb53362fe66a2565741d0a4cf8f315b37876afb6e04cac10d625c1df1ee",
           "metrics": {
@@ -3901,7 +3901,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.2944246211554855,
+          "player_seconds": 0.3042510219383985,
           "valid": true,
           "output_sha256": "ea664457e660d8c04183e431a871f657b7a7fd7c0175422e5bedc7031d4992e8",
           "metrics": {
@@ -3925,7 +3925,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.2926497929729521,
+          "player_seconds": 0.3034989850129932,
           "valid": true,
           "output_sha256": "ea664457e660d8c04183e431a871f657b7a7fd7c0175422e5bedc7031d4992e8",
           "metrics": {
@@ -3949,7 +3949,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.29446279094554484,
+          "player_seconds": 0.3004375209566206,
           "valid": true,
           "output_sha256": "ea664457e660d8c04183e431a871f657b7a7fd7c0175422e5bedc7031d4992e8",
           "metrics": {
@@ -3982,7 +3982,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.3042149031534791,
+          "player_seconds": 0.30852583493106067,
           "valid": true,
           "output_sha256": "0e0ff90e732034155ff812f1a0ea4a4300a2f2cf9ad9cceacac8d1130f473c42",
           "metrics": {
@@ -4006,7 +4006,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.3014214232098311,
+          "player_seconds": 0.3137543590273708,
           "valid": true,
           "output_sha256": "0e0ff90e732034155ff812f1a0ea4a4300a2f2cf9ad9cceacac8d1130f473c42",
           "metrics": {
@@ -4030,7 +4030,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.30100903986021876,
+          "player_seconds": 0.3155436380766332,
           "valid": true,
           "output_sha256": "0e0ff90e732034155ff812f1a0ea4a4300a2f2cf9ad9cceacac8d1130f473c42",
           "metrics": {
@@ -4063,7 +4063,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.33125778986141086,
+          "player_seconds": 0.3421566658653319,
           "valid": true,
           "output_sha256": "5bbcec89c8f6d1ab6735ecafc2da256e36b487a29dcf20238446cdc92cdd2ce8",
           "metrics": {
@@ -4087,7 +4087,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.32786728208884597,
+          "player_seconds": 0.3341237111017108,
           "valid": true,
           "output_sha256": "5bbcec89c8f6d1ab6735ecafc2da256e36b487a29dcf20238446cdc92cdd2ce8",
           "metrics": {
@@ -4111,7 +4111,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.327389360871166,
+          "player_seconds": 0.3346298539545387,
           "valid": true,
           "output_sha256": "5bbcec89c8f6d1ab6735ecafc2da256e36b487a29dcf20238446cdc92cdd2ce8",
           "metrics": {
@@ -4144,7 +4144,7 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.3103436918463558,
+          "player_seconds": 0.31803448288701475,
           "valid": true,
           "output_sha256": "b97671fa03a00c2a75275f920a0b704f5e878f59d18a7eead209a1c3980a9302",
           "metrics": {
@@ -4168,7 +4168,7 @@
         },
         {
           "repetition": 2,
-          "player_seconds": 0.30791405495256186,
+          "player_seconds": 0.31759213004261255,
           "valid": true,
           "output_sha256": "b97671fa03a00c2a75275f920a0b704f5e878f59d18a7eead209a1c3980a9302",
           "metrics": {
@@ -4192,7 +4192,7 @@
         },
         {
           "repetition": 3,
-          "player_seconds": 0.30886346800252795,
+          "player_seconds": 0.315587867051363,
           "valid": true,
           "output_sha256": "b97671fa03a00c2a75275f920a0b704f5e878f59d18a7eead209a1c3980a9302",
           "metrics": {
@@ -4225,72 +4225,72 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.12046616314910352,
+          "player_seconds": 0.12487491313368082,
           "valid": true,
-          "output_sha256": "387b6b1f57c7d67b671d2f849c1e8cfc598e8a9c41a8e01565586b695cc76d73",
+          "output_sha256": "0e6e4083c3b472514525b99cdc535a98262591381b847e889b4e0bc5d37aecad",
           "metrics": {
             "cache_hits": 0,
-            "cpu_cost": 5245,
+            "cpu_cost": 3949,
             "effective_bandwidth_mb_s": 882.653035,
             "evictions": 0,
             "latency_p50_us": 662,
             "latency_p95_us": 2177,
             "latency_p99_us": 2512,
-            "npu_cost": 319,
+            "npu_cost": 303,
             "physical_ssd_bytes": 502173184,
-            "promote_count": 26,
+            "promote_count": 10,
             "promote_hit_rate": 1.0,
-            "promote_success": 26,
+            "promote_success": 10,
             "read_amplification": 0.982589,
-            "total_cost": 557758,
+            "total_cost": 556446,
             "trace_time_us": 552194,
             "valid_bytes": 511071444
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.1209355250466615,
+          "player_seconds": 0.12356574810110033,
           "valid": true,
-          "output_sha256": "387b6b1f57c7d67b671d2f849c1e8cfc598e8a9c41a8e01565586b695cc76d73",
+          "output_sha256": "0e6e4083c3b472514525b99cdc535a98262591381b847e889b4e0bc5d37aecad",
           "metrics": {
             "cache_hits": 0,
-            "cpu_cost": 5245,
+            "cpu_cost": 3949,
             "effective_bandwidth_mb_s": 882.653035,
             "evictions": 0,
             "latency_p50_us": 662,
             "latency_p95_us": 2177,
             "latency_p99_us": 2512,
-            "npu_cost": 319,
+            "npu_cost": 303,
             "physical_ssd_bytes": 502173184,
-            "promote_count": 26,
+            "promote_count": 10,
             "promote_hit_rate": 1.0,
-            "promote_success": 26,
+            "promote_success": 10,
             "read_amplification": 0.982589,
-            "total_cost": 557758,
+            "total_cost": 556446,
             "trace_time_us": 552194,
             "valid_bytes": 511071444
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.12183147785253823,
+          "player_seconds": 0.12374842399731278,
           "valid": true,
-          "output_sha256": "387b6b1f57c7d67b671d2f849c1e8cfc598e8a9c41a8e01565586b695cc76d73",
+          "output_sha256": "0e6e4083c3b472514525b99cdc535a98262591381b847e889b4e0bc5d37aecad",
           "metrics": {
             "cache_hits": 0,
-            "cpu_cost": 5245,
+            "cpu_cost": 3949,
             "effective_bandwidth_mb_s": 882.653035,
             "evictions": 0,
             "latency_p50_us": 662,
             "latency_p95_us": 2177,
             "latency_p99_us": 2512,
-            "npu_cost": 319,
+            "npu_cost": 303,
             "physical_ssd_bytes": 502173184,
-            "promote_count": 26,
+            "promote_count": 10,
             "promote_hit_rate": 1.0,
-            "promote_success": 26,
+            "promote_success": 10,
             "read_amplification": 0.982589,
-            "total_cost": 557758,
+            "total_cost": 556446,
             "trace_time_us": 552194,
             "valid_bytes": 511071444
           }
@@ -4306,72 +4306,72 @@
       "runs": [
         {
           "repetition": 1,
-          "player_seconds": 0.11777356313541532,
+          "player_seconds": 0.11965630808845162,
           "valid": true,
-          "output_sha256": "9f1f6af4e773750636d1adc1bce33d7d0cfddb97c8ad06ed421f2768193fb334",
+          "output_sha256": "96af4bf915be42610f7c3b9abfff3ddcfccf0de3c8b2efd351a85efd48d46085",
           "metrics": {
             "cache_hits": 0,
-            "cpu_cost": 4703,
+            "cpu_cost": 3569,
             "effective_bandwidth_mb_s": 859.683971,
             "evictions": 0,
             "latency_p50_us": 587,
             "latency_p95_us": 2257,
             "latency_p99_us": 2493,
-            "npu_cost": 283,
+            "npu_cost": 269,
             "physical_ssd_bytes": 485207040,
-            "promote_count": 21,
+            "promote_count": 7,
             "promote_hit_rate": 1.0,
-            "promote_success": 21,
+            "promote_success": 7,
             "read_amplification": 0.974789,
-            "total_cost": 557162,
+            "total_cost": 556014,
             "trace_time_us": 552176,
             "valid_bytes": 497755731
           }
         },
         {
           "repetition": 2,
-          "player_seconds": 0.11736046010628343,
+          "player_seconds": 0.11921387608163059,
           "valid": true,
-          "output_sha256": "9f1f6af4e773750636d1adc1bce33d7d0cfddb97c8ad06ed421f2768193fb334",
+          "output_sha256": "96af4bf915be42610f7c3b9abfff3ddcfccf0de3c8b2efd351a85efd48d46085",
           "metrics": {
             "cache_hits": 0,
-            "cpu_cost": 4703,
+            "cpu_cost": 3569,
             "effective_bandwidth_mb_s": 859.683971,
             "evictions": 0,
             "latency_p50_us": 587,
             "latency_p95_us": 2257,
             "latency_p99_us": 2493,
-            "npu_cost": 283,
+            "npu_cost": 269,
             "physical_ssd_bytes": 485207040,
-            "promote_count": 21,
+            "promote_count": 7,
             "promote_hit_rate": 1.0,
-            "promote_success": 21,
+            "promote_success": 7,
             "read_amplification": 0.974789,
-            "total_cost": 557162,
+            "total_cost": 556014,
             "trace_time_us": 552176,
             "valid_bytes": 497755731
           }
         },
         {
           "repetition": 3,
-          "player_seconds": 0.11805632687173784,
+          "player_seconds": 0.12522367690689862,
           "valid": true,
-          "output_sha256": "9f1f6af4e773750636d1adc1bce33d7d0cfddb97c8ad06ed421f2768193fb334",
+          "output_sha256": "96af4bf915be42610f7c3b9abfff3ddcfccf0de3c8b2efd351a85efd48d46085",
           "metrics": {
             "cache_hits": 0,
-            "cpu_cost": 4703,
+            "cpu_cost": 3569,
             "effective_bandwidth_mb_s": 859.683971,
             "evictions": 0,
             "latency_p50_us": 587,
             "latency_p95_us": 2257,
             "latency_p99_us": 2493,
-            "npu_cost": 283,
+            "npu_cost": 269,
             "physical_ssd_bytes": 485207040,
-            "promote_count": 21,
+            "promote_count": 7,
             "promote_hit_rate": 1.0,
-            "promote_success": 21,
+            "promote_success": 7,
             "read_amplification": 0.974789,
-            "total_cost": 557162,
+            "total_cost": 556014,
             "trace_time_us": 552176,
             "valid_bytes": 497755731
           }

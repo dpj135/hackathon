@@ -1,5 +1,49 @@
 [
   {
+    "file": "idle_with_tail_unaligned_nds_baseline.json",
+    "metrics": {
+      "cache_hits": 784,
+      "cpu_cost": 1512,
+      "effective_bandwidth_mb_s": 80.796655,
+      "evictions": 0,
+      "latency_p50_us": 98,
+      "latency_p95_us": 98,
+      "latency_p99_us": 664,
+      "npu_cost": 808,
+      "physical_ssd_bytes": 25165824,
+      "promote_count": 8,
+      "promote_hit_rate": 1.0,
+      "promote_success": 8,
+      "read_amplification": 0.029703,
+      "total_cost": 10002734,
+      "trace_time_us": 10000414,
+      "valid_bytes": 847249408
+    },
+    "operations": 24
+  },
+  {
+    "file": "idle_with_tail_unaligned_nds_player.json",
+    "metrics": {
+      "cache_hits": 776,
+      "cpu_cost": 1704,
+      "effective_bandwidth_mb_s": 80.796655,
+      "evictions": 0,
+      "latency_p50_us": 98,
+      "latency_p95_us": 98,
+      "latency_p99_us": 563,
+      "npu_cost": 807,
+      "physical_ssd_bytes": 34603008,
+      "promote_count": 8,
+      "promote_hit_rate": 1.0,
+      "promote_success": 8,
+      "read_amplification": 0.040842,
+      "total_cost": 10002925,
+      "trace_time_us": 10000414,
+      "valid_bytes": 847249408
+    },
+    "operations": 32
+  },
+  {
     "file": "promote_high_nds_baseline.json",
     "metrics": {
       "cache_hits": 72,
@@ -25,19 +69,19 @@
     "file": "promote_high_nds_player.json",
     "metrics": {
       "cache_hits": 64,
-      "cpu_cost": 43326,
+      "cpu_cost": 41868,
       "effective_bandwidth_mb_s": 21571.405249,
-      "evictions": 22,
+      "evictions": 4,
       "latency_p50_us": 296191,
       "latency_p95_us": 544762,
       "latency_p99_us": 569405,
-      "npu_cost": 94,
+      "npu_cost": 76,
       "physical_ssd_bytes": 21407727616,
-      "promote_count": 30,
+      "promote_count": 12,
       "promote_hit_rate": 1.0,
-      "promote_success": 30,
+      "promote_success": 12,
       "read_amplification": 0.996875,
-      "total_cost": 992825,
+      "total_cost": 991349,
       "trace_time_us": 949405,
       "valid_bytes": 21474836480
     },
@@ -174,6 +218,50 @@
       "valid_bytes": 409600
     },
     "operations": 80
+  },
+  {
+    "file": "shift_k8_gap2000_nds_baseline.json",
+    "metrics": {
+      "cache_hits": 768,
+      "cpu_cost": 11904,
+      "effective_bandwidth_mb_s": 33454.334253,
+      "evictions": 64,
+      "latency_p50_us": 435,
+      "latency_p95_us": 5905,
+      "latency_p99_us": 5905,
+      "npu_cost": 896,
+      "physical_ssd_bytes": 402653184,
+      "promote_count": 128,
+      "promote_hit_rate": 1.0,
+      "promote_success": 128,
+      "read_amplification": 0.333333,
+      "total_cost": 47235,
+      "trace_time_us": 34435,
+      "valid_bytes": 1207959552
+    },
+    "operations": 384
+  },
+  {
+    "file": "shift_k8_gap2000_nds_player.json",
+    "metrics": {
+      "cache_hits": 640,
+      "cpu_cost": 12032,
+      "effective_bandwidth_mb_s": 33454.334253,
+      "evictions": 64,
+      "latency_p50_us": 435,
+      "latency_p95_us": 8215,
+      "latency_p99_us": 8215,
+      "npu_cost": 768,
+      "physical_ssd_bytes": 536870912,
+      "promote_count": 128,
+      "promote_hit_rate": 1.0,
+      "promote_success": 128,
+      "read_amplification": 0.444444,
+      "total_cost": 47235,
+      "trace_time_us": 34435,
+      "valid_bytes": 1207959552
+    },
+    "operations": 512
   },
   {
     "file": "short_ttl_26102901_nds_baseline.json",

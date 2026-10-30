@@ -1,25 +1,25 @@
 {
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
   "upstream_sha": "6b1666eb908a4cb55a84dc20832d9e57ffc1e4c4",
-  "automated": 89.9792,
+  "automated": 89.9899,
   "automated_max": 90,
   "official_greedy_score": 67.1981,
-  "inputs": 438,
+  "inputs": 481,
   "repetitions": 3,
-  "player_runs": 1314,
-  "comparisons": 177,
+  "player_runs": 1443,
+  "comparisons": 220,
   "all_replay_valid": true,
-  "functional_boundary_gate_checks": 116,
+  "functional_boundary_gate_checks": 135,
   "sanitized_checks": 74,
   "comparison_summary": [
     {
       "group": "回归对照",
       "cases": 96,
-      "wins": 94,
+      "wins": 96,
       "ties": 0,
-      "losses": 2,
-      "geometric_ratio": 0.6117848379860266,
-      "worst_ratio": 1.0773262625639761
+      "losses": 0,
+      "geometric_ratio": 0.6079780622497246,
+      "worst_ratio": 0.998587952122156
     },
     {
       "group": "独立分布（可见）",
@@ -27,7 +27,7 @@
       "wins": 23,
       "ties": 0,
       "losses": 1,
-      "geometric_ratio": 0.4046160389325296,
+      "geometric_ratio": 0.3984552102314501,
       "worst_ratio": 1.0104293224230432
     },
     {
@@ -45,21 +45,39 @@
       "wins": 17,
       "ties": 0,
       "losses": 7,
-      "geometric_ratio": 0.9324777736445998,
+      "geometric_ratio": 0.9322769219860936,
       "worst_ratio": 1.220074868345917
     },
     {
-      "group": "冻结后独立家族",
+      "group": "复用形态回归",
       "cases": 24,
       "wins": 23,
       "ties": 0,
       "losses": 1,
-      "geometric_ratio": 0.8558860225812343,
-      "worst_ratio": 1.1261281185406973
+      "geometric_ratio": 0.85066571931984,
+      "worst_ratio": 1.1531944574398407
+    },
+    {
+      "group": "缓存准入专项",
+      "cases": 19,
+      "wins": 17,
+      "ties": 1,
+      "losses": 1,
+      "geometric_ratio": 0.9506323543735674,
+      "worst_ratio": 1.0000190947794874
+    },
+    {
+      "group": "冻结后留出组合",
+      "cases": 24,
+      "wins": 14,
+      "ties": 0,
+      "losses": 10,
+      "geometric_ratio": 0.9837484415181299,
+      "worst_ratio": 1.0335323829469725
     }
   ],
   "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
   "system": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
-  "max_profile_submit_ms": 1321.250098,
-  "max_profile_rss_MiB": 2885.9609375
+  "max_profile_submit_ms": 1257.756731,
+  "max_profile_rss_MiB": 2631.93359375
 }

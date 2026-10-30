@@ -1,6 +1,6 @@
 {
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
-  "cpu": 231,
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
+  "cpu": 180,
   "seed": 26102929,
   "generated_submits": 100,
   "generated_iocbs_per_submit": 1000,
@@ -14,8 +14,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 100000,
-            "max_on_complete_ms": 0.030429,
-            "max_on_submit_ms": 63.827795,
+            "max_on_complete_ms": 0.02742,
+            "max_on_submit_ms": 66.555927,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 179870,
@@ -34,11 +34,11 @@
               "trace_time_us": 628925,
               "valid_bytes": 15899915896
             },
-            "policy_total_ms": 5848.47883599871,
+            "policy_total_ms": 6047.12945799867,
             "submit_calls": 100
           },
-          "whole_player_seconds": 65.11681583500467,
-          "max_rss_kib": 1237660,
+          "whole_player_seconds": 67.55715695605613,
+          "max_rss_kib": 1240468,
           "output_sha256": "256c26556f93f7b36872c8602c779424c77816d9fc344821f087c5587a34e3d6"
         }
       ]
@@ -52,8 +52,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 100000,
-            "max_on_complete_ms": 0.028429,
-            "max_on_submit_ms": 285.575453,
+            "max_on_complete_ms": 0.02255,
+            "max_on_submit_ms": 284.46245,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 95635,
@@ -72,11 +72,11 @@
               "trace_time_us": 196659,
               "valid_bytes": 16169769048
             },
-            "policy_total_ms": 23065.3074019967,
+            "policy_total_ms": 22808.7532369972,
             "submit_calls": 100
           },
-          "whole_player_seconds": 54.59396701399237,
-          "max_rss_kib": 853536,
+          "whole_player_seconds": 54.79776342981495,
+          "max_rss_kib": 854940,
           "output_sha256": "8ed932848abe735e002c9ac5a30e89b0f2548dd6ebccdd5d7e66f926a320acef"
         }
       ]
@@ -90,8 +90,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 1,
-            "max_on_complete_ms": 0.00223,
-            "max_on_submit_ms": 51.161548,
+            "max_on_complete_ms": 0.01002,
+            "max_on_submit_ms": 48.973174,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 5629,
@@ -110,10 +110,10 @@
               "trace_time_us": 97513,
               "valid_bytes": 536870912
             },
-            "policy_total_ms": 51.163778,
+            "policy_total_ms": 48.983194,
             "submit_calls": 1
           },
-          "whole_player_seconds": 0.6676366990432143,
+          "whole_player_seconds": 0.6002165621612221,
           "max_rss_kib": 121576,
           "output_sha256": "9170f6bf0d3f6cf2f02da6afa03431621ea4c640d47dae0ad7215a91f8654f85"
         },
@@ -122,8 +122,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 1,
-            "max_on_complete_ms": 0.0018,
-            "max_on_submit_ms": 50.993471,
+            "max_on_complete_ms": 0.00273,
+            "max_on_submit_ms": 48.655501,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 5629,
@@ -142,11 +142,11 @@
               "trace_time_us": 97513,
               "valid_bytes": 536870912
             },
-            "policy_total_ms": 50.995271,
+            "policy_total_ms": 48.658231,
             "submit_calls": 1
           },
-          "whole_player_seconds": 0.6507401680573821,
-          "max_rss_kib": 121572,
+          "whole_player_seconds": 0.5841863630339503,
+          "max_rss_kib": 121576,
           "output_sha256": "9170f6bf0d3f6cf2f02da6afa03431621ea4c640d47dae0ad7215a91f8654f85"
         },
         {
@@ -154,8 +154,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 1,
-            "max_on_complete_ms": 0.00186,
-            "max_on_submit_ms": 50.613957,
+            "max_on_complete_ms": 0.00327,
+            "max_on_submit_ms": 49.016574,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 5629,
@@ -174,11 +174,11 @@
               "trace_time_us": 97513,
               "valid_bytes": 536870912
             },
-            "policy_total_ms": 50.615817,
+            "policy_total_ms": 49.019844,
             "submit_calls": 1
           },
-          "whole_player_seconds": 0.6299931849353015,
-          "max_rss_kib": 121576,
+          "whole_player_seconds": 0.586022230098024,
+          "max_rss_kib": 121572,
           "output_sha256": "9170f6bf0d3f6cf2f02da6afa03431621ea4c640d47dae0ad7215a91f8654f85"
         }
       ]
@@ -192,8 +192,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 6,
-            "max_on_complete_ms": 0.00234,
-            "max_on_submit_ms": 137.207769,
+            "max_on_complete_ms": 0.00393,
+            "max_on_submit_ms": 130.903484,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 4,
@@ -212,11 +212,11 @@
               "trace_time_us": 106,
               "valid_bytes": 196608
             },
-            "policy_total_ms": 137.211598,
+            "policy_total_ms": 130.909454,
             "submit_calls": 1
           },
-          "whole_player_seconds": 1.1833842869382352,
-          "max_rss_kib": 338652,
+          "whole_player_seconds": 0.998052773065865,
+          "max_rss_kib": 339684,
           "output_sha256": "6ab8434c89cd57cd56149c80ca5a7af185c6a60386060b56257a4940f6a1ffcf"
         },
         {
@@ -224,8 +224,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 6,
-            "max_on_complete_ms": 0.002469,
-            "max_on_submit_ms": 135.963711,
+            "max_on_complete_ms": 0.00302,
+            "max_on_submit_ms": 132.685082,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 4,
@@ -244,11 +244,11 @@
               "trace_time_us": 106,
               "valid_bytes": 196608
             },
-            "policy_total_ms": 135.967789,
+            "policy_total_ms": 132.689873,
             "submit_calls": 1
           },
-          "whole_player_seconds": 1.1873535639606416,
-          "max_rss_kib": 339680,
+          "whole_player_seconds": 0.9896154650487006,
+          "max_rss_kib": 339684,
           "output_sha256": "6ab8434c89cd57cd56149c80ca5a7af185c6a60386060b56257a4940f6a1ffcf"
         },
         {
@@ -256,8 +256,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 6,
-            "max_on_complete_ms": 0.0027,
-            "max_on_submit_ms": 138.126232,
+            "max_on_complete_ms": 0.00342,
+            "max_on_submit_ms": 132.82766,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 4,
@@ -276,11 +276,11 @@
               "trace_time_us": 106,
               "valid_bytes": 196608
             },
-            "policy_total_ms": 138.130514,
+            "policy_total_ms": 132.83231,
             "submit_calls": 1
           },
-          "whole_player_seconds": 1.1881475311238319,
-          "max_rss_kib": 339684,
+          "whole_player_seconds": 0.9902777050156146,
+          "max_rss_kib": 338656,
           "output_sha256": "6ab8434c89cd57cd56149c80ca5a7af185c6a60386060b56257a4940f6a1ffcf"
         }
       ]
@@ -294,8 +294,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 96,
-            "max_on_complete_ms": 0.02084,
-            "max_on_submit_ms": 1316.280905,
+            "max_on_complete_ms": 0.01601,
+            "max_on_submit_ms": 1232.231992,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 64,
@@ -314,11 +314,11 @@
               "trace_time_us": 1086,
               "valid_bytes": 3145728
             },
-            "policy_total_ms": 1317.404808,
+            "policy_total_ms": 1233.34621,
             "submit_calls": 2
           },
-          "whole_player_seconds": 9.637112558120862,
-          "max_rss_kib": 2954300,
+          "whole_player_seconds": 8.080982164945453,
+          "max_rss_kib": 2695100,
           "output_sha256": "4959ff8dc2c4ab4c2d5d997c60b2923a484608a8508dc846b96ab64db3143916"
         },
         {
@@ -326,8 +326,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 96,
-            "max_on_complete_ms": 0.022219,
-            "max_on_submit_ms": 1319.009518,
+            "max_on_complete_ms": 0.01777,
+            "max_on_submit_ms": 1257.756731,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 64,
@@ -346,11 +346,11 @@
               "trace_time_us": 1086,
               "valid_bytes": 3145728
             },
-            "policy_total_ms": 1320.121599,
+            "policy_total_ms": 1258.88163,
             "submit_calls": 2
           },
-          "whole_player_seconds": 9.738807298941538,
-          "max_rss_kib": 2954300,
+          "whole_player_seconds": 8.440764913102612,
+          "max_rss_kib": 2694104,
           "output_sha256": "4959ff8dc2c4ab4c2d5d997c60b2923a484608a8508dc846b96ab64db3143916"
         },
         {
@@ -358,8 +358,8 @@
           "valid": true,
           "profile": {
             "complete_calls": 96,
-            "max_on_complete_ms": 0.0215,
-            "max_on_submit_ms": 1321.250098,
+            "max_on_complete_ms": 0.015519,
+            "max_on_submit_ms": 1236.815878,
             "metrics": {
               "cache_hits": 0,
               "cpu_cost": 64,
@@ -378,11 +378,11 @@
               "trace_time_us": 1086,
               "valid_bytes": 3145728
             },
-            "policy_total_ms": 1322.383754,
+            "policy_total_ms": 1237.937697,
             "submit_calls": 2
           },
-          "whole_player_seconds": 9.866485565900803,
-          "max_rss_kib": 2955224,
+          "whole_player_seconds": 8.13949154689908,
+          "max_rss_kib": 2695096,
           "output_sha256": "4959ff8dc2c4ab4c2d5d997c60b2923a484608a8508dc846b96ab64db3143916"
         }
       ]

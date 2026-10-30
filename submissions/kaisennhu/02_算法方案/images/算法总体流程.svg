@@ -37,7 +37,7 @@
 <polygon points="435,710 430.0,698.0 440.0,698.0" fill="#64748b"/>
 <rect x="100" y="835" width="670" height="115" rx="12" fill="#eaf2ff" stroke="#b8c9dc"/>
 <text x="435.0" y="863.5" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="26" fill="#183047">5. 完成反馈与缓存准入</text>
-<text x="435.0" y="895.0" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="21" fill="#183047">前台读完：检查复用、容量、新鲜度、收益和预算</text>
+<text x="435.0" y="895.0" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="21" fill="#183047">前台读完：查复用，估提升成本，验收益与预算</text>
 <text x="435.0" y="924.0" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="21" fill="#183047">命中完成：只更新预算反馈，不再提升</text>
 <polyline points="435,795 435,835" fill="none" stroke="#64748b" stroke-width="2"/>
 <polygon points="435,835 430.0,823.0 440.0,823.0" fill="#64748b"/>
@@ -45,7 +45,7 @@
 <polygon points="770,865 782.0,860.0 782.0,870.0" fill="#64748b"/>
 <text x="1090" y="660" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="20" fill="#183047">完成反馈</text>
 <rect x="100" y="1000" width="670" height="85" rx="12" fill="#eaf2ff" stroke="#b8c9dc"/>
-<text x="435.0" y="1028.0" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="26" fill="#183047">6. 选择提升来源并提交</text>
+<text x="435.0" y="1028.0" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="26" fill="#183047">6. 提交选定来源的提升</text>
 <text x="435.0" y="1059.5" text-anchor="middle" dominant-baseline="central" font-family="Noto Sans,Droid Sans Fallback,Microsoft YaHei,sans-serif" font-size="21" fill="#183047">从HBM或SSD写入缓存；允许当前时刻起执行</text>
 <polyline points="435,950 435,1000" fill="none" stroke="#64748b" stroke-width="2"/>
 <polygon points="435,1000 430.0,988.0 440.0,988.0" fill="#64748b"/>

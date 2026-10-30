@@ -1,0 +1,99 @@
+{
+  "events": [
+    {
+      "completions": [
+        {
+          "complete_us": 4,
+          "iocb_id": 1,
+          "submit_id": 1
+        }
+      ],
+      "event": "IOCB_COMPLETE",
+      "time_us": 4
+    },
+    {
+      "completions": [
+        {
+          "complete_us": 4,
+          "iocb_id": 2,
+          "submit_id": 1
+        }
+      ],
+      "event": "IOCB_COMPLETE",
+      "time_us": 4
+    },
+    {
+      "completions": [
+        {
+          "complete_us": 4,
+          "iocb_id": 3,
+          "submit_id": 1
+        }
+      ],
+      "event": "IOCB_COMPLETE",
+      "time_us": 4
+    }
+  ],
+  "metrics": {
+    "cache_hits": 0,
+    "cpu_cost": 2,
+    "effective_bandwidth_mb_s": 366.210938,
+    "evictions": 0,
+    "latency_p50_us": 4,
+    "latency_p95_us": 4,
+    "latency_p99_us": 4,
+    "npu_cost": 0,
+    "physical_ssd_bytes": 1536,
+    "promote_count": 0,
+    "promote_hit_rate": 0.0,
+    "promote_success": 0,
+    "read_amplification": 1.0,
+    "total_cost": 6,
+    "trace_time_us": 4,
+    "valid_bytes": 1536
+  },
+  "promotion_decisions": [],
+  "schedule_decisions": [
+    {
+      "event": "SCHEDULE_DECISION",
+      "next_wakeup_us": null,
+      "operations": [
+        {
+          "operation_id": 1,
+          "path": "DIRECT",
+          "ranges": [
+            {
+              "iocb_id": 1,
+              "iocb_offset": 0,
+              "length": 512
+            },
+            {
+              "iocb_id": 2,
+              "iocb_offset": 0,
+              "length": 512
+            },
+            {
+              "iocb_id": 3,
+              "iocb_offset": 0,
+              "length": 512
+            }
+          ],
+          "transfers": [
+            {
+              "depends_on": [],
+              "device_id": 0,
+              "group_id": 1,
+              "not_before_us": 0,
+              "physical_length": 1536,
+              "physical_ssd_offset": 0,
+              "priority": 100,
+              "transfer_id": 1,
+              "type": "DIRECT"
+            }
+          ]
+        }
+      ],
+      "submit_id": 1
+    }
+  ]
+}

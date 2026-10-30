@@ -1,0 +1,192 @@
+[
+  {
+    "file": "cycle_cap1_percard2.json",
+    "family": "small_pool_cycle",
+    "sha256": "184c02eae2c586539515bf266a6634990925307ec5934f1bcac31b0acf89eea4",
+    "requests": 640,
+    "unique_cache_keys": 16,
+    "capacity_mib": 1,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "cycle_cap1_percard8.json",
+    "family": "small_pool_cycle",
+    "sha256": "95b4422b7bd06394363c597b451e4c0f1ff30eff33745561e60e99081abc437d",
+    "requests": 640,
+    "unique_cache_keys": 64,
+    "capacity_mib": 1,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "cycle_cap8_percard8.json",
+    "family": "small_pool_cycle",
+    "sha256": "6f2a4234867176bdb8591f52514a7f6647c8eb2562846f05d28f48ef0031d163",
+    "requests": 640,
+    "unique_cache_keys": 64,
+    "capacity_mib": 8,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "cycle_cap8_percard9.json",
+    "family": "small_pool_cycle",
+    "sha256": "6d283002cc3ce6e0b05c21b9cd128b5e32ec22b0670db2326772c5bc94afea08",
+    "requests": 640,
+    "unique_cache_keys": 72,
+    "capacity_mib": 8,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "cycle_cap8_percard1.json",
+    "family": "small_pool_cycle",
+    "sha256": "cbc7a14ab0fb71938259538698edfee492e9ed8d568f80f512e4061dbd5e5c42",
+    "requests": 640,
+    "unique_cache_keys": 8,
+    "capacity_mib": 8,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k1_gap1000.json",
+    "family": "hotspot_replacement",
+    "sha256": "9f301d61561f9cfed27adfc8ef2fbdfabad38c9c9bd3398289e9d70d7724a274",
+    "requests": 144,
+    "unique_cache_keys": 16,
+    "capacity_mib": 8,
+    "arrival_gap_us": 1000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k1_gap2000.json",
+    "family": "hotspot_replacement",
+    "sha256": "526510cb5b85d75d34a1210281d147fa2ac43546a6a8c1ebbcc01419347a6d11",
+    "requests": 144,
+    "unique_cache_keys": 16,
+    "capacity_mib": 8,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k1_gap5000.json",
+    "family": "hotspot_replacement",
+    "sha256": "8f1138d8de3822d43b1be2505539c1196cabcda89b522768959eede8d343b582",
+    "requests": 144,
+    "unique_cache_keys": 16,
+    "capacity_mib": 8,
+    "arrival_gap_us": 5000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k8_gap1000.json",
+    "family": "hotspot_replacement",
+    "sha256": "53b34c59bb2b222e42a29cfe7efee5be0d3d85950450a3af07509fa076759416",
+    "requests": 1152,
+    "unique_cache_keys": 128,
+    "capacity_mib": 64,
+    "arrival_gap_us": 1000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k8_gap2000.json",
+    "family": "hotspot_replacement",
+    "sha256": "a3e3d20311a388376408fc9ead77c0f28e365750b26a7e04753e4a55134d7f8c",
+    "requests": 1152,
+    "unique_cache_keys": 128,
+    "capacity_mib": 64,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k8_gap5000.json",
+    "family": "hotspot_replacement",
+    "sha256": "526c6f39ed55d6f1864b6a79303854ac03a88d2d627ff7a0fda4a2c3289329b5",
+    "requests": 1152,
+    "unique_cache_keys": 128,
+    "capacity_mib": 64,
+    "arrival_gap_us": 5000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k32_gap1000.json",
+    "family": "hotspot_replacement",
+    "sha256": "93227cc3fb20df240c4bb2c2cc359ecd475b05e02fc99655b2a5cdea9382ecc8",
+    "requests": 4608,
+    "unique_cache_keys": 512,
+    "capacity_mib": 256,
+    "arrival_gap_us": 1000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k32_gap2000.json",
+    "family": "hotspot_replacement",
+    "sha256": "853cd70e9b0483829987a2d3dae7a667dc06ffe05cf4a694cd6ce9bbcb90bf03",
+    "requests": 4608,
+    "unique_cache_keys": 512,
+    "capacity_mib": 256,
+    "arrival_gap_us": 2000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "shift_k32_gap5000.json",
+    "family": "hotspot_replacement",
+    "sha256": "50d88800cbe986a528a85ae2b1cc544dda931caf15852ef859c6785da87a795b",
+    "requests": 4608,
+    "unique_cache_keys": 512,
+    "capacity_mib": 256,
+    "arrival_gap_us": 5000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "sparse_repeats2.json",
+    "family": "sparse_reuse",
+    "sha256": "64b3535f6167ba8d32e5eb3609c4a39f9b7ca9e784f7b6060ec83c371faa29e1",
+    "requests": 128,
+    "unique_cache_keys": 64,
+    "capacity_mib": 1024,
+    "arrival_gap_us": 100000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "sparse_repeats3.json",
+    "family": "sparse_reuse",
+    "sha256": "d3dcc4555d4b8753440c70a7ac1594a711c9b2e2769541de759cfb2dcefde853",
+    "requests": 192,
+    "unique_cache_keys": 64,
+    "capacity_mib": 1024,
+    "arrival_gap_us": 100000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "sparse_repeats6.json",
+    "family": "sparse_reuse",
+    "sha256": "335a06d8fa246c15fdbe362d23ee67f0bb4419b3efa8a8086239bd663868f4c6",
+    "requests": 384,
+    "unique_cache_keys": 64,
+    "capacity_mib": 1024,
+    "arrival_gap_us": 100000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "idle_with_tail_aligned.json",
+    "family": "idle_command_savings",
+    "sha256": "8c334a026d048108eac533dfa94bc5c1eadacd9914dccdf1d264d48fcfb322c5",
+    "requests": 808,
+    "unique_cache_keys": 16,
+    "capacity_mib": 8,
+    "arrival_gap_us": 100000,
+    "origin": "local protocol construction"
+  },
+  {
+    "file": "idle_with_tail_unaligned.json",
+    "family": "idle_command_savings",
+    "sha256": "461d4af41c17c164f67beec0e7c8c67ee0b02bb712ef0d8d240dcc8da8ffebdf",
+    "requests": 808,
+    "unique_cache_keys": 16,
+    "capacity_mib": 8,
+    "arrival_gap_us": 100000,
+    "origin": "local protocol construction"
+  }
+]
