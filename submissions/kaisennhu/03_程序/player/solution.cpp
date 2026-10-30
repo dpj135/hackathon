@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <cstdlib>
 #include <deque>
 #include <limits>
 #include <map>
@@ -22,7 +23,29 @@ const char* path_name(Path path) {
     constexpr const char* names[] = {"DIRECT", "AGGREGATE", "FALLBACK"};
     return names[static_cast<int>(path)];
 }
+// Wire names shared with the framework. Emit and compare through these.
+constexpr const char* kSsdToHbm = "SSD_TO_HBM_BUFFER";
+constexpr const char* kSsdToDdr = "SSD_TO_DDR";
+constexpr const char* kSsdToMooncake = "SSD_TO_MOONCAKE";
+constexpr const char* kSsdPrefix = "SSD_TO_";
+constexpr const char* kD2D = "D2D";
+constexpr const char* kH2D = "H2D";
+constexpr const char* kD2H = "D2H";
+constexpr const char* kPromoteSsd = "PROMOTE_SSD";
+constexpr const char* kPromoteHbm = "PROMOTE_HBM";
+bool is_path(const std::string& name, Path path) { return name == path_name(path); }
+// SSD read transfer that fronts an operation on this path.
+const char* read_type(Path path) {
+    return path == Path::Direct   ? path_name(Path::Direct)
+           : path == Path::Aggregate ? kSsdToHbm
+                                     : kSsdToDdr;
+}
+const char* copy_type(Path path) { return path == Path::Aggregate ? kD2D : kH2D; }
 constexpr I MiB = 1024 * 1024;
+double envd(const char* name, double fallback) {
+    const char* value = std::getenv(name);
+    return value ? std::strtod(value, nullptr) : fallback;
+}
 constexpr std::size_t Window = 128, HistoryLimit = 131072;
 constexpr std::size_t CountTransitions = 2000000, CountStates = 131072;
 Json obj(std::initializer_list<std::pair<const std::string, Json>> f) {
@@ -67,7 +90,7 @@ double transfer_us(I size, I bw, const Profile& p, int q) {
     return double(size) * 1000000.0 / (double(bw) * MiB * bucket(p, size, q) / 100.0);
 }
 bool ssd_type(const std::string& type) {
-    return type == "DIRECT" || type.find("SSD_TO_") == 0;
+    return type == path_name(Path::Direct) || type.rfind(kSsdPrefix, 0) == 0;
 }
 // Samples are hypotheses about the final SSD-command count, not measured q.
 std::vector<int> count_samples(int n, int active, I bytes, int seed) {
@@ -143,6 +166,11 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
     std::map<I, Promotion> promotions_;
     std::map<nds::Iocb::CacheKey, I> pending_keys_;
     I last_submit_arrival_ = -1, submit_gap_us_ = 0;
+    // Expected share of this card's pending iocbs that issue a copy on the
+    // D2D (aggregate) or H2D (fallback) engine. Used to turn an iocb count
+    // into an expected copy-task count.
+    double copy_share_agg_ = envd("NDS_COPY_SHARE_AGG", 0.75);
+    double copy_share_fb_ = envd("NDS_COPY_SHARE_FB", 0.1);
     double cost(const char* key) const { return double(c_.at(key)); }
     I pool(const char* name) const { return r_.at(name) * MiB; }
     void sync_promotions(const Json& state) {
@@ -165,6 +193,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         I nvme_bw, h2d_bw, d2d_bw, iocb_cap, hbm_cap, ddr_cap, hbm_used, ddr_used;
         I hbm_cc, h2d_cc;
         double pressure_agg, pressure_fb;
+        // Share of the copy time that stays serialized behind the SSD read.
+        // 1.0 charges the copy in full; <1 credits copy/read pipeline overlap.
+        double copy_serial_agg = 1.0, copy_serial_fb = 1.0;
     };
     EstimateParams estimate_params(const Json& state) const {
         EstimateParams k;
@@ -182,6 +213,22 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         k.h2d_cc = r_.at("h2d_copy_concurrency");
         k.pressure_agg = 1.0 + 0.5 * k.hbm_used / std::max(1.0, double(k.hbm_cap));
         k.pressure_fb = 1.0 + 0.5 * k.ddr_used / std::max(1.0, double(k.ddr_cap));
+        I ssd_rem = 0, d2d_rem = 0, h2d_rem = 0;
+        for (const auto& t : state.at("transfers_inflight").as_array()) {
+            auto type = t.at("type").as_string();
+            I rem = t.contains("remaining_bytes") ? t.at("remaining_bytes").as_int()
+                                                  : t.at("size").as_int();
+            if (ssd_type(type)) ssd_rem += rem;
+            else if (type == kD2D) d2d_rem += rem;
+            else if (type == kH2D) h2d_rem += rem;
+        }
+        double read_us = double(ssd_rem) * 1000000.0 / (k.nvme_bw * MiB);
+        double d2d_us = double(d2d_rem) * 1000000.0 / (k.d2d_bw * MiB);
+        double h2d_us = double(h2d_rem) * 1000000.0 / (k.h2d_bw * MiB);
+        // A copy engine that is behind the read stream cannot hide its work, so
+        // more in-flight copy backlog moves the serial share toward 1.0.
+        k.copy_serial_agg = 0.70 + 0.30 * d2d_us / (d2d_us + read_us + 1.0);
+        k.copy_serial_fb = 0.95 + 0.05 * h2d_us / (h2d_us + read_us + 1.0);
         return k;
     }
     // Additive resource-work surrogate, not an exact objective under shared BW.
@@ -202,13 +249,13 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         : valid < 32768 ? 130.0 * qc
                                         : bucket(d2d_profile, valid, qc);
             bw = std::min(bw, double(k.d2d_bw));
-            t += double(valid) * 1000000.0 / (bw * MiB);
+            t += k.copy_serial_agg * double(valid) * 1000000.0 / (bw * MiB);
             cpu += k.cpu_d2d;
             npu += k.npu_d2d;
             t *= k.pressure_agg;
         } else if (path == Path::Fallback) {
             qc = std::max(1, std::min(qc, int(k.h2d_cc)));
-            t += transfer_us(valid, k.h2d_bw, copy_profile, qc);
+            t += k.copy_serial_fb * transfer_us(valid, k.h2d_bw, copy_profile, qc);
             cpu += k.cpu_h2d;
             npu += k.npu_h2d;
             t *= k.pressure_fb;
@@ -231,7 +278,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         std::vector<Work> out;
         for (const auto& op : plan.at("operations").as_array()) {
             Work w;
-            bool fallback = op.at("path").as_string() == "FALLBACK";
+            bool fallback = is_path(op.at("path").as_string(), Path::Fallback);
             w.commands = cost(fallback ? "CPU_FALLBACK_FIXED_COST" : "CPU_NDS_FIXED_COST");
             for (const auto& t : op.at("transfers").as_array()) {
                 auto type = t.at("type").as_string();
@@ -242,8 +289,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 } else {
                     I bytes = t.at("bytes").as_int();
                     int q = std::max(1, std::min<int>(copies[{type, t.at("device_id").as_int()}],
-                        int(r_.at(type == "D2D" ? "hbm_copy_concurrency" : "h2d_copy_concurrency"))));
-                    if (type == "D2D") {
+                        int(r_.at(type == kD2D ? "hbm_copy_concurrency" : "h2d_copy_concurrency"))));
+                    if (type == kD2D) {
                         double bw = bytes < 4096 ? 20.0 * q : bytes < 32768 ? 130.0 * q :
                             bucket(d2d_profile, bytes, q);
                         w.copy_us += double(bytes) * 1000000.0 / (std::min(bw, double(r_.at("d2d_bw"))) * MiB);
@@ -259,7 +306,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         return out;
     }
     Json operation(const std::vector<Piece>& p, std::size_t begin, std::size_t end,
-                   const std::string& path, I now) {
+                   Path path, I now) {
         I lo = p[begin].begin(), hi = lo, bytes = 0;
         Json ranges = Json::array(), vectors = Json::array();
         for (std::size_t k = begin; k < end; ++k) {
@@ -285,9 +332,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         auto [physical, length] = nds::physical_span(lo, hi - lo);
         I id = next_op_++, first = next_transfer_++, device = p[begin].io->device_id;
         Json transfers = arr({obj({{"transfer_id", first},
-                                   {"type", path == "DIRECT"      ? "DIRECT"
-                                            : path == "AGGREGATE" ? "SSD_TO_HBM_BUFFER"
-                                                                  : "SSD_TO_DDR"},
+                                   {"type", read_type(path)},
                                    {"device_id", device},
                                    {"physical_ssd_offset", physical},
                                    {"physical_length", length},
@@ -295,9 +340,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                                    {"not_before_us", now},
                                    {"depends_on", Json::array()},
                                    {"priority", 100}})});
-        if (path != "DIRECT")
+        if (path != Path::Direct)
             transfers.push_back(obj({{"transfer_id", next_transfer_++},
-                                     {"type", path == "AGGREGATE" ? "D2D" : "H2D"},
+                                     {"type", copy_type(path)},
                                      {"device_id", device},
                                      {"bytes", bytes},
                                      {"vectors", std::move(vectors)},
@@ -306,10 +351,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                                      {"depends_on", arr({Json(first)})},
                                      {"priority", 100}}));
         Json result = obj({{"operation_id", id},
-                           {"path", path},
+                           {"path", path_name(path)},
                            {"ranges", std::move(ranges)},
                            {"transfers", std::move(transfers)}});
-        if (path != "DIRECT") result["buffer_bytes"] = length;
+        if (path != Path::Direct) result["buffer_bytes"] = length;
         return result;
     }
 
@@ -405,12 +450,17 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             std::map<std::pair<std::string, I>, int> active_copy;
             for (const auto& t : state.at("transfers_inflight").as_array()) {
                 auto type = t.at("type").as_string();
-                if (type == "DIRECT" || type.find("SSD_TO_") == 0)
-                    ++active_ssd;
+                if (ssd_type(type)) ++active_ssd;
                 else
                     ++active_copy[{type, t.at("device_id").as_int()}];
             }
             int qs = std::max(1, active_ssd + int(pieces.size()));
+            // DIRECT/AGGREGATE operations pin one iocb slot per owner until the
+            // copy completes, so the number of such reads in flight is bounded by
+            // the slot budget divided by the owners per operation.
+            const I slot_cap = std::max<I>(1, params.iocb_cap);
+            const I free_slots = std::max<I>(1, params.iocb_cap -
+                state.at("foreground_iocb_inflight").as_int());
             auto n = pieces.size();
             struct Edge { std::size_t end; I physical, valid; Path path; };
             std::vector<std::vector<Edge>> edges(n);
@@ -429,8 +479,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 bool aligned = true, whole = true;
                 std::set<I> owners;
                 I card = pieces[i].io->device_id;
-                const int qc_agg = std::max(1, active_copy[{"D2D", card}] + per_card[card]);
-                const int qc_fb = std::max(1, active_copy[{"H2D", card}] + per_card[card]);
+                const int qc_agg = std::max(1, int(std::lround(
+                    double(active_copy[{kD2D, card}]) + copy_share_agg_ * double(per_card[card]))));
+                const int qc_fb = std::max(1, int(std::lround(
+                    double(active_copy[{kH2D, card}]) + copy_share_fb_ * double(per_card[card]))));
                 std::size_t window = Window;
                 for (std::size_t j = i; j < n && j < i + window; ++j) {
                     const auto& p = pieces[j];
@@ -461,7 +513,14 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                             else { count_search = false; edges.clear(); }
                         }
                         int qc = path == Path::Aggregate ? qc_agg : qc_fb;
-                        double v = dp[i] + estimate(path, physical, valid, qs, qc, params);
+                        int qs_edge = qs;
+                        if (path == Path::Aggregate)
+                            qs_edge = int(std::max<I>(1, std::min<I>(
+                                qs, free_slots / I(owners.size()))));
+                        else if (path == Path::Direct)
+                            qs_edge = int(std::max<I>(1, std::min<I>(
+                                qs, slot_cap / I(owners.size()))));
+                        double v = dp[i] + estimate(path, physical, valid, qs_edge, qc, params);
                         if (v < dp[j + 1]) {
                             dp[j + 1] = v;
                             prev[j + 1] = i;
@@ -491,7 +550,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 for (const auto& [a, b, path] : plan) {
                     (void)b;
                     if (path != Path::Direct)
-                        ++copy_groups[{path == Path::Aggregate ? "D2D" : "H2D", pieces[a].io->device_id}];
+                        ++copy_groups[{copy_type(path), pieces[a].io->device_id}];
                 }
                 const int seed = int(plan.size());
                 I bytes = 0;
@@ -536,10 +595,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                     // Copy q is constant for a (cnt, path, card), not across cnt.
                     for (std::size_t i = 0; i < n; ++i) {
                         I card = pieces[i].io->device_id;
-                        const int qc_agg = active_copy[{"D2D", card}] +
-                            std::max(1, (cnt * copy_groups[{"D2D", card}] + seed - 1) / seed);
-                        const int qc_fb = active_copy[{"H2D", card}] +
-                            std::max(1, (cnt * copy_groups[{"H2D", card}] + seed - 1) / seed);
+                        const int qc_agg = active_copy[{kD2D, card}] +
+                            std::max(1, (cnt * copy_groups[{kD2D, card}] + seed - 1) / seed);
+                        const int qc_fb = active_copy[{kH2D, card}] +
+                            std::max(1, (cnt * copy_groups[{kH2D, card}] + seed - 1) / seed);
                         for (const auto& e : edges[i]) {
                             int qc = e.path == Path::Aggregate ? qc_agg : qc_fb;
                             weights[i].push_back(estimate(e.path, e.physical, e.valid,
@@ -592,7 +651,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             Json operations = Json::array();
             for (auto it = plan.rbegin(); it != plan.rend(); ++it) {
                 auto [a, b, path] = *it;
-                operations.push_back(operation(pieces, a, b, path_name(path), now));
+                operations.push_back(operation(pieces, a, b, path, now));
             }
             Json decision = obj({{"event", "SCHEDULE_DECISION"},
                                  {"submit_id", submit.submit_id},
@@ -681,7 +740,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             if (p.at("promote_id").as_int() == h.promote_id) return std::nullopt;
             auto known = promotions_.find(p.at("promote_id").as_int());
             if (known != promotions_.end()) pending_bytes += double(known->second.bytes);
-            if (p.at("path").as_string() == "PROMOTE_HBM") {
+            if (p.at("path").as_string() == kPromoteHbm) {
                 if (known != promotions_.end() && std::get<0>(known->second.key) == io.device_id)
                     ++pending_hbm;
             }
@@ -691,8 +750,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         int active_ssd = 0, active_d2h = 0;
         for (const auto& t : state.at("transfers_inflight").as_array()) {
             auto type = t.at("type").as_string();
-            if (type == "DIRECT" || type.find("SSD_TO_") == 0) ++active_ssd;
-            if (type == "D2H" && t.at("device_id").as_int() == io.device_id) ++active_d2h;
+            if (ssd_type(type)) ++active_ssd;
+            if (type == kD2H && t.at("device_id").as_int() == io.device_id) ++active_d2h;
         }
         auto [offset, physical] = nds::physical_span(io.ssd_offset, io.length);
         int qs = std::max(1, active_ssd + 1);
@@ -754,11 +813,11 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                              {"device_id", io.device_id},
                              {"priority", 10}});
         if (via_ssd) {
-            transfer["type"] = "SSD_TO_MOONCAKE";
+            transfer["type"] = kSsdToMooncake;
             transfer["physical_ssd_offset"] = offset;
             transfer["physical_length"] = physical;
         } else {
-            transfer["type"] = "D2H";
+            transfer["type"] = kD2H;
             transfer["bytes"] = io.length;
             transfer["vectors"] = I(io.iovs.size());
         }
@@ -766,7 +825,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                     {"not_before_us", now},
                     {"source_submit_id", io.submit_id},
                     {"source_iocb_id", io.iocb_id},
-                    {"path", via_ssd ? "PROMOTE_SSD" : "PROMOTE_HBM"},
+                    {"path", via_ssd ? kPromoteSsd : kPromoteHbm},
                     {"transfer", std::move(transfer)}});
     }
 };
