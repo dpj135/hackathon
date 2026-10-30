@@ -1134,11 +1134,15 @@ void Engine::register_cache_hit(const Iocb& iocb, std::int64_t arrival_us) {
 
 void Engine::handle_arrival(std::size_t index) {
     const TraceEvent& event = trace_.events.at(index);
-    expire_cache();
     Submit visible{event.submit.submit_id, event.submit.arrival_us, {}};
     for (const Iocb& iocb : event.submit.iocbs) {
-        if (cache_.count(iocb.cache_key())) register_cache_hit(iocb, event.submit.arrival_us);
-        else visible.iocbs.push_back(iocb);
+        auto found = cache_.find(iocb.cache_key());
+        // 过期项留在池里，只在这次查找时视为未命中。腾位置推迟到下一次写入。
+        if (found != cache_.end() && found->second.expires_at > time_ + Epsilon) {
+            register_cache_hit(iocb, event.submit.arrival_us);
+        } else {
+            visible.iocbs.push_back(iocb);
+        }
     }
     if (!visible.iocbs.empty()) register_decision(visible, policy_.on_submit(visible, runtime_state()));
 }
@@ -1536,7 +1540,6 @@ void Engine::complete_iocb(IocbRuntime& state) {
     if (state.slot_acquired) { state.slot_acquired = false; --iocb_slots_used_; }
     std::int64_t complete = std::max(state.arrival_us, ceil_us(time_));
     latencies_.push_back(complete - state.arrival_us);
-    expire_cache();
     events_.push_back(object({
         {"event", "IOCB_COMPLETE"}, {"time_us", complete},
         {"completions", array({object({{"submit_id", state.iocb.submit_id},

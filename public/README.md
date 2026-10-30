@@ -29,7 +29,7 @@ J = time_cost_per_us * TraceTime + CPUCost + NPUCost
 | PROMOTE_HBM | 从 HBM 用 D2H 写入缓存。并发受 `d2h_copy_concurrency` 限制 |
 | PROMOTE_SSD | 从 SSD 再读一遍写入缓存。它占用 SSD 带宽，没有单独的并发上限 |
 
-缓存键是 `(device_id, ssd_offset, length)`。之后同一个键再出现时，框架自己用 H2D 完成，这次请求不会进入 `on_submit`。TTL 从提升完成时起算，命中只刷新 LRU，不延长 TTL。池子装不下时先丢掉过期项，再按 LRU 驱逐。对象比 `kvcache_pool_capacity` 还大时，提升完不成缓存。
+缓存键是 `(device_id, ssd_offset, length)`。之后同一个键再出现时，框架自己用 H2D 完成，这次请求不会进入 `on_submit`。TTL 从提升完成时起算，命中只刷新 LRU，不延长 TTL。查找时如果这个键已经过期，视为未命中，但不立刻清掉。过期项要等下一次写入、池子不够时才丢掉，然后再按 LRU 驱逐。对象比 `kvcache_pool_capacity` 还大时，提升完不成缓存。
 
 程序只能看到当前已经到达、而且没有命中缓存的请求，不能提前看后面的 trace。完成时间和 `J` 由模拟器计算。
 
@@ -170,7 +170,7 @@ bash scripts/score_paths.sh
 - PROMOTE_SSD 的物理区间不是对齐后的整段 iocb。
 - 传输依赖有环，或 `not_before_us` 早于请求到达。PROMOTE 可以用 `not_before_us` 推迟启动，不能早于当前时刻。
 
-KVCache 的键是整个 iocb 的 `(device_id, ssd_offset, length)`。命中由框架模拟成该卡上的 H2D，不进入 `on_submit`。TTL 从 PROMOTE 完成时开始，命中只更新 LRU，不延长 TTL。对象比 `kvcache_pool_capacity` 还大时，PROMOTE 完不成缓存。容量不够时先丢掉过期项，再按 LRU 驱逐。
+KVCache 的键是整个 iocb 的 `(device_id, ssd_offset, length)`。命中由框架模拟成该卡上的 H2D，不进入 `on_submit`。TTL 从 PROMOTE 完成时开始，命中只更新 LRU，不延长 TTL。对象比 `kvcache_pool_capacity` 还大时，PROMOTE 完不成缓存。到达和完成时不清过期项；下一次写入发现池子不够，才先丢掉过期项，再按 LRU 驱逐。
 
 运行状态里的池用量字段是 `kvcache_pool_used`。trace 里如果还写着旧名 `mooncake_capacity`，和 `kvcache_pool_capacity` 是同一个字段。
 
@@ -221,7 +221,11 @@ KVCache 的键是整个 iocb 的 `(device_id, ssd_offset, length)`。命中由�
 自动分   = 以上三项，满分 90
 ```
 
-单题默认墙钟限制写在 suite 里，内存上限 16384MB。设计文档的 10 分由评委看，脚本不打。
+单题默认墙钟限制写在 suite 里。设计文档的 10 分由评委看，脚本不打。
+
+内存上限 16384MB 只算你的策略。`nds_player` 统计 `create_policy`、`on_submit`、`on_iocb_complete` 里经 `new` 或 STL 容器申请、还没释放的字节，以及你自己开的线程申请的字节，全局对象构造时申请的也算。框架读 trace、模拟、写结果和 `nds_validate` 不算。超过上限时 `nds_player` 打印 `NDS_POLICY_MEMORY_EXCEEDED` 并退出，这一题按超内存计 0 分。正常结束时它在标准错误里打印 `NDS_POLICY_PEAK_KB`，打分结果里对应 `policy_peak_mb`。本地想换上限，设环境变量 `NDS_POLICY_MEMORY_LIMIT_MB`。
+
+不要在 `solution.cpp` 里替换全局 `operator new` 或 `operator delete`，链接会冲突。不要用 `malloc`、`mmap` 或超大的静态数组绕过统计，评审会查。
 
 `J_reference / J_player` 大于 1 的部分不会把优化分抬过 60，但会加进输出里的 `tie_break_ratio_sum`。
 
