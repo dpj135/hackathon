@@ -110,7 +110,7 @@ def render(title,files,dest):
     page='<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+html.escape(title)+'</title><style>'+CSS+'</style></head><body><main>'+navigation+''.join(content)+'</main></body></html>'
     path.with_suffix('.html').write_text(page,encoding='utf-8');print(path)
 
-render('从零认识我们的 NDS 调度方案',['00_快速入门/方案介绍.md'],'00_快速入门/方案介绍')
-render('NDS 解题方案与验证报告',['02_算法方案/算法设计.md','02_算法方案/双卡读取逐步示例.md','05_验证结果/验证报告.md','04_测试复现/测试操作手册.md','01_题目与依据/材料来源.md'],'02_算法方案/解题方案与验证报告')
+render('从零认识我们的 NDS 调度方案',['04_算法设计与复杂度/方案介绍.md'],'04_算法设计与复杂度/方案介绍')
+render('NDS 解题方案与验证报告',['04_算法设计与复杂度/算法设计.md','04_算法设计与复杂度/双卡读取逐步示例.md','06_性能与资源报告/验证报告.md','05_自动化测试与复现/测试操作手册.md','05_自动化测试与复现/依赖来源/材料来源.md'],'04_算法设计与复杂度/解题方案与验证报告')
 
-render('验证报告',['05_验证结果/验证报告.md'],'05_验证结果/验证报告')
+render('验证报告',['06_性能与资源报告/验证报告.md'],'06_性能与资源报告/验证报告')

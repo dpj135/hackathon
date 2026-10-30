@@ -1,0 +1,37 @@
+{
+  "source_commit": "519ef500ad5f685a7e7e010c076960610018c20b",
+  "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+  "platform": {
+    "os": "Linux",
+    "architecture": "x86_64",
+    "tested_distribution": "Ubuntu 24.04",
+    "libc": [
+      "glibc",
+      "2.39"
+    ]
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "flags": [
+    "-O2",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "dynamic_dependencies": [
+    "libstdc++.so.6",
+    "libm.so.6",
+    "libgcc_s.so.1",
+    "libc.so.6",
+    "ld-linux-x86-64.so.2"
+  ],
+  "binaries": {
+    "nds_player": "5bd2c3efb4cd0cda63b57a8979acd4c2a3379716631bc4403e3c93ab0fc14a24",
+    "nds_validate": "97f00074688ab380e89b5f732eebdc9d4d507307fd5846b5a55e9729f83ea986"
+  },
+  "engine_files_sha256": {
+    "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+    "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
+    "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
+  }
+}

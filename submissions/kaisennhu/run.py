@@ -27,7 +27,7 @@ def require_valid_score(score):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('mode',choices=['build','solve','quick','score','extended','compare','scale','demo','all'],nargs='?',default='quick')
+    p.add_argument('mode',choices=['build','solve','quick','score','extended','compare','runtime','scale','demo','all'],nargs='?',default='quick')
     p.add_argument('--data',type=Path,help='Additional data folder for extended tests')
     p.add_argument('--repeat',type=int,default=3)
     p.add_argument('--output',type=Path)
@@ -36,7 +36,7 @@ def main():
     p.add_argument('--prebuilt',action='store_true',help='Use the verified Linux x86_64 executables for solve')
     a=p.parse_args()
     if a.repeat < 1:p.error('--repeat must be positive')
-    root=Path(__file__).resolve().parent;code=root/'03_程序';test=root/'04_测试复现'
+    root=Path(__file__).resolve().parent;code=root/'01_调度算法源代码';test=root/'05_自动化测试与复现'
     if os.name!='posix':p.error('Run build/tests under Linux or Windows WSL; documents can be opened directly on Windows.')
     if a.mode=='solve' and a.input is None:p.error('solve requires --input')
     if a.prebuilt and a.mode!='solve':p.error('--prebuilt is available for solve')
@@ -53,8 +53,8 @@ def main():
     if a.prebuilt:
         if platform.system()!='Linux' or platform.machine() not in ['x86_64','AMD64']:
             p.error('The bundled executables require Linux x86_64; build from source on other supported Linux architectures.')
-        binaries=code/'bin/linux-x86_64'
-        if not (binaries/'manifest.json').is_file():p.error('Git仓库只提供源码；请去掉--prebuilt自动构建，或使用完整本地交付。')
+        binaries=root/'02_可执行程序/linux-x86_64'
+        if not (binaries/'manifest.json').is_file():p.error('缺少预编译程序，请去掉--prebuilt从源码构建。')
         manifest=json.loads((binaries/'manifest.json').read_text())
         if hashlib.sha256((code/'player/solution.cpp').read_bytes()).hexdigest()!=manifest['source_sha256']:
             raise RuntimeError('源码与可执行程序不匹配，请重新构建')
@@ -113,11 +113,13 @@ def main():
             print(f'正在比较提交策略与官方贪心：{name}',flush=True)
             run(['python3',test/'compare.py','--code',code,'--data',data,'--repeat',a.repeat,
                  '--output',out/(name+'_comparison.json')],name+'_comparison.log')
+    if a.mode in ['runtime','all']:
+        run(['python3',test/'runtime.py','--code',code,'--repeat',a.repeat,'--output',out/'runtime'])
     if a.mode in ['scale','all']:
         run(['g++','-O2','-std=c++17','-I'+str(code/'include'),code/'src/json.cpp',code/'src/framework.cpp',code/'player/solution.cpp',test/'profile_main.cpp','-o',code/'nds_profile'])
         run(['python3',test/'stress.py','--code',code,'--output',out/'stress'])
     if a.mode in ['demo','all']:
-        run(['python3',root/'06_答辩演示/demo.py','--output',out/'demo'])
+        run(['python3',root/'07_答辩PPT/demo.py','--output',out/'demo'])
     print('结果目录：',out)
 
 if __name__=='__main__':main()

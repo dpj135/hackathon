@@ -79,7 +79,12 @@
     ]
   },
   "runtime": {
+    "repeat": 3,
+    "warmup_per_input": 1,
+    "cpu": 8,
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
     "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "cpu_model": "AMD EPYC 9575F 64-Core Processor",
     "flags": [
       "-O2",
       "-std=c++17",
@@ -87,12 +92,40 @@
       "-Wextra",
       "-Wpedantic"
     ],
-    "cpu_model": "AMD EPYC 9575F 64-Core Processor",
-    "cpu": 8,
-    "timing_wrapper_sha256": "5e2b933715f67b8bf7b21568ea936099809171f09df96e598b33452c56d4419e",
-    "repeat": 3,
-    "warmup_per_input": 1,
-    "policy_total_ms_sum_of_case_medians": 1153.1159270000187,
-    "process_seconds_sum_of_case_medians": 9.45528271375224
-  }
+    "source_sha256": {
+      "strategy": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+      "greedy": "82f29df92e749349904bbe0398d673f7f8defacc04c1eb82a55fb00b3832b6d8"
+    },
+    "engine_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+    "entry_sha256": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
+    "timing_wrapper_sha256": "133f82158efbc34c8f9a3f89645b0b77847ebab63c9f6f555a3dd13dcf9db734",
+    "binary_sha256": {
+      "strategy": "a29f866d2a6f489ff5ec17f59c27b880e474bc60d812188b56fdacd5948d2006",
+      "greedy": "f3407535454cea154e2583d538ba29420751f2265fb03e17419d45d5dec4c3fb"
+    },
+    "build_seconds": 13.793446683790535,
+    "totals": {
+      "strategy": {
+        "wall_seconds": 9.392674229573458,
+        "policy_total_ms": 1153.4711970000158
+      },
+      "greedy": {
+        "wall_seconds": 10.96877548797056,
+        "policy_total_ms": 831.1762179999861
+      }
+    },
+    "all_valid": true,
+    "all_repeated_outputs_identical": true
+  },
+  "source_commit": "519ef500ad5f685a7e7e010c076960610018c20b",
+  "verification_date_utc": "2026-10-30",
+  "scale": {
+    "cases": 5,
+    "runs": 11,
+    "all_valid": true,
+    "policy_peak_kib_max": 1658996,
+    "process_peak_kib_max": 3510992,
+    "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d"
+  },
+  "fresh_replay_matches_published_655_outputs": true
 }

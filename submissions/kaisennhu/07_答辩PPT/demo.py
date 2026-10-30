@@ -3,7 +3,7 @@
 import argparse,json,subprocess,collections
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--code',type=Path);p.add_argument('--output',type=Path);a=p.parse_args()
-root=Path(__file__).resolve().parents[1];code=(a.code or root/'03_程序').resolve();out=(a.output or root/'06_答辩演示/运行输出').resolve();out.mkdir(parents=True,exist_ok=True)
+root=Path(__file__).resolve().parents[1];code=(a.code or root/'01_调度算法源代码').resolve();out=(a.output or root/'07_答辩PPT/运行输出').resolve();out.mkdir(parents=True,exist_ok=True)
 subprocess.run(['make','-C',str(code),'-j4'],check=True,stdout=subprocess.DEVNULL)
 scenes=[('read_direct_low','连续512B读取：比较命令合并'),('promote_low_aligned','热点复用：观察PROMOTE和CACHE_HIT'),('promote_high','小缓存大工作集：限制提升成本'),('promote_ssd_mid','边际资源工作量估值：拒绝小对象低收益提升')]
 scenes.append(('short_ttl_26102901','扩展负载：排队后热点证据过时'))
@@ -12,7 +12,7 @@ scenes.extend([('shift_k8_gap2000','热点迁移：允许新数据替换旧缓�
 for name,title in scenes:
  src=code/f'data/{name}.json'
  if not src.exists():
-  src=next(p for p in [root/f'04_测试复现/fixtures/{group}/{name}.json' for group in ['resources','admission']] if p.exists())
+  src=next(p for p in [root/f'05_自动化测试与复现/fixtures/{group}/{name}.json' for group in ['resources','admission']] if p.exists())
  print('\n'+title,flush=True);solutions={}
  for label,exe in [('贪心','nds_baseline'),('方案','nds_player')]:
   path=out/f'{name}_{exe}.json'

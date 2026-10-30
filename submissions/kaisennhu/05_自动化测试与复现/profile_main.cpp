@@ -37,7 +37,7 @@ std::unique_ptr<SchedulerPolicy> create_profiled_policy(
 // This includes the exact bundled upstream source, including all allocation hooks.
 #define create_policy create_profiled_policy
 #define main metered_player_main
-#include "../03_程序/src/player_main.cpp"
+#include "../01_调度算法源代码/src/player_main.cpp"
 #undef main
 #undef create_policy
 int main(int argc, char** argv) {

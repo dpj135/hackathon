@@ -1,0 +1,17 @@
+NDS 多路径IO调度方案 · 七分钟答辩
+格式：PPTX；16:9；9页；建议讲解时长约7分钟。
+设计：Presenton 搜索设计 HELVETICA RED，ID 12；黑白米色底，红色强调，统一网格与页码。
+内容来源：本仓库主线 519ef500ad5f685a7e7e010c076960610018c20b 的策略、官方SDK及06目录实测报告。
+图像/图标来源：无外部图像或图标；表格与文字由本次材料生成。
+
+字体（应用于本PPTX）：
+1. Inter Tight
+   https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap
+2. Noto Sans SC
+   https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap
+浏览器字体栈为 Inter Tight, Noto Sans SC, sans-serif。PPTX不保证嵌入字体；编辑机器缺字体时，建议安装相应字体并检查自动替换后的排版。
+
+导出：Presenton HTML exporter，creation_id=24336；仅保留最终9页PPTX。
+PPTX文件随Git提交，不依赖24小时临时链接。
+已检查9页源页面的尺寸、文本溢出、缩略图，以及PPTX ZIP完整性、页数和文本内容。
+PPTX SHA256：4661820fedcfb9b990c18e40fac06468ea676dbabf9987e30d0cd0dcbfc98ecb

@@ -13,7 +13,7 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def sdk(code):
-    manifest = json.loads((ROOT/'01_题目与依据/SDK来源与哈希.json').read_text())
+    manifest = json.loads((ROOT/'05_自动化测试与复现/依赖来源/SDK来源与哈希.json').read_text())
     official = ROOT.parents[1]/'public'
     for item in manifest['files']:
         dst = code/item['file']
@@ -26,7 +26,7 @@ def sdk(code):
         shutil.copy2(src,dst)
 
 def fixtures(code, groups):
-    tests = ROOT/'04_测试复现'
+    tests = ROOT/'05_自动化测试与复现'
     for group in groups:
         dest = tests/'fixtures'/group
         records = json.loads((dest/'manifest.json').read_text())
