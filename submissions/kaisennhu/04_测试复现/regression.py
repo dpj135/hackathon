@@ -62,6 +62,16 @@ with tempfile.TemporaryDirectory(prefix='nds-regression-') as temp:
             resources={'hbm_capacity':1,'iocb_capacity':2})
     r,_,_=check('slot_mixed_paths',t)
     assert len({o['path'] for d in r['schedule_decisions'] for o in d['operations']})>=2
+    # Two AGGREGATE groups on different IOCBs share the single slot, so only one
+    # can be in flight: a batch with two operations is not overlap evidence.
+    t=trace([(0,[io(1,0,4096,unaligned=True),io(2,4096,4096,unaligned=True)])],
+            resources={'iocb_capacity':1,'ddr_capacity':1},
+            costs={'CPU_FALLBACK_FIXED_COST':1000000})
+    r,src,dst=check('serial_two_groups',t)
+    assert [o['path'] for d in r['schedule_decisions'] for o in d['operations']]==['AGGREGATE']*2
+    baseline=work/'serial_two_groups.baseline.json'
+    run([root/'nds_baseline',src,baseline]);run([root/'nds_validate',src,baseline])
+    assert r['metrics']['total_cost']<=json.loads(baseline.read_text())['metrics']['total_cost']
     check('overlapping_reads',trace([(0,[io(1,1001,584,unaligned=True),io(2,1100,768,unaligned=True)])]))
     r,src,dst=check('ttl_expiry',trace([(0,[io(1,0,1048576)]),(500,[io(1,0,1048576)]),(8000,[io(1,0,1048576)])],costs={'promote_ttl_us':1000}))
     assert r['metrics']['cache_hits']==0

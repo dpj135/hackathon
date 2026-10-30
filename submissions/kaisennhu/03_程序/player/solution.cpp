@@ -42,6 +42,10 @@ const char* read_type(Path path) {
 }
 const char* copy_type(Path path) { return path == Path::Aggregate ? kD2D : kH2D; }
 constexpr I MiB = 1024 * 1024;
+double envd(const char* name, double fallback) {
+    const char* value = std::getenv(name);
+    return value ? std::strtod(value, nullptr) : fallback;
+}
 constexpr std::size_t Window = 128, HistoryLimit = 131072;
 constexpr std::size_t CountTransitions = 2000000, CountStates = 131072;
 Json obj(std::initializer_list<std::pair<const std::string, Json>> f) {
@@ -189,6 +193,11 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         // rest charge the copy in full.
         std::map<I, double> copy_serial_agg, copy_serial_fb;
     };
+    // Expected share of this card's pending iocbs that issue a copy on the
+    // D2D (aggregate) or H2D (fallback) engine. Used to turn an iocb count
+    // into an expected copy-task count.
+    double copy_share_agg_ = envd("NDS_COPY_SHARE_AGG", 0.75);
+    double copy_share_fb_ = envd("NDS_COPY_SHARE_FB", 0.1);
     EstimateParams estimate_params(const Json& state) const {
         EstimateParams k;
         k.time_cost = cost("time_cost_per_us");
@@ -504,8 +513,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 bool aligned = true, whole = true;
                 std::set<I> owners;
                 I card = pieces[i].io->device_id;
-                const int qc_agg = std::max(1, active_copy[{kD2D, card}] + per_card[card]);
-                const int qc_fb = std::max(1, active_copy[{kH2D, card}] + per_card[card]);
+                const int qc_agg = std::max(1, int(std::lround(
+                    double(active_copy[{kD2D, card}]) + copy_share_agg_ * double(per_card[card]))));
+                const int qc_fb = std::max(1, int(std::lround(
+                    double(active_copy[{kH2D, card}]) + copy_share_fb_ * double(per_card[card]))));
                 std::size_t window = Window;
                 for (std::size_t j = i; j < n && j < i + window; ++j) {
                     const auto& p = pieces[j];
@@ -583,7 +594,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 for (const auto& p : pieces) bytes += p.length;
                 auto samples = count_samples(int(n), active_ssd, bytes, seed);
                 samples.insert(samples.begin(), prefix_min[n]);
-                double best = std::numeric_limits<double>::infinity();
+                // The ordinary DP plan is the incumbent: a count plan must beat
+                // it on the same estimate, not merely exist.
+                double best = dp[n];
                 int best_count = seed;
                 std::set<int> tried;
                 struct Cell { double value = std::numeric_limits<double>::infinity();
