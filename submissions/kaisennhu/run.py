@@ -3,9 +3,11 @@
 import argparse
 import hashlib
 import json
+import math
 import os
 import platform
 import subprocess
+import sys
 from datetime import datetime,timezone
 from pathlib import Path
 
@@ -16,7 +18,9 @@ def require_valid_score(score):
     if len({c['id'] for c in cases})!=count:
         raise ValueError('评分包含重复用例')
     if any(c['status']!='ok' or c.get('total_cost',0)<=0 or
-           c['peak_mb']>score['memory_limit_mb'] for c in cases):
+           not isinstance(c.get('policy_peak_mb'),(int,float)) or
+           not math.isfinite(c['policy_peak_mb']) or c['policy_peak_mb']<0 or
+           (score['memory_limit_mb']>0 and c['policy_peak_mb']>score['memory_limit_mb']) for c in cases):
         raise ValueError('评分存在失败、无效成本或内存超限')
     if score['performance']!=10.0 or score['feasibility']!=20.0:
         raise ValueError('评分资源或正确性检查未全部通过')
@@ -42,14 +46,21 @@ def main():
         if log:
             with (out/log).open('w') as f:subprocess.run(args,check=True,stdout=f,stderr=subprocess.STDOUT)
         else:subprocess.run(args,check=True)
+    sys.path.insert(0,str(test))
+    import prepare
+    prepare.sdk(code)
     binaries=code
     if a.prebuilt:
         if platform.system()!='Linux' or platform.machine() not in ['x86_64','AMD64']:
             p.error('The bundled executables require Linux x86_64; build from source on other supported Linux architectures.')
         binaries=code/'bin/linux-x86_64'
+        if not (binaries/'manifest.json').is_file():p.error('Git仓库只提供源码；请去掉--prebuilt自动构建，或使用完整本地交付。')
         manifest=json.loads((binaries/'manifest.json').read_text())
         if hashlib.sha256((code/'player/solution.cpp').read_bytes()).hexdigest()!=manifest['source_sha256']:
             raise RuntimeError('源码与可执行程序不匹配，请重新构建')
+        for name,digest in manifest['engine_files_sha256'].items():
+            if hashlib.sha256((code/name).read_bytes()).hexdigest()!=digest:
+                raise RuntimeError('SDK与可执行程序不匹配：'+name)
         for name,digest in manifest['binaries'].items():
             target=binaries/name
             if hashlib.sha256(target.read_bytes()).hexdigest()!=digest:raise RuntimeError('可执行程序校验失败：'+name)
@@ -64,13 +75,17 @@ def main():
         run([binaries/'nds_validate',a.input.resolve(),result])
         print('方案与官方回放校验完成：',result)
     if a.mode in ['quick','all']:
+        prepare.fixtures(code,['admission'])
         run(['make','-C',code,'test'],'framework.log')
         run(['python3',test/'regression.py','--code',code,'--output',out/'regression'])
         run(['python3',test/'boundaries.py','--code',code,'--output',out/'boundaries'])
         run(['python3',test/'admission_checks.py','--code',code,'--output',out/'admission_checks.json'])
         run(['python3',test/'gate_tests.py','--output',out/'gate_checks.json'])
+        run(['python3',test/'engine_checks.py','--code',code,'--output',out/'engine_checks.json'])
+    if a.mode in ['score','compare','all']:
+        run(['g++','-O2','-std=c++17','-I'+str(code/'include'),code/'src/json.cpp',code/'src/framework.cpp',code/'src/player_main.cpp',test/'greedy_policy.cpp','-o',code/'nds_greedy_metered'])
     if a.mode in ['score','all']:
-        for label,binary in [('strategy','nds_player'),('official_baseline','nds_baseline')]:
+        for label,binary in [('strategy','nds_player'),('official_baseline','nds_greedy_metered')]:
             print('正在评测：'+('提交方案' if label=='strategy' else '官方基线'),flush=True)
             run(['python3',code/'scripts/score_suite.py','--player',code/binary,'--validate',code/'nds_validate',
                 '--suite',code/'suites/public_suite.json','--data-dir',code/'data','--baseline',code/'suites/public_baseline.json',
@@ -78,8 +93,12 @@ def main():
             score=json.loads((out/(label+'_score.json')).read_text())
             require_valid_score(score)
             print(f"  自动分 {score['automated']}/90，合法 {score['valid_cases']}/{score['case_count']}",flush=True)
+    if a.mode in ['extended','compare','all'] and not a.data:
+        prepare.fixtures(code,prepare.GENERATED+['robustness','coverage'])
+    if a.mode=='demo':
+        prepare.fixtures(code,['resources','admission'])
     if a.mode in ['extended','all']:
-        groups=[('additional',a.data.resolve())] if a.data else [('official',code/'data')]+[(n,test/'fixtures'/n) for n in ['resources','coverage','distribution','regression','robustness','cache_mix','blind','admission','holdout']]
+        groups=[('additional',a.data.resolve())] if a.data else [('official',code/'data')]+[(n,test/'fixtures'/n) for n in ['resources','coverage','distribution','regression','robustness','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout']]
         for name,data in groups:
             print(f'正在验证 {name}，每个输入重复 {a.repeat} 次……',flush=True)
             run(['python3',test/'evaluate.py','--code',code,'--data',data,'--repeat',a.repeat,'--cpu',min(os.sched_getaffinity(0)),
@@ -87,7 +106,7 @@ def main():
             summary=json.loads((out/(name+'.json')).read_text())['summary']
             print(f"  {summary['valid']}/{summary['cases']} 合法，{summary['deterministic']} 条重复输出一致。",flush=True)
     if a.mode in ['compare','all']:
-        groups=[('additional',a.data.resolve())] if a.data else [(n,test/'fixtures'/n) for n in ['regression','robustness','cache_mix','blind','admission','holdout']]
+        groups=[('additional',a.data.resolve())] if a.data else [(n,test/'fixtures'/n) for n in ['regression','robustness','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout']]
         for name,data in groups:
             print(f'正在比较提交策略与官方贪心：{name}',flush=True)
             run(['python3',test/'compare.py','--code',code,'--data',data,'--repeat',a.repeat,

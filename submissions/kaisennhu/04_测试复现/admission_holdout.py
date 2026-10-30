@@ -14,9 +14,12 @@ def main():
     parser.add_argument('--code', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--source-sha256', required=True)
+    parser.add_argument('--engine-sha256', help='Bind a new holdout to the frozen engine as well as the policy')
     parser.add_argument('--seeds', type=int, nargs='+', default=[271013, 271019, 271027, 271043, 271057, 271067])
     args = parser.parse_args()
     assert hashlib.sha256((args.code / 'player/solution.cpp').read_bytes()).hexdigest() == args.source_sha256
+    if args.engine_sha256:
+        assert hashlib.sha256((args.code / 'src/framework.cpp').read_bytes()).hexdigest() == args.engine_sha256
     instance = json.loads((args.code / 'data/promote_hbm_low.json').read_text())['instance']
     args.output.mkdir(parents=True, exist_ok=True)
     manifest = []
@@ -60,6 +63,10 @@ def main():
             manifest.append(dict(file=path.name, family=family, seed=seed, requests=24 * 8 * count,
                 sha256=hashlib.sha256(path.read_bytes()).hexdigest(), source_freeze_sha256=args.source_sha256,
                 selection='Generated after source freeze; not used for retuning'))
+    if args.engine_sha256:
+        for item in manifest:
+            item['engine_freeze_sha256'] = args.engine_sha256
+            item['selection'] = 'Generated after policy and engine freeze; not used for retuning'
     (args.output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print('Generated', len(manifest), 'frozen-policy holdout inputs')
 

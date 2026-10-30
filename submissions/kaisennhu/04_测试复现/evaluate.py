@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Run the submitted policy, replay every output, retain deterministic evidence."""
+import re
 import argparse
 import hashlib
 import json
@@ -27,6 +28,7 @@ def main():
     if not cases:p.error('no input cases')
     result=dict(source_sha256=sha(code/'player/solution.cpp'),binary_sha256=sha(code/'nds_player'),
                 repeat=a.repeat,cpu_affinity=sorted(os.sched_getaffinity(0)),cases=[],summary={})
+    result['engine_files_sha256']={str(p.relative_to(code)):sha(p) for p in [code/'src/framework.cpp',code/'src/player_main.cpp',code/'scripts/score_suite.py']}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='nds-evaluate-') as tmp:
         dest=Path(tmp)/'result.json'
@@ -37,7 +39,10 @@ def main():
             for rep in range(a.repeat):
                 run=dict(repetition=rep+1);start=time.monotonic()
                 try:
-                    subprocess.run([str(code/'nds_player'),str(src),str(dest)],check=True,capture_output=True,timeout=a.timeout)
+                    played=subprocess.run([str(code/'nds_player'),str(src),str(dest)],check=True,capture_output=True,timeout=a.timeout)
+                    peak=re.search(rb'^NDS_POLICY_PEAK_KB (\d+)$',played.stderr,re.M)
+                    if not peak:raise RuntimeError('player did not report policy memory')
+                    run['policy_peak_kib']=int(peak[1])
                     run['player_seconds']=time.monotonic()-start
                     subprocess.run([str(code/'nds_validate'),str(src),str(dest)],check=True,capture_output=True,timeout=a.timeout)
                     run.update(valid=True,output_sha256=sha(dest),metrics=json.loads(dest.read_text())['metrics'])

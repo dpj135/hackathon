@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Assessment only: compare fixed current policy with organizer's greedy."""
+import re
 import argparse,hashlib,json,math,os,subprocess,tempfile,time
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('--code',type=Path,required=True);p.add_argument('--data',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--repeat',type=int,default=3);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--code',type=Path,required=True);p.add_argument('--data',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--repeat',type=int,default=3);p.add_argument('--timeout',type=float,default=600);a=p.parse_args()
 code=a.code.resolve();build=code
 os.sched_setaffinity(0,{max(os.sched_getaffinity(0))})
 manifest=json.loads((a.data/'manifest.json').read_text())
-report=dict(source_sha256=hashlib.sha256((code/'player/solution.cpp').read_bytes()).hexdigest(),repeat=a.repeat,cases=[],summary={})
+report=dict(source_sha256=hashlib.sha256((code/'player/solution.cpp').read_bytes()).hexdigest(),repeat=a.repeat,auxiliary_timeout_seconds=a.timeout,cases=[],summary={})
+report['binary_sha256']=hashlib.sha256((code/'nds_player').read_bytes()).hexdigest()
+report['baseline_binary_sha256']=hashlib.sha256((code/'nds_greedy_metered').read_bytes()).hexdigest()
+report['engine_files_sha256']={str(p.relative_to(code)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [code/'src/framework.cpp',code/'src/player_main.cpp',code/'scripts/score_suite.py']}
 a.output.parent.mkdir(parents=True,exist_ok=True)
 with tempfile.TemporaryDirectory(prefix='nds-review-') as tmp:
     dest=Path(tmp)/'result.json'
@@ -18,9 +22,12 @@ with tempfile.TemporaryDirectory(prefix='nds-review-') as tmp:
             for rep in range(a.repeat):
                 run=dict(repetition=rep+1);t=time.monotonic()
                 try:
-                    subprocess.run([str(build/('nds_player' if name=='strategy' else 'nds_baseline')),str(src),str(dest)],check=True,capture_output=True,timeout=180)
+                    played=subprocess.run([str(build/('nds_player' if name=='strategy' else 'nds_greedy_metered')),str(src),str(dest)],check=True,capture_output=True,timeout=a.timeout)
+                    peak=re.search(rb'^NDS_POLICY_PEAK_KB (\d+)$',played.stderr,re.M)
+                    if not peak:raise RuntimeError('player did not report policy memory')
+                    run['policy_peak_kib']=int(peak[1])
                     run['seconds']=time.monotonic()-t
-                    subprocess.run([str(build/'nds_validate'),str(src),str(dest)],check=True,capture_output=True,timeout=180)
+                    subprocess.run([str(build/'nds_validate'),str(src),str(dest)],check=True,capture_output=True,timeout=a.timeout)
                     raw=dest.read_bytes();run.update(valid=True,output_sha256=hashlib.sha256(raw).hexdigest(),metrics=json.loads(raw)['metrics'])
                 except (subprocess.CalledProcessError,subprocess.TimeoutExpired) as exc:
                     run.update(valid=False,error=str(exc),stderr=(exc.stderr or b'').decode(errors='replace')[-1500:])

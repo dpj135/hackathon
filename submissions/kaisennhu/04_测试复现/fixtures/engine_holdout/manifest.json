@@ -1,0 +1,194 @@
+[
+  {
+    "file": "arrival_ramp_291101.json",
+    "family": "arrival_ramp",
+    "seed": 291101,
+    "requests": 1536,
+    "sha256": "3a232e3edcdb621cff621cf58eb78d1d9d2548f8c7133bfd5da358ab1ce10ff8",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "staggered_hotsets_291101.json",
+    "family": "staggered_hotsets",
+    "seed": 291101,
+    "requests": 1536,
+    "sha256": "ce49ccae77ff59f15253a134d721c043bf5d2b8a0fab91f70a9a2b187a407091",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "ttl_turnover_291101.json",
+    "family": "ttl_turnover",
+    "seed": 291101,
+    "requests": 1536,
+    "sha256": "80631fde9098f7727fb4ea9bc156b9843acaef98a72437be77e1ad755c641232",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "asymmetric_reuse_291101.json",
+    "family": "asymmetric_reuse",
+    "seed": 291101,
+    "requests": 1536,
+    "sha256": "8cbcd23472c9dc04571463177fff80bbd266a84b893db92f42ba6bd13299677c",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "arrival_ramp_291113.json",
+    "family": "arrival_ramp",
+    "seed": 291113,
+    "requests": 384,
+    "sha256": "fc2a3906d9cc81fddedd189f2d3caab31801ee778f04501cfa5e86eb58fd0a27",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "staggered_hotsets_291113.json",
+    "family": "staggered_hotsets",
+    "seed": 291113,
+    "requests": 384,
+    "sha256": "927a6933117e0803b248a94795371f8b9d4d4f82b9fa86551e8b9cc48d33375f",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "ttl_turnover_291113.json",
+    "family": "ttl_turnover",
+    "seed": 291113,
+    "requests": 384,
+    "sha256": "017e647cc5277d0133a27b1e287dbfcc319abbfd9f62973bc02ee219d86d9dd5",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "asymmetric_reuse_291113.json",
+    "family": "asymmetric_reuse",
+    "seed": 291113,
+    "requests": 384,
+    "sha256": "7e01ac8fa7796311b1e0cc394785041fa264df0d4508c152c37755ff5b1e5807",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "arrival_ramp_291127.json",
+    "family": "arrival_ramp",
+    "seed": 291127,
+    "requests": 1536,
+    "sha256": "cbb72424d40cb86bc1bdfce41bab5ad519c55e4f1f8d4d0e5d543d2362d80319",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "staggered_hotsets_291127.json",
+    "family": "staggered_hotsets",
+    "seed": 291127,
+    "requests": 1536,
+    "sha256": "bb2644f25ebd4365d84b6786715ef537d78e780d2c3d0a12c7712cbf0ab9b394",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "ttl_turnover_291127.json",
+    "family": "ttl_turnover",
+    "seed": 291127,
+    "requests": 1536,
+    "sha256": "7f87e4095832c9f8c5f51551414b7d54e96951e6a581c6b7f587ee91315953f6",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "asymmetric_reuse_291127.json",
+    "family": "asymmetric_reuse",
+    "seed": 291127,
+    "requests": 1536,
+    "sha256": "48fd00d22fe9178e70044e98c075c851bca1b6bbd1d7bd17ff8e068badfeb3fc",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "arrival_ramp_291139.json",
+    "family": "arrival_ramp",
+    "seed": 291139,
+    "requests": 1536,
+    "sha256": "f9abd6fa13483a2130dfefd5cef5ac34a3a83b5086c22efeed488cbacb80dde1",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "staggered_hotsets_291139.json",
+    "family": "staggered_hotsets",
+    "seed": 291139,
+    "requests": 1536,
+    "sha256": "256a50614cef1cf4bfe86c87b9f0dd6d3848a57645795a0304d12710845579e2",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "ttl_turnover_291139.json",
+    "family": "ttl_turnover",
+    "seed": 291139,
+    "requests": 1536,
+    "sha256": "95216a82dacc75bd2b4dc8f656b2b1a7441ff723883703f4c28cf61182ae553e",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "asymmetric_reuse_291139.json",
+    "family": "asymmetric_reuse",
+    "seed": 291139,
+    "requests": 1536,
+    "sha256": "6cd33712e662c4a301e8cbb025e0b638dde02afb33a3dcc9f44f7131bf27110a",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "arrival_ramp_291151.json",
+    "family": "arrival_ramp",
+    "seed": 291151,
+    "requests": 384,
+    "sha256": "eb53df9ba837f394de7e7422ab60021b635f2df047684aed19c2e68551d3687e",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "staggered_hotsets_291151.json",
+    "family": "staggered_hotsets",
+    "seed": 291151,
+    "requests": 384,
+    "sha256": "95edd1ae32ad7893d881c3513e4510cc4e5c1cc8d37aac9abb82379b2fdf7146",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "ttl_turnover_291151.json",
+    "family": "ttl_turnover",
+    "seed": 291151,
+    "requests": 384,
+    "sha256": "f4cf3238ea71f941ab1030e512da2e6c8712b1ac4961eac79c094a9f0ef13350",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "asymmetric_reuse_291151.json",
+    "family": "asymmetric_reuse",
+    "seed": 291151,
+    "requests": 384,
+    "sha256": "96710b98bac112eb5f9a421ba623ab2765550a135651ff9c22254a4b4b5a52e7",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "arrival_ramp_291163.json",
+    "family": "arrival_ramp",
+    "seed": 291163,
+    "requests": 768,
+    "sha256": "81b48e96b109e7107a8162c8e073f1e7ef8cede2c09e42fa3d27de131a0c9f53",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "staggered_hotsets_291163.json",
+    "family": "staggered_hotsets",
+    "seed": 291163,
+    "requests": 768,
+    "sha256": "c0ed6fd184129d20f9f681fea4acf97aaa5e60a998a77301b511d02de0da971f",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "ttl_turnover_291163.json",
+    "family": "ttl_turnover",
+    "seed": 291163,
+    "requests": 768,
+    "sha256": "880e0a1195fa45d4f8234ecdd015734a66fac38821c743fc8034f8ac041a7020",
+    "selection": "Visible regression inputs for the submitted policy"
+  },
+  {
+    "file": "asymmetric_reuse_291163.json",
+    "family": "asymmetric_reuse",
+    "seed": 291163,
+    "requests": 768,
+    "sha256": "ba7f712bc94525fe23ba3a9336db4a31785d3f79585566bbb0b80b56025aec75",
+    "selection": "Visible regression inputs for the submitted policy"
+  }
+]
