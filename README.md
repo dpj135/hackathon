@@ -22,4 +22,4 @@ python3 run.py score
 python3 run.py demo
 ```
 
-交付核验使用随附Linux x86_64二进制；从源码构建另需C++17编译器、make、nm和Python 3.10+。脚本从本仓库`public/`校验并复制固定SDK，按需重建扩展输入，不修改官方源码与参考成本。逐文件摘要和交付范围见[提交清单](submissions/kaisennhu/提交清单.md)。
+交付核验使用随附Linux x86_64二进制；从源码构建另需C++17编译器、make、nm和Python 3.10+。脚本从本仓库`public/`校验并复制固定SDK，按需重建扩展输入，不修改官方源码与参考成本。逐文件摘要和交付范围见[材料目录与提交清单](submissions/kaisennhu/README.md)。

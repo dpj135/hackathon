@@ -125,7 +125,11 @@
     "all_valid": true,
     "policy_peak_kib_max": 1658996,
     "process_peak_kib_max": 3510992,
-    "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d"
+    "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+    "cpu": 184,
+    "seed": 26102929,
+    "generated_submits": 100,
+    "generated_iocbs_per_submit": 1000
   },
   "fresh_replay_matches_published_655_outputs": true
 }

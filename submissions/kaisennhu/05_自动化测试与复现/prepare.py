@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATED = ['resources','distribution','regression','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout','transfer_holdout']
+FIXED_FIXTURES_COMMIT = '519ef500ad5f685a7e7e010c076960610018c20b'
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -31,6 +32,23 @@ def fixtures(code, groups):
         dest = tests/'fixtures'/group
         records = json.loads((dest/'manifest.json').read_text())
         missing = [x for x in records if not (dest/x['file']).is_file() or digest(dest/x['file']) != x['sha256']]
+        if not missing:
+            continue
+        # Keep only manifests in the submission. These fixed inputs already exist
+        # in the repository's immutable history; generated families use seeds below.
+        fixed = [x for x in missing if group == 'coverage' or
+                 (group == 'robustness' and x['file'].startswith('length_'))]
+        for item in fixed:
+            source = f"{FIXED_FIXTURES_COMMIT}:submissions/kaisennhu/04_测试复现/fixtures/{group}/{item['file']}"
+            result = subprocess.run(['git', '-C', str(ROOT.parents[1]), 'show', source],
+                                    capture_output=True)
+            if result.returncode:
+                raise RuntimeError('固定输入需完整Git历史；请在仓库执行 git fetch origin '+
+                                   FIXED_FIXTURES_COMMIT+' 后重试：'+group+'/'+item['file'])
+            if hashlib.sha256(result.stdout).hexdigest() != item['sha256']:
+                raise RuntimeError('固定输入哈希不符：'+group+'/'+item['file'])
+            (dest/item['file']).write_bytes(result.stdout)
+        missing = [x for x in missing if x not in fixed]
         if not missing:
             continue
         if group not in GENERATED and group != 'robustness':
