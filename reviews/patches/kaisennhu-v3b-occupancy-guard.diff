@@ -1,0 +1,58 @@
+--- a/submissions/kaisennhu/03_程序/player/solution.cpp
++++ b/submissions/kaisennhu/03_程序/player/solution.cpp
+@@ -121,6 +121,7 @@
+     std::map<std::pair<I, I>, Work> work_;
+     std::map<std::vector<I>, I> batch_costs_;
+     std::map<I, I> promotion_cards_;
++    std::map<I, I> promote_lengths_;
+     struct ObservedBatch { nds::Submit submit; Json decision; };
+     std::deque<ObservedBatch> recent_;
+     double cost(const char* key) const { return double(c_.at(key)); }
+@@ -600,20 +601,36 @@
+              byte_clock_ - h.last_byte > pool("kvcache_pool_capacity")))
+             return std::nullopt;
+         if (now - h.last_arrival > std::max(1.0, h.gap + 2.0 * h.jitter)) return std::nullopt;
+-        for (const auto& key : state.at("cached_ranges").as_array())
++        I occupancy = 0;
++        for (const auto& key : state.at("cached_ranges").as_array()) {
++            occupancy += key[2].as_int();
+             if (key[0].as_int() == io.device_id && key[1].as_int() == io.ssd_offset &&
+                 key[2].as_int() == io.length)
+                 return std::nullopt;
++        }
+         int pending_hbm = 0, pending_ssd = 0;
++        std::map<I, char> inflight_ids;
+         for (const auto& p : state.at("promote_inflight").as_array()) {
+-            if (p.at("promote_id").as_int() == h.promote_id) return std::nullopt;
++            I pid = p.at("promote_id").as_int();
++            inflight_ids[pid] = 0;
++            auto len = promote_lengths_.find(pid);
++            if (len != promote_lengths_.end()) occupancy += len->second;
++            if (pid == h.promote_id) return std::nullopt;
+             if (p.at("path").as_string() == "PROMOTE_HBM") {
+-                auto card = promotion_cards_.find(p.at("promote_id").as_int());
++                auto card = promotion_cards_.find(pid);
+                 if (card != promotion_cards_.end() && card->second == io.device_id) ++pending_hbm;
+             }
+             else
+                 ++pending_ssd;
+         }
++        if (promote_lengths_.size() > 8192) {
++            for (auto it = promote_lengths_.begin(); it != promote_lengths_.end();) {
++                if (inflight_ids.count(it->first)) ++it;
++                else it = promote_lengths_.erase(it);
++            }
++        }
++        // Do not admit a promotion that cannot fit alongside resident and inflight entries.
++        if (occupancy + io.length > pool("kvcache_pool_capacity")) return std::nullopt;
+         int active_ssd = 0, active_d2h = 0;
+         for (const auto& t : state.at("transfers_inflight").as_array()) {
+             auto type = t.at("type").as_string();
+@@ -660,6 +677,7 @@
+         I promote = next_promote_++;
+         h.promote_id = promote;
+         promotion_cards_[promote] = io.device_id;
++        promote_lengths_[promote] = io.length;
+         Json transfer = obj({{"transfer_id", next_transfer_++},
+                              {"device_id", io.device_id},
+                              {"priority", 10}});
