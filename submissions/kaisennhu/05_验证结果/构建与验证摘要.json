@@ -1,16 +1,21 @@
 {
-  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
-  "upstream_sha": "6b1666eb908a4cb55a84dc20832d9e57ffc1e4c4",
+  "source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
+  "upstream_sha": "dd321261c9d3002d548a8097fd29affc019034b8",
   "automated": 89.9899,
   "automated_max": 90,
   "official_greedy_score": 67.1981,
-  "inputs": 481,
+  "inputs": 529,
   "repetitions": 3,
-  "player_runs": 1443,
-  "comparisons": 220,
+  "player_runs": 1587,
+  "comparisons": 268,
   "all_replay_valid": true,
-  "functional_boundary_gate_checks": 135,
+  "functional_boundary_gate_checks": 145,
   "sanitized_checks": 74,
+  "engine_files_sha256": {
+    "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+    "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
+    "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
+  },
   "comparison_summary": [
     {
       "group": "回归对照",
@@ -18,7 +23,7 @@
       "wins": 96,
       "ties": 0,
       "losses": 0,
-      "geometric_ratio": 0.6079780622497246,
+      "geometric_ratio": 0.6082591850970782,
       "worst_ratio": 0.998587952122156
     },
     {
@@ -36,7 +41,7 @@
       "wins": 3,
       "ties": 0,
       "losses": 6,
-      "geometric_ratio": 1.003727540203927,
+      "geometric_ratio": 1.0054996527118698,
       "worst_ratio": 1.1225264299268094
     },
     {
@@ -45,7 +50,7 @@
       "wins": 17,
       "ties": 0,
       "losses": 7,
-      "geometric_ratio": 0.9322769219860936,
+      "geometric_ratio": 0.9299414196254968,
       "worst_ratio": 1.220074868345917
     },
     {
@@ -54,7 +59,7 @@
       "wins": 23,
       "ties": 0,
       "losses": 1,
-      "geometric_ratio": 0.85066571931984,
+      "geometric_ratio": 0.8497092846092982,
       "worst_ratio": 1.1531944574398407
     },
     {
@@ -67,17 +72,51 @@
       "worst_ratio": 1.0000190947794874
     },
     {
-      "group": "冻结后留出组合",
+      "group": "既有组合回归",
       "cases": 24,
       "wins": 14,
       "ties": 0,
       "losses": 10,
       "geometric_ratio": 0.9837484415181299,
       "worst_ratio": 1.0335323829469725
+    },
+    {
+      "group": "到达与TTL组合回归",
+      "cases": 24,
+      "wins": 10,
+      "ties": 0,
+      "losses": 14,
+      "geometric_ratio": 0.9955170271094198,
+      "worst_ratio": 1.0557562462894576
+    },
+    {
+      "group": "冻结后留出组合",
+      "cases": 24,
+      "wins": 10,
+      "ties": 0,
+      "losses": 14,
+      "geometric_ratio": 0.9911745904162471,
+      "worst_ratio": 1.0476055447099497
     }
   ],
   "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
   "system": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
-  "max_profile_submit_ms": 1257.756731,
-  "max_profile_rss_MiB": 2631.93359375
+  "max_profile_submit_ms": 1136.904137,
+  "max_profile_policy_MiB": 1620.1220703125,
+  "max_profile_rss_MiB": 3428.65625,
+  "freeze": {
+    "source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
+    "binary_sha256": "4d4a6d7341c3263fcf03f5a1141dfd1111cd6e3daa8fcc9a1cfb9b7fbd2c6a55",
+    "upstream_sha": "dd321261c9d3002d548a8097fd29affc019034b8",
+    "engine_commit": "94766c623e4664e03b0861aa5abb68044500614b",
+    "engine_files_sha256": {
+      "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+      "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
+      "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
+    },
+    "frozen_utc": "2026-10-30T07:17:51.382841+00:00",
+    "base_commit": "dd321261c9d3002d548a8097fd29affc019034b8",
+    "selection": "All preceding 505 inputs are visible regression. The generic two-cut candidate family is frozen; generate 24 new combinations afterward, with no selection from their results."
+  },
+  "baseline_timeout_note": "One 180s auxiliary baseline attempt timed out; a 600s retry passed in 47.15s. Official suite timeouts unchanged; full records retained in local delivery."
 }

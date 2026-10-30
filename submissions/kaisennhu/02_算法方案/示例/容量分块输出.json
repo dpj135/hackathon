@@ -1,0 +1,223 @@
+{
+  "events": [
+    {
+      "completions": [
+        {
+          "complete_us": 466,
+          "iocb_id": 1,
+          "submit_id": 1
+        }
+      ],
+      "event": "IOCB_COMPLETE",
+      "time_us": 466
+    }
+  ],
+  "metrics": {
+    "cache_hits": 0,
+    "cpu_cost": 30,
+    "effective_bandwidth_mb_s": 6437.76824,
+    "evictions": 0,
+    "latency_p50_us": 466,
+    "latency_p95_us": 466,
+    "latency_p99_us": 466,
+    "npu_cost": 4,
+    "physical_ssd_bytes": 3146240,
+    "promote_count": 0,
+    "promote_hit_rate": 0.0,
+    "promote_success": 0,
+    "read_amplification": 1.000163,
+    "total_cost": 500,
+    "trace_time_us": 466,
+    "valid_bytes": 3145728
+  },
+  "promotion_decisions": [],
+  "schedule_decisions": [
+    {
+      "event": "SCHEDULE_DECISION",
+      "next_wakeup_us": null,
+      "operations": [
+        {
+          "buffer_bytes": 1048576,
+          "operation_id": 1,
+          "path": "AGGREGATE",
+          "ranges": [
+            {
+              "iocb_id": 1,
+              "iocb_offset": 0,
+              "length": 1048476
+            }
+          ],
+          "transfers": [
+            {
+              "depends_on": [],
+              "device_id": 0,
+              "group_id": 1,
+              "not_before_us": 0,
+              "physical_length": 1048576,
+              "physical_ssd_offset": 0,
+              "priority": 100,
+              "transfer_id": 1,
+              "type": "SSD_TO_HBM_BUFFER"
+            },
+            {
+              "bytes": 1048476,
+              "depends_on": [
+                1
+              ],
+              "device_id": 0,
+              "group_id": 1,
+              "not_before_us": 0,
+              "priority": 100,
+              "transfer_id": 2,
+              "type": "D2D",
+              "vectors": [
+                {
+                  "iocb_id": 1,
+                  "iov_id": 0,
+                  "iov_offset": 0,
+                  "length": 1048476
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "buffer_bytes": 1048576,
+          "operation_id": 2,
+          "path": "FALLBACK",
+          "ranges": [
+            {
+              "iocb_id": 1,
+              "iocb_offset": 1048476,
+              "length": 1048576
+            }
+          ],
+          "transfers": [
+            {
+              "depends_on": [],
+              "device_id": 0,
+              "group_id": 2,
+              "not_before_us": 0,
+              "physical_length": 1048576,
+              "physical_ssd_offset": 1048576,
+              "priority": 100,
+              "transfer_id": 3,
+              "type": "SSD_TO_DDR"
+            },
+            {
+              "bytes": 1048576,
+              "depends_on": [
+                3
+              ],
+              "device_id": 0,
+              "group_id": 2,
+              "not_before_us": 0,
+              "priority": 100,
+              "transfer_id": 4,
+              "type": "H2D",
+              "vectors": [
+                {
+                  "iocb_id": 1,
+                  "iov_id": 0,
+                  "iov_offset": 1048476,
+                  "length": 1048576
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "buffer_bytes": 1048576,
+          "operation_id": 3,
+          "path": "FALLBACK",
+          "ranges": [
+            {
+              "iocb_id": 1,
+              "iocb_offset": 2097052,
+              "length": 1048576
+            }
+          ],
+          "transfers": [
+            {
+              "depends_on": [],
+              "device_id": 0,
+              "group_id": 3,
+              "not_before_us": 0,
+              "physical_length": 1048576,
+              "physical_ssd_offset": 2097152,
+              "priority": 100,
+              "transfer_id": 5,
+              "type": "SSD_TO_DDR"
+            },
+            {
+              "bytes": 1048576,
+              "depends_on": [
+                5
+              ],
+              "device_id": 0,
+              "group_id": 3,
+              "not_before_us": 0,
+              "priority": 100,
+              "transfer_id": 6,
+              "type": "H2D",
+              "vectors": [
+                {
+                  "iocb_id": 1,
+                  "iov_id": 0,
+                  "iov_offset": 2097052,
+                  "length": 1048576
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "buffer_bytes": 512,
+          "operation_id": 4,
+          "path": "AGGREGATE",
+          "ranges": [
+            {
+              "iocb_id": 1,
+              "iocb_offset": 3145628,
+              "length": 100
+            }
+          ],
+          "transfers": [
+            {
+              "depends_on": [],
+              "device_id": 0,
+              "group_id": 4,
+              "not_before_us": 0,
+              "physical_length": 512,
+              "physical_ssd_offset": 3145728,
+              "priority": 100,
+              "transfer_id": 7,
+              "type": "SSD_TO_HBM_BUFFER"
+            },
+            {
+              "bytes": 100,
+              "depends_on": [
+                7
+              ],
+              "device_id": 0,
+              "group_id": 4,
+              "not_before_us": 0,
+              "priority": 100,
+              "transfer_id": 8,
+              "type": "D2D",
+              "vectors": [
+                {
+                  "iocb_id": 1,
+                  "iov_id": 0,
+                  "iov_offset": 3145628,
+                  "length": 100
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "submit_id": 1
+    }
+  ]
+}

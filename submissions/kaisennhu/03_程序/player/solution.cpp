@@ -296,7 +296,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             }
             ++per_card[io.device_id];
         }
-        auto build_decision = [&](I block_limit) {
+        auto build_decision = [&](I block_limit, bool align_cuts = true) {
             std::vector<Piece> pieces;
             for (std::size_t k = 0; k < submit.iocbs.size(); ++k) {
                 const auto& io = submit.iocbs[k];
@@ -307,7 +307,11 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         if (max_pool < 512)
                             throw nds::ValidationError("no temporary pool for unaligned IO");
                         length = std::min(length, max_pool - start % 512);
-                        if (offset + length < io.length) length -= (start + length) % 512;
+                        // Both cuts are legal: align the logical end to avoid rereading
+                        // a sector, or preserve useful length to retain a bandwidth bucket.
+                        // The pool bound above includes the leading alignment padding.
+                        if (align_cuts && offset + length < io.length)
+                            length -= (start + length) % 512;
                         if (length <= 0) throw nds::ValidationError("temporary pool too small");
                     }
                     pieces.push_back({&io, &index, offset, length, direct_ok(io, index, offset, length),
@@ -454,7 +458,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         Json decision = build_decision(2 * MiB);
         std::size_t iov_count = 0;
         for (const auto& io : submit.iocbs) iov_count += io.iovs.size();
-        // At most six plans, with counterfactual path choices on a bounded
+        // At most twelve plans, with two cut styles and path choices on a bounded
         // observed window. Only the current decision is issued. Older omitted
         // work and cache-hit/background traffic make this a surrogate for J.
         if (submit.iocbs.size() <= 1024 && iov_count <= 2048 &&
@@ -527,13 +531,17 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 return value;
             };
             I best = evaluate(decision, "");
+            const Json initial = decision;
             for (I block : {2 * MiB, 8 * MiB}) {
-                Json base = block == 2 * MiB ? decision : build_decision(block);
-                for (const std::string forced : {"", "AGGREGATE", "FALLBACK"}) {
-                    Json candidate = base;
-                    rewrite_path(candidate, forced);
-                    I value = evaluate(candidate, forced);
-                    if (value < best) { best = value; decision = std::move(candidate); }
+                for (bool align_cuts : {true, false}) {
+                    Json base = block == 2 * MiB && align_cuts
+                        ? initial : build_decision(block, align_cuts);
+                    for (const std::string forced : {"", "AGGREGATE", "FALLBACK"}) {
+                        Json candidate = base;
+                        rewrite_path(candidate, forced);
+                        I value = evaluate(candidate, forced);
+                        if (value < best) { best = value; decision = std::move(candidate); }
+                    }
                 }
             }
         }

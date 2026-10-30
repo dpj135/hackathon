@@ -1,8 +1,0 @@
-{
-  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
-  "binary_sha256": "5e920469d0c24ae3cac16f23d691d5d83d5748e370139481f6f6240eaba34c2f",
-  "upstream_sha": "6b1666eb908a4cb55a84dc20832d9e57ffc1e4c4",
-  "frozen_utc": "2026-10-30T05:40:53.171489+00:00",
-  "base_commit": "96928e0cc74c20f582f30f0692b0e8acb1f48652",
-  "selection": "Existing workloads and admission counterexamples are visible regression inputs. Holdout inputs will be generated only after this freeze; do not retune against them."
-}

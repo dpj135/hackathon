@@ -66,7 +66,13 @@ def render(title,files,dest):
     for index,file in enumerate(files):
         if index:doc.add_page_break()
         number=0
-        for kind,value in blocks((root/file).read_text()):
+        source_text=(root/file).read_text()
+        def rebase(match):
+            target=match.group(2)
+            if '://' in target or target.startswith('#'):return match.group(0)
+            return '['+match.group(1)+']('+os.path.relpath((root/file).parent/target,(root/dest).parent)+')'
+        source_text=re.sub(r'(?<!!)\[([^]]+)\]\(([^)]+)\)',rebase,source_text)
+        for kind,value in blocks(source_text):
             number=number+1 if kind=='number' else 0
             if kind=='heading':
                 level,text=value;heading_id+=1;anchor=f'section-{heading_id}'
@@ -105,6 +111,6 @@ def render(title,files,dest):
     path.with_suffix('.html').write_text(page,encoding='utf-8');print(path)
 
 render('从零认识我们的 NDS 调度方案',['00_快速入门/方案介绍.md'],'00_快速入门/方案介绍')
-render('NDS 解题方案与验证报告',['02_算法方案/算法设计.md','02_算法方案/设计依据与优化评述.md','02_算法方案/通用性与边界条件.md','05_验证结果/验证报告.md','04_测试复现/测试操作手册.md','01_题目与依据/材料来源.md'],'02_算法方案/解题方案与验证报告')
+render('NDS 解题方案与验证报告',['02_算法方案/算法设计.md','02_算法方案/双卡读取逐步示例.md','05_验证结果/验证报告.md','04_测试复现/测试操作手册.md','01_题目与依据/材料来源.md'],'02_算法方案/解题方案与验证报告')
 
 render('验证报告',['05_验证结果/验证报告.md'],'05_验证结果/验证报告')

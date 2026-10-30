@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Scale and high-iov probes, with callback timing and independent official replay."""
+import re
 import argparse
-import gzip
 import hashlib
 import json
 import os
-import shutil
 import subprocess
 import tempfile
 import time
@@ -44,16 +43,19 @@ def main():
                 t['events']=[dict(event='IO_SUBMIT',time_us=0,submit=dict(submit_id=1,arrival_us=0,iocbs=[io]))]
                 trace.write_text(json.dumps(t,separators=(',',':'))+'\n')
             else:
-                name='micro_32768_one_byte_iovs' if family=='micro' else 'balanced_cache_filtered_many_iovs'
-                fixture=Path(__file__).resolve().parent/'fixtures/stress'/(name+'.json.gz')
-                with gzip.open(fixture,'rb') as src,trace.open('wb') as dst:shutil.copyfileobj(src,dst)
+                from stress_inputs import generate
+                generate(code,family,trace)
             row=dict(family=family,input_sha256=hashlib.sha256(trace.read_bytes()).hexdigest(),runs=[])
             for rep in range(repeats):
                 start=time.monotonic()
                 r=subprocess.run(['/usr/bin/time','-f','%M','-o',str(rss),str(code/'nds_profile'),str(trace),str(result)],check=True,capture_output=True,text=True,timeout=a.timeout)
                 wall=time.monotonic()-start
                 subprocess.run([str(code/'nds_validate'),str(trace),str(result)],check=True,capture_output=True,timeout=a.timeout)
-                row['runs'].append(dict(repetition=rep+1,valid=True,profile=json.loads(r.stdout),whole_player_seconds=wall,
+                peak=re.search(r'^NDS_POLICY_PEAK_KB (\d+)$',r.stderr,re.M)
+                timing=re.search(r'^NDS_POLICY_TIMING (.+)$',r.stderr,re.M)
+                assert peak and timing,r.stderr
+                profile=json.loads(timing[1]);profile['metrics']=json.loads(result.read_text())['metrics']
+                row['runs'].append(dict(repetition=rep+1,valid=True,profile=profile,policy_peak_kib=int(peak[1]),whole_player_seconds=wall,
                     max_rss_kib=int(rss.read_text().strip()),output_sha256=hashlib.sha256(result.read_bytes()).hexdigest()))
                 print(family,rep+1,'passed',flush=True)
             assert len({x['output_sha256'] for x in row['runs']})==1
