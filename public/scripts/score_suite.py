@@ -11,6 +11,8 @@ The automated score follows the contest rules:
 Design and reproducibility (10 points) are left to human review.
 A trace that crashes, times out, exceeds the memory limit, or fails
 validation scores 0 on all three automated components.
+The memory limit covers only heap held by the contestant policy, as counted
+by nds_player. The simulator, trace loading and nds_validate are not limited.
 J_reference / J_player above 1 is reported as a tie-break and does not
 raise the 60-point optimization cap.
 """
@@ -33,7 +35,18 @@ def load_json(path: Path):
         return json.load(handle)
 
 
-def run_limited(command, timeout_sec: float, memory_limit_mb: int):
+def stderr_kb(text: str, tag: str):
+    found = None
+    for line in text.splitlines():
+        if line.startswith(tag + " "):
+            try:
+                found = int(line.split()[1])
+            except (IndexError, ValueError):
+                pass
+    return found
+
+
+def run_limited(command, timeout_sec: float, env=None):
     timer = "/usr/bin/time"
     timed = [timer, "-f", "NDS_MAXRSS_KB %M", "--", *command] if Path(timer).exists() else command
     proc = subprocess.Popen(
@@ -41,45 +54,29 @@ def run_limited(command, timeout_sec: float, memory_limit_mb: int):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         start_new_session=True,
+        env=env,
     )
     started = time.monotonic()
     status = "ok"
-    peak_kb = 0
     try:
-        while proc.poll() is None:
-            elapsed = time.monotonic() - started
-            try:
-                with open(f"/proc/{proc.pid}/status", encoding="utf-8") as handle:
-                    for line in handle:
-                        if line.startswith("VmHWM:"):
-                            peak_kb = max(peak_kb, int(line.split()[1]))
-            except OSError:
-                pass
-            if memory_limit_mb and peak_kb > memory_limit_mb * 1024:
-                status = "memory"
-                os.killpg(proc.pid, signal.SIGKILL)
-                break
-            if elapsed > timeout_sec:
-                status = "timeout"
-                os.killpg(proc.pid, signal.SIGKILL)
-                break
-            time.sleep(0.02)
-    finally:
+        stdout, stderr = proc.communicate(timeout=timeout_sec)
+    except subprocess.TimeoutExpired:
+        status = "timeout"
+        os.killpg(proc.pid, signal.SIGKILL)
         stdout, stderr = proc.communicate()
     text = stderr.decode("utf-8", "replace")
-    for line in text.splitlines():
-        if line.startswith("NDS_MAXRSS_KB "):
-            try:
-                peak_kb = max(peak_kb, int(line.split()[1]))
-            except ValueError:
-                pass
+    if status == "ok" and "NDS_POLICY_MEMORY_EXCEEDED" in text:
+        status = "memory"
     if status == "ok" and proc.returncode != 0:
         status = "error"
+    process_kb = stderr_kb(text, "NDS_MAXRSS_KB")
+    policy_kb = stderr_kb(text, "NDS_POLICY_PEAK_KB")
     return {
         "status": status,
         "code": proc.returncode,
         "seconds": time.monotonic() - started,
-        "peak_mb": peak_kb / 1024.0,
+        "process_peak_mb": None if process_kb is None else process_kb / 1024.0,
+        "policy_peak_mb": None if policy_kb is None else policy_kb / 1024.0,
         "stdout": stdout.decode("utf-8", "replace")[-2000:],
         "stderr": text[-2000:],
     }
@@ -103,8 +100,13 @@ def check_frozen(trace, frozen: dict, case_id: str):
 def score_case(player: Path, validate: Path | None, trace_path: Path, timeout_sec: float,
                memory_limit_mb: int, work: Path):
     output = work / "solution.json"
-    played = run_limited([str(player), str(trace_path), str(output)], timeout_sec, memory_limit_mb)
+    env = dict(os.environ, NDS_POLICY_MEMORY_LIMIT_MB=str(memory_limit_mb))
+    played = run_limited([str(player), str(trace_path), str(output)], timeout_sec, env)
     if played["status"] != "ok":
+        return played, None
+    if played["policy_peak_mb"] is None:
+        played["status"] = "error"
+        played["stderr"] = (played["stderr"] + "\nplayer did not report NDS_POLICY_PEAK_KB")[-2000:]
         return played, None
     try:
         solution = load_json(output)
@@ -119,9 +121,8 @@ def score_case(player: Path, validate: Path | None, trace_path: Path, timeout_se
         played["stderr"] = (played["stderr"] + "\nnon-positive total_cost")[-2000:]
         return played, metrics
     if validate is not None:
-        checked = run_limited([str(validate), str(trace_path), str(output)], timeout_sec, memory_limit_mb)
+        checked = run_limited([str(validate), str(trace_path), str(output)], timeout_sec)
         played["seconds"] += checked["seconds"]
-        played["peak_mb"] = max(played["peak_mb"], checked["peak_mb"])
         if checked["status"] != "ok":
             played["status"] = "timeout" if checked["status"] == "timeout" else "invalid"
             played["stderr"] = checked["stderr"]
@@ -173,7 +174,8 @@ def main():
             "tags": case.get("tags", []),
             "status": played["status"],
             "seconds": round(played["seconds"], 3),
-            "peak_mb": round(played["peak_mb"], 2),
+            "policy_peak_mb": None if played["policy_peak_mb"] is None else round(played["policy_peak_mb"], 2),
+            "process_peak_mb": None if played["process_peak_mb"] is None else round(played["process_peak_mb"], 2),
             "trace_opt": 0.0,
             "ratio": None,
         }
@@ -206,7 +208,7 @@ def main():
         else:
             details = [
                 line.strip() for line in played["stderr"].splitlines()
-                if line.strip() and not line.startswith("NDS_MAXRSS_KB ")
+                if line.strip() and not line.startswith(("NDS_MAXRSS_KB ", "NDS_POLICY_PEAK_KB "))
             ]
             record["error"] = (details[-1] if details else "failed")[:400]
         if args.write_baseline and played["status"] == "ok":
@@ -216,7 +218,8 @@ def main():
             f"{case_id:24} {record['status']:8} "
             f"J={record.get('total_cost', '-'):>12} "
             f"ratio={record['ratio'] if record['ratio'] is not None else '-'} "
-            f"opt={record['trace_opt']:.2f} {record['seconds']:.2f}s",
+            f"opt={record['trace_opt']:.2f} {record['seconds']:.2f}s "
+            f"policy={record['policy_peak_mb'] if record['policy_peak_mb'] is not None else '-'}MB",
             flush=True,
         )
 
