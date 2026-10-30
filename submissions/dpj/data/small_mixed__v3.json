@@ -1,0 +1,181 @@
+{
+  "events": [
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 0,
+        "iocbs": [
+          {
+            "device_id": 5,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 90194313397,
+                "iov_id": 0,
+                "length": 65608
+              },
+              {
+                "hbm_addr": 90194394624,
+                "iov_id": 1,
+                "length": 32869
+              }
+            ],
+            "length": 98477,
+            "opcode": "READV",
+            "ssd_offset": 21475888641
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 73014444032,
+                "iov_id": 0,
+                "length": 1024
+              }
+            ],
+            "length": 1024,
+            "opcode": "READV",
+            "ssd_offset": 4296019456
+          }
+        ],
+        "submit_id": 1
+      },
+      "time_us": 0
+    },
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 50,
+        "iocbs": [
+          {
+            "device_id": 1,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 73014449152,
+                "iov_id": 0,
+                "length": 512
+              },
+              {
+                "hbm_addr": 73014449664,
+                "iov_id": 1,
+                "length": 131072
+              }
+            ],
+            "length": 131584,
+            "opcode": "READV",
+            "ssd_offset": 4296035328
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 73014584832,
+                "iov_id": 0,
+                "length": 512
+              },
+              {
+                "hbm_addr": 73014585344,
+                "iov_id": 1,
+                "length": 131072
+              }
+            ],
+            "length": 131584,
+            "opcode": "READV",
+            "ssd_offset": 4296035328
+          }
+        ],
+        "submit_id": 2
+      },
+      "time_us": 50
+    }
+  ],
+  "generator_metadata": {
+    "actual_hbm_fragment_rate": 0.333333333333333,
+    "actual_logical_unaligned_rate": 0.25,
+    "actual_new_object_adjacent_rate": 0.0,
+    "actual_new_object_unaligned_rate": 0.333333333333333,
+    "actual_reuse_rate": 0.25,
+    "arrival_gap_us": 50,
+    "arrival_jitter_us": 0,
+    "average_iovs_per_iocb": 1.75,
+    "balance_cards": false,
+    "cards": 8,
+    "cycle_per_card": 0,
+    "hotset_size": 64,
+    "iocbs_per_submit_max": 2,
+    "iocbs_per_submit_min": 2,
+    "iovs_per_iocb_max": 2,
+    "iovs_per_iocb_min": 1,
+    "logical_bytes": 362669,
+    "logical_iocb_count": 4,
+    "logical_iov_size_counts": {
+      "1024": 1,
+      "131072": 2,
+      "32869": 1,
+      "512": 2,
+      "65608": 1
+    },
+    "preset": "balanced",
+    "requested_adjacent_rate": 0.3,
+    "requested_hbm_fragment_rate": 0.5,
+    "requested_reuse_rate": 0.2,
+    "requested_unaligned_rate": 0.3,
+    "seed": 39005,
+    "size_profile": "mixed",
+    "sizes": [
+      512,
+      584,
+      768,
+      4096,
+      32768,
+      65536,
+      131072,
+      1048576
+    ],
+    "submit_count": 2,
+    "total_iov_count": 7,
+    "unique_object_count": 3
+  },
+  "instance": {
+    "instance_id": "public-small_mixed__v3",
+    "resources": {
+      "nvme_bw": 21504,
+      "iocb_capacity": 1024,
+      "hbm_capacity": 256,
+      "ddr_capacity": 1024,
+      "cpu_copy_bw": 30720,
+      "h2d_bw": 20480,
+      "d2h_bw": 20480,
+      "d2d_bw": 1572864,
+      "hbm_copy_concurrency": 1024,
+      "h2d_copy_concurrency": 1024,
+      "d2h_copy_concurrency": 10,
+      "mooncake_capacity": 10248576
+    },
+    "runtime_limits": {
+      "max_cpus": 8,
+      "max_processes": 32,
+      "max_memory_mb": 16384,
+      "decision_timeout_ms": 60000
+    },
+    "fixed_parameters": {
+      "promote_ttl_us": 60000000,
+      "time_cost_per_us": 1,
+      "CPU_NDS_FIXED_COST": 1,
+      "CPU_NDS_PER_CMD_COST": 1,
+      "CPU_PROMOTE_FIXED_COST": 80,
+      "CPU_PROMOTE_PER_CMD_COST": 1,
+      "CPU_FALLBACK_FIXED_COST": 8,
+      "CPU_FALLBACK_PER_CMD_COST": 2,
+      "CPU_H2D_CALL_COST": 1,
+      "CPU_D2H_CALL_COST": 1,
+      "CPU_D2D_CALL_COST": 2,
+      "NPU_H2D_CALL_COST": 1,
+      "NPU_D2H_CALL_COST": 1,
+      "NPU_D2D_CALL_COST": 1
+    }
+  }
+}

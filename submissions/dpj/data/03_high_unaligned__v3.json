@@ -1,0 +1,2891 @@
+{
+  "events": [
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 0,
+        "iocbs": [
+          {
+            "device_id": 0,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 68719476800,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 68719505408,
+                "iov_id": 1,
+                "length": 584
+              }
+            ],
+            "length": 1168,
+            "opcode": "READV",
+            "ssd_offset": 1054721
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 81604378624,
+                "iov_id": 0,
+                "length": 65536
+              },
+              {
+                "hbm_addr": 81604458496,
+                "iov_id": 1,
+                "length": 512
+              },
+              {
+                "hbm_addr": 81604459008,
+                "iov_id": 2,
+                "length": 131072
+              }
+            ],
+            "length": 197120,
+            "opcode": "READV",
+            "ssd_offset": 12885958144
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 3,
+            "iovs": [
+              {
+                "hbm_addr": 81604594278,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 81604653568,
+                "iov_id": 1,
+                "length": 4155
+              },
+              {
+                "hbm_addr": 81604658176,
+                "iov_id": 2,
+                "length": 654
+              },
+              {
+                "hbm_addr": 81604676608,
+                "iov_id": 3,
+                "length": 553
+              }
+            ],
+            "length": 38202,
+            "opcode": "READV",
+            "ssd_offset": 12886166017
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 4,
+            "iovs": [
+              {
+                "hbm_addr": 77309411679,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 77309412352,
+                "iov_id": 1,
+                "length": 32865
+              },
+              {
+                "hbm_addr": 77309445632,
+                "iov_id": 2,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77309453312,
+                "iov_id": 3,
+                "length": 65637
+              }
+            ],
+            "length": 99854,
+            "opcode": "READV",
+            "ssd_offset": 8590986753
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 5,
+            "iovs": [
+              {
+                "hbm_addr": 85899346391,
+                "iov_id": 0,
+                "length": 584
+              }
+            ],
+            "length": 584,
+            "opcode": "READV",
+            "ssd_offset": 17180923393
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 6,
+            "iovs": [
+              {
+                "hbm_addr": 77309523473,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 77309524480,
+                "iov_id": 1,
+                "length": 32865
+              },
+              {
+                "hbm_addr": 77309557760,
+                "iov_id": 2,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77309574144,
+                "iov_id": 3,
+                "length": 65637
+              }
+            ],
+            "length": 99854,
+            "opcode": "READV",
+            "ssd_offset": 8590986753
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 7,
+            "iovs": [
+              {
+                "hbm_addr": 94489280718,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 94489299456,
+                "iov_id": 1,
+                "length": 4143
+              },
+              {
+                "hbm_addr": 94489304064,
+                "iov_id": 2,
+                "length": 65737
+              }
+            ],
+            "length": 70464,
+            "opcode": "READV",
+            "ssd_offset": 25770852865
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 8,
+            "iovs": [
+              {
+                "hbm_addr": 94489374269,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 25770923329
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 9,
+            "iovs": [
+              {
+                "hbm_addr": 73014444326,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 73014494208,
+                "iov_id": 1,
+                "length": 32917
+              },
+              {
+                "hbm_addr": 73014527488,
+                "iov_id": 2,
+                "length": 4204
+              },
+              {
+                "hbm_addr": 73014532096,
+                "iov_id": 3,
+                "length": 65558
+              }
+            ],
+            "length": 135519,
+            "opcode": "READV",
+            "ssd_offset": 4296018945
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 10,
+            "iovs": [
+              {
+                "hbm_addr": 90194313551,
+                "iov_id": 0,
+                "length": 768
+              }
+            ],
+            "length": 768,
+            "opcode": "READV",
+            "ssd_offset": 21475889665
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 11,
+            "iovs": [
+              {
+                "hbm_addr": 94490427774,
+                "iov_id": 0,
+                "length": 584
+              }
+            ],
+            "length": 584,
+            "opcode": "READV",
+            "ssd_offset": 25771971977
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 12,
+            "iovs": [
+              {
+                "hbm_addr": 85899351597,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 85899352576,
+                "iov_id": 1,
+                "length": 584
+              },
+              {
+                "hbm_addr": 85899353600,
+                "iov_id": 2,
+                "length": 131118
+              },
+              {
+                "hbm_addr": 85899485184,
+                "iov_id": 3,
+                "length": 131176
+              }
+            ],
+            "length": 263646,
+            "opcode": "READV",
+            "ssd_offset": 17180934145
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 13,
+            "iovs": [
+              {
+                "hbm_addr": 98784248164,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 30065821185
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 14,
+            "iovs": [
+              {
+                "hbm_addr": 81604681982,
+                "iov_id": 0,
+                "length": 768
+              }
+            ],
+            "length": 768,
+            "opcode": "READV",
+            "ssd_offset": 12886204219
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 15,
+            "iovs": [
+              {
+                "hbm_addr": 68719510658,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 1059841
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 16,
+            "iovs": [
+              {
+                "hbm_addr": 94490432692,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 94490460160,
+                "iov_id": 1,
+                "length": 768
+              }
+            ],
+            "length": 1536,
+            "opcode": "READV",
+            "ssd_offset": 25771979777
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 17,
+            "iovs": [
+              {
+                "hbm_addr": 98785301082,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 98785336832,
+                "iov_id": 1,
+                "length": 4135
+              }
+            ],
+            "length": 36975,
+            "opcode": "READV",
+            "ssd_offset": 30066879489
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 18,
+            "iovs": [
+              {
+                "hbm_addr": 90194319080,
+                "iov_id": 0,
+                "length": 65608
+              }
+            ],
+            "length": 65608,
+            "opcode": "READV",
+            "ssd_offset": 21475902465
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 19,
+            "iovs": [
+              {
+                "hbm_addr": 98785345996,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 30066916464
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 20,
+            "iovs": [
+              {
+                "hbm_addr": 77309644296,
+                "iov_id": 0,
+                "length": 584
+              }
+            ],
+            "length": 584,
+            "opcode": "READV",
+            "ssd_offset": 8591086607
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 21,
+            "iovs": [
+              {
+                "hbm_addr": 81604687162,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 81604721152,
+                "iov_id": 1,
+                "length": 768
+              }
+            ],
+            "length": 33608,
+            "opcode": "READV",
+            "ssd_offset": 12886213633
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 22,
+            "iovs": [
+              {
+                "hbm_addr": 73014602240,
+                "iov_id": 0,
+                "length": 65536
+              },
+              {
+                "hbm_addr": 73014672384,
+                "iov_id": 1,
+                "length": 512
+              },
+              {
+                "hbm_addr": 73014672896,
+                "iov_id": 2,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 73015741440,
+                "iov_id": 3,
+                "length": 4096
+              }
+            ],
+            "length": 1118720,
+            "opcode": "READV",
+            "ssd_offset": 4296154624
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 23,
+            "iovs": [
+              {
+                "hbm_addr": 85899621308,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 85899654656,
+                "iov_id": 1,
+                "length": 1048736
+              },
+              {
+                "hbm_addr": 85900727808,
+                "iov_id": 2,
+                "length": 584
+              }
+            ],
+            "length": 1082160,
+            "opcode": "READV",
+            "ssd_offset": 17181197791
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 24,
+            "iovs": [
+              {
+                "hbm_addr": 98786399232,
+                "iov_id": 0,
+                "length": 1024
+              }
+            ],
+            "length": 1024,
+            "opcode": "READV",
+            "ssd_offset": 30067976704
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 25,
+            "iovs": [
+              {
+                "hbm_addr": 90194389104,
+                "iov_id": 0,
+                "length": 65608
+              }
+            ],
+            "length": 65608,
+            "opcode": "READV",
+            "ssd_offset": 21475902465
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 26,
+            "iovs": [
+              {
+                "hbm_addr": 90194459405,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 21475968073
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 27,
+            "iovs": [
+              {
+                "hbm_addr": 73015749995,
+                "iov_id": 0,
+                "length": 4168
+              }
+            ],
+            "length": 4168,
+            "opcode": "READV",
+            "ssd_offset": 4297280513
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 28,
+            "iovs": [
+              {
+                "hbm_addr": 68719547904,
+                "iov_id": 0,
+                "length": 131072
+              },
+              {
+                "hbm_addr": 68719678976,
+                "iov_id": 1,
+                "length": 32768
+              }
+            ],
+            "length": 163840,
+            "opcode": "READV",
+            "ssd_offset": 1093120
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 29,
+            "iovs": [
+              {
+                "hbm_addr": 73015758336,
+                "iov_id": 0,
+                "length": 131072
+              }
+            ],
+            "length": 131072,
+            "opcode": "READV",
+            "ssd_offset": 4297292800
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 30,
+            "iovs": [
+              {
+                "hbm_addr": 85900733183,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 85900794368,
+                "iov_id": 1,
+                "length": 584
+              },
+              {
+                "hbm_addr": 85900795392,
+                "iov_id": 2,
+                "length": 32796
+              }
+            ],
+            "length": 66220,
+            "opcode": "READV",
+            "ssd_offset": 17182292481
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 31,
+            "iovs": [
+              {
+                "hbm_addr": 68719716098,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 68719730176,
+                "iov_id": 1,
+                "length": 4177
+              },
+              {
+                "hbm_addr": 68719738880,
+                "iov_id": 2,
+                "length": 584
+              },
+              {
+                "hbm_addr": 68719758336,
+                "iov_id": 3,
+                "length": 649
+              }
+            ],
+            "length": 9578,
+            "opcode": "READV",
+            "ssd_offset": 1270273
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 32,
+            "iovs": [
+              {
+                "hbm_addr": 77309649884,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 77309708288,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77309709312,
+                "iov_id": 2,
+                "length": 131121
+              }
+            ],
+            "length": 164729,
+            "opcode": "READV",
+            "ssd_offset": 8591101441
+          }
+        ],
+        "submit_id": 1
+      },
+      "time_us": 0
+    },
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 100,
+        "iocbs": [
+          {
+            "device_id": 0,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 68719763460,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 68719780352,
+                "iov_id": 1,
+                "length": 65655
+              },
+              {
+                "hbm_addr": 68719846400,
+                "iov_id": 2,
+                "length": 768
+              }
+            ],
+            "length": 70591,
+            "opcode": "READV",
+            "ssd_offset": 1294337
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 98786404655,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 98786437632,
+                "iov_id": 1,
+                "length": 680
+              }
+            ],
+            "length": 1448,
+            "opcode": "READV",
+            "ssd_offset": 30067988993
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 3,
+            "iovs": [
+              {
+                "hbm_addr": 94490465423,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 94490473472,
+                "iov_id": 1,
+                "length": 131106
+              }
+            ],
+            "length": 131874,
+            "opcode": "READV",
+            "ssd_offset": 25771994625
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 4,
+            "iovs": [
+              {
+                "hbm_addr": 98786443206,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 98786461696,
+                "iov_id": 1,
+                "length": 4244
+              },
+              {
+                "hbm_addr": 98786466304,
+                "iov_id": 2,
+                "length": 556
+              }
+            ],
+            "length": 8968,
+            "opcode": "READV",
+            "ssd_offset": 30067997185
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 5,
+            "iovs": [
+              {
+                "hbm_addr": 94490609527,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 94490613760,
+                "iov_id": 1,
+                "length": 768
+              }
+            ],
+            "length": 4936,
+            "opcode": "READV",
+            "ssd_offset": 25772126499
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 6,
+            "iovs": [
+              {
+                "hbm_addr": 90194496593,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 90194628096,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 90194645504,
+                "iov_id": 2,
+                "length": 584
+              },
+              {
+                "hbm_addr": 90194646528,
+                "iov_id": 3,
+                "length": 1048760
+              }
+            ],
+            "length": 1181256,
+            "opcode": "READV",
+            "ssd_offset": 21476000913
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 7,
+            "iovs": [
+              {
+                "hbm_addr": 77309845285,
+                "iov_id": 0,
+                "length": 584
+              }
+            ],
+            "length": 584,
+            "opcode": "READV",
+            "ssd_offset": 8591276545
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 8,
+            "iovs": [
+              {
+                "hbm_addr": 98786471526,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 98786472448,
+                "iov_id": 1,
+                "length": 558
+              },
+              {
+                "hbm_addr": 98786486272,
+                "iov_id": 2,
+                "length": 4211
+              },
+              {
+                "hbm_addr": 98786505216,
+                "iov_id": 3,
+                "length": 768
+              }
+            ],
+            "length": 6121,
+            "opcode": "READV",
+            "ssd_offset": 30068006153
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 9,
+            "iovs": [
+              {
+                "hbm_addr": 68719851647,
+                "iov_id": 0,
+                "length": 4168
+              }
+            ],
+            "length": 4168,
+            "opcode": "READV",
+            "ssd_offset": 1364928
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 10,
+            "iovs": [
+              {
+                "hbm_addr": 85900833252,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 17182364673
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 11,
+            "iovs": [
+              {
+                "hbm_addr": 77309850381,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 77310899200,
+                "iov_id": 1,
+                "length": 663
+              }
+            ],
+            "length": 1049311,
+            "opcode": "READV",
+            "ssd_offset": 8591282689
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 12,
+            "iovs": [
+              {
+                "hbm_addr": 81604726426,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 12886248961
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 13,
+            "iovs": [
+              {
+                "hbm_addr": 77310904711,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 77310964224,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77310991872,
+                "iov_id": 2,
+                "length": 131121
+              }
+            ],
+            "length": 164729,
+            "opcode": "READV",
+            "ssd_offset": 8591101441
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 14,
+            "iovs": [
+              {
+                "hbm_addr": 73015893781,
+                "iov_id": 0,
+                "length": 768
+              }
+            ],
+            "length": 768,
+            "opcode": "READV",
+            "ssd_offset": 4297428993
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 15,
+            "iovs": [
+              {
+                "hbm_addr": 90195699964,
+                "iov_id": 0,
+                "length": 584
+              }
+            ],
+            "length": 584,
+            "opcode": "READV",
+            "ssd_offset": 21477193217
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 16,
+            "iovs": [
+              {
+                "hbm_addr": 73015899513,
+                "iov_id": 0,
+                "length": 768
+              }
+            ],
+            "length": 768,
+            "opcode": "READV",
+            "ssd_offset": 4297440257
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 17,
+            "iovs": [
+              {
+                "hbm_addr": 81604764037,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 12886293505
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 18,
+            "iovs": [
+              {
+                "hbm_addr": 81604801219,
+                "iov_id": 0,
+                "length": 131144
+              }
+            ],
+            "length": 131144,
+            "opcode": "READV",
+            "ssd_offset": 12886335489
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 19,
+            "iovs": [
+              {
+                "hbm_addr": 85901886546,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 85901914112,
+                "iov_id": 1,
+                "length": 535
+              },
+              {
+                "hbm_addr": 85901915136,
+                "iov_id": 2,
+                "length": 680
+              },
+              {
+                "hbm_addr": 85901935616,
+                "iov_id": 3,
+                "length": 1048777
+              }
+            ],
+            "length": 1050576,
+            "opcode": "READV",
+            "ssd_offset": 17183417857
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 20,
+            "iovs": [
+              {
+                "hbm_addr": 73015905185,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 73015917568,
+                "iov_id": 1,
+                "length": 131137
+              }
+            ],
+            "length": 135305,
+            "opcode": "READV",
+            "ssd_offset": 4297441025
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 21,
+            "iovs": [
+              {
+                "hbm_addr": 98786510578,
+                "iov_id": 0,
+                "length": 131144
+              }
+            ],
+            "length": 131144,
+            "opcode": "READV",
+            "ssd_offset": 30068026369
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 22,
+            "iovs": [
+              {
+                "hbm_addr": 94490618880,
+                "iov_id": 0,
+                "length": 512
+              }
+            ],
+            "length": 512,
+            "opcode": "READV",
+            "ssd_offset": 25772148224
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 23,
+            "iovs": [
+              {
+                "hbm_addr": 85902988800,
+                "iov_id": 0,
+                "length": 512
+              }
+            ],
+            "length": 512,
+            "opcode": "READV",
+            "ssd_offset": 17184468480
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 24,
+            "iovs": [
+              {
+                "hbm_addr": 90195704873,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 90195836416,
+                "iov_id": 1,
+                "length": 65733
+              },
+              {
+                "hbm_addr": 90195916800,
+                "iov_id": 2,
+                "length": 4277
+              },
+              {
+                "hbm_addr": 90195929600,
+                "iov_id": 3,
+                "length": 65670
+              }
+            ],
+            "length": 266824,
+            "opcode": "READV",
+            "ssd_offset": 21477198337
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 25,
+            "iovs": [
+              {
+                "hbm_addr": 94490623552,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 25772148737
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 26,
+            "iovs": [
+              {
+                "hbm_addr": 85902993882,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 17184468993
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 27,
+            "iovs": [
+              {
+                "hbm_addr": 68719860338,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 68719861248,
+                "iov_id": 1,
+                "length": 32843
+              },
+              {
+                "hbm_addr": 68719903232,
+                "iov_id": 2,
+                "length": 584
+              }
+            ],
+            "length": 34011,
+            "opcode": "READV",
+            "ssd_offset": 1369096
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 28,
+            "iovs": [
+              {
+                "hbm_addr": 90196000157,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 90196001280,
+                "iov_id": 1,
+                "length": 768
+              }
+            ],
+            "length": 1536,
+            "opcode": "READV",
+            "ssd_offset": 21477465161
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 29,
+            "iovs": [
+              {
+                "hbm_addr": 77311127977,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 77311132160,
+                "iov_id": 1,
+                "length": 584
+              },
+              {
+                "hbm_addr": 77311160320,
+                "iov_id": 2,
+                "length": 626
+              }
+            ],
+            "length": 5378,
+            "opcode": "READV",
+            "ssd_offset": 8592342017
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 30,
+            "iovs": [
+              {
+                "hbm_addr": 81604936964,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 81606015488,
+                "iov_id": 1,
+                "length": 649
+              },
+              {
+                "hbm_addr": 81606018560,
+                "iov_id": 2,
+                "length": 131243
+              },
+              {
+                "hbm_addr": 81606150144,
+                "iov_id": 3,
+                "length": 65627
+              }
+            ],
+            "length": 1246167,
+            "opcode": "READV",
+            "ssd_offset": 12886479361
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 31,
+            "iovs": [
+              {
+                "hbm_addr": 73016053332,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 73016184832,
+                "iov_id": 1,
+                "length": 4249
+              },
+              {
+                "hbm_addr": 73016189440,
+                "iov_id": 2,
+                "length": 768
+              },
+              {
+                "hbm_addr": 73016203264,
+                "iov_id": 3,
+                "length": 65723
+              }
+            ],
+            "length": 201884,
+            "opcode": "READV",
+            "ssd_offset": 4297576330
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 32,
+            "iovs": [
+              {
+                "hbm_addr": 68719908490,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 68719910912,
+                "iov_id": 1,
+                "length": 584
+              }
+            ],
+            "length": 1168,
+            "opcode": "READV",
+            "ssd_offset": 1054721
+          }
+        ],
+        "submit_id": 2
+      },
+      "time_us": 100
+    },
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 200,
+        "iocbs": [
+          {
+            "device_id": 0,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 68719916163,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 68719917056,
+                "iov_id": 1,
+                "length": 1048651
+              }
+            ],
+            "length": 1049419,
+            "opcode": "READV",
+            "ssd_offset": 1403107
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 81606220797,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 81606221824,
+                "iov_id": 1,
+                "length": 1048758
+              },
+              {
+                "hbm_addr": 81607270912,
+                "iov_id": 2,
+                "length": 131093
+              }
+            ],
+            "length": 1180435,
+            "opcode": "READV",
+            "ssd_offset": 12887730689
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 3,
+            "iovs": [
+              {
+                "hbm_addr": 90196006538,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 90196007424,
+                "iov_id": 1,
+                "length": 570
+              }
+            ],
+            "length": 1338,
+            "opcode": "READV",
+            "ssd_offset": 21477480961
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 4,
+            "iovs": [
+              {
+                "hbm_addr": 85903031296,
+                "iov_id": 0,
+                "length": 512
+              },
+              {
+                "hbm_addr": 85903031808,
+                "iov_id": 1,
+                "length": 1024
+              }
+            ],
+            "length": 1536,
+            "opcode": "READV",
+            "ssd_offset": 17184510464
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 5,
+            "iovs": [
+              {
+                "hbm_addr": 90196012933,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 90196071424,
+                "iov_id": 1,
+                "length": 131110
+              },
+              {
+                "hbm_addr": 90196203008,
+                "iov_id": 2,
+                "length": 131141
+              }
+            ],
+            "length": 295091,
+            "opcode": "READV",
+            "ssd_offset": 21477494785
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 6,
+            "iovs": [
+              {
+                "hbm_addr": 68720970428,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 68720971264,
+                "iov_id": 1,
+                "length": 131193
+              },
+              {
+                "hbm_addr": 68721127936,
+                "iov_id": 2,
+                "length": 131173
+              },
+              {
+                "hbm_addr": 68721259520,
+                "iov_id": 3,
+                "length": 131075
+              }
+            ],
+            "length": 394209,
+            "opcode": "READV",
+            "ssd_offset": 2465793
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 7,
+            "iovs": [
+              {
+                "hbm_addr": 98786646294,
+                "iov_id": 0,
+                "length": 65608
+              },
+              {
+                "hbm_addr": 98786717696,
+                "iov_id": 1,
+                "length": 513
+              }
+            ],
+            "length": 66121,
+            "opcode": "READV",
+            "ssd_offset": 30068157513
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 8,
+            "iovs": [
+              {
+                "hbm_addr": 90196339117,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 90196371968,
+                "iov_id": 1,
+                "length": 603
+              }
+            ],
+            "length": 33443,
+            "opcode": "READV",
+            "ssd_offset": 21477789876
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 9,
+            "iovs": [
+              {
+                "hbm_addr": 85903037073,
+                "iov_id": 0,
+                "length": 584
+              }
+            ],
+            "length": 584,
+            "opcode": "READV",
+            "ssd_offset": 17184519681
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 10,
+            "iovs": [
+              {
+                "hbm_addr": 90196377558,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 90196378624,
+                "iov_id": 1,
+                "length": 584
+              }
+            ],
+            "length": 1168,
+            "opcode": "READV",
+            "ssd_offset": 21477832705
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 11,
+            "iovs": [
+              {
+                "hbm_addr": 68721395290,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 68722454528,
+                "iov_id": 1,
+                "length": 32779
+              }
+            ],
+            "length": 1081427,
+            "opcode": "READV",
+            "ssd_offset": 2860002
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 12,
+            "iovs": [
+              {
+                "hbm_addr": 94491676747,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 94491808256,
+                "iov_id": 1,
+                "length": 1048733
+              },
+              {
+                "hbm_addr": 94492857344,
+                "iov_id": 2,
+                "length": 32811
+              }
+            ],
+            "length": 1212688,
+            "opcode": "READV",
+            "ssd_offset": 25773207041
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 13,
+            "iovs": [
+              {
+                "hbm_addr": 98786722816,
+                "iov_id": 0,
+                "length": 32768
+              },
+              {
+                "hbm_addr": 98786765824,
+                "iov_id": 1,
+                "length": 1024
+              },
+              {
+                "hbm_addr": 98786786816,
+                "iov_id": 2,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 98787865088,
+                "iov_id": 3,
+                "length": 65536
+              }
+            ],
+            "length": 1147904,
+            "opcode": "READV",
+            "ssd_offset": 30068229632
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 14,
+            "iovs": [
+              {
+                "hbm_addr": 68722492199,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 68722493440,
+                "iov_id": 1,
+                "length": 584
+              },
+              {
+                "hbm_addr": 68722522112,
+                "iov_id": 2,
+                "length": 581
+              },
+              {
+                "hbm_addr": 68722523136,
+                "iov_id": 3,
+                "length": 691
+              }
+            ],
+            "length": 2624,
+            "opcode": "READV",
+            "ssd_offset": 3949569
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 15,
+            "iovs": [
+              {
+                "hbm_addr": 98787935087,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 30069383169
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 16,
+            "iovs": [
+              {
+                "hbm_addr": 94492894856,
+                "iov_id": 0,
+                "length": 65608
+              },
+              {
+                "hbm_addr": 94492960768,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 94492984320,
+                "iov_id": 2,
+                "length": 131179
+              }
+            ],
+            "length": 197555,
+            "opcode": "READV",
+            "ssd_offset": 25774432769
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 17,
+            "iovs": [
+              {
+                "hbm_addr": 81607406592,
+                "iov_id": 0,
+                "length": 512
+              }
+            ],
+            "length": 512,
+            "opcode": "READV",
+            "ssd_offset": 12888911360
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 18,
+            "iovs": [
+              {
+                "hbm_addr": 77311165492,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 77311297024,
+                "iov_id": 1,
+                "length": 32961
+              },
+              {
+                "hbm_addr": 77311334912,
+                "iov_id": 2,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77311355904,
+                "iov_id": 3,
+                "length": 702
+              }
+            ],
+            "length": 165575,
+            "opcode": "READV",
+            "ssd_offset": 8592353793
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 19,
+            "iovs": [
+              {
+                "hbm_addr": 81607411288,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 12888911873
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 20,
+            "iovs": [
+              {
+                "hbm_addr": 73016273877,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 73016297472,
+                "iov_id": 1,
+                "length": 4241
+              },
+              {
+                "hbm_addr": 73016331776,
+                "iov_id": 2,
+                "length": 65537
+              }
+            ],
+            "length": 70362,
+            "opcode": "READV",
+            "ssd_offset": 4297782785
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 21,
+            "iovs": [
+              {
+                "hbm_addr": 73016402035,
+                "iov_id": 0,
+                "length": 131144
+              }
+            ],
+            "length": 131144,
+            "opcode": "READV",
+            "ssd_offset": 4297859073
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 22,
+            "iovs": [
+              {
+                "hbm_addr": 85903042048,
+                "iov_id": 0,
+                "length": 32768
+              },
+              {
+                "hbm_addr": 85903074816,
+                "iov_id": 1,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 85904123392,
+                "iov_id": 2,
+                "length": 512
+              }
+            ],
+            "length": 1081856,
+            "opcode": "READV",
+            "ssd_offset": 17184534016
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 23,
+            "iovs": [
+              {
+                "hbm_addr": 94493120000,
+                "iov_id": 0,
+                "length": 512
+              },
+              {
+                "hbm_addr": 94493120512,
+                "iov_id": 1,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 94494169088,
+                "iov_id": 2,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 94495217664,
+                "iov_id": 3,
+                "length": 131072
+              }
+            ],
+            "length": 2228736,
+            "opcode": "READV",
+            "ssd_offset": 25774630400
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 24,
+            "iovs": [
+              {
+                "hbm_addr": 85904128430,
+                "iov_id": 0,
+                "length": 1048648
+              }
+            ],
+            "length": 1048648,
+            "opcode": "READV",
+            "ssd_offset": 17185625089
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 25,
+            "iovs": [
+              {
+                "hbm_addr": 73016537600,
+                "iov_id": 0,
+                "length": 131072
+              },
+              {
+                "hbm_addr": 73016679424,
+                "iov_id": 1,
+                "length": 131072
+              },
+              {
+                "hbm_addr": 73016828928,
+                "iov_id": 2,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 73017877504,
+                "iov_id": 3,
+                "length": 4096
+              }
+            ],
+            "length": 1314816,
+            "opcode": "READV",
+            "ssd_offset": 4297997312
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 26,
+            "iovs": [
+              {
+                "hbm_addr": 77311361465,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 77312433152,
+                "iov_id": 1,
+                "length": 663
+              }
+            ],
+            "length": 1049311,
+            "opcode": "READV",
+            "ssd_offset": 8591282689
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 27,
+            "iovs": [
+              {
+                "hbm_addr": 94495352832,
+                "iov_id": 0,
+                "length": 32768
+              },
+              {
+                "hbm_addr": 94495385600,
+                "iov_id": 1,
+                "length": 4096
+              },
+              {
+                "hbm_addr": 94495389696,
+                "iov_id": 2,
+                "length": 65536
+              }
+            ],
+            "length": 102400,
+            "opcode": "READV",
+            "ssd_offset": 25776871424
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 28,
+            "iovs": [
+              {
+                "hbm_addr": 77312438619,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77312439808,
+                "iov_id": 1,
+                "length": 32873
+              },
+              {
+                "hbm_addr": 77312473088,
+                "iov_id": 2,
+                "length": 131148
+              }
+            ],
+            "length": 164789,
+            "opcode": "READV",
+            "ssd_offset": 8592519368
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 29,
+            "iovs": [
+              {
+                "hbm_addr": 77312609272,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 77312740864,
+                "iov_id": 1,
+                "length": 32834
+              }
+            ],
+            "length": 163978,
+            "opcode": "READV",
+            "ssd_offset": 8592699905
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 30,
+            "iovs": [
+              {
+                "hbm_addr": 98788988224,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 98789021184,
+                "iov_id": 1,
+                "length": 32931
+              },
+              {
+                "hbm_addr": 98789065216,
+                "iov_id": 2,
+                "length": 4166
+              }
+            ],
+            "length": 69937,
+            "opcode": "READV",
+            "ssd_offset": 30070431817
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 31,
+            "iovs": [
+              {
+                "hbm_addr": 81608464669,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 81609513472,
+                "iov_id": 1,
+                "length": 584
+              },
+              {
+                "hbm_addr": 81609514496,
+                "iov_id": 2,
+                "length": 65616
+              },
+              {
+                "hbm_addr": 81609580544,
+                "iov_id": 3,
+                "length": 768
+              }
+            ],
+            "length": 1115616,
+            "opcode": "READV",
+            "ssd_offset": 12889972737
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 32,
+            "iovs": [
+              {
+                "hbm_addr": 73017885696,
+                "iov_id": 0,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 73018939392,
+                "iov_id": 1,
+                "length": 1024
+              }
+            ],
+            "length": 1049600,
+            "opcode": "READV",
+            "ssd_offset": 4299318784
+          }
+        ],
+        "submit_id": 3
+      },
+      "time_us": 200
+    },
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 300,
+        "iocbs": [
+          {
+            "device_id": 3,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 81609586048,
+                "iov_id": 0,
+                "length": 65608
+              },
+              {
+                "hbm_addr": 81609682432,
+                "iov_id": 1,
+                "length": 1048625
+              },
+              {
+                "hbm_addr": 81610731520,
+                "iov_id": 2,
+                "length": 1048720
+              }
+            ],
+            "length": 2162953,
+            "opcode": "READV",
+            "ssd_offset": 12891088353
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 2,
+            "iovs": [
+              {
+                "hbm_addr": 98789074292,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 98789082112,
+                "iov_id": 1,
+                "length": 4253
+              }
+            ],
+            "length": 4837,
+            "opcode": "READV",
+            "ssd_offset": 30070507521
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 3,
+            "iovs": [
+              {
+                "hbm_addr": 68722528278,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 68722530816,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 68722542080,
+                "iov_id": 2,
+                "length": 1048754
+              }
+            ],
+            "length": 1050106,
+            "opcode": "READV",
+            "ssd_offset": 3952193
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 4,
+            "iovs": [
+              {
+                "hbm_addr": 90196384095,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 90197432832,
+                "iov_id": 1,
+                "length": 32915
+              },
+              {
+                "hbm_addr": 90197466112,
+                "iov_id": 2,
+                "length": 523
+              }
+            ],
+            "length": 1082086,
+            "opcode": "READV",
+            "ssd_offset": 21477845505
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 5,
+            "iovs": [
+              {
+                "hbm_addr": 81611784839,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 81612833792,
+                "iov_id": 1,
+                "length": 32894
+              },
+              {
+                "hbm_addr": 81612867072,
+                "iov_id": 2,
+                "length": 65663
+              },
+              {
+                "hbm_addr": 81612938240,
+                "iov_id": 3,
+                "length": 584
+              }
+            ],
+            "length": 1147789,
+            "opcode": "READV",
+            "ssd_offset": 12893261825
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 6,
+            "iovs": [
+              {
+                "hbm_addr": 85905181473,
+                "iov_id": 0,
+                "length": 768
+              }
+            ],
+            "length": 768,
+            "opcode": "READV",
+            "ssd_offset": 17186681857
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 7,
+            "iovs": [
+              {
+                "hbm_addr": 73018944631,
+                "iov_id": 0,
+                "length": 4168
+              }
+            ],
+            "length": 4168,
+            "opcode": "READV",
+            "ssd_offset": 4300379649
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 8,
+            "iovs": [
+              {
+                "hbm_addr": 77312778477,
+                "iov_id": 0,
+                "length": 65608
+              }
+            ],
+            "length": 65608,
+            "opcode": "READV",
+            "ssd_offset": 8592863883
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 9,
+            "iovs": [
+              {
+                "hbm_addr": 68723595751,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 68723629056,
+                "iov_id": 1,
+                "length": 131227
+              },
+              {
+                "hbm_addr": 68723760640,
+                "iov_id": 2,
+                "length": 1048698
+              },
+              {
+                "hbm_addr": 68724809728,
+                "iov_id": 3,
+                "length": 32924
+              }
+            ],
+            "length": 1245689,
+            "opcode": "READV",
+            "ssd_offset": 5002299
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 10,
+            "iovs": [
+              {
+                "hbm_addr": 85905186816,
+                "iov_id": 0,
+                "length": 65536
+              },
+              {
+                "hbm_addr": 85905252352,
+                "iov_id": 1,
+                "length": 1024
+              },
+              {
+                "hbm_addr": 85905261568,
+                "iov_id": 2,
+                "length": 1024
+              }
+            ],
+            "length": 67584,
+            "opcode": "READV",
+            "ssd_offset": 17186690048
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 11,
+            "iovs": [
+              {
+                "hbm_addr": 98789090816,
+                "iov_id": 0,
+                "length": 1048576
+              },
+              {
+                "hbm_addr": 98790154752,
+                "iov_id": 1,
+                "length": 65536
+              }
+            ],
+            "length": 1114112,
+            "opcode": "READV",
+            "ssd_offset": 30070524416
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 12,
+            "iovs": [
+              {
+                "hbm_addr": 77312848497,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 77312979968,
+                "iov_id": 1,
+                "length": 1048717
+              },
+              {
+                "hbm_addr": 77314039808,
+                "iov_id": 2,
+                "length": 4122
+              },
+              {
+                "hbm_addr": 77314065408,
+                "iov_id": 3,
+                "length": 4168
+              }
+            ],
+            "length": 1188151,
+            "opcode": "READV",
+            "ssd_offset": 8592929491
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 13,
+            "iovs": [
+              {
+                "hbm_addr": 81612943471,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 81612944384,
+                "iov_id": 1,
+                "length": 4163
+              },
+              {
+                "hbm_addr": 81612963328,
+                "iov_id": 2,
+                "length": 131118
+              },
+              {
+                "hbm_addr": 81613106176,
+                "iov_id": 3,
+                "length": 131116
+              }
+            ],
+            "length": 266981,
+            "opcode": "READV",
+            "ssd_offset": 12894409614
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 14,
+            "iovs": [
+              {
+                "hbm_addr": 85905267094,
+                "iov_id": 0,
+                "length": 4168
+              },
+              {
+                "hbm_addr": 85905271296,
+                "iov_id": 1,
+                "length": 131157
+              }
+            ],
+            "length": 135325,
+            "opcode": "READV",
+            "ssd_offset": 17186757633
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 15,
+            "iovs": [
+              {
+                "hbm_addr": 90197471482,
+                "iov_id": 0,
+                "length": 131144
+              },
+              {
+                "hbm_addr": 90197602816,
+                "iov_id": 1,
+                "length": 1048696
+              },
+              {
+                "hbm_addr": 90198651904,
+                "iov_id": 2,
+                "length": 4236
+              },
+              {
+                "hbm_addr": 90198656512,
+                "iov_id": 3,
+                "length": 32909
+              }
+            ],
+            "length": 1216985,
+            "opcode": "READV",
+            "ssd_offset": 21478935553
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 16,
+            "iovs": [
+              {
+                "hbm_addr": 73018953680,
+                "iov_id": 0,
+                "length": 65608
+              },
+              {
+                "hbm_addr": 73019047424,
+                "iov_id": 1,
+                "length": 32939
+              },
+              {
+                "hbm_addr": 73019080704,
+                "iov_id": 2,
+                "length": 65709
+              }
+            ],
+            "length": 164256,
+            "opcode": "READV",
+            "ssd_offset": 4300383817
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 17,
+            "iovs": [
+              {
+                "hbm_addr": 98790224491,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 98790242816,
+                "iov_id": 1,
+                "length": 32835
+              }
+            ],
+            "length": 33603,
+            "opcode": "READV",
+            "ssd_offset": 30071640577
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 18,
+            "iovs": [
+              {
+                "hbm_addr": 73019151078,
+                "iov_id": 0,
+                "length": 1048648
+              },
+              {
+                "hbm_addr": 73020199936,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 73020211712,
+                "iov_id": 2,
+                "length": 131171
+              }
+            ],
+            "length": 1180587,
+            "opcode": "READV",
+            "ssd_offset": 4300548073
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 19,
+            "iovs": [
+              {
+                "hbm_addr": 68724847565,
+                "iov_id": 0,
+                "length": 32840
+              },
+              {
+                "hbm_addr": 68724897792,
+                "iov_id": 1,
+                "length": 521
+              },
+              {
+                "hbm_addr": 68724915712,
+                "iov_id": 2,
+                "length": 32921
+              },
+              {
+                "hbm_addr": 68724976128,
+                "iov_id": 3,
+                "length": 131105
+              }
+            ],
+            "length": 197387,
+            "opcode": "READV",
+            "ssd_offset": 6257665
+          },
+          {
+            "device_id": 1,
+            "iocb_id": 20,
+            "iovs": [
+              {
+                "hbm_addr": 73020347616,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 4301738497
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 21,
+            "iovs": [
+              {
+                "hbm_addr": 90198694063,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 90198694912,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 90198695936,
+                "iov_id": 2,
+                "length": 4260
+              }
+            ],
+            "length": 5612,
+            "opcode": "READV",
+            "ssd_offset": 21480158209
+          },
+          {
+            "device_id": 5,
+            "iocb_id": 22,
+            "iovs": [
+              {
+                "hbm_addr": 90198705134,
+                "iov_id": 0,
+                "length": 4168
+              }
+            ],
+            "length": 4168,
+            "opcode": "READV",
+            "ssd_offset": 21480173057
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 23,
+            "iovs": [
+              {
+                "hbm_addr": 77314074168,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 77314075136,
+                "iov_id": 1,
+                "length": 688
+              },
+              {
+                "hbm_addr": 77314076160,
+                "iov_id": 2,
+                "length": 574
+              },
+              {
+                "hbm_addr": 77314096128,
+                "iov_id": 3,
+                "length": 687
+              }
+            ],
+            "length": 2717,
+            "opcode": "READV",
+            "ssd_offset": 8594127873
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 24,
+            "iovs": [
+              {
+                "hbm_addr": 94495459532,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 94495473664,
+                "iov_id": 1,
+                "length": 603
+              },
+              {
+                "hbm_addr": 94495474688,
+                "iov_id": 2,
+                "length": 584
+              },
+              {
+                "hbm_addr": 94495505408,
+                "iov_id": 3,
+                "length": 131154
+              }
+            ],
+            "length": 132925,
+            "opcode": "READV",
+            "ssd_offset": 25776978945
+          },
+          {
+            "device_id": 4,
+            "iocb_id": 25,
+            "iovs": [
+              {
+                "hbm_addr": 85905406976,
+                "iov_id": 0,
+                "length": 65536
+              }
+            ],
+            "length": 65536,
+            "opcode": "READV",
+            "ssd_offset": 17186893312
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 26,
+            "iovs": [
+              {
+                "hbm_addr": 94495641156,
+                "iov_id": 0,
+                "length": 32840
+              }
+            ],
+            "length": 32840,
+            "opcode": "READV",
+            "ssd_offset": 25777123841
+          },
+          {
+            "device_id": 0,
+            "iocb_id": 27,
+            "iovs": [
+              {
+                "hbm_addr": 68725112308,
+                "iov_id": 0,
+                "length": 131144
+              }
+            ],
+            "length": 131144,
+            "opcode": "READV",
+            "ssd_offset": 6470145
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 28,
+            "iovs": [
+              {
+                "hbm_addr": 94495678464,
+                "iov_id": 0,
+                "length": 65536
+              },
+              {
+                "hbm_addr": 94495744000,
+                "iov_id": 1,
+                "length": 1024
+              },
+              {
+                "hbm_addr": 94495770112,
+                "iov_id": 2,
+                "length": 512
+              }
+            ],
+            "length": 67072,
+            "opcode": "READV",
+            "ssd_offset": 25777169408
+          },
+          {
+            "device_id": 3,
+            "iocb_id": 29,
+            "iovs": [
+              {
+                "hbm_addr": 81613241862,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 81613242880,
+                "iov_id": 1,
+                "length": 768
+              },
+              {
+                "hbm_addr": 81613243904,
+                "iov_id": 2,
+                "length": 4135
+              }
+            ],
+            "length": 5487,
+            "opcode": "READV",
+            "ssd_offset": 12894686209
+          },
+          {
+            "device_id": 7,
+            "iocb_id": 30,
+            "iovs": [
+              {
+                "hbm_addr": 98790280597,
+                "iov_id": 0,
+                "length": 768
+              },
+              {
+                "hbm_addr": 98790301184,
+                "iov_id": 1,
+                "length": 32884
+              },
+              {
+                "hbm_addr": 98790334464,
+                "iov_id": 2,
+                "length": 131235
+              }
+            ],
+            "length": 164887,
+            "opcode": "READV",
+            "ssd_offset": 30071674180
+          },
+          {
+            "device_id": 2,
+            "iocb_id": 31,
+            "iovs": [
+              {
+                "hbm_addr": 77314101254,
+                "iov_id": 0,
+                "length": 584
+              },
+              {
+                "hbm_addr": 77314119168,
+                "iov_id": 1,
+                "length": 584
+              },
+              {
+                "hbm_addr": 77314120192,
+                "iov_id": 2,
+                "length": 32844
+              },
+              {
+                "hbm_addr": 77314153472,
+                "iov_id": 3,
+                "length": 584
+              }
+            ],
+            "length": 34596,
+            "opcode": "READV",
+            "ssd_offset": 8594136577
+          },
+          {
+            "device_id": 6,
+            "iocb_id": 32,
+            "iovs": [
+              {
+                "hbm_addr": 94495774720,
+                "iov_id": 0,
+                "length": 131072
+              },
+              {
+                "hbm_addr": 94495905792,
+                "iov_id": 1,
+                "length": 1048576
+              }
+            ],
+            "length": 1179648,
+            "opcode": "READV",
+            "ssd_offset": 25777236480
+          }
+        ],
+        "submit_id": 4
+      },
+      "time_us": 300
+    }
+  ],
+  "generator_metadata": {
+    "actual_hbm_fragment_rate": 0.465116279069767,
+    "actual_logical_unaligned_rate": 0.84375,
+    "actual_new_object_adjacent_rate": 0.333333333333333,
+    "actual_new_object_unaligned_rate": 0.83739837398374,
+    "actual_reuse_rate": 0.0390625,
+    "arrival_gap_us": 100,
+    "arrival_jitter_us": 0,
+    "average_iovs_per_iocb": 2.34375,
+    "balance_cards": true,
+    "cards": 8,
+    "cycle_per_card": 0,
+    "hotset_size": 64,
+    "iocbs_per_submit_max": 32,
+    "iocbs_per_submit_min": 32,
+    "iovs_per_iocb_max": 4,
+    "iovs_per_iocb_min": 1,
+    "logical_bytes": 47802233,
+    "logical_iocb_count": 128,
+    "logical_iov_size_counts": {
+      "1024": 7,
+      "1048576": 9,
+      "1048625": 1,
+      "1048648": 16,
+      "1048651": 1,
+      "1048696": 1,
+      "1048698": 1,
+      "1048717": 1,
+      "1048720": 1,
+      "1048733": 1,
+      "1048736": 1,
+      "1048754": 1,
+      "1048758": 1,
+      "1048760": 1,
+      "1048777": 1,
+      "131072": 7,
+      "131075": 1,
+      "131093": 1,
+      "131105": 1,
+      "131106": 1,
+      "131110": 1,
+      "131116": 1,
+      "131118": 2,
+      "131121": 2,
+      "131137": 1,
+      "131141": 1,
+      "131144": 12,
+      "131148": 1,
+      "131154": 1,
+      "131157": 1,
+      "131171": 1,
+      "131173": 1,
+      "131176": 1,
+      "131179": 1,
+      "131193": 1,
+      "131227": 1,
+      "131235": 1,
+      "131243": 1,
+      "32768": 4,
+      "32779": 1,
+      "32796": 1,
+      "32811": 1,
+      "32834": 1,
+      "32835": 1,
+      "32840": 20,
+      "32843": 1,
+      "32844": 1,
+      "32865": 2,
+      "32873": 1,
+      "32884": 1,
+      "32894": 1,
+      "32909": 1,
+      "32915": 1,
+      "32917": 1,
+      "32921": 1,
+      "32924": 1,
+      "32931": 1,
+      "32939": 1,
+      "32961": 1,
+      "4096": 3,
+      "4122": 1,
+      "4135": 2,
+      "4143": 1,
+      "4155": 1,
+      "4163": 1,
+      "4166": 1,
+      "4168": 12,
+      "4177": 1,
+      "4204": 1,
+      "4211": 1,
+      "4236": 1,
+      "4241": 1,
+      "4244": 1,
+      "4249": 1,
+      "4253": 1,
+      "4260": 1,
+      "4277": 1,
+      "512": 9,
+      "513": 1,
+      "521": 1,
+      "523": 1,
+      "535": 1,
+      "553": 1,
+      "556": 1,
+      "558": 1,
+      "570": 1,
+      "574": 1,
+      "581": 1,
+      "584": 40,
+      "603": 2,
+      "626": 1,
+      "649": 2,
+      "654": 1,
+      "65536": 8,
+      "65537": 1,
+      "65558": 1,
+      "65608": 7,
+      "65616": 1,
+      "65627": 1,
+      "65637": 2,
+      "65655": 1,
+      "65663": 1,
+      "65670": 1,
+      "65709": 1,
+      "65723": 1,
+      "65733": 1,
+      "65737": 1,
+      "663": 2,
+      "680": 2,
+      "687": 1,
+      "688": 1,
+      "691": 1,
+      "702": 1,
+      "768": 37
+    },
+    "preset": "high-unaligned",
+    "requested_adjacent_rate": 0.3,
+    "requested_hbm_fragment_rate": 0.5,
+    "requested_reuse_rate": 0.1,
+    "requested_unaligned_rate": 0.9,
+    "seed": 30103,
+    "size_profile": "mixed",
+    "sizes": [
+      512,
+      584,
+      768,
+      4096,
+      32768,
+      65536,
+      131072,
+      1048576
+    ],
+    "submit_count": 4,
+    "total_iov_count": 300,
+    "unique_object_count": 123
+  },
+  "instance": {
+    "fixed_parameters": {
+      "CPU_D2D_CALL_COST": 2,
+      "CPU_D2H_CALL_COST": 1,
+      "CPU_FALLBACK_FIXED_COST": 8,
+      "CPU_FALLBACK_PER_CMD_COST": 2,
+      "CPU_H2D_CALL_COST": 1,
+      "CPU_NDS_FIXED_COST": 1,
+      "CPU_NDS_PER_CMD_COST": 1,
+      "CPU_PROMOTE_FIXED_COST": 80,
+      "CPU_PROMOTE_PER_CMD_COST": 1,
+      "NPU_D2D_CALL_COST": 1,
+      "NPU_D2H_CALL_COST": 1,
+      "NPU_H2D_CALL_COST": 1,
+      "promote_ttl_us": 60000000,
+      "time_cost_per_us": 1
+    },
+    "instance_id": "public-03_high_unaligned__v3",
+    "resources": {
+      "cpu_copy_bw": 30720,
+      "d2d_bw": 1572864,
+      "d2h_bw": 20480,
+      "d2h_copy_concurrency": 10,
+      "ddr_capacity": 1024,
+      "h2d_bw": 20480,
+      "h2d_copy_concurrency": 1024,
+      "hbm_capacity": 256,
+      "hbm_copy_concurrency": 1024,
+      "iocb_capacity": 1024,
+      "kvcache_pool_capacity": 10248576,
+      "nvme_bw": 21504
+    },
+    "runtime_limits": {
+      "decision_timeout_ms": 60000,
+      "max_cpus": 8,
+      "max_memory_mb": 16384,
+      "max_processes": 32
+    }
+  }
+}

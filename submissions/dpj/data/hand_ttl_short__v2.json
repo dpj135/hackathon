@@ -1,0 +1,151 @@
+{
+  "events": [
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 0,
+        "iocbs": [
+          {
+            "device_id": 4,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 85899345920,
+                "iov_id": 0,
+                "length": 4096
+              }
+            ],
+            "length": 4096,
+            "opcode": "READV",
+            "ssd_offset": 17180925440
+          }
+        ],
+        "submit_id": 1
+      },
+      "time_us": 0
+    },
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 400,
+        "iocbs": [
+          {
+            "device_id": 4,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 85899354112,
+                "iov_id": 0,
+                "length": 4096
+              }
+            ],
+            "length": 4096,
+            "opcode": "READV",
+            "ssd_offset": 17180925440
+          }
+        ],
+        "submit_id": 2
+      },
+      "time_us": 400
+    },
+    {
+      "event": "IO_SUBMIT",
+      "submit": {
+        "arrival_us": 800,
+        "iocbs": [
+          {
+            "device_id": 4,
+            "iocb_id": 1,
+            "iovs": [
+              {
+                "hbm_addr": 85899362304,
+                "iov_id": 0,
+                "length": 4096
+              }
+            ],
+            "length": 4096,
+            "opcode": "READV",
+            "ssd_offset": 17180925440
+          }
+        ],
+        "submit_id": 3
+      },
+      "time_us": 800
+    }
+  ],
+  "generator_metadata": {
+    "actual_hbm_fragment_rate": 0.0,
+    "actual_logical_unaligned_rate": 0.0,
+    "actual_new_object_adjacent_rate": 0.0,
+    "actual_new_object_unaligned_rate": 0.0,
+    "actual_reuse_rate": 0.666666666666667,
+    "arrival_gap_us": 400,
+    "arrival_jitter_us": 0,
+    "average_iovs_per_iocb": 1.0,
+    "balance_cards": false,
+    "cards": 8,
+    "cycle_per_card": 0,
+    "hotset_size": 1,
+    "iocbs_per_submit_max": 1,
+    "iocbs_per_submit_min": 1,
+    "iovs_per_iocb_max": 1,
+    "iovs_per_iocb_min": 1,
+    "logical_bytes": 12288,
+    "logical_iocb_count": 3,
+    "logical_iov_size_counts": {
+      "4096": 3
+    },
+    "preset": "balanced",
+    "requested_adjacent_rate": 0.0,
+    "requested_hbm_fragment_rate": 0.0,
+    "requested_reuse_rate": 1.0,
+    "requested_unaligned_rate": 0.0,
+    "seed": 29010,
+    "size_profile": "mixed",
+    "sizes": [
+      4096
+    ],
+    "submit_count": 3,
+    "total_iov_count": 3,
+    "unique_object_count": 1
+  },
+  "instance": {
+    "instance_id": "public-hand_ttl_short__v2",
+    "resources": {
+      "nvme_bw": 21504,
+      "iocb_capacity": 1024,
+      "hbm_capacity": 256,
+      "ddr_capacity": 1024,
+      "cpu_copy_bw": 30720,
+      "h2d_bw": 20480,
+      "d2h_bw": 20480,
+      "d2d_bw": 1572864,
+      "hbm_copy_concurrency": 1024,
+      "h2d_copy_concurrency": 1024,
+      "d2h_copy_concurrency": 10,
+      "kvcache_pool_capacity": 10248576
+    },
+    "runtime_limits": {
+      "max_cpus": 8,
+      "max_processes": 32,
+      "max_memory_mb": 16384,
+      "decision_timeout_ms": 60000
+    },
+    "fixed_parameters": {
+      "promote_ttl_us": 1000,
+      "time_cost_per_us": 1,
+      "CPU_NDS_FIXED_COST": 1,
+      "CPU_NDS_PER_CMD_COST": 1,
+      "CPU_PROMOTE_FIXED_COST": 80,
+      "CPU_PROMOTE_PER_CMD_COST": 1,
+      "CPU_FALLBACK_FIXED_COST": 8,
+      "CPU_FALLBACK_PER_CMD_COST": 2,
+      "CPU_H2D_CALL_COST": 1,
+      "CPU_D2H_CALL_COST": 1,
+      "CPU_D2D_CALL_COST": 2,
+      "NPU_H2D_CALL_COST": 1,
+      "NPU_D2H_CALL_COST": 1,
+      "NPU_D2D_CALL_COST": 1
+    }
+  }
+}

@@ -1,0 +1,1398 @@
+{
+  "name": "public-x3",
+  "memory_limit_mb": 16384,
+  "cases": [
+    {
+      "id": "small_aligned",
+      "file": "small_aligned.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "aligned"
+      ]
+    },
+    {
+      "id": "small_aligned__v2",
+      "file": "small_aligned__v2.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "aligned",
+        "variant"
+      ],
+      "source_case": "small_aligned"
+    },
+    {
+      "id": "small_aligned__v3",
+      "file": "small_aligned__v3.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "aligned",
+        "variant"
+      ],
+      "source_case": "small_aligned"
+    },
+    {
+      "id": "small_mixed",
+      "file": "small_mixed.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "mixed"
+      ]
+    },
+    {
+      "id": "small_mixed__v2",
+      "file": "small_mixed__v2.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "small_mixed"
+    },
+    {
+      "id": "small_mixed__v3",
+      "file": "small_mixed__v3.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "small_mixed"
+    },
+    {
+      "id": "small_repeated",
+      "file": "small_repeated.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "reuse"
+      ]
+    },
+    {
+      "id": "small_repeated__v2",
+      "file": "small_repeated__v2.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "reuse",
+        "variant"
+      ],
+      "source_case": "small_repeated"
+    },
+    {
+      "id": "small_repeated__v3",
+      "file": "small_repeated__v3.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "reuse",
+        "variant"
+      ],
+      "source_case": "small_repeated"
+    },
+    {
+      "id": "hand_ttl_short",
+      "file": "hand_ttl_short.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "ttl"
+      ]
+    },
+    {
+      "id": "hand_ttl_short__v2",
+      "file": "hand_ttl_short__v2.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "ttl",
+        "variant"
+      ],
+      "source_case": "hand_ttl_short"
+    },
+    {
+      "id": "hand_ttl_short__v3",
+      "file": "hand_ttl_short__v3.json",
+      "weight": 1,
+      "timeout_sec": 30,
+      "tags": [
+        "low",
+        "hand",
+        "ttl",
+        "variant"
+      ],
+      "source_case": "hand_ttl_short"
+    },
+    {
+      "id": "01_aligned",
+      "file": "01_aligned.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aligned",
+        "balanced"
+      ]
+    },
+    {
+      "id": "01_aligned__v2",
+      "file": "01_aligned__v2.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aligned",
+        "balanced",
+        "variant"
+      ],
+      "source_case": "01_aligned"
+    },
+    {
+      "id": "01_aligned__v3",
+      "file": "01_aligned__v3.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aligned",
+        "balanced",
+        "variant"
+      ],
+      "source_case": "01_aligned"
+    },
+    {
+      "id": "02_low_unaligned",
+      "file": "02_low_unaligned.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "unaligned"
+      ]
+    },
+    {
+      "id": "02_low_unaligned__v2",
+      "file": "02_low_unaligned__v2.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "02_low_unaligned"
+    },
+    {
+      "id": "02_low_unaligned__v3",
+      "file": "02_low_unaligned__v3.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "02_low_unaligned"
+    },
+    {
+      "id": "03_high_unaligned",
+      "file": "03_high_unaligned.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "unaligned"
+      ]
+    },
+    {
+      "id": "03_high_unaligned__v2",
+      "file": "03_high_unaligned__v2.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "03_high_unaligned"
+    },
+    {
+      "id": "03_high_unaligned__v3",
+      "file": "03_high_unaligned__v3.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "03_high_unaligned"
+    },
+    {
+      "id": "04_fragmented",
+      "file": "04_fragmented.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "fragmented"
+      ]
+    },
+    {
+      "id": "04_fragmented__v2",
+      "file": "04_fragmented__v2.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "fragmented",
+        "variant"
+      ],
+      "source_case": "04_fragmented"
+    },
+    {
+      "id": "04_fragmented__v3",
+      "file": "04_fragmented__v3.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "fragmented",
+        "variant"
+      ],
+      "source_case": "04_fragmented"
+    },
+    {
+      "id": "05_mixed_size",
+      "file": "05_mixed_size.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "mixed"
+      ]
+    },
+    {
+      "id": "05_mixed_size__v2",
+      "file": "05_mixed_size__v2.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "05_mixed_size"
+    },
+    {
+      "id": "05_mixed_size__v3",
+      "file": "05_mixed_size__v3.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "05_mixed_size"
+    },
+    {
+      "id": "06_reuse_hot",
+      "file": "06_reuse_hot.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "reuse"
+      ]
+    },
+    {
+      "id": "06_reuse_hot__v2",
+      "file": "06_reuse_hot__v2.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "reuse",
+        "variant"
+      ],
+      "source_case": "06_reuse_hot"
+    },
+    {
+      "id": "06_reuse_hot__v3",
+      "file": "06_reuse_hot__v3.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "reuse",
+        "variant"
+      ],
+      "source_case": "06_reuse_hot"
+    },
+    {
+      "id": "07_no_reuse",
+      "file": "07_no_reuse.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "cold"
+      ]
+    },
+    {
+      "id": "07_no_reuse__v2",
+      "file": "07_no_reuse__v2.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "cold",
+        "variant"
+      ],
+      "source_case": "07_no_reuse"
+    },
+    {
+      "id": "07_no_reuse__v3",
+      "file": "07_no_reuse__v3.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "cold",
+        "variant"
+      ],
+      "source_case": "07_no_reuse"
+    },
+    {
+      "id": "08_ttl_expiry",
+      "file": "08_ttl_expiry.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "ttl"
+      ]
+    },
+    {
+      "id": "08_ttl_expiry__v2",
+      "file": "08_ttl_expiry__v2.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "ttl",
+        "variant"
+      ],
+      "source_case": "08_ttl_expiry"
+    },
+    {
+      "id": "08_ttl_expiry__v3",
+      "file": "08_ttl_expiry__v3.json",
+      "weight": 1,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "ttl",
+        "variant"
+      ],
+      "source_case": "08_ttl_expiry"
+    },
+    {
+      "id": "09_buffer_pressure",
+      "file": "09_buffer_pressure.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "buffer"
+      ]
+    },
+    {
+      "id": "09_buffer_pressure__v2",
+      "file": "09_buffer_pressure__v2.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "buffer",
+        "variant"
+      ],
+      "source_case": "09_buffer_pressure"
+    },
+    {
+      "id": "09_buffer_pressure__v3",
+      "file": "09_buffer_pressure__v3.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "buffer",
+        "variant"
+      ],
+      "source_case": "09_buffer_pressure"
+    },
+    {
+      "id": "10_concurrency",
+      "file": "10_concurrency_pressure.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "concurrency"
+      ]
+    },
+    {
+      "id": "10_concurrency__v2",
+      "file": "10_concurrency_pressure__v2.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "concurrency",
+        "variant"
+      ],
+      "source_case": "10_concurrency"
+    },
+    {
+      "id": "10_concurrency__v3",
+      "file": "10_concurrency_pressure__v3.json",
+      "weight": 1,
+      "timeout_sec": 90,
+      "tags": [
+        "low",
+        "concurrency",
+        "variant"
+      ],
+      "source_case": "10_concurrency"
+    },
+    {
+      "id": "11_merge_friendly",
+      "file": "11_merge_friendly.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aggregate"
+      ]
+    },
+    {
+      "id": "11_merge_friendly__v2",
+      "file": "11_merge_friendly__v2.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aggregate",
+        "variant"
+      ],
+      "source_case": "11_merge_friendly"
+    },
+    {
+      "id": "11_merge_friendly__v3",
+      "file": "11_merge_friendly__v3.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aggregate",
+        "variant"
+      ],
+      "source_case": "11_merge_friendly"
+    },
+    {
+      "id": "promote_low_aligned",
+      "file": "promote_low_aligned.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote"
+      ]
+    },
+    {
+      "id": "promote_low_aligned__v2",
+      "file": "promote_low_aligned__v2.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "variant"
+      ],
+      "source_case": "promote_low_aligned"
+    },
+    {
+      "id": "promote_low_aligned__v3",
+      "file": "promote_low_aligned__v3.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "variant"
+      ],
+      "source_case": "promote_low_aligned"
+    },
+    {
+      "id": "promote_low_unaligned",
+      "file": "promote_low_unaligned.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "unaligned"
+      ]
+    },
+    {
+      "id": "promote_low_unaligned__v2",
+      "file": "promote_low_unaligned__v2.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "promote_low_unaligned"
+    },
+    {
+      "id": "promote_low_unaligned__v3",
+      "file": "promote_low_unaligned__v3.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "promote_low_unaligned"
+    },
+    {
+      "id": "mid_mixed",
+      "file": "mid_mixed.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "mixed"
+      ]
+    },
+    {
+      "id": "mid_mixed__v2",
+      "file": "mid_mixed__v2.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "mid_mixed"
+    },
+    {
+      "id": "mid_mixed__v3",
+      "file": "mid_mixed__v3.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "mid_mixed"
+    },
+    {
+      "id": "mid_unaligned",
+      "file": "mid_unaligned.json",
+      "weight": 1,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "unaligned"
+      ]
+    },
+    {
+      "id": "mid_unaligned__v2",
+      "file": "mid_unaligned__v2.json",
+      "weight": 1,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "mid_unaligned"
+    },
+    {
+      "id": "mid_unaligned__v3",
+      "file": "mid_unaligned__v3.json",
+      "weight": 1,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "unaligned",
+        "variant"
+      ],
+      "source_case": "mid_unaligned"
+    },
+    {
+      "id": "mid_reuse",
+      "file": "mid_reuse.json",
+      "weight": 1,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "reuse"
+      ]
+    },
+    {
+      "id": "mid_reuse__v2",
+      "file": "mid_reuse__v2.json",
+      "weight": 1,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "reuse",
+        "variant"
+      ],
+      "source_case": "mid_reuse"
+    },
+    {
+      "id": "mid_reuse__v3",
+      "file": "mid_reuse__v3.json",
+      "weight": 1,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "reuse",
+        "variant"
+      ],
+      "source_case": "mid_reuse"
+    },
+    {
+      "id": "promote_mid",
+      "file": "promote_mid.json",
+      "weight": 4,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "promote"
+      ]
+    },
+    {
+      "id": "promote_mid__v2",
+      "file": "promote_mid__v2.json",
+      "weight": 4,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "promote",
+        "variant"
+      ],
+      "source_case": "promote_mid"
+    },
+    {
+      "id": "promote_mid__v3",
+      "file": "promote_mid__v3.json",
+      "weight": 4,
+      "timeout_sec": 120,
+      "tags": [
+        "mid",
+        "promote",
+        "variant"
+      ],
+      "source_case": "promote_mid"
+    },
+    {
+      "id": "high_aligned",
+      "file": "high_aligned.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "aligned"
+      ]
+    },
+    {
+      "id": "high_aligned__v2",
+      "file": "high_aligned__v2.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "aligned",
+        "variant"
+      ],
+      "source_case": "high_aligned"
+    },
+    {
+      "id": "high_aligned__v3",
+      "file": "high_aligned__v3.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "aligned",
+        "variant"
+      ],
+      "source_case": "high_aligned"
+    },
+    {
+      "id": "high_mixed",
+      "file": "high_mixed.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "mixed"
+      ]
+    },
+    {
+      "id": "high_mixed__v2",
+      "file": "high_mixed__v2.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "high_mixed"
+    },
+    {
+      "id": "high_mixed__v3",
+      "file": "high_mixed__v3.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "mixed",
+        "variant"
+      ],
+      "source_case": "high_mixed"
+    },
+    {
+      "id": "promote_high",
+      "file": "promote_high.json",
+      "weight": 12,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "evict"
+      ]
+    },
+    {
+      "id": "promote_high__v2",
+      "file": "promote_high__v2.json",
+      "weight": 12,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "evict",
+        "variant"
+      ],
+      "source_case": "promote_high"
+    },
+    {
+      "id": "promote_high__v3",
+      "file": "promote_high__v3.json",
+      "weight": 12,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "evict",
+        "variant"
+      ],
+      "source_case": "promote_high"
+    },
+    {
+      "id": "read_direct_low",
+      "file": "read_direct_low.json",
+      "weight": 6,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "direct",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_direct_low__v2",
+      "file": "read_direct_low__v2.json",
+      "weight": 6,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "direct",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_direct_low"
+    },
+    {
+      "id": "read_direct_low__v3",
+      "file": "read_direct_low__v3.json",
+      "weight": 6,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "direct",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_direct_low"
+    },
+    {
+      "id": "read_direct_mid",
+      "file": "read_direct_mid.json",
+      "weight": 6,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "direct",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_direct_mid__v2",
+      "file": "read_direct_mid__v2.json",
+      "weight": 6,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "direct",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_direct_mid"
+    },
+    {
+      "id": "read_direct_mid__v3",
+      "file": "read_direct_mid__v3.json",
+      "weight": 6,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "direct",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_direct_mid"
+    },
+    {
+      "id": "read_direct_high",
+      "file": "read_direct_high.json",
+      "weight": 6,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "direct",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_direct_high__v2",
+      "file": "read_direct_high__v2.json",
+      "weight": 6,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "direct",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_direct_high"
+    },
+    {
+      "id": "read_direct_high__v3",
+      "file": "read_direct_high__v3.json",
+      "weight": 6,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "direct",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_direct_high"
+    },
+    {
+      "id": "read_aggregate_low",
+      "file": "read_aggregate_low.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aggregate",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_aggregate_low__v2",
+      "file": "read_aggregate_low__v2.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aggregate",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_aggregate_low"
+    },
+    {
+      "id": "read_aggregate_low__v3",
+      "file": "read_aggregate_low__v3.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "aggregate",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_aggregate_low"
+    },
+    {
+      "id": "read_aggregate_mid",
+      "file": "read_aggregate_mid.json",
+      "weight": 4,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "aggregate",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_aggregate_mid__v2",
+      "file": "read_aggregate_mid__v2.json",
+      "weight": 4,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "aggregate",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_aggregate_mid"
+    },
+    {
+      "id": "read_aggregate_mid__v3",
+      "file": "read_aggregate_mid__v3.json",
+      "weight": 4,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "aggregate",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_aggregate_mid"
+    },
+    {
+      "id": "read_aggregate_high",
+      "file": "read_aggregate_high.json",
+      "weight": 4,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "aggregate",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_aggregate_high__v2",
+      "file": "read_aggregate_high__v2.json",
+      "weight": 4,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "aggregate",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_aggregate_high"
+    },
+    {
+      "id": "read_aggregate_high__v3",
+      "file": "read_aggregate_high__v3.json",
+      "weight": 4,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "aggregate",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_aggregate_high"
+    },
+    {
+      "id": "read_fallback_low",
+      "file": "read_fallback_low.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "fallback",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_fallback_low__v2",
+      "file": "read_fallback_low__v2.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "fallback",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_fallback_low"
+    },
+    {
+      "id": "read_fallback_low__v3",
+      "file": "read_fallback_low__v3.json",
+      "weight": 4,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "fallback",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_fallback_low"
+    },
+    {
+      "id": "read_fallback_mid",
+      "file": "read_fallback_mid.json",
+      "weight": 4,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "fallback",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_fallback_mid__v2",
+      "file": "read_fallback_mid__v2.json",
+      "weight": 4,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "fallback",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_fallback_mid"
+    },
+    {
+      "id": "read_fallback_mid__v3",
+      "file": "read_fallback_mid__v3.json",
+      "weight": 4,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "fallback",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_fallback_mid"
+    },
+    {
+      "id": "read_fallback_high",
+      "file": "read_fallback_high.json",
+      "weight": 4,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "fallback",
+        "merge"
+      ]
+    },
+    {
+      "id": "read_fallback_high__v2",
+      "file": "read_fallback_high__v2.json",
+      "weight": 4,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "fallback",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_fallback_high"
+    },
+    {
+      "id": "read_fallback_high__v3",
+      "file": "read_fallback_high__v3.json",
+      "weight": 4,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "fallback",
+        "merge",
+        "variant"
+      ],
+      "source_case": "read_fallback_high"
+    },
+    {
+      "id": "promote_ssd_low",
+      "file": "promote_ssd_low.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "ssd"
+      ]
+    },
+    {
+      "id": "promote_ssd_low__v2",
+      "file": "promote_ssd_low__v2.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "ssd",
+        "variant"
+      ],
+      "source_case": "promote_ssd_low"
+    },
+    {
+      "id": "promote_ssd_low__v3",
+      "file": "promote_ssd_low__v3.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "ssd",
+        "variant"
+      ],
+      "source_case": "promote_ssd_low"
+    },
+    {
+      "id": "promote_ssd_mid",
+      "file": "promote_ssd_mid.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "promote",
+        "ssd"
+      ]
+    },
+    {
+      "id": "promote_ssd_mid__v2",
+      "file": "promote_ssd_mid__v2.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "promote",
+        "ssd",
+        "variant"
+      ],
+      "source_case": "promote_ssd_mid"
+    },
+    {
+      "id": "promote_ssd_mid__v3",
+      "file": "promote_ssd_mid__v3.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "promote",
+        "ssd",
+        "variant"
+      ],
+      "source_case": "promote_ssd_mid"
+    },
+    {
+      "id": "promote_ssd_high",
+      "file": "promote_ssd_high.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "ssd"
+      ]
+    },
+    {
+      "id": "promote_ssd_high__v2",
+      "file": "promote_ssd_high__v2.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "ssd",
+        "variant"
+      ],
+      "source_case": "promote_ssd_high"
+    },
+    {
+      "id": "promote_ssd_high__v3",
+      "file": "promote_ssd_high__v3.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "ssd",
+        "variant"
+      ],
+      "source_case": "promote_ssd_high"
+    },
+    {
+      "id": "promote_hbm_low",
+      "file": "promote_hbm_low.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "hbm"
+      ]
+    },
+    {
+      "id": "promote_hbm_low__v2",
+      "file": "promote_hbm_low__v2.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "hbm",
+        "variant"
+      ],
+      "source_case": "promote_hbm_low"
+    },
+    {
+      "id": "promote_hbm_low__v3",
+      "file": "promote_hbm_low__v3.json",
+      "weight": 2,
+      "timeout_sec": 60,
+      "tags": [
+        "low",
+        "promote",
+        "hbm",
+        "variant"
+      ],
+      "source_case": "promote_hbm_low"
+    },
+    {
+      "id": "promote_hbm_mid",
+      "file": "promote_hbm_mid.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "promote",
+        "hbm"
+      ]
+    },
+    {
+      "id": "promote_hbm_mid__v2",
+      "file": "promote_hbm_mid__v2.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "promote",
+        "hbm",
+        "variant"
+      ],
+      "source_case": "promote_hbm_mid"
+    },
+    {
+      "id": "promote_hbm_mid__v3",
+      "file": "promote_hbm_mid__v3.json",
+      "weight": 2,
+      "timeout_sec": 90,
+      "tags": [
+        "mid",
+        "promote",
+        "hbm",
+        "variant"
+      ],
+      "source_case": "promote_hbm_mid"
+    },
+    {
+      "id": "promote_hbm_high",
+      "file": "promote_hbm_high.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "hbm"
+      ]
+    },
+    {
+      "id": "promote_hbm_high__v2",
+      "file": "promote_hbm_high__v2.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "hbm",
+        "variant"
+      ],
+      "source_case": "promote_hbm_high"
+    },
+    {
+      "id": "promote_hbm_high__v3",
+      "file": "promote_hbm_high__v3.json",
+      "weight": 2,
+      "timeout_sec": 180,
+      "tags": [
+        "high",
+        "promote",
+        "hbm",
+        "variant"
+      ],
+      "source_case": "promote_hbm_high"
+    }
+  ]
+}
