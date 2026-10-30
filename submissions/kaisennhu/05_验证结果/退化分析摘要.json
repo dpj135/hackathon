@@ -1,0 +1,448 @@
+{
+  "source_sha256": "f0dd0be1760cbd58135b7bbeb01d1632608f00be9ffc819315b7526d82151aa5",
+  "cases": [
+    {
+      "case": "walking_hotspot_9511",
+      "group": "blind",
+      "current": {
+        "cache_hits": 360,
+        "cpu_cost": 21333,
+        "effective_bandwidth_mb_s": 21900.008594,
+        "evictions": 0,
+        "latency_p50_us": 3384,
+        "latency_p95_us": 131236,
+        "latency_p99_us": 137049,
+        "npu_cost": 2328,
+        "physical_ssd_bytes": 4219953152,
+        "promote_count": 56,
+        "promote_hit_rate": 1.0,
+        "promote_success": 56,
+        "read_amplification": 0.897624,
+        "total_cost": 228385,
+        "trace_time_us": 204724,
+        "valid_bytes": 4701245784
+      },
+      "greedy": {
+        "cache_hits": 2552,
+        "cpu_cost": 21040,
+        "effective_bandwidth_mb_s": 48083.581173,
+        "evictions": 0,
+        "latency_p50_us": 235,
+        "latency_p95_us": 5183,
+        "latency_p99_us": 22815,
+        "npu_cost": 3280,
+        "physical_ssd_bytes": 1182191616,
+        "promote_count": 168,
+        "promote_hit_rate": 1.0,
+        "promote_success": 168,
+        "read_amplification": 0.251463,
+        "total_cost": 117563,
+        "trace_time_us": 93243,
+        "valid_bytes": 4701245784
+      },
+      "delta": {
+        "total_cost": 110822,
+        "trace_time_us": 111481,
+        "cpu_cost": 293,
+        "npu_cost": -952
+      },
+      "cost_increase_pct": 94.26605309493634,
+      "diagnosis": {
+        "reasons": {
+          "reuse_or_object_size": 237,
+          "credit_insufficient": 1160,
+          "gain_nonpositive": 419,
+          "freshness": 129,
+          "admit": 56,
+          "admitted_or_pending": 704,
+          "age_ttl_or_byte_distance": 7
+        },
+        "by_size": {
+          "513": {
+            "reuse_or_object_size": 80,
+            "gain_nonpositive": 24,
+            "credit_insufficient": 212,
+            "freshness": 28
+          },
+          "7168": {
+            "reuse_or_object_size": 56,
+            "credit_insufficient": 222,
+            "gain_nonpositive": 123,
+            "age_ttl_or_byte_distance": 7
+          },
+          "40960": {
+            "reuse_or_object_size": 85,
+            "credit_insufficient": 726,
+            "gain_nonpositive": 264,
+            "freshness": 13
+          },
+          "786432": {
+            "freshness": 56,
+            "gain_nonpositive": 8,
+            "admit": 16,
+            "admitted_or_pending": 64
+          },
+          "1572864": {
+            "admit": 16,
+            "admitted_or_pending": 192
+          },
+          "7340032": {
+            "reuse_or_object_size": 16,
+            "freshness": 32,
+            "admit": 24,
+            "admitted_or_pending": 448
+          }
+        }
+      },
+      "input_sha256": "273b6c6377d2c6cf10931adac1a63305a8488a39e213428adc4051f6297768db",
+      "greedy_output_sha256": [
+        "8afe073b5e46b1f5a512bb7a09ab42a2315701c7ed741fdff793295804577992",
+        "8afe073b5e46b1f5a512bb7a09ab42a2315701c7ed741fdff793295804577992",
+        "8afe073b5e46b1f5a512bb7a09ab42a2315701c7ed741fdff793295804577992"
+      ],
+      "greedy_replay_valid": true
+    },
+    {
+      "case": "length_1048576_batch_64",
+      "group": "robustness",
+      "current": {
+        "cache_hits": 0,
+        "cpu_cost": 4736,
+        "effective_bandwidth_mb_s": 18734.677449,
+        "evictions": 0,
+        "latency_p50_us": 25885,
+        "latency_p95_us": 26897,
+        "latency_p99_us": 26897,
+        "npu_cost": 512,
+        "physical_ssd_bytes": 537133056,
+        "promote_count": 0,
+        "promote_hit_rate": 0.0,
+        "promote_success": 0,
+        "read_amplification": 1.000488,
+        "total_cost": 32577,
+        "trace_time_us": 27329,
+        "valid_bytes": 536870912
+      },
+      "greedy": {
+        "cache_hits": 0,
+        "cpu_cost": 2048,
+        "effective_bandwidth_mb_s": 20880.91354,
+        "evictions": 0,
+        "latency_p50_us": 22712,
+        "latency_p95_us": 23848,
+        "latency_p99_us": 23861,
+        "npu_cost": 512,
+        "physical_ssd_bytes": 537133056,
+        "promote_count": 0,
+        "promote_hit_rate": 0.0,
+        "promote_success": 0,
+        "read_amplification": 1.000488,
+        "total_cost": 27080,
+        "trace_time_us": 24520,
+        "valid_bytes": 536870912
+      },
+      "delta": {
+        "total_cost": 5497,
+        "trace_time_us": 2809,
+        "cpu_cost": 2688,
+        "npu_cost": 0
+      },
+      "cost_increase_pct": 20.299113737075338,
+      "input_sha256": "674748e607c6836378f5b6b2201f2ff37e5f63de15333ccea7409c2dbd20e6c5",
+      "greedy_output_sha256": [
+        "4f8e675e907ee6135bb8f4c23463171f0ecf814f78765511d7ae3f58f9c6ba81",
+        "4f8e675e907ee6135bb8f4c23463171f0ecf814f78765511d7ae3f58f9c6ba81",
+        "4f8e675e907ee6135bb8f4c23463171f0ecf814f78765511d7ae3f58f9c6ba81"
+      ],
+      "greedy_replay_valid": true
+    },
+    {
+      "case": "length_2097153_batch_64",
+      "group": "robustness",
+      "current": {
+        "cache_hits": 0,
+        "cpu_cost": 6784,
+        "effective_bandwidth_mb_s": 18164.410691,
+        "evictions": 0,
+        "latency_p50_us": 55774,
+        "latency_p95_us": 56018,
+        "latency_p99_us": 56018,
+        "npu_cost": 1024,
+        "physical_ssd_bytes": 1074003968,
+        "promote_count": 0,
+        "promote_hit_rate": 0.0,
+        "promote_success": 0,
+        "read_amplification": 1.000244,
+        "total_cost": 64182,
+        "trace_time_us": 56374,
+        "valid_bytes": 1073742336
+      },
+      "greedy": {
+        "cache_hits": 0,
+        "cpu_cost": 2048,
+        "effective_bandwidth_mb_s": 20161.458718,
+        "evictions": 0,
+        "latency_p50_us": 36916,
+        "latency_p95_us": 49940,
+        "latency_p99_us": 49970,
+        "npu_cost": 512,
+        "physical_ssd_bytes": 1074003968,
+        "promote_count": 0,
+        "promote_hit_rate": 0.0,
+        "promote_success": 0,
+        "read_amplification": 1.000244,
+        "total_cost": 53350,
+        "trace_time_us": 50790,
+        "valid_bytes": 1073742336
+      },
+      "delta": {
+        "total_cost": 10832,
+        "trace_time_us": 5584,
+        "cpu_cost": 4736,
+        "npu_cost": 512
+      },
+      "cost_increase_pct": 20.30365510777883,
+      "input_sha256": "74ce821dc8643ab191830505f902a9056f9dbb32a3c7a842e40adbf7c279c679",
+      "greedy_output_sha256": [
+        "20e7cc46420dee53ae108a16ac3d419f2f54d263e0873f5cdafb8b4241965c2a",
+        "20e7cc46420dee53ae108a16ac3d419f2f54d263e0873f5cdafb8b4241965c2a",
+        "20e7cc46420dee53ae108a16ac3d419f2f54d263e0873f5cdafb8b4241965c2a"
+      ],
+      "greedy_replay_valid": true
+    },
+    {
+      "case": "cache_visibility_9323",
+      "group": "cache_mix",
+      "current": {
+        "cache_hits": 24,
+        "cpu_cost": 15540,
+        "effective_bandwidth_mb_s": 21157.393712,
+        "evictions": 0,
+        "latency_p50_us": 82338,
+        "latency_p95_us": 290598,
+        "latency_p99_us": 317605,
+        "npu_cost": 1468,
+        "physical_ssd_bytes": 7909109760,
+        "promote_count": 4,
+        "promote_hit_rate": 1.0,
+        "promote_success": 4,
+        "read_amplification": 0.999666,
+        "total_cost": 373632,
+        "trace_time_us": 356624,
+        "valid_bytes": 7911751680
+      },
+      "greedy": {
+        "cache_hits": 888,
+        "cpu_cost": 16728,
+        "effective_bandwidth_mb_s": 25446.984145,
+        "evictions": 0,
+        "latency_p50_us": 1264,
+        "latency_p95_us": 198028,
+        "latency_p99_us": 209759,
+        "npu_cost": 1984,
+        "physical_ssd_bytes": 6415589376,
+        "promote_count": 64,
+        "promote_hit_rate": 1.0,
+        "promote_success": 64,
+        "read_amplification": 0.810894,
+        "total_cost": 315220,
+        "trace_time_us": 296508,
+        "valid_bytes": 7911751680
+      },
+      "delta": {
+        "total_cost": 58412,
+        "trace_time_us": 60116,
+        "cpu_cost": -1188,
+        "npu_cost": -516
+      },
+      "cost_increase_pct": 18.530550091999242,
+      "diagnosis": {
+        "reasons": {
+          "reuse_or_object_size": 1352,
+          "credit_insufficient": 226,
+          "gain_nonpositive": 189,
+          "freshness": 757,
+          "admit": 4,
+          "admitted_or_pending": 8
+        },
+        "by_size": {
+          "512": {
+            "reuse_or_object_size": 352,
+            "credit_insufficient": 182,
+            "freshness": 106
+          },
+          "8192": {
+            "reuse_or_object_size": 352,
+            "gain_nonpositive": 189,
+            "credit_insufficient": 28,
+            "freshness": 71
+          },
+          "130560": {
+            "reuse_or_object_size": 88,
+            "credit_insufficient": 16,
+            "freshness": 20,
+            "admit": 4,
+            "admitted_or_pending": 8
+          },
+          "3145728": {
+            "freshness": 80,
+            "reuse_or_object_size": 80
+          },
+          "6291456": {
+            "freshness": 160,
+            "reuse_or_object_size": 160
+          },
+          "8388608": {
+            "freshness": 320,
+            "reuse_or_object_size": 320
+          }
+        }
+      },
+      "input_sha256": "28806583b875f825f27d04faa182584bef78c3059372ea3e86b15208d83c5207",
+      "greedy_output_sha256": [
+        "366027dba87b69695ba1bce7df25eb468efcddf8fc94b1edad5e730d3a2ba4f2",
+        "366027dba87b69695ba1bce7df25eb468efcddf8fc94b1edad5e730d3a2ba4f2",
+        "366027dba87b69695ba1bce7df25eb468efcddf8fc94b1edad5e730d3a2ba4f2"
+      ],
+      "greedy_replay_valid": true
+    },
+    {
+      "case": "asymmetric_reuse_311041",
+      "group": "transfer_holdout",
+      "current": {
+        "cache_hits": 600,
+        "cpu_cost": 13196,
+        "effective_bandwidth_mb_s": 33169.752037,
+        "evictions": 0,
+        "latency_p50_us": 22045,
+        "latency_p95_us": 128588,
+        "latency_p99_us": 130160,
+        "npu_cost": 1392,
+        "physical_ssd_bytes": 3942645760,
+        "promote_count": 32,
+        "promote_hit_rate": 1.0,
+        "promote_success": 32,
+        "read_amplification": 0.611979,
+        "total_cost": 199817,
+        "trace_time_us": 185229,
+        "valid_bytes": 6442450944
+      },
+      "greedy": {
+        "cache_hits": 698,
+        "cpu_cost": 5534,
+        "effective_bandwidth_mb_s": 38035.807147,
+        "evictions": 0,
+        "latency_p50_us": 11905,
+        "latency_p95_us": 93938,
+        "latency_p99_us": 99965,
+        "npu_cost": 1014,
+        "physical_ssd_bytes": 3514826752,
+        "promote_count": 32,
+        "promote_hit_rate": 1.0,
+        "promote_success": 32,
+        "read_amplification": 0.545573,
+        "total_cost": 168080,
+        "trace_time_us": 161532,
+        "valid_bytes": 6442450944
+      },
+      "delta": {
+        "total_cost": 31737,
+        "trace_time_us": 23697,
+        "cpu_cost": 7662,
+        "npu_cost": 378
+      },
+      "cost_increase_pct": 18.882079961922905,
+      "diagnosis": {
+        "reasons": {
+          "reuse_or_object_size": 800,
+          "admit": 32,
+          "admitted_or_pending": 104
+        },
+        "by_size": {
+          "4194304": {
+            "reuse_or_object_size": 800,
+            "admit": 32,
+            "admitted_or_pending": 104
+          }
+        }
+      },
+      "input_sha256": "fd122721802b62ef3edf010c0702458f714b820f3898639da4951fbaf0eff730",
+      "greedy_output_sha256": [
+        "ce502831c89c795cc5ab546f4c203924c705aa1b4314c0a5766b4a0c635bb405",
+        "ce502831c89c795cc5ab546f4c203924c705aa1b4314c0a5766b4a0c635bb405",
+        "ce502831c89c795cc5ab546f4c203924c705aa1b4314c0a5766b4a0c635bb405"
+      ],
+      "greedy_replay_valid": true
+    },
+    {
+      "case": "ttl_turnover_311041",
+      "group": "transfer_holdout",
+      "current": {
+        "cache_hits": 89,
+        "cpu_cost": 14460,
+        "effective_bandwidth_mb_s": 22101.275931,
+        "evictions": 0,
+        "latency_p50_us": 209275,
+        "latency_p95_us": 225431,
+        "latency_p99_us": 226613,
+        "npu_cost": 940,
+        "physical_ssd_bytes": 6069157888,
+        "promote_count": 21,
+        "promote_hit_rate": 1.0,
+        "promote_success": 21,
+        "read_amplification": 0.942057,
+        "total_cost": 293393,
+        "trace_time_us": 277993,
+        "valid_bytes": 6442450944
+      },
+      "greedy": {
+        "cache_hits": 235,
+        "cpu_cost": 8903,
+        "effective_bandwidth_mb_s": 25086.151987,
+        "evictions": 0,
+        "latency_p50_us": 132144,
+        "latency_p95_us": 180263,
+        "latency_p99_us": 184515,
+        "npu_cost": 740,
+        "physical_ssd_bytes": 5456789504,
+        "promote_count": 64,
+        "promote_hit_rate": 1.0,
+        "promote_success": 64,
+        "read_amplification": 0.847005,
+        "total_cost": 254559,
+        "trace_time_us": 244916,
+        "valid_bytes": 6442450944
+      },
+      "delta": {
+        "total_cost": 38834,
+        "trace_time_us": 33077,
+        "cpu_cost": 5557,
+        "npu_cost": 200
+      },
+      "cost_increase_pct": 15.255402480368009,
+      "diagnosis": {
+        "reasons": {
+          "age_ttl_or_byte_distance": 43,
+          "admit": 21,
+          "reuse_or_object_size": 1383
+        },
+        "by_size": {
+          "4194304": {
+            "age_ttl_or_byte_distance": 43,
+            "admit": 21,
+            "reuse_or_object_size": 1383
+          }
+        }
+      },
+      "input_sha256": "969da044fb84e15f33f924301fd6b97eed3077fe65e002e86731f9be5c96d2e7",
+      "greedy_output_sha256": [
+        "24c6c8a31c45849da624cbb2fdfb4172e7ab6cf331b7328797b3cdefbefb1312",
+        "24c6c8a31c45849da624cbb2fdfb4172e7ab6cf331b7328797b3cdefbefb1312",
+        "24c6c8a31c45849da624cbb2fdfb4172e7ab6cf331b7328797b3cdefbefb1312"
+      ],
+      "greedy_replay_valid": true
+    }
+  ],
+  "engine_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
+  "comparison": "Current policy versus official GreedyBaseline; repeated runs are not independent inputs."
+}

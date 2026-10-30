@@ -76,6 +76,7 @@ def main():
         print('方案与官方回放校验完成：',result)
     if a.mode in ['quick','all']:
         prepare.fixtures(code,['admission'])
+        run(['python3',test/'policy_boundary.py','--code',code,'--output',out/'policy_boundary.json'])
         run(['make','-C',code,'test'],'framework.log')
         run(['python3',test/'regression.py','--code',code,'--output',out/'regression'])
         run(['python3',test/'boundaries.py','--code',code,'--output',out/'boundaries'])

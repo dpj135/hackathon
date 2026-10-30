@@ -10,7 +10,8 @@
 
 #include "nds/player_api.hpp"
 
-// Interval DP, bounded observed-window planning, and read-funded cache admission.
+// Bounded interval/count DP and read-funded cache admission.
+// Decisions use public cost tables and callback state; no simulator calls.
 // No files, network or future trace access.
 namespace {
 using I = std::int64_t;
@@ -18,12 +19,11 @@ using nds::Json;
 constexpr I MiB = 1024 * 1024;
 constexpr std::size_t Window = 128, HistoryLimit = 131072;
 constexpr std::size_t CountTransitions = 2000000, CountStates = 131072;
-constexpr std::size_t PlanTransfers = 4096;
 Json obj(std::initializer_list<std::pair<const std::string, Json>> f) {
     return Json(Json::Object(f));
 }
 Json arr(std::initializer_list<Json> f) { return Json(Json::Array(f)); }
-// Match the public simulator: MB means 2^20 bytes. Estimates are NOT completion times.
+// Public performance tables: MB means 2^20 bytes. Estimates are NOT completion times.
 using Profile = std::map<I, std::map<int, int>>;
 const Profile direct_profile = {{512, {{1, 2}}},
                                 {4096, {{1, 20}}},
@@ -102,22 +102,6 @@ struct Piece {
     I begin() const { return io->ssd_offset + offset; }
     I end() const { return begin() + length; }
 };
-// A local evaluator receives only explicitly constructed, already observed work.
-class FixedPlan final : public nds::SchedulerPolicy {
-    Json plan_;
-    std::map<I, Json> prefix_;
-
-   public:
-    explicit FixedPlan(Json p, std::map<I, Json> prefix = {})
-        : plan_(std::move(p)), prefix_(std::move(prefix)) {}
-    Json on_submit(const nds::Submit& s, const Json&) override {
-        auto it = prefix_.find(s.submit_id);
-        return it == prefix_.end() ? plan_ : it->second;
-    }
-    std::optional<Json> on_iocb_complete(const nds::Iocb&, const Json&) override {
-        return std::nullopt;
-    }
-};
 bool direct_ok(const nds::Iocb& io, const IovIndex& index, I off, I len) {
     if ((io.ssd_offset + off) % 512 || len % 512) return false;
     auto k = index.first(off);
@@ -149,13 +133,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         int hit_q = 1;
     };
     std::map<std::pair<I, I>, Work> work_;
-    std::map<std::vector<I>, I> batch_costs_;
     struct Promotion { nds::Iocb::CacheKey key; I bytes; };
     std::map<I, Promotion> promotions_;
     std::map<nds::Iocb::CacheKey, I> pending_keys_;
     I last_submit_arrival_ = -1, submit_gap_us_ = 0;
-    struct ObservedBatch { nds::Submit submit; Json decision; };
-    std::deque<ObservedBatch> recent_;
     double cost(const char* key) const { return double(c_.at(key)); }
     I pool(const char* name) const { return r_.at(name) * MiB; }
     void sync_promotions(const Json& state) {
@@ -247,60 +228,6 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         }
         return out;
     }
-    std::optional<Json> split_reads(const Json& plan, I limit, I now, const Json& state) {
-        std::size_t total = 0;
-        bool changed = false;
-        for (const auto& op : plan.at("operations").as_array())
-            for (const auto& t : op.at("transfers").as_array()) {
-                I count = t.at("type").as_string() == "DIRECT"
-                    ? (t.at("physical_length").as_int() - 1) / limit + 1 : 1;
-                if (count > I(PlanTransfers - total)) return std::nullopt;
-                total += std::size_t(count); changed = changed || count > 1;
-                // This transformation is only for our independent, ready SSD stages.
-                if (ssd_type(t.at("type").as_string()) &&
-                    (t.at("depends_on").size() || t.at("not_before_us").as_int() > now)) return std::nullopt;
-            }
-        if (!changed) return std::nullopt;
-        Json candidate = plan;
-        for (auto& op : candidate["operations"].as_array()) {
-            if (op.at("path").as_string() != "DIRECT") continue;
-            Json transfers = Json::array();
-            for (const auto& t : op.at("transfers").as_array()) {
-                if (!ssd_type(t.at("type").as_string())) continue;
-                I sectors = t.at("physical_length").as_int() / 512;
-                I count = (t.at("physical_length").as_int() - 1) / limit + 1;
-                if (count < 1 || count > sectors) return std::nullopt;
-                I offset = t.at("physical_ssd_offset").as_int();
-                for (I k = 0; k < count; ++k) {
-                    I bytes = (sectors / count + (k < sectors % count)) * 512;
-                    Json part = t;
-                    part["transfer_id"] = next_transfer_++;
-                    part["physical_ssd_offset"] = offset; part["physical_length"] = bytes;
-                    transfers.push_back(std::move(part));
-                    offset += bytes;
-                }
-            }
-            op["transfers"] = std::move(transfers);
-        }
-        // Do not split an already efficient large read merely to raise other
-        // reads' q. Its extra calls survive even if later traffic absorbs the gain.
-        const auto original_work = plan_work(plan, state);
-        for (int pass = 0; pass < 4; ++pass) {
-            bool removed = false;
-            auto proposed = plan_work(candidate, state);
-            for (std::size_t i = 0; i < proposed.size(); ++i) {
-                if (candidate.at("operations")[i].at("transfers").size() <=
-                    plan.at("operations")[i].at("transfers").size()) continue;
-                if (cost("time_cost_per_us") * proposed[i].read_us + proposed[i].commands >=
-                    cost("time_cost_per_us") * original_work[i].read_us + original_work[i].commands) {
-                    candidate["operations"][i] = plan.at("operations")[i]; removed = true;
-                }
-            }
-            if (!removed) return candidate;
-        }
-        // A still-changing estimate is too uncertain for this bounded transform.
-        return std::nullopt;
-    }
     Json operation(const std::vector<Piece>& p, std::size_t begin, std::size_t end,
                    const std::string& path, I now) {
         I lo = p[begin].begin(), hi = lo, bytes = 0;
@@ -365,11 +292,6 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         if (last_submit_arrival_ >= 0 && submit.arrival_us > last_submit_arrival_)
             submit_gap_us_ = submit.arrival_us - last_submit_arrival_;
         last_submit_arrival_ = submit.arrival_us;
-        for (auto it = recent_.begin(); it != recent_.end();) {
-            bool pending = std::any_of(it->submit.iocbs.begin(), it->submit.iocbs.end(),
-                [&](const nds::Iocb& io) { return arrivals_.count({io.submit_id, io.iocb_id}) != 0; });
-            if (!pending) it = recent_.erase(it); else ++it;
-        }
         std::vector<IovIndex> indexes;
         indexes.reserve(submit.iocbs.size());  // Piece pointers must remain stable.
         std::map<I, int> per_card;
@@ -419,7 +341,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             ++per_card[io.device_id];
         }
         std::size_t count_budget = CountTransitions;
-        auto build_decision = [&](I block_limit, bool align_cuts = true, bool use_counts = true) {
+        std::size_t iov_count = 0;
+        for (const auto& io : submit.iocbs) iov_count += io.iovs.size();
+        auto build_decision = [&] {
+            constexpr I block_limit = 2 * MiB;
             std::vector<Piece> pieces;
             for (std::size_t k = 0; k < submit.iocbs.size(); ++k) {
                 const auto& io = submit.iocbs[k];
@@ -430,10 +355,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         if (max_pool < 512)
                             throw nds::ValidationError("no temporary pool for unaligned IO");
                         length = std::min(length, max_pool - start % 512);
-                        // Both cuts are legal: align the logical end to avoid rereading
-                        // a sector, or preserve useful length to retain a bandwidth bucket.
-                        // The pool bound above includes the leading alignment padding.
-                        if (align_cuts && offset + length < io.length)
+                        // Align an interior cut to avoid rereading a boundary sector.
+                        // The pool bound includes the leading alignment padding.
+                        if (offset + length < io.length)
                             length -= (start + length) % 512;
                         if (length <= 0) throw nds::ValidationError("temporary pool too small");
                     }
@@ -460,7 +384,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             struct Edge { std::size_t end; I physical, valid, card; std::string path; };
             std::vector<std::vector<Edge>> edges(n);
             std::size_t edge_count = 0;
-            bool count_search = use_counts && count_budget > 0 && n <= 16384 &&
+            bool count_search = submit.iocbs.size() <= 1024 && iov_count <= 2048 &&
+                count_budget > 0 && n <= 16384 &&
                 state.at("transfers_inflight").size() == 0 && state.at("queued_iocbs").size() == 0 &&
                 state.at("promote_inflight").size() == 0 && state.at("foreground_iocb_inflight").as_int() == 0 &&
                 arrivals_.size() == submit.iocbs.size();
@@ -517,7 +442,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             std::vector<std::tuple<std::size_t, std::size_t, std::string>> plan;
             for (std::size_t end = n; end > 0; end = prev[end])
                 plan.emplace_back(prev[end], end, paths[end]);
-            if (count_search) {
+            if (count_search && plan.size() <= 2048) {
                 // Reachability is checked before allocating DP rows. In particular,
                 // different cards, gaps, pools and slot ownership can force >1 group.
                 const int unreachable = int(n) + 1;
@@ -634,217 +559,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                                  {"submit_id", submit.submit_id},
                                  {"operations", std::move(operations)},
                                  {"next_wakeup_us", Json(nullptr)}});
-            std::size_t total_iovs = 0;
-            for (const auto& io : submit.iocbs) total_iovs += io.iovs.size();
-            // At most 3*4^5 plans. Exact within this restricted family, only when
-            // conservatively idle; cached or previously promoted work disables search.
-            if (n <= 6 && total_iovs <= 256 && next_promote_ == 1 &&
-                arrivals_.size() == submit.iocbs.size() && state.at("cached_ranges").size() == 0 &&
-                state.at("transfers_inflight").size() == 0 &&
-                state.at("queued_iocbs").size() == 0 && state.at("promote_inflight").size() == 0 &&
-                state.at("foreground_iocb_inflight").as_int() == 0 &&
-                std::all_of(pieces.begin(), pieces.end(), [](const Piece& p) { return p.whole; })) {
-                nds::Trace local;
-                local.instance.resources = r_;
-                local.instance.fixed_parameters = c_;
-                local.events.push_back({submit.arrival_us, submit});
-                auto evaluate = [&](const Json& plan) {
-                    FixedPlan policy(plan);
-                    nds::Simulator simulator(local, policy);
-                    return simulator.run().at("metrics").at("total_cost").as_int();
-                };
-                I best = evaluate(decision);
-                const I op_base = next_op_, transfer_base = next_transfer_;
-                auto search = [&](auto&& self, std::size_t start, Json ops) -> void {
-                    if (start == n) {
-                        Json candidate = obj({{"event", "SCHEDULE_DECISION"},
-                                              {"submit_id", submit.submit_id},
-                                              {"operations", std::move(ops)},
-                                              {"next_wakeup_us", Json(nullptr)}});
-                        I value = evaluate(candidate);
-                        if (value < best) {
-                            best = value;
-                            decision = std::move(candidate);
-                        }
-                        return;
-                    }
-                    I hi = pieces[start].begin();
-                    bool direct = true;
-                    for (std::size_t end = start; end < n; ++end) {
-                        const auto& p = pieces[end];
-                        if (p.io->device_id != pieces[start].io->device_id) break;
-                        if (end > start && nds::align_down(p.begin()) > nds::align_up(hi)) break;
-                        if (end > start && p.begin() != hi) direct = false;
-                        direct = direct && p.aligned;
-                        hi = std::max(hi, p.end());
-                        I physical = nds::align_up(hi) - nds::align_down(pieces[start].begin());
-                        if (end > start && physical > block_limit) break;
-                        for (const std::string path : {"DIRECT", "AGGREGATE", "FALLBACK"}) {
-                            if (path != "FALLBACK" &&
-                                end - start + 1 > std::size_t(r_.at("iocb_capacity")))
-                                continue;
-                            if (path == "DIRECT" && !direct) continue;
-                            if (path == "AGGREGATE" && physical > pool("hbm_capacity")) continue;
-                            if (path == "FALLBACK" && physical > pool("ddr_capacity")) continue;
-                            next_op_ = op_base + I(ops.size());
-                            next_transfer_ = transfer_base + 2 * I(ops.size());
-                            auto next = ops;
-                            next.push_back(operation(pieces, start, end + 1, path, now));
-                            self(self, end + 1, std::move(next));
-                        }
-                    }
-                };
-                search(search, 0, Json::array());
-                next_op_ = op_base + I(n);
-                next_transfer_ = transfer_base + 2 * I(n);
-            }
             return decision;
         };
-        Json decision = build_decision(2 * MiB, true, false);
-        std::size_t iov_count = 0;
-        for (const auto& io : submit.iocbs) iov_count += io.iovs.size();
-        // Two cut styles, paths and bounded count/split candidates on an observed
-        // observed window. Only the current decision is issued. Older omitted
-        // work and cache-hit/background traffic make this a surrogate for J.
-        if (submit.iocbs.size() <= 1024 && iov_count <= 2048 &&
-            decision.at("operations").size() <= 2048) {
-            std::map<I, Json> prefix;
-            nds::Trace local;
-            local.instance.resources = r_; local.instance.fixed_parameters = c_;
-            std::size_t prefix_iovs = iov_count;
-            std::size_t prefix_ops = decision.at("operations").size();
-            bool busy = state.at("queued_iocbs").size() || state.at("transfers_inflight").size();
-            if (busy) for (auto it = recent_.rbegin(); it != recent_.rend(); ++it) {
-                std::size_t count = 0;
-                for (const auto& io : it->submit.iocbs) count += io.iovs.size();
-                if (prefix_iovs + count > 32768 ||
-                    prefix_ops + it->decision.at("operations").size() > 512) break;
-                prefix_iovs += count;
-                prefix_ops += it->decision.at("operations").size();
-                local.events.insert(local.events.begin(), {it->submit.arrival_us, it->submit});
-                prefix[it->submit.submit_id] = it->decision;
-            }
-            auto visible = submit; visible.arrival_us = now;
-            local.events.push_back({now, std::move(visible)});
-            std::map<I, I> ordinal;
-            for (const auto& io : submit.iocbs) ordinal[io.iocb_id] = I(ordinal.size());
-            auto rewrite_path = [&](Json& plan, const std::string& forced) {
-                if (forced.empty()) return;
-                for (auto& op : plan["operations"].as_array()) {
-                    auto path = op.at("path").as_string();
-                    if (path == "DIRECT" || path == forced) continue;
-                    std::set<I> owners;
-                    for (const auto& range : op.at("ranges").as_array()) owners.insert(range.at("iocb_id").as_int());
-                    if (forced == "AGGREGATE" && owners.size() > std::size_t(r_.at("iocb_capacity"))) continue;
-                    if (r_.at(forced == "AGGREGATE" ? "hbm_copy_concurrency" : "h2d_copy_concurrency") == 0) continue;
-                    if (op.at("buffer_bytes").as_int() > pool(forced == "AGGREGATE" ? "hbm_capacity" : "ddr_capacity")) continue;
-                    op["path"] = forced;
-                    for (auto& t : op["transfers"].as_array())
-                        t["type"] = ssd_type(t.at("type").as_string())
-                            ? (forced == "AGGREGATE" ? "SSD_TO_HBM_BUFFER" : "SSD_TO_DDR")
-                            : (forced == "AGGREGATE" ? "D2D" : "H2D");
-                }
-            };
-            auto evaluate = [&](const Json& candidate, const std::string& mode) {
-                std::vector<I> key;
-                key.push_back(I(submit.iocbs.size()));
-                for (const auto& io : submit.iocbs) {
-                    key.push_back(io.device_id); key.push_back(io.length);
-                }
-                key.push_back(I(candidate.at("operations").size()));
-                for (const auto& op : candidate.at("operations").as_array()) {
-                    const auto& transfers = op.at("transfers");
-                    auto path = op.at("path").as_string();
-                    key.push_back(path == "DIRECT" ? 0 : path == "AGGREGATE" ? 1 : 2);
-                    key.push_back(transfers[0].at("device_id").as_int());
-                    key.push_back(transfers[0].at("physical_length").as_int());
-                    key.push_back(I(transfers.size()));
-                    std::map<I, I> transfer_order;
-                    for (const auto& t : transfers.as_array())
-                        transfer_order[t.at("transfer_id").as_int()] = I(transfer_order.size());
-                    for (const auto& t : transfers.as_array()) {
-                        auto type = t.at("type").as_string();
-                        key.push_back(ssd_type(type) ? 0 : type == "D2D" ? 1 : 2);
-                        key.push_back(t.at(ssd_type(type) ? "physical_length" : "bytes").as_int());
-                        key.push_back(t.at("not_before_us").as_int() - now);
-                        key.push_back(t.at("priority").as_int());
-                        key.push_back(I(t.at("depends_on").size()));
-                        for (const auto& dep : t.at("depends_on").as_array())
-                            key.push_back(transfer_order.at(dep.as_int()));
-                    }
-                    key.push_back(I(op.at("ranges").size()));
-                    for (const auto& range : op.at("ranges").as_array()) {
-                        key.push_back(ordinal.at(range.at("iocb_id").as_int()));
-                        key.push_back(range.at("iocb_offset").as_int());
-                        key.push_back(range.at("length").as_int());
-                    }
-                }
-                auto cached = batch_costs_.find(key);
-                if (prefix.empty() && cached != batch_costs_.end()) return cached->second;
-                // Counterfactual path-family comparison on observed inputs only;
-                // this is a proxy, and never changes previously issued decisions.
-                auto scenario = prefix;
-                for (auto& entry : scenario) rewrite_path(entry.second, mode);
-                FixedPlan policy(candidate, std::move(scenario));
-                nds::Simulator simulator(local, policy);
-                I value = simulator.run().at("metrics").at("total_cost").as_int();
-                if (prefix.empty() && key.size() <= 32768) {
-                    if (batch_costs_.size() >= 64) batch_costs_.erase(batch_costs_.begin());
-                    batch_costs_.emplace(std::move(key), value);
-                }
-                return value;
-            };
-            I best = evaluate(decision, "");
-            const Json initial = decision;
-            auto compare = [&](const Json& candidate, const std::string& mode = "") {
-                I value = evaluate(candidate, mode);
-                if (value < best) { best = value; decision = candidate; }
-            };
-            for (I block : {2 * MiB, 8 * MiB}) {
-                for (bool align_cuts : {true, false}) {
-                    Json base = block == 2 * MiB && align_cuts
-                        ? initial : build_decision(block, align_cuts);
-                    if (block == 2 * MiB && align_cuts) compare(build_decision(block, align_cuts));
-                    for (const std::string forced : {"", "AGGREGATE", "FALLBACK"}) {
-                        Json candidate = base;
-                        rewrite_path(candidate, forced);
-                        compare(candidate, forced);
-                        // Rank cheap split proposals, then simulate at most two.
-                        // Limits come from size buckets, never trace names or seeds.
-                        std::vector<std::pair<double, Json>> splits;
-                        for (I limit = 8 * 1024; limit <= 4 * MiB; limit *= 2) {
-                            auto split = split_reads(candidate, limit, now, state);
-                            if (!split) continue;
-                            auto work = plan_work(*split, state);
-                            double read = 0, calls = 0;
-                            std::map<I, double> copy;
-                            for (std::size_t i = 0; i < work.size(); ++i) {
-                                read += work[i].read_us; calls += work[i].commands;
-                                copy[split->at("operations")[i].at("transfers")[0].at("device_id").as_int()] += work[i].copy_us;
-                            }
-                            double longest = 0;
-                            for (const auto& [card, t] : copy) { (void)card; longest = std::max(longest, t); }
-                            double value = cost("time_cost_per_us") * (read + longest) + calls;
-                            splits.emplace_back(value, std::move(*split));
-                            // At most three entries: stable in-place insertion avoids
-                            // nothrow temporary allocations outside the SDK meter.
-                            for (std::size_t k = splits.size() - 1;
-                                 k > 0 && splits[k].first < splits[k - 1].first; --k)
-                                std::swap(splits[k], splits[k - 1]);
-                            if (splits.size() > 2) splits.pop_back();
-                        }
-                        for (const auto& entry : splits) compare(entry.second, forced);
-                    }
-                }
-            }
-        }
-        if (iov_count <= 2048 && submit.iocbs.size() <= 1024 && decision.at("operations").size() <= 2048) {
-            auto observed = submit; observed.arrival_us = now;
-            recent_.push_back({std::move(observed), decision});
-            while (recent_.size() > 32) recent_.pop_front();
-        } else {
-            recent_.clear();
-        }
+        Json decision = build_decision();
         // Account only the final selected plan. Shared commands are charged once,
         // then apportioned by useful bytes; queueing latency is not service work.
         std::map<I, I> card_bytes;

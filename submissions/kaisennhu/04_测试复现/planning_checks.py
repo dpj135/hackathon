@@ -79,7 +79,8 @@ for size in [32767,32769,131071,131073,524287,524289]:
     run('unaligned_'+str(size), [iocb(1,100,size,shift=1)])
 r = run('one_owner_one_slot', [iocb(1,0,524288)], {'iocb_capacity':1})
 assert len(r['schedule_decisions'][0]['operations']) == 1
-assert len(r['schedule_decisions'][0]['operations'][0]['transfers']) > 1
+# A single-owner plan must cover the read without extra bytes, even with one slot.
+assert sum(t['physical_length'] for t in r['schedule_decisions'][0]['operations'][0]['transfers']) == 524288
 run('independent_owners_one_slot', [iocb(i,i*32768,32768) for i in range(16)], {'iocb_capacity':1})
 run('mixed_sizes', [iocb(0,0,2<<20)]+[iocb(i,(2<<20)+(i-1)*32768,32768) for i in range(1,4)])
 run('balanced_cards', [iocb(c*16+i,c*(1<<30)+i*32768,32768,c) for c in range(8) for i in range(16)])
