@@ -42,10 +42,6 @@ const char* read_type(Path path) {
 }
 const char* copy_type(Path path) { return path == Path::Aggregate ? kD2D : kH2D; }
 constexpr I MiB = 1024 * 1024;
-double envd(const char* name, double fallback) {
-    const char* value = std::getenv(name);
-    return value ? std::strtod(value, nullptr) : fallback;
-}
 constexpr std::size_t Window = 128, HistoryLimit = 131072;
 constexpr std::size_t CountTransitions = 2000000, CountStates = 131072;
 Json obj(std::initializer_list<std::pair<const std::string, Json>> f) {
@@ -166,11 +162,6 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
     std::map<I, Promotion> promotions_;
     std::map<nds::Iocb::CacheKey, I> pending_keys_;
     I last_submit_arrival_ = -1, submit_gap_us_ = 0;
-    // Expected share of this card's pending iocbs that issue a copy on the
-    // D2D (aggregate) or H2D (fallback) engine. Used to turn an iocb count
-    // into an expected copy-task count.
-    double copy_share_agg_ = envd("NDS_COPY_SHARE_AGG", 0.75);
-    double copy_share_fb_ = envd("NDS_COPY_SHARE_FB", 0.1);
     double cost(const char* key) const { return double(c_.at(key)); }
     I pool(const char* name) const { return r_.at(name) * MiB; }
     void sync_promotions(const Json& state) {
@@ -194,8 +185,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         I hbm_cc, h2d_cc;
         double pressure_agg, pressure_fb;
         // Share of the copy time that stays serialized behind the SSD read.
-        // 1.0 charges the copy in full; <1 credits copy/read pipeline overlap.
-        double copy_serial_agg = 1.0, copy_serial_fb = 1.0;
+        // Only cards with observable overlap work get a per-card value; the
+        // rest charge the copy in full.
+        std::map<I, double> copy_serial_agg, copy_serial_fb;
     };
     EstimateParams estimate_params(const Json& state) const {
         EstimateParams k;
@@ -213,27 +205,43 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         k.h2d_cc = r_.at("h2d_copy_concurrency");
         k.pressure_agg = 1.0 + 0.5 * k.hbm_used / std::max(1.0, double(k.hbm_cap));
         k.pressure_fb = 1.0 + 0.5 * k.ddr_used / std::max(1.0, double(k.ddr_cap));
-        I ssd_rem = 0, d2d_rem = 0, h2d_rem = 0;
+        // Copy engines are per card, so is the backlog that can hide a copy.
+        std::map<I, I> ssd_rem, d2d_rem, h2d_rem;
         for (const auto& t : state.at("transfers_inflight").as_array()) {
             auto type = t.at("type").as_string();
             I rem = t.contains("remaining_bytes") ? t.at("remaining_bytes").as_int()
                                                   : t.at("size").as_int();
-            if (ssd_type(type)) ssd_rem += rem;
-            else if (type == kD2D) d2d_rem += rem;
-            else if (type == kH2D) h2d_rem += rem;
+            I card = t.at("device_id").as_int();
+            if (ssd_type(type)) ssd_rem[card] += rem;
+            else if (type == kD2D) d2d_rem[card] += rem;
+            else if (type == kH2D) h2d_rem[card] += rem;
         }
-        double read_us = double(ssd_rem) * 1000000.0 / (k.nvme_bw * MiB);
-        double d2d_us = double(d2d_rem) * 1000000.0 / (k.d2d_bw * MiB);
-        double h2d_us = double(h2d_rem) * 1000000.0 / (k.h2d_bw * MiB);
-        // A copy engine that is behind the read stream cannot hide its work, so
-        // more in-flight copy backlog moves the serial share toward 1.0.
-        k.copy_serial_agg = 0.70 + 0.30 * d2d_us / (d2d_us + read_us + 1.0);
-        k.copy_serial_fb = 0.95 + 0.05 * h2d_us / (h2d_us + read_us + 1.0);
+        // A copy engine that is behind its own card's read stream cannot hide
+        // its work, so more in-flight copy backlog moves the share toward 1.0.
+        std::set<I> cards;
+        for (const auto& [card, bytes] : ssd_rem) { (void)bytes; cards.insert(card); }
+        for (const auto& [card, bytes] : d2d_rem) { (void)bytes; cards.insert(card); }
+        for (const auto& [card, bytes] : h2d_rem) { (void)bytes; cards.insert(card); }
+        for (I card : cards) {
+            double read_us = double(ssd_rem[card]) * 1000000.0 / (k.nvme_bw * MiB);
+            double d2d_us = double(d2d_rem[card]) * 1000000.0 / (k.d2d_bw * MiB);
+            double h2d_us = double(h2d_rem[card]) * 1000000.0 / (k.h2d_bw * MiB);
+            k.copy_serial_agg[card] = 0.70 + 0.30 * d2d_us / (d2d_us + read_us + 1.0);
+            k.copy_serial_fb[card] = 0.95 + 0.05 * h2d_us / (h2d_us + read_us + 1.0);
+        }
         return k;
+    }
+    // Only independent work already on the card's engines can hide a copy;
+    // without it the copy is charged in full. A second operation in the same
+    // batch is not evidence of overlap: its slot may only be acquired after
+    // the first operation completes.
+    static double serial_share(const std::map<I, double>& by_card, I card) {
+        auto it = by_card.find(card);
+        return it != by_card.end() ? it->second : 1.0;
     }
     // Additive resource-work surrogate, not an exact objective under shared BW.
     // Preserve floating-point evaluation order: ties determine the output plan.
-    double estimate(Path path, I physical, I valid, int qs, int qc,
+    double estimate(Path path, I physical, I valid, int qs, int qc, I card,
                     const EstimateParams& k) const {
         double cpu = 0, npu = 0, t = 0;
         if (path == Path::Direct || path == Path::Aggregate) {
@@ -249,13 +257,15 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         : valid < 32768 ? 130.0 * qc
                                         : bucket(d2d_profile, valid, qc);
             bw = std::min(bw, double(k.d2d_bw));
-            t += k.copy_serial_agg * double(valid) * 1000000.0 / (bw * MiB);
+            t += serial_share(k.copy_serial_agg, card) *
+                 double(valid) * 1000000.0 / (bw * MiB);
             cpu += k.cpu_d2d;
             npu += k.npu_d2d;
             t *= k.pressure_agg;
         } else if (path == Path::Fallback) {
             qc = std::max(1, std::min(qc, int(k.h2d_cc)));
-            t += k.copy_serial_fb * transfer_us(valid, k.h2d_bw, copy_profile, qc);
+            t += serial_share(k.copy_serial_fb, card) *
+                 transfer_us(valid, k.h2d_bw, copy_profile, qc);
             cpu += k.cpu_h2d;
             npu += k.npu_h2d;
             t *= k.pressure_fb;
@@ -455,13 +465,28 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                     ++active_copy[{type, t.at("device_id").as_int()}];
             }
             int qs = std::max(1, active_ssd + int(pieces.size()));
-            // DIRECT/AGGREGATE operations pin one iocb slot per owner until the
-            // copy completes, so the number of such reads in flight is bounded by
-            // the slot budget divided by the owners per operation.
-            const I slot_cap = std::max<I>(1, params.iocb_cap);
-            const I free_slots = std::max<I>(1, params.iocb_cap -
-                state.at("foreground_iocb_inflight").as_int());
             auto n = pieces.size();
+            // A slot belongs to an IOCB, not to a transfer: once an IOCB holds
+            // its slot it may launch several reads, and every operation of the
+            // plan that includes it needs that same slot. Rank owners by first
+            // appearance in the order the planner groups in; only the first
+            // free_slots of them can start now, the rest wait for a completion.
+            // The result is a candidate concurrency, not an exact replay.
+            // AGGREGATE holds its slot through the copy, so only currently
+            // free slots can admit it; a DIRECT operation releases the slot
+            // when the read completes, so its budget is the whole capacity.
+            const I slot_cap = std::max<I>(1, params.iocb_cap);
+            const I free_slots = std::max<I>(0, params.iocb_cap -
+                state.at("foreground_iocb_inflight").as_int());
+            std::map<I, int> owner_rank;
+            int free_pieces = 0, cap_pieces = 0;
+            for (std::size_t p = 0; p < n; ++p) {
+                auto [it, fresh] = owner_rank.emplace(
+                    pieces[p].io->iocb_id, int(owner_rank.size()));
+                (void)fresh;
+                if (I(it->second) < free_slots) ++free_pieces;
+                if (I(it->second) < slot_cap) ++cap_pieces;
+            }
             struct Edge { std::size_t end; I physical, valid; Path path; };
             std::vector<std::vector<Edge>> edges(n);
             std::size_t edge_count = 0;
@@ -479,10 +504,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 bool aligned = true, whole = true;
                 std::set<I> owners;
                 I card = pieces[i].io->device_id;
-                const int qc_agg = std::max(1, int(std::lround(
-                    double(active_copy[{kD2D, card}]) + copy_share_agg_ * double(per_card[card]))));
-                const int qc_fb = std::max(1, int(std::lround(
-                    double(active_copy[{kH2D, card}]) + copy_share_fb_ * double(per_card[card]))));
+                const int qc_agg = std::max(1, active_copy[{kD2D, card}] + per_card[card]);
+                const int qc_fb = std::max(1, active_copy[{kH2D, card}] + per_card[card]);
                 std::size_t window = Window;
                 for (std::size_t j = i; j < n && j < i + window; ++j) {
                     const auto& p = pieces[j];
@@ -514,13 +537,16 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         }
                         int qc = path == Path::Aggregate ? qc_agg : qc_fb;
                         int qs_edge = qs;
-                        if (path == Path::Aggregate)
-                            qs_edge = int(std::max<I>(1, std::min<I>(
-                                qs, free_slots / I(owners.size()))));
-                        else if (path == Path::Direct)
-                            qs_edge = int(std::max<I>(1, std::min<I>(
-                                qs, slot_cap / I(owners.size()))));
-                        double v = dp[i] + estimate(path, physical, valid, qs_edge, qc, params);
+                        if (path != Path::Fallback) {
+                            // Slot-bound reads: the launchable pieces are split
+                            // over this operation's owners. FALLBACK reads take
+                            // no slot and keep the unbounded estimate above.
+                            const int k = int(owners.size());
+                            const int window = path == Path::Direct ? cap_pieces : free_pieces;
+                            qs_edge = std::max(1, active_ssd + (window + k - 1) / k);
+                        }
+                        double v = dp[i] + estimate(path, physical, valid, qs_edge, qc,
+                                                    pieces[i].io->device_id, params);
                         if (v < dp[j + 1]) {
                             dp[j + 1] = v;
                             prev[j + 1] = i;
@@ -602,7 +628,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         for (const auto& e : edges[i]) {
                             int qc = e.path == Path::Aggregate ? qc_agg : qc_fb;
                             weights[i].push_back(estimate(e.path, e.physical, e.valid,
-                                std::max(1, active_ssd + cnt), qc, params));
+                                std::max(1, active_ssd + cnt), qc,
+                                pieces[i].io->device_id, params));
                         }
                     }
                     rows[0].get(0)->value = 0;
