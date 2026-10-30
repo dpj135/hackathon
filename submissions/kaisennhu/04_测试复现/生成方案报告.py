@@ -59,9 +59,9 @@ def render(title,files,dest):
     if len(files)>1:
         doc.add_heading(title,0)
         doc.add_paragraph('区间动态规划与复用感知缓存',style='Subtitle')
-        doc.add_paragraph('请求到达时，联合决定分块、合并与传输路径；请求完成后，再根据复用证据和预算决定是否建立缓存。在线决策只使用公开参数与回调状态，不在策略内部调用模拟器。')
-        doc.add_paragraph('阅读顺序：整体流程 → 分组、选路和缓存的具体规则 → 可复算例子 → 设计依据与baseline对照 → 通用性和验证 → 运行复现。实现预算、复杂度和代码定位放在算法附录。')
-        doc.add_paragraph('团队 / 作者：________________')
+        doc.add_paragraph('请求到达时联合选择分组与路径，完成后按复用证据和收益决定缓存。')
+        doc.add_paragraph('阅读顺序：方案介绍 → 算法设计 → 具体示例 → 验证与复现。')
+        doc.add_paragraph('参赛方案：KaisennHu')
         content.append('<h1>'+html.escape(title)+'</h1><p>区间动态规划与复用感知缓存</p>')
     for index,file in enumerate(files):
         if index:doc.add_page_break()

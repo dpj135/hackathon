@@ -16,6 +16,12 @@
 namespace {
 using I = std::int64_t;
 using nds::Json;
+enum class Path { Direct, Aggregate, Fallback };
+constexpr Path AllPaths[] = {Path::Direct, Path::Aggregate, Path::Fallback};
+const char* path_name(Path path) {
+    constexpr const char* names[] = {"DIRECT", "AGGREGATE", "FALLBACK"};
+    return names[static_cast<int>(path)];
+}
 constexpr I MiB = 1024 * 1024;
 constexpr std::size_t Window = 128, HistoryLimit = 131072;
 constexpr std::size_t CountTransitions = 2000000, CountStates = 131072;
@@ -153,37 +159,61 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             }
         }
     }
+    // Snapshot once per submit: pool pressure belongs to this callback's state.
+    struct EstimateParams {
+        double time_cost, cpu_nds, cpu_fallback, cpu_d2d, npu_d2d, cpu_h2d, npu_h2d;
+        I nvme_bw, h2d_bw, d2d_bw, iocb_cap, hbm_cap, ddr_cap, hbm_used, ddr_used;
+        I hbm_cc, h2d_cc;
+        double pressure_agg, pressure_fb;
+    };
+    EstimateParams estimate_params(const Json& state) const {
+        EstimateParams k;
+        k.time_cost = cost("time_cost_per_us");
+        k.cpu_nds = cost("CPU_NDS_FIXED_COST") + cost("CPU_NDS_PER_CMD_COST");
+        k.cpu_fallback = cost("CPU_FALLBACK_FIXED_COST") + cost("CPU_FALLBACK_PER_CMD_COST");
+        k.cpu_d2d = cost("CPU_D2D_CALL_COST"); k.npu_d2d = cost("NPU_D2D_CALL_COST");
+        k.cpu_h2d = cost("CPU_H2D_CALL_COST"); k.npu_h2d = cost("NPU_H2D_CALL_COST");
+        k.nvme_bw = r_.at("nvme_bw"); k.h2d_bw = r_.at("h2d_bw"); k.d2d_bw = r_.at("d2d_bw");
+        k.iocb_cap = r_.at("iocb_capacity");
+        k.hbm_cap = pool("hbm_capacity"); k.ddr_cap = pool("ddr_capacity");
+        k.hbm_used = state.at("aggregate_hbm_used").as_int();
+        k.ddr_used = state.at("fallback_ddr_used").as_int();
+        k.hbm_cc = r_.at("hbm_copy_concurrency");
+        k.h2d_cc = r_.at("h2d_copy_concurrency");
+        k.pressure_agg = 1.0 + 0.5 * k.hbm_used / std::max(1.0, double(k.hbm_cap));
+        k.pressure_fb = 1.0 + 0.5 * k.ddr_used / std::max(1.0, double(k.ddr_cap));
+        return k;
+    }
     // Additive resource-work surrogate, not an exact objective under shared BW.
-    double estimate(const std::string& path, I physical, I valid, int qs, int qc,
-                    const Json& state) const {
+    // Preserve floating-point evaluation order: ties determine the output plan.
+    double estimate(Path path, I physical, I valid, int qs, int qc,
+                    const EstimateParams& k) const {
         double cpu = 0, npu = 0, t = 0;
-        if (path == "DIRECT" || path == "AGGREGATE") {
-            cpu = cost("CPU_NDS_FIXED_COST") + cost("CPU_NDS_PER_CMD_COST");
-            t = transfer_us(physical, r_.at("nvme_bw"), direct_profile, qs);
+        if (path == Path::Direct || path == Path::Aggregate) {
+            cpu = k.cpu_nds;
+            t = transfer_us(physical, k.nvme_bw, direct_profile, qs);
         } else {
-            cpu = cost("CPU_FALLBACK_FIXED_COST") + cost("CPU_FALLBACK_PER_CMD_COST");
-            t = transfer_us(physical, r_.at("nvme_bw"), ddr_profile, qs);
+            cpu = k.cpu_fallback;
+            t = transfer_us(physical, k.nvme_bw, ddr_profile, qs);
         }
-        if (path == "AGGREGATE") {
-            qc = std::max(1, std::min<int>(qc, int(r_.at("hbm_copy_concurrency"))));
+        if (path == Path::Aggregate) {
+            qc = std::max(1, std::min(qc, int(k.hbm_cc)));
             double bw = valid < 4096    ? 20.0 * qc
                         : valid < 32768 ? 130.0 * qc
                                         : bucket(d2d_profile, valid, qc);
-            bw = std::min(bw, double(r_.at("d2d_bw")));
+            bw = std::min(bw, double(k.d2d_bw));
             t += double(valid) * 1000000.0 / (bw * MiB);
-            cpu += cost("CPU_D2D_CALL_COST");
-            npu += cost("NPU_D2D_CALL_COST");
-            t *= 1.0 + 0.5 * state.at("aggregate_hbm_used").as_int() /
-                           std::max(1.0, double(pool("hbm_capacity")));
-        } else if (path == "FALLBACK") {
-            qc = std::max(1, std::min<int>(qc, int(r_.at("h2d_copy_concurrency"))));
-            t += transfer_us(valid, r_.at("h2d_bw"), copy_profile, qc);
-            cpu += cost("CPU_H2D_CALL_COST");
-            npu += cost("NPU_H2D_CALL_COST");
-            t *= 1.0 + 0.5 * state.at("fallback_ddr_used").as_int() /
-                           std::max(1.0, double(pool("ddr_capacity")));
+            cpu += k.cpu_d2d;
+            npu += k.npu_d2d;
+            t *= k.pressure_agg;
+        } else if (path == Path::Fallback) {
+            qc = std::max(1, std::min(qc, int(k.h2d_cc)));
+            t += transfer_us(valid, k.h2d_bw, copy_profile, qc);
+            cpu += k.cpu_h2d;
+            npu += k.npu_h2d;
+            t *= k.pressure_fb;
         }
-        return cost("time_cost_per_us") * t + cpu + npu;
+        return k.time_cost * t + cpu + npu;
     }
     // Count transfers, not operations. Copy resources are scoped by type AND card.
     // These static-q work values are ranking proxies, never latency upper bounds.
@@ -344,6 +374,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         std::size_t iov_count = 0;
         for (const auto& io : submit.iocbs) iov_count += io.iovs.size();
         auto build_decision = [&] {
+            const auto params = estimate_params(state);
             constexpr I block_limit = 2 * MiB;
             std::vector<Piece> pieces;
             for (std::size_t k = 0; k < submit.iocbs.size(); ++k) {
@@ -381,7 +412,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             }
             int qs = std::max(1, active_ssd + int(pieces.size()));
             auto n = pieces.size();
-            struct Edge { std::size_t end; I physical, valid, card; std::string path; };
+            struct Edge { std::size_t end; I physical, valid; Path path; };
             std::vector<std::vector<Edge>> edges(n);
             std::size_t edge_count = 0;
             bool count_search = submit.iocbs.size() <= 1024 && iov_count <= 2048 &&
@@ -391,13 +422,15 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 arrivals_.size() == submit.iocbs.size();
             std::vector<double> dp(n + 1, std::numeric_limits<double>::infinity());
             std::vector<std::size_t> prev(n + 1);
-            std::vector<std::string> paths(n + 1);
+            std::vector<Path> paths(n + 1);
             dp[0] = 0;
             for (std::size_t i = 0; i < n; ++i) {
                 I hi = pieces[i].begin(), valid = 0;
                 bool aligned = true, whole = true;
                 std::set<I> owners;
                 I card = pieces[i].io->device_id;
+                const int qc_agg = std::max(1, active_copy[{"D2D", card}] + per_card[card]);
+                const int qc_fb = std::max(1, active_copy[{"H2D", card}] + per_card[card]);
                 std::size_t window = Window;
                 for (std::size_t j = i; j < n && j < i + window; ++j) {
                     const auto& p = pieces[j];
@@ -414,21 +447,21 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                     owners.insert(p.io->iocb_id);
                     I physical = nds::align_up(hi) - nds::align_down(pieces[i].begin());
                     if (j > i && physical > block_limit) break;
-                    for (const std::string path : {"DIRECT", "AGGREGATE", "FALLBACK"}) {
-                        if (path != "FALLBACK" && owners.size() > std::size_t(r_.at("iocb_capacity")))
+                    for (Path path : AllPaths) {
+                        if (path != Path::Fallback && owners.size() > std::size_t(params.iocb_cap))
                             continue;
-                        if (path == "DIRECT" && !aligned) continue;
-                        if (path == "AGGREGATE" && physical > pool("hbm_capacity")) continue;
-                        if (path == "FALLBACK" && physical > pool("ddr_capacity")) continue;
-                        if (path == "AGGREGATE" && r_.at("hbm_copy_concurrency") == 0) continue;
-                        if (path == "FALLBACK" && r_.at("h2d_copy_concurrency") == 0) continue;
+                        if (path == Path::Direct && !aligned) continue;
+                        if (path == Path::Aggregate && physical > params.hbm_cap) continue;
+                        if (path == Path::Fallback && physical > params.ddr_cap) continue;
+                        if (path == Path::Aggregate && params.hbm_cc == 0) continue;
+                        if (path == Path::Fallback && params.h2d_cc == 0) continue;
                         if (count_search) {
                             if (++edge_count <= CountStates * 2)
-                                edges[i].push_back({j + 1, physical, valid, card, path});
+                                edges[i].push_back({j + 1, physical, valid, path});
                             else { count_search = false; edges.clear(); }
                         }
-                        int qc = std::max(1, active_copy[{path == "AGGREGATE" ? "D2D" : "H2D", card}] + per_card[card]);
-                        double v = dp[i] + estimate(path, physical, valid, qs, qc, state);
+                        int qc = path == Path::Aggregate ? qc_agg : qc_fb;
+                        double v = dp[i] + estimate(path, physical, valid, qs, qc, params);
                         if (v < dp[j + 1]) {
                             dp[j + 1] = v;
                             prev[j + 1] = i;
@@ -439,7 +472,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             }
             if (!std::isfinite(dp[n]))
                 throw nds::ValidationError("no feasible path under supplied resources");
-            std::vector<std::tuple<std::size_t, std::size_t, std::string>> plan;
+            std::vector<std::tuple<std::size_t, std::size_t, Path>> plan;
             for (std::size_t end = n; end > 0; end = prev[end])
                 plan.emplace_back(prev[end], end, paths[end]);
             if (count_search && plan.size() <= 2048) {
@@ -457,8 +490,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 std::map<std::pair<std::string, I>, int> copy_groups;
                 for (const auto& [a, b, path] : plan) {
                     (void)b;
-                    if (path != "DIRECT")
-                        ++copy_groups[{path == "AGGREGATE" ? "D2D" : "H2D", pieces[a].io->device_id}];
+                    if (path != Path::Direct)
+                        ++copy_groups[{path == Path::Aggregate ? "D2D" : "H2D", pieces[a].io->device_id}];
                 }
                 const int seed = int(plan.size());
                 I bytes = 0;
@@ -500,12 +533,18 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                     if (transitions > count_budget) return;
                     count_budget -= transitions;
                     std::vector<std::vector<double>> weights(n);
-                    for (std::size_t i = 0; i < n; ++i) for (const auto& e : edges[i]) {
-                        auto type = e.path == "AGGREGATE" ? "D2D" : "H2D";
-                        int qc = active_copy[{type, e.card}] +
-                            std::max(1, (cnt * copy_groups[{type, e.card}] + seed - 1) / seed);
-                        weights[i].push_back(estimate(e.path, e.physical, e.valid,
-                            std::max(1, active_ssd + cnt), qc, state));
+                    // Copy q is constant for a (cnt, path, card), not across cnt.
+                    for (std::size_t i = 0; i < n; ++i) {
+                        I card = pieces[i].io->device_id;
+                        const int qc_agg = active_copy[{"D2D", card}] +
+                            std::max(1, (cnt * copy_groups[{"D2D", card}] + seed - 1) / seed);
+                        const int qc_fb = active_copy[{"H2D", card}] +
+                            std::max(1, (cnt * copy_groups[{"H2D", card}] + seed - 1) / seed);
+                        for (const auto& e : edges[i]) {
+                            int qc = e.path == Path::Aggregate ? qc_agg : qc_fb;
+                            weights[i].push_back(estimate(e.path, e.physical, e.valid,
+                                std::max(1, active_ssd + cnt), qc, params));
+                        }
                     }
                     rows[0].get(0)->value = 0;
                     for (int h = 0; h < cnt; ++h)
@@ -530,9 +569,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                         const auto& cell = *rows[h].get(end);
                         const auto& edge = edges[cell.previous][cell.edge];
                         proposed.emplace_back(cell.previous, end, edge.path);
-                        if (edge.path == "AGGREGATE") hbm += edge.physical;
-                        if (edge.path == "FALLBACK") ddr += edge.physical;
-                        if (edge.path != "FALLBACK")
+                        if (edge.path == Path::Aggregate) hbm += edge.physical;
+                        if (edge.path == Path::Fallback) ddr += edge.physical;
+                        if (edge.path != Path::Fallback)
                             for (std::size_t i = cell.previous; i < end; ++i)
                                 nds_owners.insert(pieces[i].io->iocb_id);
                         end = cell.previous;
@@ -541,9 +580,9 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                     // owners and buffers fit. This does NOT keep q fixed to the end.
                     // A rejected candidate may still be legal as a queued plan;
                     // the ordinary planner remains available for that case.
-                    if (nds_owners.size() > std::size_t(r_.at("iocb_capacity")) ||
-                        hbm + state.at("aggregate_hbm_used").as_int() > pool("hbm_capacity") ||
-                        ddr + state.at("fallback_ddr_used").as_int() > pool("ddr_capacity")) return;
+                    if (nds_owners.size() > std::size_t(params.iocb_cap) ||
+                        hbm + params.hbm_used > params.hbm_cap ||
+                        ddr + params.ddr_used > params.ddr_cap) return;
                     best = last->value; best_count = cnt; plan = std::move(proposed);
                 };
                 for (int cnt : samples) solve_count(cnt);
@@ -553,7 +592,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             Json operations = Json::array();
             for (auto it = plan.rbegin(); it != plan.rend(); ++it) {
                 auto [a, b, path] = *it;
-                operations.push_back(operation(pieces, a, b, path, now));
+                operations.push_back(operation(pieces, a, b, path_name(path), now));
             }
             Json decision = obj({{"event", "SCHEDULE_DECISION"},
                                  {"submit_id", submit.submit_id},
