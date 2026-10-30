@@ -1,6 +1,6 @@
 {
-  "source_sha256": "f0dd0be1760cbd58135b7bbeb01d1632608f00be9ffc819315b7526d82151aa5",
-  "binary_sha256": "12e0bf576bfdcbeab837c98e11c5d1d98cb42c1927b2a3fa363c68e616ea6e74",
+  "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
+  "binary_sha256": "5bd2c3efb4cd0cda63b57a8979acd4c2a3379716631bc4403e3c93ab0fc14a24",
   "engine_sha256": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
   "repeat": 3,
   "groups": {
@@ -18,115 +18,35 @@
     "planning_holdout": 24,
     "transfer_holdout": 24,
     "pr17_added": 78,
-    "ablation_holdout": 24
+    "independent_combinations": 24
   },
-  "upstream_sha": "dd321261c9d3002d548a8097fd29affc019034b8",
-  "automated": 88.4555,
-  "automated_max": 90,
-  "official_greedy_score": 67.1981,
   "inputs": 655,
   "player_runs": 1965,
   "all_replay_valid": true,
+  "all_repeated_outputs_identical": true,
+  "policy_peak_mb_max": 13.0615234375,
+  "automated": 88.4555,
+  "automated_max": 90,
+  "official_greedy_score": 67.1981,
+  "public_vs_greedy": {
+    "wins": 35,
+    "ties": 4,
+    "losses": 0
+  },
+  "extended_vs_greedy": {
+    "cases": 292,
+    "wins": 195,
+    "ties": 1,
+    "losses": 96
+  },
   "functional_boundary_gate_checks": 173,
   "engine_files_sha256": {
     "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
     "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
     "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
   },
-  "comparisons": 292,
-  "comparison_summary": [
-    {
-      "group": "回归对照",
-      "cases": 96,
-      "wins": 88,
-      "ties": 0,
-      "losses": 8,
-      "geometric_ratio": 0.6216955667236659,
-      "worst_ratio": 1.1463141533270964
-    },
-    {
-      "group": "分布与尺寸边界",
-      "cases": 33,
-      "wins": 25,
-      "ties": 0,
-      "losses": 8,
-      "geometric_ratio": 0.5246761531758493,
-      "worst_ratio": 1.2030365510777883
-    },
-    {
-      "group": "缓存与到达过程",
-      "cases": 24,
-      "wins": 16,
-      "ties": 0,
-      "losses": 8,
-      "geometric_ratio": 0.935420027466918,
-      "worst_ratio": 1.1853055009199924
-    },
-    {
-      "group": "复用形态回归",
-      "cases": 24,
-      "wins": 22,
-      "ties": 0,
-      "losses": 2,
-      "geometric_ratio": 0.917371630385162,
-      "worst_ratio": 1.9426605309493634
-    },
-    {
-      "group": "缓存准入专项",
-      "cases": 19,
-      "wins": 17,
-      "ties": 1,
-      "losses": 1,
-      "geometric_ratio": 0.9506323543735674,
-      "worst_ratio": 1.0000190947794874
-    },
-    {
-      "group": "既有组合回归",
-      "cases": 24,
-      "wins": 8,
-      "ties": 0,
-      "losses": 16,
-      "geometric_ratio": 1.00423095879472,
-      "worst_ratio": 1.0847368477549137
-    },
-    {
-      "group": "到达与TTL组合回归",
-      "cases": 24,
-      "wins": 6,
-      "ties": 0,
-      "losses": 18,
-      "geometric_ratio": 1.0176731226978526,
-      "worst_ratio": 1.145978651447897
-    },
-    {
-      "group": "既有规划组合回归",
-      "cases": 24,
-      "wins": 7,
-      "ties": 0,
-      "losses": 17,
-      "geometric_ratio": 1.009341644800884,
-      "worst_ratio": 1.1064771896914638
-    },
-    {
-      "group": "传输组合回归",
-      "cases": 24,
-      "wins": 6,
-      "ties": 0,
-      "losses": 18,
-      "geometric_ratio": 1.0195820085417293,
-      "worst_ratio": 1.188820799619229
-    }
-  ],
-  "public_vs_greedy": {
-    "cases": 39,
-    "wins": 35,
-    "ties": 4,
-    "losses": 0,
-    "geometric_ratio": 0.46213920302210426,
-    "worst_ratio": 1.0
-  },
   "strategy_boundary": {
-    "source_sha256": "f0dd0be1760cbd58135b7bbeb01d1632608f00be9ffc819315b7526d82151aa5",
+    "source_sha256": "3afbd688c5957e82fd20ca69a65ab2feb62683d955131d7e09bf4e42e48b502d",
     "passed": 1,
     "sdk_dependencies": [
       "nds::align_down(long, long)",
@@ -145,19 +65,34 @@
       "nds::Json::operator[](unsigned long) const"
     ]
   },
-  "baseline_reuse": "292 greedy costs reused after all input and engine hashes matched; current policy rerun three times. Public greedy rescored with official entry point.",
   "provenance": {
     "PR17_commit": "f26313bd67e7640da27635cb3588062a6884911b",
     "additional_cases": 78,
-    "ablation_holdout_seeds": [
+    "all_generated_inputs_are_visible_regression": true,
+    "independent_combination_seeds": [
       451009,
       451019,
       451027,
       451039,
       451049,
       451057
-    ],
-    "all_generated_inputs_are_visible_regression": true
+    ]
   },
-  "benchmark_note": "No current sanitizer or full scale claim; prior policy evidence is not carried forward."
+  "runtime": {
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O2",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic"
+    ],
+    "cpu_model": "AMD EPYC 9575F 64-Core Processor",
+    "cpu": 8,
+    "timing_wrapper_sha256": "5e2b933715f67b8bf7b21568ea936099809171f09df96e598b33452c56d4419e",
+    "repeat": 3,
+    "warmup_per_input": 1,
+    "policy_total_ms_sum_of_case_medians": 1153.1159270000187,
+    "process_seconds_sum_of_case_medians": 9.45528271375224
+  }
 }
