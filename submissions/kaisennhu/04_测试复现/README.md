@@ -4,11 +4,12 @@
 
 | 文件或目录 | 用途 |
 | --- | --- |
-| [regression.py](regression.py)、[boundaries.py](boundaries.py)、[gate_tests.py](gate_tests.py) | 功能、边界、变形与评分失败检测 |
+| [regression.py](regression.py)、[boundaries.py](boundaries.py)、[gate_tests.py](gate_tests.py)、[admission_checks.py](admission_checks.py) | 功能、边界、变形与评分失败检测 |
 | [evaluate.py](evaluate.py) | 重复运行、官方回放和输出确定性核验 |
 | [compare.py](compare.py) | 与官方贪心逐输入比较成本 |
 | [stress.py](stress.py)、[profile_main.cpp](profile_main.cpp) | 十万请求及高iov资源测试 |
 | [matrix.py](matrix.py)、[independent.py](independent.py)、[renewal.py](renewal.py) | 构造与扩展不同测试家族 |
+| [admission_workloads.py](admission_workloads.py)、[admission_holdout.py](admission_holdout.py) | 缓存准入专项与冻结后留出组合生成器 |
 | [fixtures/](fixtures/) | 固定扩展输入、分组manifest及压力输入 |
 | [生成方案报告.py](生成方案报告.py) | 从Markdown生成Word和离线HTML；仅文档生成需要python-docx |
 

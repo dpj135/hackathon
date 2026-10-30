@@ -2,10 +2,10 @@
   "platform": "Linux x86_64",
   "linkage": "static",
   "compiler_flags": "-O2 -std=c++17 -static -s",
-  "source_sha256": "6a30c42d1a939b131290c2802a1b2942fad991cc857dede96cbc3890b8cb22d6",
+  "source_sha256": "3977a1c70be98264736945b2eeb7a33b508c051a680eb9a024a739877423a08e",
   "upstream_sha": "6b1666eb908a4cb55a84dc20832d9e57ffc1e4c4",
   "binaries": {
-    "nds_player": "502ed01c8d9893c0c3a4f7941229f78e1f1678b39595b31b452a521e0f3fad25",
+    "nds_player": "6895bd311c699c7fab5fab88df6bd63da0ff4e4fcfb451c5a96180e86b88bf31",
     "nds_validate": "47c8f78e77e447d344710e9b10e498defedb865101c93e755719e677d9035b1d"
   }
 }

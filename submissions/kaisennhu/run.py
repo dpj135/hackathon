@@ -67,6 +67,7 @@ def main():
         run(['make','-C',code,'test'],'framework.log')
         run(['python3',test/'regression.py','--code',code,'--output',out/'regression'])
         run(['python3',test/'boundaries.py','--code',code,'--output',out/'boundaries'])
+        run(['python3',test/'admission_checks.py','--code',code,'--output',out/'admission_checks.json'])
         run(['python3',test/'gate_tests.py','--output',out/'gate_checks.json'])
     if a.mode in ['score','all']:
         for label,binary in [('strategy','nds_player'),('official_baseline','nds_baseline')]:
@@ -78,7 +79,7 @@ def main():
             require_valid_score(score)
             print(f"  自动分 {score['automated']}/90，合法 {score['valid_cases']}/{score['case_count']}",flush=True)
     if a.mode in ['extended','all']:
-        groups=[('additional',a.data.resolve())] if a.data else [('official',code/'data')]+[(n,test/'fixtures'/n) for n in ['resources','coverage','distribution','regression','robustness','cache_mix','blind']]
+        groups=[('additional',a.data.resolve())] if a.data else [('official',code/'data')]+[(n,test/'fixtures'/n) for n in ['resources','coverage','distribution','regression','robustness','cache_mix','blind','admission','holdout']]
         for name,data in groups:
             print(f'正在验证 {name}，每个输入重复 {a.repeat} 次……',flush=True)
             run(['python3',test/'evaluate.py','--code',code,'--data',data,'--repeat',a.repeat,'--cpu',min(os.sched_getaffinity(0)),
@@ -86,7 +87,7 @@ def main():
             summary=json.loads((out/(name+'.json')).read_text())['summary']
             print(f"  {summary['valid']}/{summary['cases']} 合法，{summary['deterministic']} 条重复输出一致。",flush=True)
     if a.mode in ['compare','all']:
-        groups=[('additional',a.data.resolve())] if a.data else [(n,test/'fixtures'/n) for n in ['regression','robustness','cache_mix','blind']]
+        groups=[('additional',a.data.resolve())] if a.data else [(n,test/'fixtures'/n) for n in ['regression','robustness','cache_mix','blind','admission','holdout']]
         for name,data in groups:
             print(f'正在比较提交策略与官方贪心：{name}',flush=True)
             run(['python3',test/'compare.py','--code',code,'--data',data,'--repeat',a.repeat,

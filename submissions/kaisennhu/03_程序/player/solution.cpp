@@ -112,19 +112,41 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         I seen = 0, last_arrival = 0, last_byte = 0, promote_id = 0, generation = 0;
         I observed = 0, accounted = 0;
         double gap = 0, jitter = 0, credit = 0, last_gain = 0, paid_cost = 0;
+        bool cache_admitted = false;
     };
     std::map<nds::Iocb::CacheKey, History> history_;
     std::deque<std::pair<nds::Iocb::CacheKey, I>> history_queue_;
     I byte_clock_ = 0, generation_ = 0;
     std::map<std::pair<I, I>, I> arrivals_;
-    struct Work { double read_us = 0, copy_us = 0, commands = 0, card_share = 1; int hit_q = 1; };
+    struct Work {
+        double read_us = 0, copy_us = 0, commands = 0, card_share = 1;
+        double batch_us = 0, submit_gap_us = 0;
+        int hit_q = 1;
+    };
     std::map<std::pair<I, I>, Work> work_;
     std::map<std::vector<I>, I> batch_costs_;
-    std::map<I, I> promotion_cards_;
+    struct Promotion { nds::Iocb::CacheKey key; I bytes; };
+    std::map<I, Promotion> promotions_;
+    std::map<nds::Iocb::CacheKey, I> pending_keys_;
+    I last_submit_arrival_ = -1, submit_gap_us_ = 0;
     struct ObservedBatch { nds::Submit submit; Json decision; };
     std::deque<ObservedBatch> recent_;
     double cost(const char* key) const { return double(c_.at(key)); }
     I pool(const char* name) const { return r_.at(name) * MiB; }
+    void sync_promotions(const Json& state) {
+        std::set<I> live;
+        for (const auto& p : state.at("promote_inflight").as_array())
+            live.insert(p.at("promote_id").as_int());
+        for (auto it = promotions_.begin(); it != promotions_.end();) {
+            if (live.count(it->first)) ++it;
+            else {
+                auto known = history_.find(it->second.key);
+                if (known != history_.end()) known->second.cache_admitted = true;
+                pending_keys_.erase(it->second.key);
+                it = promotions_.erase(it);
+            }
+        }
+    }
     // Additive resource-work surrogate, not an exact objective under shared BW.
     double estimate(const std::string& path, I physical, I valid, int qs, int qc,
                     const Json& state) const {
@@ -217,18 +239,15 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         : r_(std::move(r)), c_(std::move(c)) {}
     Json on_submit(const nds::Submit& submit, const Json& state) override {
         I now = state.at("current_time_us").as_int();
+        sync_promotions(state);
+        if (last_submit_arrival_ >= 0 && submit.arrival_us > last_submit_arrival_)
+            submit_gap_us_ = submit.arrival_us - last_submit_arrival_;
+        last_submit_arrival_ = submit.arrival_us;
         for (auto it = recent_.begin(); it != recent_.end();) {
             bool pending = std::any_of(it->submit.iocbs.begin(), it->submit.iocbs.end(),
                 [&](const nds::Iocb& io) { return arrivals_.count({io.submit_id, io.iocb_id}) != 0; });
             if (!pending) it = recent_.erase(it); else ++it;
         }
-        std::map<I, I> live_cards;
-        for (const auto& p : state.at("promote_inflight").as_array()) {
-            I id = p.at("promote_id").as_int();
-            auto known = promotion_cards_.find(id);
-            if (known != promotion_cards_.end()) live_cards.emplace(*known);
-        }
-        promotion_cards_.swap(live_cards);
         std::vector<IovIndex> indexes;
         indexes.reserve(submit.iocbs.size());  // Piece pointers must remain stable.
         std::map<I, int> per_card;
@@ -237,6 +256,10 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             indexes.emplace_back(io);
             arrivals_[{io.submit_id, io.iocb_id}] = submit.arrival_us;
             auto& h = history_[io.cache_key()];
+            // on_submit contains only actual misses. Once an earlier promotion
+            // has finished, a new miss is authoritative evidence of absence.
+            // Misses that arrived during that promotion cannot justify another.
+            if (!pending_keys_.count(io.cache_key())) h.cache_admitted = false;
             bool observed_again = h.seen && submit.arrival_us > h.last_arrival;
             if (h.seen && submit.arrival_us > h.last_arrival) {
                 double gap = double(submit.arrival_us - h.last_arrival);
@@ -538,6 +561,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         for (const auto& op : decision.at("operations").as_array())
             ++card_ops[op.at("transfers")[0].at("device_id").as_int()];
         int read_q = std::max(1, active_ssd + int(decision.at("operations").size()));
+        double batch_read_us = 0;
+        std::map<I, double> batch_copy_us;
         for (const auto& op : decision.at("operations").as_array()) {
             const auto& first = op.at("transfers")[0];
             I card = first.at("device_id").as_int();
@@ -560,6 +585,8 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 copy = double(bytes) * 1000000.0 / (std::min(bw, double(r_.at("d2d_bw"))) * MiB);
                 commands += cost("CPU_D2D_CALL_COST") + cost("NPU_D2D_CALL_COST");
             }
+            batch_read_us += read;
+            batch_copy_us[card] += copy;
             for (const auto& range : op.at("ranges").as_array()) {
                 auto& w = work_[{submit.submit_id, range.at("iocb_id").as_int()}];
                 double fraction = double(range.at("length").as_int()) / bytes;
@@ -570,10 +597,21 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
                 w.hit_q = std::max(1, std::min<int>(per_card[card], int(r_.at("h2d_copy_concurrency"))));
             }
         }
+        double longest_copy_us = 0;
+        for (const auto& [card, us] : batch_copy_us) {
+            (void)card;
+            longest_copy_us = std::max(longest_copy_us, us);
+        }
+        for (const auto& io : submit.iocbs) {
+            auto& w = work_.at({submit.submit_id, io.iocb_id});
+            w.batch_us = batch_read_us + longest_copy_us;
+            w.submit_gap_us = double(submit_gap_us_);
+        }
         return decision;
     }
     std::optional<Json> on_iocb_complete(const nds::Iocb& io, const Json& state) override {
         I now = state.at("current_time_us").as_int();
+        sync_promotions(state);
         auto owner = std::make_pair(io.submit_id, io.iocb_id);
         auto arrival = arrivals_.find(owner);
         auto work = work_.find(owner);
@@ -581,6 +619,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
         if (work != work_.end()) { served = work->second; work_.erase(work); }
         // Cache hits have no foreground work owned by this policy.
         bool foreground = arrival != arrivals_.end();
+        I arrived_at = foreground ? arrival->second : now;
         if (arrival != arrivals_.end()) arrivals_.erase(arrival);
         auto found = history_.find(io.cache_key());
         if (found == history_.end()) return std::nullopt;
@@ -591,6 +630,7 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             h.credit = std::min(h.paid_cost, h.credit + std::max(0.0, h.last_gain));
             return std::nullopt;
         }
+        if (h.cache_admitted || pending_keys_.count(io.cache_key())) return std::nullopt;
         if (h.seen < 2 || h.gap <= 0 || io.length > pool("kvcache_pool_capacity")) return std::nullopt;
         if ((h.gap >= cost("promote_ttl_us") || cost("promote_ttl_us") <= 0))
             return std::nullopt;
@@ -600,16 +640,15 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
              byte_clock_ - h.last_byte > pool("kvcache_pool_capacity")))
             return std::nullopt;
         if (now - h.last_arrival > std::max(1.0, h.gap + 2.0 * h.jitter)) return std::nullopt;
-        for (const auto& key : state.at("cached_ranges").as_array())
-            if (key[0].as_int() == io.device_id && key[1].as_int() == io.ssd_offset &&
-                key[2].as_int() == io.length)
-                return std::nullopt;
         int pending_hbm = 0, pending_ssd = 0;
+        double pending_bytes = 0;
         for (const auto& p : state.at("promote_inflight").as_array()) {
             if (p.at("promote_id").as_int() == h.promote_id) return std::nullopt;
+            auto known = promotions_.find(p.at("promote_id").as_int());
+            if (known != promotions_.end()) pending_bytes += double(known->second.bytes);
             if (p.at("path").as_string() == "PROMOTE_HBM") {
-                auto card = promotion_cards_.find(p.at("promote_id").as_int());
-                if (card != promotion_cards_.end() && card->second == io.device_id) ++pending_hbm;
+                if (known != promotions_.end() && std::get<0>(known->second.key) == io.device_id)
+                    ++pending_hbm;
             }
             else
                 ++pending_ssd;
@@ -640,26 +679,42 @@ class AdaptivePolicy final : public nds::SchedulerPolicy {
             : cost("time_cost_per_us") * transfer_us(io.length, r_.at("d2h_bw"), copy_profile, qh) * served.card_share + cost("CPU_D2H_CALL_COST") + cost("NPU_D2H_CALL_COST");
         double promote_cost = cost("CPU_PROMOTE_FIXED_COST") + service;
         double hit = transfer_us(io.length, r_.at("h2d_bw"), copy_profile, served.hit_q);
+        // An observed idle gap can absorb saved service time without reducing
+        // TraceTime. Keep command savings even in that arrival-limited regime.
+        // This extrapolates the last visible gap; future arrivals remain unknown.
+        double span = std::max(served.batch_us, double(now - arrived_at));
+        double time_weight = served.submit_gap_us <= 0 || span >= served.submit_gap_us ? 1.0 : 0.0;
         // Global SSD work and per-card copy work have different parallel scope.
         // This remains a marginal-work estimate, not a global optimality claim.
-        double gain = cost("time_cost_per_us") *
+        double gain = time_weight * cost("time_cost_per_us") *
                           (served.read_us + (served.copy_us - hit) * served.card_share) +
                       served.commands - cost("CPU_H2D_CALL_COST") - cost("NPU_H2D_CALL_COST");
         // Fund promotion from estimated work of already observed reads. Reuse
         // must still be fresh and each future hit must have positive net value.
         if (h.observed > h.accounted) {
+            // Budget measures already observed service expenditure, whereas
+            // gain above measures prospective benefit. Keeping them separate
+            // lets sparse but expensive non-direct reads fund useful caching.
             double spent = cost("time_cost_per_us") *
                 (served.read_us + served.copy_us * served.card_share) + served.commands;
             h.credit += (h.observed - h.accounted) * std::max(0.0, spent);
             h.accounted = h.observed;
         }
-        if (gain <= 0 || h.credit < promote_cost) return std::nullopt;
+        // Replacing a larger fraction of the pool requires proportionally more
+        // evidence, but never permanently pins the current residents in place.
+        double capacity = double(pool("kvcache_pool_capacity"));
+        double reclaim = std::max(0.0, double(state.at("kvcache_pool_used").as_int()) +
+                                      pending_bytes + double(io.length) - capacity);
+        double admission_cost = promote_cost * (1.0 + reclaim / capacity);
+        if (gain <= 0 || h.credit < admission_cost) return std::nullopt;
         h.credit = 0;
         h.last_gain = gain;
         h.paid_cost = promote_cost;
         I promote = next_promote_++;
         h.promote_id = promote;
-        promotion_cards_[promote] = io.device_id;
+        h.cache_admitted = true;
+        promotions_.emplace(promote, Promotion{io.cache_key(), io.length});
+        pending_keys_[io.cache_key()] = promote;
         Json transfer = obj({{"transfer_id", next_transfer_++},
                              {"device_id", io.device_id},
                              {"priority", 10}});
