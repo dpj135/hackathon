@@ -1,7 +1,0 @@
-请先打开“开始阅读.html”，或进入00_快速入门阅读“方案介绍.docx”。
-
-本包只有一份调度策略，程序、报告、验证和答辩材料保持一致。
-Windows可直接解压阅读；程序在Linux或WSL中运行。
-常用命令：python3 run.py quick / score / demo。
-单条输入：python3 run.py solve --prebuilt --input 03_程序/data/small_mixed.json --result result.json
-详细复现方式见04_测试复现/测试操作手册.md。

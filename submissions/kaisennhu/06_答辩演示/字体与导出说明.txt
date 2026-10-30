@@ -6,5 +6,5 @@ PPTX、PDF、PNG来自同一份最终内容。
 来源：https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap
 
 PDF和PNG保存导出外观；编辑PPTX时请核对字体和换行。
-本目录保存可离线使用的文件；导出链接和分享预览为临时链接，通常24小时有效。
+本目录直接提供PPTX、PDF和逐页PNG文件，可下载后离线使用。
 参考：固定官方SDK与随包验证证据。
