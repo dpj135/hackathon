@@ -56,9 +56,9 @@ def main():
         presentation = ET.fromstring(archive.read('ppt/presentation.xml'))
         ns = {'p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
         slides = presentation.findall('p:sldIdLst/p:sldId', ns)
-        if len(slides) != 9:
-            raise RuntimeError(f'Expected 9 slides, found {len(slides)}')
-    print(f'PASS {len(records)} file hashes; source/binaries match; 9-slide PPTX')
+        if len(slides) != 12:
+            raise RuntimeError(f'Expected 12 slides, found {len(slides)}')
+    print(f'PASS {len(records)} file hashes; source/binaries match; 12-slide PPTX')
     if args.files_only:
         return
     if platform.system() != 'Linux' or platform.machine() not in ['x86_64', 'AMD64']:
