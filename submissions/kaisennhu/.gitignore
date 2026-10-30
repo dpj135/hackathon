@@ -52,3 +52,6 @@ __pycache__/
 !/04_测试复现/fixtures/robustness/length_*.json
 /04_测试复现/fixtures/stress/
 /06_答辩演示/字体与导出说明.txt
+
+/04_测试复现/fixtures/transfer_holdout/*.json
+!/04_测试复现/fixtures/transfer_holdout/manifest.json

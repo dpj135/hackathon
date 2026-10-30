@@ -1,16 +1,16 @@
 {
-  "source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
+  "source_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
   "upstream_sha": "dd321261c9d3002d548a8097fd29affc019034b8",
   "automated": 89.9899,
   "automated_max": 90,
   "official_greedy_score": 67.1981,
-  "inputs": 529,
+  "inputs": 553,
   "repetitions": 3,
-  "player_runs": 1587,
-  "comparisons": 268,
+  "player_runs": 1659,
+  "comparisons": 292,
   "all_replay_valid": true,
-  "functional_boundary_gate_checks": 145,
-  "sanitized_checks": 74,
+  "functional_boundary_gate_checks": 172,
+  "sanitized_checks": 101,
   "engine_files_sha256": {
     "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
     "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
@@ -23,25 +23,16 @@
       "wins": 96,
       "ties": 0,
       "losses": 0,
-      "geometric_ratio": 0.6082591850970782,
-      "worst_ratio": 0.998587952122156
+      "geometric_ratio": 0.6081686758887439,
+      "worst_ratio": 0.9986009308370636
     },
     {
-      "group": "独立分布（可见）",
-      "cases": 24,
-      "wins": 23,
+      "group": "分布与尺寸边界",
+      "cases": 33,
+      "wins": 26,
       "ties": 0,
-      "losses": 1,
-      "geometric_ratio": 0.3984552102314501,
-      "worst_ratio": 1.0104293224230432
-    },
-    {
-      "group": "范围内尺寸边界",
-      "cases": 9,
-      "wins": 3,
-      "ties": 0,
-      "losses": 6,
-      "geometric_ratio": 1.0054996527118698,
+      "losses": 7,
+      "geometric_ratio": 0.5129007323661477,
       "worst_ratio": 1.1225264299268094
     },
     {
@@ -50,7 +41,7 @@
       "wins": 17,
       "ties": 0,
       "losses": 7,
-      "geometric_ratio": 0.9299414196254968,
+      "geometric_ratio": 0.9306685663235915,
       "worst_ratio": 1.220074868345917
     },
     {
@@ -59,8 +50,8 @@
       "wins": 23,
       "ties": 0,
       "losses": 1,
-      "geometric_ratio": 0.8497092846092982,
-      "worst_ratio": 1.1531944574398407
+      "geometric_ratio": 0.8544619336663348,
+      "worst_ratio": 1.265551236358378
     },
     {
       "group": "缓存准入专项",
@@ -77,8 +68,8 @@
       "wins": 14,
       "ties": 0,
       "losses": 10,
-      "geometric_ratio": 0.9837484415181299,
-      "worst_ratio": 1.0335323829469725
+      "geometric_ratio": 0.9837780932521755,
+      "worst_ratio": 1.0345923279507032
     },
     {
       "group": "到达与TTL组合回归",
@@ -86,37 +77,173 @@
       "wins": 10,
       "ties": 0,
       "losses": 14,
-      "geometric_ratio": 0.9955170271094198,
+      "geometric_ratio": 0.9955036228084144,
       "worst_ratio": 1.0557562462894576
     },
     {
-      "group": "冻结后留出组合",
+      "group": "既有规划组合回归",
       "cases": 24,
       "wins": 10,
       "ties": 0,
       "losses": 14,
-      "geometric_ratio": 0.9911745904162471,
+      "geometric_ratio": 0.9911606347928824,
       "worst_ratio": 1.0476055447099497
+    },
+    {
+      "group": "冻结后留出组合",
+      "cases": 24,
+      "wins": 11,
+      "ties": 0,
+      "losses": 13,
+      "geometric_ratio": 0.9959078990852002,
+      "worst_ratio": 1.1637616426840143
     }
   ],
+  "public_comparison_regressions": [
+    {
+      "case": "03_high_unaligned",
+      "before_J": 3518,
+      "current_J": 3526,
+      "change_pct": 0.22740193291643784
+    },
+    {
+      "case": "06_reuse_hot",
+      "before_J": 36180,
+      "current_J": 36197,
+      "change_pct": 0.046987285793265166
+    },
+    {
+      "case": "08_ttl_expiry",
+      "before_J": 25898,
+      "current_J": 25905,
+      "change_pct": 0.027029114217325123
+    },
+    {
+      "case": "mid_mixed",
+      "before_J": 77751,
+      "current_J": 77823,
+      "change_pct": 0.09260331056835103
+    },
+    {
+      "case": "mid_reuse",
+      "before_J": 86459,
+      "current_J": 87117,
+      "change_pct": 0.7610543725927954
+    }
+  ],
+  "public_comparison_source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
   "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
   "system": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
-  "max_profile_submit_ms": 1136.904137,
-  "max_profile_policy_MiB": 1620.1220703125,
-  "max_profile_rss_MiB": 3428.65625,
+  "max_profile_submit_ms": 1665.212461,
+  "max_profile_policy_MiB": 1620.1396484375,
+  "max_profile_rss_MiB": 3429.06640625,
   "freeze": {
-    "source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
-    "binary_sha256": "4d4a6d7341c3263fcf03f5a1141dfd1111cd6e3daa8fcc9a1cfb9b7fbd2c6a55",
-    "upstream_sha": "dd321261c9d3002d548a8097fd29affc019034b8",
-    "engine_commit": "94766c623e4664e03b0861aa5abb68044500614b",
+    "source_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "binary_sha256": "d6f16dab089647f6d0e3d0721b81d45c0428559b5df1ab07a879276d8ace9f37",
+    "base_commit": "74850224e7508cfc59a0e2280966605904b15f81",
     "engine_files_sha256": {
       "src/framework.cpp": "6de26addc1f2b8b42b65187d9e3c39d5b4bd8b0f9d994169f8d6f364d03fac13",
       "src/player_main.cpp": "cdd2134f9b8158befdb78d8f92a0884087b48181e4600e00da52171fc1f807e4",
       "scripts/score_suite.py": "0beba0f9d65f72e1d968a2a76ab61987e5846237ef857475736f5d95a5069ca8"
     },
-    "frozen_utc": "2026-10-30T07:17:51.382841+00:00",
-    "base_commit": "dd321261c9d3002d548a8097fd29affc019034b8",
-    "selection": "All preceding 505 inputs are visible regression. The generic two-cut candidate family is frozen; generate 24 new combinations afterward, with no selection from their results."
+    "frozen_utc": "2026-10-30T09:29:55.981062+00:00"
   },
-  "baseline_timeout_note": "One 180s auxiliary baseline attempt timed out; a 600s retry passed in 47.15s. Official suite timeouts unchanged; full records retained in local delivery."
+  "baseline_reuse": "Existing 268 deterministic greedy J values reused only after engine hashes and all input hashes matched; new 24 holdout baselines executed and replayed three times.",
+  "planning_overhead": {
+    "cpu": 238,
+    "source_sha256": "31f991a7d7cff8077693ac9dd30e10441655dd21741e71c7dea3311ab56455b4",
+    "comparison_source_sha256": "8e0c344efd047a42ff39be1e698cc89007eb9cc8f6bde3bd73b87236a782abb7",
+    "cases": [
+      {
+        "case": "single_524288",
+        "input_sha256": "7c3fdface303f3f87b3bb273de1f21827b89d11c8182f1875288c6e16e19142a",
+        "repetitions": 3,
+        "comparison_submit_ms_range": [
+          0.530711,
+          0.610319
+        ],
+        "current_submit_ms_range": [
+          1.776977,
+          1.934846
+        ]
+      },
+      {
+        "case": "balanced_cards",
+        "input_sha256": "efe47374952da98faea9216dbd4cbde1a0ab71ded0081550d5057c04379677ea",
+        "repetitions": 3,
+        "comparison_submit_ms_range": [
+          4.787052,
+          5.370842
+        ],
+        "current_submit_ms_range": [
+          48.073715,
+          48.796452
+        ]
+      },
+      {
+        "case": "large_1024",
+        "input_sha256": "39245ce4a4194271a7bd38c2de3f838a848884f6a19278c88a57a46bcaed64bf",
+        "repetitions": 3,
+        "comparison_submit_ms_range": [
+          85.057913,
+          93.3534
+        ],
+        "current_submit_ms_range": [
+          233.708985,
+          290.384284
+        ]
+      },
+      {
+        "case": "one_owner_4096_pieces",
+        "input_sha256": "615c34868c86bd35a6086a33d663e337d6a176f739e46a65826b23e03a59e950",
+        "repetitions": 3,
+        "comparison_submit_ms_range": [
+          28.311275,
+          29.402145
+        ],
+        "current_submit_ms_range": [
+          30.516284,
+          32.090156
+        ]
+      }
+    ]
+  },
+  "planning_examples": [
+    {
+      "name": "single_32768",
+      "J": 11,
+      "operations": 1,
+      "ssd_transfers": 2
+    },
+    {
+      "name": "single_131072",
+      "J": 25,
+      "operations": 1,
+      "ssd_transfers": 4
+    },
+    {
+      "name": "single_524288",
+      "J": 64,
+      "operations": 1,
+      "ssd_transfers": 4
+    },
+    {
+      "name": "single_4194304",
+      "J": 212,
+      "operations": 1,
+      "ssd_transfers": 4
+    },
+    {
+      "name": "single_8388608",
+      "J": 378,
+      "operations": 1,
+      "ssd_transfers": 4
+    },
+    {
+      "name": "balanced_cards",
+      "J": 259,
+      "operations": 8,
+      "ssd_transfers": 64
+    }
+  ]
 }

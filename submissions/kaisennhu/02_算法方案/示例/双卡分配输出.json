@@ -49,7 +49,7 @@
       "operations": [
         {
           "buffer_bytes": 2097664,
-          "operation_id": 4,
+          "operation_id": 7,
           "path": "FALLBACK",
           "ranges": [
             {
@@ -62,24 +62,24 @@
             {
               "depends_on": [],
               "device_id": 0,
-              "group_id": 4,
+              "group_id": 7,
               "not_before_us": 0,
               "physical_length": 2097664,
               "physical_ssd_offset": 0,
               "priority": 100,
-              "transfer_id": 7,
+              "transfer_id": 13,
               "type": "SSD_TO_DDR"
             },
             {
               "bytes": 2097152,
               "depends_on": [
-                7
+                13
               ],
               "device_id": 0,
-              "group_id": 4,
+              "group_id": 7,
               "not_before_us": 0,
               "priority": 100,
-              "transfer_id": 8,
+              "transfer_id": 14,
               "type": "H2D",
               "vectors": [
                 {
@@ -94,7 +94,7 @@
         },
         {
           "buffer_bytes": 2097664,
-          "operation_id": 5,
+          "operation_id": 8,
           "path": "FALLBACK",
           "ranges": [
             {
@@ -107,24 +107,24 @@
             {
               "depends_on": [],
               "device_id": 1,
-              "group_id": 5,
+              "group_id": 8,
               "not_before_us": 0,
               "physical_length": 2097664,
               "physical_ssd_offset": 2097152,
               "priority": 100,
-              "transfer_id": 9,
+              "transfer_id": 15,
               "type": "SSD_TO_DDR"
             },
             {
               "bytes": 2097152,
               "depends_on": [
-                9
+                15
               ],
               "device_id": 1,
-              "group_id": 5,
+              "group_id": 8,
               "not_before_us": 0,
               "priority": 100,
-              "transfer_id": 10,
+              "transfer_id": 16,
               "type": "H2D",
               "vectors": [
                 {
@@ -139,7 +139,7 @@
         },
         {
           "buffer_bytes": 1049088,
-          "operation_id": 6,
+          "operation_id": 9,
           "path": "FALLBACK",
           "ranges": [
             {
@@ -152,24 +152,24 @@
             {
               "depends_on": [],
               "device_id": 1,
-              "group_id": 6,
+              "group_id": 9,
               "not_before_us": 0,
               "physical_length": 1049088,
               "physical_ssd_offset": 4194304,
               "priority": 100,
-              "transfer_id": 11,
+              "transfer_id": 17,
               "type": "SSD_TO_DDR"
             },
             {
               "bytes": 1048576,
               "depends_on": [
-                11
+                17
               ],
               "device_id": 1,
-              "group_id": 6,
+              "group_id": 9,
               "not_before_us": 0,
               "priority": 100,
-              "transfer_id": 12,
+              "transfer_id": 18,
               "type": "H2D",
               "vectors": [
                 {

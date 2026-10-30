@@ -7,7 +7,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-GENERATED = ['resources','distribution','regression','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout']
+GENERATED = ['resources','distribution','regression','cache_mix','blind','admission','holdout','engine_holdout','planning_holdout','transfer_holdout']
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
