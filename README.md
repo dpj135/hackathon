@@ -10,7 +10,7 @@
 | 4. 算法设计与复杂度 | [算法设计](submissions/kaisennhu/04_算法设计与复杂度/算法设计.md)、[复杂度分析](submissions/kaisennhu/04_算法设计与复杂度/复杂度分析.md) |
 | 5. 自动化测试与复现 | [统一入口](submissions/kaisennhu/run.py)、[复现手册](submissions/kaisennhu/05_自动化测试与复现/测试操作手册.md) |
 | 6. 性能与资源报告 | [验证报告与逐例证据](submissions/kaisennhu/06_性能与资源报告/验证报告.md) |
-| 7. 答辩PPT | [答辩PPT（11页）](submissions/kaisennhu/07_答辩PPT/答辩介绍.pptx)、[讲解与演示流程](submissions/kaisennhu/07_答辩PPT/讲解与演示流程.md) |
+| 7. 答辩PPT | [答辩PPT（8页）](submissions/kaisennhu/07_答辩PPT/答辩介绍.pptx)、[讲解与演示流程](submissions/kaisennhu/07_答辩PPT/讲解与演示流程.md) |
 
 完整克隆后，在Linux或WSL执行：
 
